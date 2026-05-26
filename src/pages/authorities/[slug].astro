@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import AuthorityLayout from '../../layouts/AuthorityLayout.astro';
+
+export async function getStaticPaths() {
+  const authorities = await getCollection('authorities');
+  return authorities.map(authority => ({
+    params: { slug: authority.slug },
+    props: { authority }
+  }));
+}
+
+const { authority } = Astro.props;
+const { Content } = await authority.render();
+---
+
+<AuthorityLayout authority={authority}>
+  <Content />
+</AuthorityLayout>

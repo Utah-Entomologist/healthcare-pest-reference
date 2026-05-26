@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Methodology"
+  description="Source tier hierarchy, confidence ratings, verification discipline, and the explicit list of fabricated claims investigated and excluded from the Healthcare Pest Reference."
+>
+  <h1>Methodology</h1>
+
+  <p>
+    Every fact published on this reference is rated for source confidence and
+    sourced to a primary authority. This page documents the verification discipline
+    applied to all content, the source tier hierarchy used to evaluate evidence,
+    and the explicit list of commonly-circulated claims that have been investigated
+    and disconfirmed.
+  </p>
+
+  <h2>Source Tier Hierarchy</h2>
+
+  <h3>Tier 1 — Authoritative</h3>
+
+  <p>
+    Citations directly to federal regulators (CMS, OSHA, EPA, FDA, CDC, USDA,
+    VHA, IHS), accrediting bodies (The Joint Commission, DNV-GL, HFAP, CIHQ),
+    state regulators (state Departments of Health, state Departments of
+    Agriculture, state structural pest control boards, state environmental
+    quality agencies), and the Entomological Society of America Certification
+    Corporation (for matters relating to the Board Certified Entomologist
+    credential). Tier 1 sources are cited directly.
+  </p>
+
+  <h3>Tier 2 — Recognized Authority</h3>
+
+  <p>
+    Citations to AHRQ, NIOSH, the National Pest Management Association
+    QualityPro standards, peer-reviewed academic literature in facility
+    management, infection control, and entomology, and published standards
+    from AORN, USP, APIC, ASHE, and the Facility Guidelines Institute (FGI).
+    Tier 2 sources are cited directly.
+  </p>
+
+  <h3>Tier 3 — Reference Only</h3>
+
+  <p>
+    Industry publications, vendor whitepapers, and trade press. Tier 3 sources
+    are used only to identify a Tier 1 or Tier 2 source to verify against. If
+    a claim only exists in Tier 3 material, the claim is flagged as unverified
+    and is not published as a stated fact in this reference.
+  </p>
+
+  <h2>Source Confidence Ratings</h2>
+
+  <h3>HIGH Confidence</h3>
+
+  <p>
+    The verbatim text or substantive claim has been directly fetched from a
+    primary source in real time and verified by extraction or quotation. Page
+    metadata includes the source URL and the date of most recent verification.
+  </p>
+
+  <h3>MEDIUM Confidence</h3>
+
+  <p>
+    The primary source exists but cannot be directly fetched. This typically
+    occurs where the primary source is behind an institutional paywall
+    (Joint Commission CAMH e-edition, USP-NF, AORN eGuidelines+) or where
+    the primary source is rendered in a JavaScript framework that cannot be
+    crawled (the Utah eRules portal at adminrules.utah.gov). Where MEDIUM
+    confidence applies, the page discloses the limitation and identifies the
+    secondary aggregator used. Litigation-grade applications should obtain
+    institutional access to verify the verbatim source.
+  </p>
+
+  <h3>KILLED — Investigated and Disconfirmed</h3>
+
+  <p>
+    The claim has been investigated against primary sources and found to be
+    fabricated, mis-cited, or attributable only to Tier 3 sources without
+    Tier 1 or Tier 2 support. KILLED claims are not published as stated facts
+    but are explicitly catalogued so that future researchers do not re-introduce
+    them. The list below catalogues every claim investigated and excluded
+    during the foundation phase of this reference.
+  </p>
+
+  <h2>Investigated and Excluded Claims</h2>
+
+  <p>
+    The following claims have been investigated and disconfirmed. Each is
+    paired with the disconfirming finding and primary source. This list is
+    not exhaustive; it documents the claims most commonly circulated in
+    vendor materials, industry publications, and prior research that have
+    been investigated against primary sources.
+  </p>
+
+  <h3>Federal Regulatory Claims</h3>
+
+  <ul>
+    <li>
+      <strong>"CMS State Operations Manual Appendix A contains pest interpretive
+      guidance."</strong> Disconfirmed. A full-document text extraction of
+      Appendix A Rev. 238 (Issued 03-20-2026), 613 pages, 27,201 lines,
+      returns zero matches for pest, vermin, rodent, insect, infestation,
+      roach, cockroach, rat, mice, mouse, or "integrated pest" across the
+      entire document. The 2016 archived version contained a single bullet
+      under A-0749; that bullet does not appear in the current operational
+      manual.
+    </li>
+    <li>
+      <strong>"42 CFR §488.28 specifies a 10-calendar-day plan-of-correction
+      submission requirement verbatim."</strong> Disconfirmed. §488.28
+      specifies a 60-day compliance expectation. The 10-day PoC submission
+      deadline exists in CMS State Operations Manual Pub. 100-07, Exhibit
+      152 — sub-regulatory guidance, not codified regulation.
+    </li>
+    <li>
+      <strong>"21 CFR §123.1 Applicability for Seafood HACCP."</strong>
+      Disconfirmed. §123.1 does not exist as an enumerated section. Part
+      123 Subpart A begins at §123.3 Definitions. Scope is established
+      through §123.3 definitions and §123.6's mandate. Verified via direct
+      eCFR fetch.
+    </li>
+    <li>
+      <strong>"Federal HACCP regulations apply to hospital food service."</strong>
+      Disconfirmed. 21 CFR Parts 120 and 123 (FDA HACCP for juice and seafood),
+      9 CFR Parts 304, 310, and 417 (USDA-FSIS HACCP for meat and poultry) do
+      not apply to hospital food service. Hospital food service is governed
+      by state-adopted Food Code provisions.
+    </li>
+    <li>
+      <strong>"7 CFR Part 110 federal recordkeeping requirements for restricted-use
+      pesticides remain in effect."</strong> Disconfirmed. USDA rescinded
+      7 CFR Part 110 effective July 11, 2025 (Federal Register Vol. 90
+      No. 90, May 12, 2025, FR Doc 2025-08220). State-level recordkeeping
+      rules now govern.
+    </li>
+  </ul>
+
+  <h3>CDC HICPAC Claims</h3>
+
+  <ul>
+    <li>
+      <strong>"CDC HICPAC issued a formal 2019 update to the Environmental
+      Infection Control Guidelines adding water management and construction
+      sections."</strong> Disconfirmed. CDC's own update log shows no 2019
+      substantive update to the 2003 guideline. The 2003 guideline remains
+      the active document. The "July 2019" entry on CDC's updates page is
+      an unrelated Interim Measles Infection Control Recommendations document.
+      Water management for healthcare buildings is governed by separate
+      documents (ASHRAE Standard 188; CMS QSO-17-30).
+    </li>
+    <li>
+      <strong>"HICPAC Section E.VI contains the pest control recommendations."</strong>
+      Disconfirmed. Pest Control recommendations are at Section E.V. (NOT
+      E.VI). Section E.VI contains Special Pathogens recommendations
+      (MRSA/VRE, C. difficile, CJD). Verified via direct CDC MMWR primary
+      source fetch.
+    </li>
+    <li>
+      <strong>"HICPAC Section E.V. background narrative names specific
+      cockroach, rodent, and ant species and discusses operating rooms,
+      ICUs, and protective environments."</strong> Disconfirmed. The
+      species-name narrative and OR/ICU/PE discussion does not appear in
+      Section E.V. of Part II. Part II is the recommendations document;
+      species detail may exist in Part I (a separate document) but was
+      attributed to E.V. without verification.
+    </li>
+    <li>
+      <strong>"All four HICPAC Section E.V. recommendations are Category II."</strong>
+      Disconfirmed. E.V.2 (window screening) is Category IB. E.V.1, E.V.3,
+      and E.V.4 are Category II. Verified verbatim against CDC MMWR
+      Recomm Rep 2003;52(RR-10).
+    </li>
+  </ul>
+
+  <h3>Joint Commission Claims</h3>
+
+  <ul>
+    <li>
+      <strong>"Joint Commission Perspectives July 2019 announced an
+      EC.02.06.01 revision removing Integrated Pest Management language."</strong>
+      Could not be verified. No primary or secondary source surfaces a
+      July 2019 Perspectives announcement matching this description. The
+      EC.02.06.01 standard's published text does not contain explicit IPM
+      language before or after 2019.
+    </li>
+    <li>
+      <strong>"The Joint Commission SAFER Matrix launch was announced in
+      Perspectives Vol. 36 No. 11, November 2016."</strong> Disconfirmed.
+      The SAFER Matrix announcement was the May 2016 Perspectives. SAFER
+      became effective for psych-deemed hospitals on June 6, 2016 and for
+      all other accreditation programs on January 1, 2017.
+    </li>
+    <li>
+      <strong>"Joint Commission Immediate Threat to Life findings must be
+      corrected within 45 calendar days of survey close."</strong>
+      Disconfirmed. The actual ITL framework is 72 hours initial
+      identification with up to 23 days maximum for full resolution. The
+      45-day timeline is the Evidence of Standards Compliance submission
+      deadline for Preliminary Denial of Accreditation situations, not the
+      ITL correction deadline.
+    </li>
+  </ul>
+
+  <h3>Cost and Litigation Claims</h3>
+
+  <ul>
+    <li>
+      <strong>"Average hospital-acquired infection cost is $50,000."</strong>
+      Disconfirmed as unsourced. Per-event HAI costs vary across nearly two
+      orders of magnitude per Zimlichman et al. 2013 (JAMA Internal Medicine
+      173[22]:2039-2046), from $896 (CAUTI) to $58,614 (MRSA central line-
+      associated bloodstream infection).
+    </li>
+    <li>
+      <strong>"Average hospital pest litigation cost is $75,000 to $250,000."</strong>
+      Disconfirmed as unsourced. No primary-source dataset exists on
+      hospital pest litigation costs. Plaintiff firms specializing in pest
+      litigation explicitly state there is no average. The published
+      verdict universe is biased toward plaintiff wins, larger awards, and
+      cases attorneys publish; hospital settlements are disproportionately
+      under non-disclosure agreement.
+    </li>
+    <li>
+      <strong>"Park La Brea $3.5 million settlement is healthcare precedent."</strong>
+      Disconfirmed. Park La Brea (Los Angeles Superior Court, December 14,
+      2017, $3.5 million awarded across 16 plaintiffs in 8 multifamily
+      housing units) was a multifamily housing case under landlord premises
+      liability, not a healthcare case.
+    </li>
+    <li>
+      <strong>"Sheele et al. 2017 was published in PNAS."</strong>
+      Disconfirmed. Sheele et al. 2017 was published in Infection Control
+      and Hospital Epidemiology (ICHE) 38(5):623-624. The Proceedings of
+      the National Academy of Sciences (PNAS) published a 2019 commentary
+      by Scarpino and Althouse that derived per-infestation figures from
+      Sheele 2017; the PNAS commentary is a secondary citation, not the
+      primary data publication.
+    </li>
+  </ul>
+
+  <h3>AHRQ Common Formats Claim</h3>
+
+  <ul>
+    <li>
+      <strong>"AHRQ Common Formats include an 'Environment' event-type
+      category within the Patient Safety Event reporting framework."</strong>
+      Disconfirmed. CFER-H V2.0 (current as of 03-31-2025) modules are
+      Anesthesia, Blood, Device, Fall, Medication, Perinatal, Pressure
+      Injury, Surgery, and VTE. CFS-H V1.0 modules add Birth-Maternal,
+      Birth-Neonatal, Hospital-Acquired Infection, and Other. No
+      "Environment" or equivalently-named event-type category exists.
+    </li>
+  </ul>
+
+  <h3>State Citation Claims</h3>
+
+  <ul>
+    <li>
+      <strong>"Utah school IPM rule is codified at R392-200-7(12)."</strong>
+      Disconfirmed. The Utah school IPM rule is at R392-200-18 "Pest
+      Management."
+    </li>
+  </ul>
+
+  <h3>BCE Credential Claims</h3>
+
+  <ul>
+    <li>
+      <strong>"BCE is a graduate-level credential."</strong> Disconfirmed.
+      BCE requires a bachelor's-level degree in a biological or life
+      science with at least four entomology courses. Advanced degrees
+      satisfy the educational requirement but are not required.
+    </li>
+  </ul>
+
+  <h2>Verification Discipline</h2>
+
+  <p>
+    Foundation content for this reference was produced through seven research
+    threads followed by five validation rounds. Each validation round
+    targeted specific factual claims from prior research and re-verified
+    them against primary sources via live web fetch where the primary source
+    was publicly accessible, or via cross-referenced secondary aggregators
+    where the primary source was paywalled or rendered in JavaScript.
+  </p>
+
+  <p>
+    The validation discipline was intentionally adversarial: every claim
+    was treated as potentially fabricated until verified, and verification
+    required direct primary-source confirmation rather than secondary or
+    tertiary citation. This methodology surfaced multiple fabricated claims
+    in prior research outputs, all catalogued above and excluded from the
+    reference.
+  </p>
+
+  <p>
+    Ongoing maintenance follows the same discipline. New authority pages
+    are added only after primary-source verification. Existing pages are
+    re-verified at least annually or upon any reported change to the
+    underlying authority.
+  </p>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const authorities = await getCollection('authorities');
+
+const grouped = authorities.reduce((acc, authority) => {
+  const type = authority.data.authority_type;
+  if (!acc[type]) acc[type] = [];
+  acc[type].push(authority);
+  return acc;
+}, {} as Record<string, typeof authorities>);
+
+const typeOrder = [
+  'federal regulator',
+  'accrediting body',
+  'state regulator',
+  'recognized authority'
+];
+
+const typeLabels: Record<string, string> = {
+  'federal regulator': 'Federal Regulators',
+  'accrediting body': 'Accrediting Bodies',
+  'state regulator': 'State Regulators',
+  'recognized authority': 'Recognized Authorities'
+};
+---
+
+<BaseLayout
+  title="All Authority Pages"
+  description="Complete index of regulatory authorities covered by the Healthcare Pest Reference, organized by authority type."
+>
+  <h1>All Authority Pages</h1>
+
+  <p>
+    Every published authority page in this reference. Pages are grouped by authority
+    type and listed with their formal citation. Click any title to view the full
+    authority page with verbatim text, plain-language summary, applicability scope,
+    documentation evidence, and surveyor behavior detail.
+  </p>
+
+  {typeOrder.map(type => grouped[type] && (
+    <section>
+      <h2>{typeLabels[type]}</h2>
+      <ul>
+        {grouped[type]
+          .sort((a, b) => a.data.title.localeCompare(b.data.title))
+          .map(authority => (
+            <li>
+              <a href={`/authorities/${authority.slug}/`}>{authority.data.title}</a>
+              <br />
+              <small style="color: var(--color-text-muted);">{authority.data.citation}</small>
+            </li>
+          ))}
+      </ul>
+    </section>
+  ))}
+</BaseLayout>

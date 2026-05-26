@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const authorities = await getCollection('authorities');
+const sortedAuthorities = authorities.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+---
+
+<BaseLayout
+  title="National Reference for Healthcare Pest Control Compliance"
+  description="Authoritative reference work mapping U.S. federal, state, and accrediting body pest control compliance requirements for hospitals, critical access hospitals, skilled nursing facilities, ambulatory surgery centers, hospices, behavioral health, rehabilitation, and pediatric facilities. Primary-source anchored. Maintained by a Board Certified Entomologist."
+>
+  <h1>Healthcare Pest Reference</h1>
+
+  <p>
+    A national authoritative reference for healthcare pest control compliance. Maps the
+    federal, state, accrediting body, and recognized authority requirements that govern
+    pest management in U.S. healthcare facilities. Every requirement anchored to a
+    primary source. Every fabricated or weakly-sourced claim that has been investigated
+    and disconfirmed is explicitly labeled and excluded.
+  </p>
+
+  <p>
+    The reference serves hospital facilities directors, infection preventionists, risk
+    and compliance officers, Joint Commission and CMS survey readiness teams, healthcare
+    procurement officers, plaintiff and defense attorneys litigating healthcare pest
+    matters, and pest control operators serving healthcare clients.
+  </p>
+
+  <h2>Phase 1 — Federal Regulatory Anchors</h2>
+
+  <p>
+    Phase 1 of this reference covers the federal regulatory tier and the Utah state
+    regulatory framework as a depth prototype. Subsequent phases will expand to the
+    other 49 states, additional accrediting bodies (DNV-GL, HFAP, CIHQ), the FGI
+    Guidelines for Design and Construction, and the institutional credentialing
+    landscape across acute-care, critical access, skilled nursing, ambulatory surgery,
+    hospice, behavioral health, rehabilitation, and pediatric facility types.
+  </p>
+
+  <h2>Current Authority Pages</h2>
+
+  <ul>
+    {sortedAuthorities.map(authority => (
+      <li>
+        <a href={`/authorities/${authority.slug}/`}>{authority.data.title}</a>
+        {' '}— {authority.data.citation}
+      </li>
+    ))}
+  </ul>
+
+  <h2>How to Use This Reference</h2>
+
+  <p>
+    Each authority page is a self-contained explanation of one regulatory authority.
+    Pages include the verbatim regulatory text where publicly available, a plain-language
+    summary, the facility types the requirement applies to, the documentation evidence
+    surveyors expect, the citation pathway surveyors use, and explicit notes on any
+    adjacent claims that have been investigated and disconfirmed as fabricated or
+    weakly sourced.
+  </p>
+
+  <p>
+    Citations should be verified against the primary source for litigation-grade
+    applications. The reference notes where primary sources are paywalled and
+    institutional access is required for direct verbatim verification.
+  </p>
+
+  <h2>Methodology</h2>
+
+  <p>
+    Every fact in this reference is rated for source confidence and source tier.
+    See the <a href="/methodology/">methodology page</a> for details on the verification
+    discipline, the source tier hierarchy, and the explicit list of fabricated claims
+    that have been investigated and excluded.
+  </p>
+
+  <p>
+    The reference is maintained by Trenton L. Frazer, Board Certified Entomologist
+    (BCE #B3413, General Entomology specialty), MS Entomology, University of Florida.
+    See the <a href="/about/">about page</a> for credentialing detail and the reference's
+    relationship to the operator's other work.
+  </p>
+</BaseLayout>

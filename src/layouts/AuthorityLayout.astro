@@ -1,0 +1,65 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  authority: CollectionEntry<'authorities'>;
+}
+
+const { authority } = Astro.props;
+const {
+  title,
+  authority_type,
+  citation,
+  last_verified,
+  source_url,
+  source_tier,
+  source_confidence,
+  paywalled,
+  verbatim_available
+} = authority.data;
+
+const description = `${title}. Source: ${citation}. Last verified ${last_verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}.`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  authorityType={authority_type}
+  citation={citation}
+  lastVerified={last_verified}
+>
+  <h1>{title}</h1>
+
+  <section class="authority-meta">
+    <dl>
+      <dt>Authority Type</dt>
+      <dd>{authority_type}</dd>
+
+      <dt>Citation</dt>
+      <dd>{citation}</dd>
+
+      <dt>Primary Source</dt>
+      <dd><a href={source_url} target="_blank" rel="noopener">{source_url}</a></dd>
+
+      <dt>Source Tier</dt>
+      <dd>Tier {source_tier}</dd>
+
+      <dt>Confidence</dt>
+      <dd class={source_confidence === 'HIGH' ? 'confidence-high' : 'confidence-medium'}>
+        {source_confidence}
+      </dd>
+
+      <dt>Paywalled</dt>
+      <dd>{paywalled ? 'Yes — institutional access recommended for litigation-grade use' : 'No'}</dd>
+
+      <dt>Verbatim Available</dt>
+      <dd>{verbatim_available ? 'Yes' : 'No — predecessor or paraphrase only'}</dd>
+
+      <dt>Last Verified</dt>
+      <dd>{last_verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</dd>
+    </dl>
+  </section>
+
+  <slot />
+</BaseLayout>
