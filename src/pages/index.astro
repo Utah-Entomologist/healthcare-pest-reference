@@ -3,55 +3,180 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const authorities = await getCollection('authorities');
-const sortedAuthorities = authorities.sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
+
+const grouped = authorities.reduce((acc, authority) => {
+  const type = authority.data.authority_type;
+  if (!acc[type]) acc[type] = [];
+  acc[type].push(authority);
+  return acc;
+}, {} as Record<string, typeof authorities>);
+
+const typeOrder = [
+  'federal regulator',
+  'accrediting body',
+  'state regulator',
+  'recognized authority'
+];
+
+const typeLabels: Record<string, string> = {
+  'federal regulator': 'Federal Regulators',
+  'accrediting body': 'Accrediting Bodies',
+  'state regulator': 'State Regulators',
+  'recognized authority': 'Recognized Authorities'
+};
+
+const totalCount = authorities.length;
 ---
 
 <BaseLayout
   title="National Reference for Healthcare Pest Control Compliance"
   description="Authoritative reference work mapping U.S. federal, state, and accrediting body pest control compliance requirements for hospitals, critical access hospitals, skilled nursing facilities, ambulatory surgery centers, hospices, behavioral health, rehabilitation, and pediatric facilities. Primary-source anchored. Maintained by a Board Certified Entomologist."
 >
-  <h1>Healthcare Pest Reference</h1>
+  <style>
+    .hero {
+      margin-bottom: 3rem;
+    }
 
-  <p>
-    A national authoritative reference for healthcare pest control compliance. Maps the
-    federal, state, accrediting body, and recognized authority requirements that govern
-    pest management in U.S. healthcare facilities. Every requirement anchored to a
-    primary source. Every fabricated or weakly-sourced claim that has been investigated
-    and disconfirmed is explicitly labeled and excluded.
-  </p>
+    .hero h1 {
+      margin-bottom: 1.25rem;
+    }
 
-  <p>
-    The reference serves hospital facilities directors, infection preventionists, risk
-    and compliance officers, Joint Commission and CMS survey readiness teams, healthcare
-    procurement officers, plaintiff and defense attorneys litigating healthcare pest
-    matters, and pest control operators serving healthcare clients.
-  </p>
+    .hero-lede {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
 
-  <h2>Phase 1 — Federal Regulatory Anchors</h2>
+    .hero-audience {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0;
+    }
 
-  <p>
-    Phase 1 of this reference covers the federal regulatory tier and the Utah state
-    regulatory framework as a depth prototype. Subsequent phases will expand to the
-    other 49 states, additional accrediting bodies (DNV-GL, HFAP, CIHQ), the FGI
-    Guidelines for Design and Construction, and the institutional credentialing
-    landscape across acute-care, critical access, skilled nursing, ambulatory surgery,
-    hospice, behavioral health, rehabilitation, and pediatric facility types.
-  </p>
+    .scope-note {
+      background: var(--color-bg-subtle);
+      border-left: 3px solid var(--color-accent);
+      padding: 1.1rem 1.4rem;
+      margin: 2.5rem 0 3rem;
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+    }
 
-  <h2>Current Authority Pages</h2>
+    .scope-note strong {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
 
-  <ul>
-    {sortedAuthorities.map(authority => (
-      <li>
-        <a href={`/authorities/${authority.slug}/`}>{authority.data.title}</a>
-        {' '}— {authority.data.citation}
-      </li>
-    ))}
-  </ul>
+    .authority-group {
+      margin-bottom: 2.5rem;
+    }
 
-  <h2>How to Use This Reference</h2>
+    .authority-group h3 {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-meta);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-rule);
+      margin-top: 0;
+    }
+
+    .authority-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .authority-list li {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--color-rule);
+    }
+
+    .authority-list li:last-child {
+      border-bottom: none;
+    }
+
+    .authority-list a {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.25rem;
+      line-height: 1.35;
+    }
+
+    .authority-list a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .authority-citation {
+      font-size: 0.84rem;
+      color: var(--color-text-meta);
+      font-family: var(--font-sans);
+    }
+
+    .closing-note {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-rule);
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+  </style>
+
+  <div class="hero">
+    <h1>Healthcare Pest Reference</h1>
+
+    <p class="hero-lede">
+      A national authoritative reference mapping U.S. federal, state, and accrediting
+      body pest control compliance requirements for healthcare facilities. Primary-source
+      anchored. Independently verified. Maintained by a Board Certified Entomologist.
+    </p>
+
+    <p class="hero-audience">
+      For hospital risk management, infection prevention, plant operations, accreditation
+      readiness teams, healthcare procurement, and legal counsel litigating healthcare
+      pest matters.
+    </p>
+  </div>
+
+  <div class="scope-note">
+    <strong>Phase 1 in progress.</strong> The current reference covers {totalCount} authorities
+    across the federal regulatory spine, with the Utah state framework as a depth prototype.
+    Subsequent phases expand to additional state regulatory frameworks, accrediting bodies,
+    standards bodies, and institutional credentialing references.
+  </div>
+
+  <h2>Authority Index</h2>
+
+  {typeOrder.map(type => grouped[type] && (
+    <div class="authority-group">
+      <h3>{typeLabels[type]}</h3>
+      <ul class="authority-list">
+        {grouped[type]
+          .sort((a, b) => a.data.title.localeCompare(b.data.title))
+          .map(authority => (
+            <li>
+              <a href={`/authorities/${authority.slug}/`}>{authority.data.title}</a>
+              <span class="authority-citation">{authority.data.citation}</span>
+            </li>
+          ))}
+      </ul>
+    </div>
+  ))}
+
+  <h2>How This Reference Works</h2>
 
   <p>
     Each authority page is a self-contained explanation of one regulatory authority.
@@ -63,24 +188,24 @@ const sortedAuthorities = authorities.sort((a, b) =>
   </p>
 
   <p>
-    Citations should be verified against the primary source for litigation-grade
-    applications. The reference notes where primary sources are paywalled and
-    institutional access is required for direct verbatim verification.
-  </p>
-
-  <h2>Methodology</h2>
-
-  <p>
-    Every fact in this reference is rated for source confidence and source tier.
-    See the <a href="/methodology/">methodology page</a> for details on the verification
-    discipline, the source tier hierarchy, and the explicit list of fabricated claims
-    that have been investigated and excluded.
+    Every claim on this reference carries a source tier rating and a confidence
+    rating. Citations should be verified against the primary source for any
+    litigation-grade application. The reference notes where primary sources are
+    paywalled and institutional access is required for direct verbatim verification.
   </p>
 
   <p>
-    The reference is maintained by Trenton L. Frazer, Board Certified Entomologist
-    (BCE #B3413, General Entomology specialty), MS Entomology, University of Florida.
-    See the <a href="/about/">about page</a> for credentialing detail and the reference's
-    relationship to the operator's other work.
+    See the <a href="/methodology/">methodology page</a> for the source tier hierarchy,
+    confidence ratings, verification discipline, and the explicit catalog of fabricated
+    claims that have been investigated and excluded from this reference.
   </p>
+
+  <div class="closing-note">
+    <p>
+      Maintained by Trenton L. Frazer, Board Certified Entomologist (BCE #B3413,
+      General Entomology specialty), MS Entomology, University of Florida.
+      See the <a href="/about/">about page</a> for credentialing detail and the
+      reference's relationship to the operator's commercial and consulting practices.
+    </p>
+  </div>
 </BaseLayout>

@@ -24,32 +24,84 @@ const typeLabels: Record<string, string> = {
   'state regulator': 'State Regulators',
   'recognized authority': 'Recognized Authorities'
 };
+
+const totalCount = authorities.length;
 ---
 
 <BaseLayout
-  title="All Authority Pages"
+  title="Authority Index"
   description="Complete index of regulatory authorities covered by the Healthcare Pest Reference, organized by authority type."
 >
-  <h1>All Authority Pages</h1>
+  <style>
+    .authority-list {
+      list-style: none;
+      margin: 0 0 2rem;
+      padding: 0;
+    }
 
-  <p>
-    Every published authority page in this reference. Pages are grouped by authority
-    type and listed with their formal citation. Click any title to view the full
-    authority page with verbatim text, plain-language summary, applicability scope,
-    documentation evidence, and surveyor behavior detail.
+    .authority-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-rule);
+    }
+
+    .authority-list li:last-child {
+      border-bottom: none;
+    }
+
+    .authority-list a {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.3rem;
+      line-height: 1.35;
+    }
+
+    .authority-list a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .authority-citation {
+      font-size: 0.86rem;
+      color: var(--color-text-meta);
+      font-family: var(--font-sans);
+    }
+
+    .index-summary {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.55;
+      margin-bottom: 2.5rem;
+      color: var(--color-text);
+    }
+  </style>
+
+  <h1>Authority Index</h1>
+
+  <p class="index-summary">
+    {totalCount} regulatory authorities currently published. Pages grouped by
+    authority type and listed with their formal citation. Each authority page
+    contains verbatim text where available, plain-language summary, applicability
+    scope, documentation evidence required, surveyor behavior, source confidence
+    rating, and explicit notes on any adjacent claims that have been investigated
+    and disconfirmed.
   </p>
 
   {typeOrder.map(type => grouped[type] && (
     <section>
       <h2>{typeLabels[type]}</h2>
-      <ul>
+      <ul class="authority-list">
         {grouped[type]
           .sort((a, b) => a.data.title.localeCompare(b.data.title))
           .map(authority => (
             <li>
               <a href={`/authorities/${authority.slug}/`}>{authority.data.title}</a>
-              <br />
-              <small style="color: var(--color-text-muted);">{authority.data.citation}</small>
+              <span class="authority-citation">{authority.data.citation}</span>
             </li>
           ))}
       </ul>

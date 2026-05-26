@@ -20,6 +20,13 @@ const {
 } = authority.data;
 
 const description = `${title}. Source: ${citation}. Last verified ${last_verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}.`;
+
+const authorityTypeLabels: Record<string, string> = {
+  'federal regulator': 'Federal Regulator',
+  'state regulator': 'State Regulator',
+  'accrediting body': 'Accrediting Body',
+  'recognized authority': 'Recognized Authority'
+};
 ---
 
 <BaseLayout
@@ -32,9 +39,10 @@ const description = `${title}. Source: ${citation}. Last verified ${last_verifie
   <h1>{title}</h1>
 
   <section class="authority-meta">
+    <div class="authority-meta-header">Source Record</div>
     <dl>
       <dt>Authority Type</dt>
-      <dd>{authority_type}</dd>
+      <dd>{authorityTypeLabels[authority_type] || authority_type}</dd>
 
       <dt>Citation</dt>
       <dd>{citation}</dd>
@@ -59,6 +67,10 @@ const description = `${title}. Source: ${citation}. Last verified ${last_verifie
       <dt>Last Verified</dt>
       <dd>{last_verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</dd>
     </dl>
+
+    <div class="verification-badge">
+      <span>Verified by <strong>Trenton L. Frazer, BCE #B3413</strong> · Board Certified Entomologist · <a href="/methodology/">verification methodology</a></span>
+    </div>
   </section>
 
   <slot />
