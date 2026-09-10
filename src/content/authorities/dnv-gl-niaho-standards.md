@@ -18,6 +18,18 @@ services_applicable:
   - pesticide storage and handling
 verbatim_available: false
 verbatim_paywall_note: "DNV-GL NIAHO Standards verbatim text is published through DNV Healthcare's standards manual, which is provided to accredited and applicant facilities under accreditation agreement. Operational requirements referenced on this page are publicly summarized in DNV Healthcare's overview materials, ISO 9001 framework documentation (NIAHO is built on ISO 9001 quality management principles), and CMS deeming authority documentation."
+summary: "NIAHO incorporates the CMS Conditions of Participation by reference and adds ISO 9001 quality management. Pest expectations match The Joint Commission; documentation expectations are more structured."
+related_authorities:
+  - slug: cms-conditions-of-participation
+    why: "The federal regulation NIAHO incorporates by reference."
+  - slug: cms-state-operations-manual
+    why: "The CMS interpretive guidance and A-tags applied during state validation surveys of DNV-accredited hospitals."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The standard of care referenced by NIAHO infection prevention standards."
+  - slug: joint-commission-2026-pe-chapter
+    why: "The other hospital accreditation framework; useful for translating PE-chapter language into NIAHO terms."
+  - slug: osha-hazard-communication
+    why: "The federal standard behind NIAHO hazardous materials requirements for pesticides."
 ---
 
 ## Citation
@@ -103,10 +115,3 @@ MEDIUM confidence. NIAHO Standards verbatim text is provided to accredited facil
 
 - **"DNV-GL accredits more U.S. hospitals than The Joint Commission."** Disconfirmed. The Joint Commission is the largest U.S. healthcare accreditor, accrediting the majority of U.S. acute-care hospitals. DNV is the second-largest, accrediting approximately 600 hospitals (substantially fewer than TJC's accredited population).
 - **"NIAHO requires Board Certified Entomologists for hospital pest management."** Disconfirmed. NIAHO does not name BCE as a credentialing requirement. The credential framework expectation flows from CDC HICPAC E.V.3's "credentialed pest-control specialist" call, which NIAHO incorporates by reference but does not specify further.
-
-## Related Authorities
-
-- [CMS Conditions of Participation](/authorities/cms-conditions-of-participation/) — federal framework that NIAHO incorporates by reference
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — standard of care referenced by NIAHO infection prevention standards
-- [The Joint Commission 2026 PE Chapter](/authorities/joint-commission-2026-pe-chapter/) — alternative accreditation framework for U.S. hospitals
-- [OSHA Hazard Communication Standard](/authorities/osha-hazard-communication/) — federal standard referenced by NIAHO hazardous materials requirements

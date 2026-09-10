@@ -25,6 +25,18 @@ services_applicable:
   - food service
   - pharmacy
 verbatim_available: true
+summary: "The most-cited federal authority on healthcare pest control: four recommendations covering strategy, window screening, a credentialed pest-control specialist, and specimen containment."
+related_authorities:
+  - slug: apic-text-environmental-services
+    why: "The Infection Preventionist’s practice reference, which builds on HICPAC and positions pest management as infection prevention infrastructure."
+  - slug: esacc-bce-credential
+    why: "The highest-rigor answer to E.V.3’s call for a “credentialed pest-control specialist.”"
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal framework for the “pest-control strategies” E.V.1 asks facilities to develop."
+  - slug: aorn-2026-perioperative-guidelines
+    why: "Perioperative standards for operating rooms, one of the high-risk areas E.V.1 names."
+  - slug: fgi-guidelines-design-construction
+    why: "The design standard behind E.V.2’s window screening and the envelope-level exclusion of the areas E.V.1 names."
 ---
 
 ## Citation

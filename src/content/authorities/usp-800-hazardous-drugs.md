@@ -23,6 +23,14 @@ services_applicable:
   - environmental cleaning and disinfection
 verbatim_available: false
 verbatim_paywall_note: "USP General Chapter <800> verbatim text is published in the United States Pharmacopeia–National Formulary (USP-NF), which is subscription-only. Effective date (December 1, 2019), compendial applicability date (November 1, 2023), and operational requirements are publicly verifiable through USP FAQ documents, NIOSH Hazardous Drug List references, and state pharmacy board adoption materials."
+summary: "Hazardous drug handling standards. Pest activity in a hazardous drug area is a containment event; pest control products must be compatible with decontamination and wipe-sampling protocols."
+related_authorities:
+  - slug: usp-797-sterile-compounding
+    why: "Companion chapter for sterile compounding, with overlapping environmental requirements and the same Designated Person coordination."
+  - slug: osha-hazard-communication
+    why: "Applies to both the hazardous drugs and the pesticides in the same facility; the two inventories and SDS files must be kept straight."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The infection control standard of care referenced by pharmacy accreditation for pest control strategy."
 ---
 
 ## Citation
@@ -111,9 +119,3 @@ MEDIUM confidence. USP General Chapter <800> verbatim text is paywalled in the U
 ## Related Killed Claims
 
 No fabricated claims about USP <800> identified in foundation research.
-
-## Related Authorities
-
-- [USP General Chapter <797> — Sterile Compounding](/authorities/usp-797-sterile-compounding/) — companion chapter for sterile pharmaceutical compounding with overlapping environmental requirements
-- [OSHA Hazard Communication Standard](/authorities/osha-hazard-communication/) — applicable to both pesticides and hazardous drugs, with intersecting documentation requirements
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — healthcare facility pest management standards referenced as standard of care

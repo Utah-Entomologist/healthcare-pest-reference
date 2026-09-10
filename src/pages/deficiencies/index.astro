@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/site';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('deficiencies');
+
+const regimeOrder = ['CMS', 'The Joint Commission', 'DNV', 'State'] as const;
+const regimeLabels: Record<string, string> = {
+  CMS: 'CMS survey tags (Form 2567 A-tags)',
+  'The Joint Commission': 'Joint Commission standards and Elements of Performance',
+  DNV: 'DNV NIAHO standards',
+  State: 'State survey citations'
+};
+
+const grouped = entries.reduce((acc, entry) => {
+  (acc[entry.data.regime] ||= []).push(entry);
+  return acc;
+}, {} as Record<string, typeof entries>);
+
+for (const list of Object.values(grouped)) {
+  list.sort((a, b) => a.data.identifier.localeCompare(b.data.identifier, 'en', { numeric: true }));
+}
+
+const pendingCount = entries.filter((e) => e.data.content_pending).length;
+---
+
+<BaseLayout
+  title="Survey Deficiencies: Pest-Related Tags and Elements of Performance"
+  description="Reference pages for the CMS A-tags and Joint Commission Elements of Performance under which pest activity and pesticide storage are cited in healthcare facilities. What each tag enforces, what surveyors look for, the documentation that satisfies it, and how to structure a plan of correction."
+  breadcrumbs={[{ name: 'Deficiencies', url: `${SITE_URL}/deficiencies/` }]}
+>
+  <style>
+    .index-summary {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .index-note {
+      background: var(--color-bg-subtle);
+      border-left: 3px solid var(--color-accent);
+      padding: 1rem 1.3rem;
+      margin: 0 0 2.5rem;
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+    }
+
+    .tag-list {
+      list-style: none;
+      margin: 0 0 2rem;
+      padding: 0;
+    }
+
+    .tag-list li {
+      display: grid;
+      grid-template-columns: 9.5rem 1fr;
+      gap: 0.25rem 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--color-rule);
+      align-items: baseline;
+    }
+
+    .tag-list li:last-child {
+      border-bottom: none;
+    }
+
+    .tag-id {
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    .tag-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      text-decoration: none;
+      line-height: 1.35;
+    }
+
+    .tag-title:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    .tag-summary {
+      grid-column: 2;
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .tag-pending {
+      grid-column: 2;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-confidence-medium);
+    }
+
+    @media (max-width: 720px) {
+      .tag-list li {
+        grid-template-columns: 1fr;
+      }
+
+      .tag-summary,
+      .tag-pending {
+        grid-column: 1;
+      }
+    }
+  </style>
+
+  <h1>Survey Deficiencies</h1>
+
+  <p class="index-summary">
+    If a surveyor has cited your facility for pest activity or pesticide handling,
+    the citation names a tag or an Element of Performance. These pages take each
+    identifier in turn: what it enforces, what the surveyor was looking for, the
+    documentation that closes the finding, where facilities usually fail, and the
+    elements a plan of correction has to address.
+  </p>
+
+  <p class="index-note">
+    These pages are reference, not templates. A plan of correction is a facility's
+    own document and is reviewed by the agency that issued the finding; nothing here
+    should be submitted without review by the people accountable for it.
+    {pendingCount > 0 && (
+      <span> Pages whose standard text is paywalled or not yet transcribed from the primary source say so in the body rather than paraphrasing it.</span>
+    )}
+  </p>
+
+  {regimeOrder.map((regime) => grouped[regime] && (
+    <section>
+      <h2>{regimeLabels[regime]}</h2>
+      <ul class="tag-list">
+        {grouped[regime].map((entry) => (
+          <li>
+            <span class="tag-id">{entry.data.identifier}</span>
+            <a class="tag-title" href={`/deficiencies/${entry.slug}/`}>{entry.data.title}</a>
+            {entry.data.summary && <p class="tag-summary">{entry.data.summary}</p>}
+            {entry.data.content_pending && <span class="tag-pending">Primary-source text pending</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+
+  <h2>How These Pages Relate to the Authority Pages</h2>
+
+  <p>
+    Each deficiency page is downstream of one or more <a href="/authorities/">authority
+    pages</a>. The authority page explains the regulation or standard as a whole; the
+    deficiency page explains one citation under it, from the surveyor's side of the
+    table. Where the two disagree, the authority page and its primary source control.
+  </p>
+</BaseLayout>

@@ -21,6 +21,19 @@ facility_types_applicable:
 services_applicable:
   - all facility services using or storing pesticides
 verbatim_available: true
+summary: "HazCom governs every pesticide stored or used in a healthcare facility: written program, inventory, Safety Data Sheets accessible every shift, labeling, and training."
+meta_description: "OSHA 29 CFR 1910.1200 as it applies to pesticides in hospitals and other healthcare facilities: the written hazard communication program, pesticide inventory, Safety Data Sheet access on every shift, GHS labeling, training, and the storage findings surveyors cite under Joint Commission PE.02.01.01 EP 4."
+related_authorities:
+  - slug: joint-commission-2026-pe-chapter
+    why: "The accreditor standard (PE.02.01.01 EP 4) under which pesticide storage and SDS deficiencies are actually cited in Joint Commission hospitals."
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal IPM framework whose chemical-control-last hierarchy determines how many pesticides should be on the shelf in the first place."
+  - slug: utah-r68-7-pesticide-applicator
+    why: "An example of the state applicator licensure and storage rules that overlay HazCom for whoever applies the products."
+  - slug: usda-7cfr110-rescission
+    why: "Why restricted-use pesticide application records now come from state rules rather than the rescinded federal Part 110."
+  - slug: dnv-gl-niaho-standards
+    why: "The DNV hazardous materials requirements that reference HazCom for DNV-accredited hospitals."
 ---
 
 ## Citation
@@ -78,6 +91,10 @@ OSHA HazCom is the documentation backbone for pesticide-related findings during 
 - That an eyewash station is within required distance per 29 CFR 1910.151(c)
 
 Common citation patterns under PE.02.01.01 (and its legacy predecessor EC.02.02.01 EP 5) include uninventoried pesticide containers, missing SDS, expired products on shelf, improper segregation, missing secondary containment, and SDS access barriers on non-day shifts.
+
+## Pesticide Storage Specifically
+
+HazCom is the documentation standard, but a pesticide storage finding usually involves the EPA label, the eyewash requirement in 29 CFR 1910.151(c), state applicator rules, and the accreditor standard the finding is written to. Those are brought together on the [pesticide storage requirements for healthcare facilities](/topics/pesticide-storage-requirements-healthcare-facilities/) topic page.
 
 ## Confidence Notes
 

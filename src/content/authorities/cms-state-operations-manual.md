@@ -16,6 +16,28 @@ facility_types_applicable:
 services_applicable:
   - all hospital services
 verbatim_available: true
+summary: "The 613-page surveyor manual for hospitals. Contains no pest-specific guidance; pest findings are written to A-0701, A-0722, A-0747, and A-0750 by inference."
+seo_title: "CMS Appendix A (State Operations Manual, Hospitals): Pest Control Guidance and A-Tags A-0701, A-0749, A-0750"
+meta_description: "What CMS Appendix A of the State Operations Manual says about pest control in hospitals: nothing explicit. How surveyors cite pest activity under A-0701, A-0722, A-0747, and A-0750, why the old A-0749 pest bullet is gone, and what a plan of correction has to address."
+related_authorities:
+  - slug: cms-conditions-of-participation
+    why: "Start with the regulation itself. §482.41 is what an A-0700-series tag enforces, and its verbatim text is the first thing a plan of correction has to quote back."
+  - slug: joint-commission-2026-pe-chapter
+    why: "If the hospital is Joint Commission accredited, the same observation is scored as PE.01.01.01 (pest activity) or PE.02.01.01 EP 4 (pesticide storage). Read this next to align the two responses."
+  - slug: dnv-gl-niaho-standards
+    why: "If the hospital is DNV accredited instead, the NIAHO framework incorporates §482.41 by reference and expects ISO 9001-style corrective and preventive action."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The four HICPAC pest recommendations are the standard of care a surveyor measures against when Appendix A is silent. Your corrective action should map to them."
+  - slug: osha-hazard-communication
+    why: "If the finding involves pesticide containers, storage, or Safety Data Sheets, the documentation that closes it is defined here, not in Appendix A."
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal six-step IPM structure. A plan of correction that promises a “pest program” should be able to point to each step."
+  - slug: fda-food-code-2022
+    why: "If the observation was in dietary or food service, the state-adopted Food Code has an explicit pest control section the state inspector will also apply."
+  - slug: apic-text-environmental-services
+    why: "The Infection Preventionist is the internal owner surveyors expect to see engaged in any pest finding tied to A-0747 or A-0750."
+  - slug: hai-cost-exposure-framing
+    why: "What the finding can cost beyond the citation: documented per-event operational cost and the Medicare payment programs at stake."
 ---
 
 ## Citation
@@ -57,6 +79,18 @@ Surveyors observing pest activity during a CMS validation survey cite the activi
 - Pest activity affecting infection prevention is cross-referenced to A-0747 (Condition: Infection Prevention and Control) and A-0750 (sanitary environment language)
 
 Severity escalation to condition-level deficiency is uncommon but documented in cases of active rodent infestation in dietary or sterile-processing areas.
+
+## If You Are Responding to a Survey Finding
+
+Most readers arrive at this page holding a Form 2567. The tag on the form tells you which page to read next:
+
+- [A-0700 — Condition: Physical Environment](/deficiencies/a-0700-physical-environment/): the condition-level citation for §482.41 as a whole, used when the deficiency is judged systemic.
+- [A-0701 — Standard: Buildings](/deficiencies/a-0701-buildings/): the tag most pest observations in patient-care and support areas are written to.
+- [A-0722 — Standard: Facilities](/deficiencies/a-0722-facilities/): the tag for pest activity in food preparation and other service areas.
+- [A-0747 — Condition: Infection Prevention and Control](/deficiencies/a-0747-infection-prevention-and-control/): the cross-reference when pest activity is framed as an infection control failure.
+- [A-0749](/deficiencies/a-0749-infection-prevention-and-control-program/) and [A-0750](/deficiencies/a-0750-sanitary-environment/): the §482.42 tags, including the one that carried the old pest-control bullet and the one that carries the current "sanitary environment" language.
+
+If the hospital is Joint Commission accredited and the same observation appears on the accreditation report, see [PE.01.01.01](/deficiencies/pe-01-01-01-safe-adequate-environment/) for pest activity and [PE.02.01.01 EP 4](/deficiencies/pe-02-01-01-hazardous-materials-and-waste/) for pesticide storage.
 
 ## Confidence Notes
 

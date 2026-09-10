@@ -24,6 +24,18 @@ services_applicable:
   - pest management documentation sign-off
   - expert opinion and testimony
 verbatim_available: true
+summary: "What a Board Certified Entomologist is: the degree, experience, two examinations, 120 CEUs per cycle, and enforceable Code of Ethics, and how to verify one on the ESACC roster."
+seo_title: "What Is a Board Certified Entomologist (BCE)? Requirements, Verification, and the BCE Who Maintains This Reference"
+meta_description: "A Board Certified Entomologist (BCE) is a credential issued by the Entomological Society of America Certification Corporation, requiring a biological science degree, post-degree experience, two examinations, 120 CEUs per three-year cycle, and an enforceable Code of Ethics. How to verify a BCE on the ESACC roster, how it compares to ACE and state licensure, and the BCE (#B3413) who maintains this reference."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The federal anchor for the “credentialed pest-control specialist” requirement the BCE answers."
+  - slug: utah-r68-7-pesticide-applicator
+    why: "State applicator licensure: the legal baseline, distinct from professional credentialing."
+  - slug: vha-directive-1850-02
+    why: "A federal program that requires applicator certification verification, illustrating how credential checks appear in practice."
+  - slug: epa-ipm-toolkit-2021
+    why: "The program-design work a credentialed specialist is expected to tailor to a healthcare facility."
 ---
 
 ## Citation
@@ -131,8 +143,3 @@ HIGH confidence. ESACC governance structure, BCE eligibility criteria, examinati
 - **"BCE is required by CDC HICPAC, CMS, Joint Commission, or state hospital licensure."** Disconfirmed. No federal regulator, no accrediting body, and no state hospital licensing rule names the BCE credential as a requirement. The BCE is the highest-rigor available answer to HICPAC E.V.3's "credentialed pest-control specialist" call, but is not federally mandated.
 - **"There are currently 440 active BCEs."** Cannot be verified as current. The 440 figure is from May 22, 2024. Conservative framing: "BCEs represent a small fraction of pest management professionals nationally."
 - **"BCE and ACE are roughly equivalent credentials."** Disconfirmed. The credentials differ structurally in degree requirement, examination structure, and continuing education obligations. BCE is the degreed professional credential authorizing program design, audit, and expert opinion. ACE is the technician-level credential demonstrating mastery of applied structural pest control practice.
-
-## Related Authorities
-
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — the federal anchor for the "credentialed pest-control specialist" requirement
-- [Utah R68-7 Pesticide Applicator Licensing](/authorities/utah-r68-7-pesticide-applicator/) — Utah state applicator licensure framework (legal baseline, distinct from BCE professional credentialing)

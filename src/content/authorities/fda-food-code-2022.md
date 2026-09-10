@@ -24,6 +24,18 @@ services_applicable:
   - cafeteria
   - patient meal preparation
 verbatim_available: true
+summary: "The state-adopted food code governing hospital dietary and cafeteria operations. Section 6-501.111 is an explicit four-part pest control requirement, one part rated Priority Foundation."
+related_authorities:
+  - slug: nacmcf-1997-haccp-prerequisite
+    why: "Where a hospital food service runs a HACCP plan, pest control is a named prerequisite program under the NACMCF principles the Food Code draws on."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "Names kitchens and cafeterias first among the high-risk areas a healthcare pest control strategy must emphasize."
+  - slug: usda-7cfr110-rescission
+    why: "Records for any restricted-use pesticide applied in a food service area now rest on state rules; the federal 7 CFR Part 110 record no longer exists."
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal IPM structure that satisfies the Food Code’s “methods if pests are found” and harborage-elimination provisions."
+  - slug: cms-state-operations-manual
+    why: "Pest activity in a hospital kitchen observed during a CMS survey is cited under A-0722 (Facilities) in addition to the state food inspection."
 ---
 
 ## Citation

@@ -28,6 +28,16 @@ services_applicable:
   - mechanical room design
 verbatim_available: false
 verbatim_paywall_note: "FGI Guidelines verbatim text is published by the Facility Guidelines Institute and is available through ASHE (American Society for Healthcare Engineering) at approximately $200-$400 per volume. Operational requirements referenced on this page are publicly summarized in FGI overview materials, state hospital licensing regulations that adopt FGI by reference, and ASHE/HFM (Health Facilities Management) published articles."
+summary: "The healthcare design and construction standard adopted by about 40 states. Builds pest exclusion into the envelope, loading docks, kitchens, mechanical rooms, and sterile spaces."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "Federal infection prevention standard with overlapping pest exclusion expectations, especially E.V.2 window screening."
+  - slug: epa-ipm-toolkit-2021
+    why: "Federal IPM framework that places exclusion second in the intervention hierarchy, ahead of any chemical control."
+  - slug: aorn-2026-perioperative-guidelines
+    why: "References FGI as the standard for perioperative facility design."
+  - slug: usp-797-sterile-compounding
+    why: "References FGI for pharmacy compounding facility design."
 ---
 
 ## Citation
@@ -144,10 +154,3 @@ MEDIUM confidence. FGI Guidelines verbatim text is paywalled (sold through ASHE 
 
 - **"FGI Guidelines are federal regulation."** Disconfirmed. FGI is a nonprofit organization, not a federal regulator. FGI Guidelines are adopted by reference in state hospital licensing rules and referenced as standard of care by accrediting bodies, but they are not directly federal regulation.
 - **"FGI Guidelines require Board Certified Entomologist involvement in healthcare facility design."** Disconfirmed. FGI does not address pest management credentialing in facility design. BCE involvement in facility design is a best practice for pest-sensitive facility types but is not an FGI requirement.
-
-## Related Authorities
-
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — federal infection prevention standard with overlapping pest exclusion expectations (especially E.V.2 window screening)
-- [EPA IPM in Health Care Facilities Toolkit (2021)](/authorities/epa-ipm-toolkit-2021/) — federal IPM framework that addresses exclusion as the second IPM hierarchy step
-- [AORN 2026 Guidelines for Perioperative Practice](/authorities/aorn-2026-perioperative-guidelines/) — references FGI as standard for perioperative facility design
-- [USP General Chapter <797>](/authorities/usp-797-sterile-compounding/) — references FGI for pharmacy compounding facility design

@@ -1,0 +1,117 @@
+---
+/**
+ * "Related Authorities" — sibling pages linked by regulatory relationship.
+ *
+ * Entries come from frontmatter (`related_authorities` on authority pages,
+ * `governing_authorities` on deficiency and topic pages). Titles are looked
+ * up from the collection so they never drift from the target page. An
+ * unknown slug fails the build rather than shipping a broken link.
+ */
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  entries: { slug: string; why: string }[];
+  heading?: string;
+  /** Path of the page being rendered, so a page never lists itself. */
+  selfSlug?: string;
+  /** Intro sentence rendered above the list (used on the SOM hub). */
+  intro?: string;
+}
+
+const { entries, heading = 'Related Authorities', selfSlug, intro } = Astro.props;
+
+const authorities = await getCollection('authorities');
+const bySlug = new Map<string, (typeof authorities)[number]>(authorities.map((a) => [a.slug, a]));
+
+const items = entries
+  .filter((e) => e.slug !== selfSlug)
+  .map((e) => {
+    const target = bySlug.get(e.slug);
+    if (!target) {
+      throw new Error(`RelatedAuthorities: unknown authority slug "${e.slug}" (referenced from ${selfSlug ?? 'a page'})`);
+    }
+    return { slug: e.slug, title: target.data.title, why: e.why };
+  });
+---
+
+{items.length > 0 && (
+  <section class="related" aria-labelledby="related-heading">
+    <h2 id="related-heading">{heading}</h2>
+    {intro && <p class="related-intro">{intro}</p>}
+    <ol class="related-list">
+      {items.map((item) => (
+        <li>
+          <a href={`/authorities/${item.slug}/`}>{item.title}</a>
+          <p class="related-why">{item.why}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+
+<style>
+  .related {
+    margin-top: 3rem;
+  }
+
+  .related-intro {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: related;
+  }
+
+  .related-list li {
+    padding: 0.85rem 0 0.85rem 2.4rem;
+    border-bottom: 1px solid var(--color-rule);
+    position: relative;
+    margin: 0;
+  }
+
+  .related-list li::before {
+    counter-increment: related;
+    content: counter(related);
+    position: absolute;
+    left: 0.25rem;
+    top: 0.95rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-meta);
+    width: 1.4rem;
+    text-align: right;
+  }
+
+  .related-list li:last-child {
+    border-bottom: none;
+  }
+
+  .related-list a {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: block;
+    line-height: 1.35;
+    margin-bottom: 0.25rem;
+  }
+
+  .related-list a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .related-why {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+</style>

@@ -1,5 +1,109 @@
 # Open Questions
 
+Two runs are logged here. Run 2 items (September 10, 2026) are first; Run 1
+items follow and remain open unless marked otherwise.
+
+---
+
+# Run 2 — September 10, 2026
+
+## Blocks content, not the build
+
+### R2-1. The GSC report and handoff file were not available to the build
+
+`GSC_Report_2026-09-09.md` and `HANDOFF_TO_CLAUDE_CODE.md` are not in the
+repository on any branch, and a search of the connected Google Drive and
+Gmail found neither. The run therefore could not read the query log. Every
+measured number in the brief was taken as given; the *identity* of the ten
+survey-citation queries was not available, so the deficiency page set was
+derived from the tags and Elements of Performance this reference's own
+content already documents (A-0700, A-0701, A-0722, A-0747, A-0749, A-0750,
+PE.01.01.01, PE.02.01.01 EP 4, EC.02.06.01, EC.02.02.01 EP 5). Reconcile
+that set against the actual query log and add or rename pages as needed.
+The Task 4.1 title uses A-0701, A-0749, and A-0750 because those are the
+tags the page discusses; if the query log names a different tag, change
+`seo_title` in `src/content/authorities/cms-state-operations-manual.md`.
+Commit both files to the repository root so future runs can read them.
+
+### R2-2. Every primary-source site was unreachable from the build environment
+
+eCFR, cms.gov, jointcommission.org, federalregister.gov, govinfo.gov,
+osha.gov, epa.gov, and adminrules.utah.gov were all blocked by the egress
+proxy. As a result the new pages quote verbatim text only where it already
+existed on this reference (verified May 25, 2026), and everything else is
+marked in the page body. The markers to clear, by page:
+
+- `a-0747`, `a-0749`, `a-0750`: verbatim text of 42 CFR §482.42 and its
+  subsections; the official tag titles for A-0749 and A-0750 as printed in
+  Appendix A Rev. 238.
+- All six CMS pages: the plan-of-correction criteria from State Operations
+  Manual Chapter 7 (the five elements are presented as structure at MEDIUM
+  confidence and marked pending verbatim).
+- `pe-01-01-01`, `pe-02-01-01`, `ec-02-06-01`, `ec-02-02-01`: verbatim EP
+  text is paywalled in the CAMH e-edition and is marked
+  `[CONTENT PENDING — PAYWALLED SOURCE]`; the Evidence of Standards
+  Compliance structure is presented at MEDIUM confidence pending the
+  current ESC instructions.
+- `topics/pesticide-storage-requirements-healthcare-facilities`: the FIFRA
+  §136j(a)(2)(G) and 29 CFR 1910.151(c) quotations are cited but were not
+  re-fetched; 40 CFR §156.10 is cited but not quoted; states other than
+  Utah are pending.
+
+Each affected page carries `content_pending: true` in frontmatter, which
+renders a notice under the title and a "Primary-source text pending" label
+on the index. Clear the flag when the markers are gone.
+
+### R2-3. No `last_verified` on any new page
+
+The ten deficiency pages and the topic page carry no verification date and
+render `[VERIFICATION DATE NOT RECORDED]`. They are assembled from
+already-verified material, but the verification of the assembled page is the
+operator's act. Add `last_verified` after review.
+
+## Decisions for the operator
+
+### R2-4. Task 4.4, USP <800>: recommendation is to accept the page as off-audience
+
+See the PR description. Nothing was changed on the page beyond related
+links. If the operator prefers the other option, the section to add is
+"What the compendial applicability date means for pest management in
+compounding areas," and it needs USP-NF access to be written to standard.
+
+### R2-5. The www redirect depends on the www custom domain staying attached
+
+`public/_redirects` sends `https://www.healthcarepestreference.org/*` to the
+apex with a 301. Cloudflare Pages only serves that rule for a host that is
+attached to the project as a custom domain, which www currently is (it
+returns 200). Do not remove the www custom domain; doing so would make the
+host fail rather than redirect. No DNS change is involved.
+
+### R2-6. Sitemap `lastmod` comes from git history
+
+`src/lib/dates.ts` takes each page's lastmod from the last commit touching
+its source file, falling back to the latest frontmatter date. If the
+Cloudflare Pages build uses a shallow clone, git history may be truncated
+and content pages will fall back to frontmatter dates while static pages
+(`/`, `/about/`, and so on) will carry no lastmod. Check one deploy's
+sitemap; if the static pages lack lastmod, either deepen the clone in the
+build settings or accept it.
+
+### R2-7. Field naming
+
+The brief asked for `relatedAuthorities`. The field is `related_authorities`
+to match the rest of the frontmatter schema (same reasoning as Run 1
+item 9). Each entry is `{ slug, why }`; an unknown slug fails the build.
+
+## Still blocked from Run 1
+
+### R2-8. Resend sender (Run 1 item 1) is still blocked
+
+The Resend account still has only `mail.myfalconpest.com` verified. No
+change was made; the Falcon domain was not used. Task 6 remains open.
+
+---
+
+# Run 1 — September 9–10, 2026
+
 Logged during the overnight build run of September 9–10, 2026. Each item is
 something the build could not resolve on its own authority. Nothing here
 blocks the pull request from being reviewed; several items block features
