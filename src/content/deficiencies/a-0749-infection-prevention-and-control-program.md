@@ -1,50 +1,49 @@
 ---
 identifier: "A-0749"
-title: "Infection Prevention and Control Program (§482.42(a)) — the tag that carried the former pest-control bullet"
-summary: "The §482.42(a) tag. In the 2016 Appendix A its interpretive guidance listed “Techniques for pest control”; that bullet is absent from the current Rev. 238. Facilities still search for it."
+title: "The tag that carried the former “Techniques for pest control” bullet (2016 Appendix A)"
+summary: "In the 2016 archived Appendix A, the interpretive guidance at A-0749 listed “Techniques for pest control.” That bullet is absent from Rev. 238. What A-0749 covers in the current manual could not be re-verified this build and is not asserted here."
 regime: "CMS"
-citation: "42 CFR §482.42(a), cited on Form 2567 under A-0749 per CMS State Operations Manual, Appendix A (Rev. 238, 03-20-2026)"
+citation: "CMS State Operations Manual, Appendix A, tag A-0749 as it appeared in the 2016 archived edition; current Rev. 238 (03-20-2026) subject not verified"
 source_url: "https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/downloads/som107ap_a_hospitals.pdf"
 source_tier: 1
 source_confidence: "MEDIUM"
 paywalled: false
 content_pending: true
+verification_status: "blocked"
+verification_note: "What A-0749 covers in Appendix A Rev. 238, and whether it still exists under that number, was not re-verified during the September 10, 2026 build: the CMS site was egress-blocked. Only the 2016-archive finding and the Rev. 238 zero-match finding are asserted, both from this reference's State Operations Manual page. Hold until re-verified."
 date_published: 2026-09-10
 governing_authorities:
   - slug: cms-state-operations-manual
-    why: "The definitive finding that the current Appendix A contains no pest guidance, including under A-0749, and the killed claim that it still does."
+    why: "The definitive finding that the current Appendix A contains no pest guidance, and the killed claim that the A-0749 bullet is still there."
   - slug: cms-conditions-of-participation
-    why: "The regulation §482.42 sits in, and the physical environment condition most pest findings are actually written to."
+    why: "The physical environment condition most hospital pest findings are actually written to (A-0701)."
   - slug: cdc-hicpac-environmental-guidelines
-    why: "The standard of care that fills the gap the removed bullet left; its four recommendations are what “techniques for pest control” now means in practice."
-  - slug: apic-text-environmental-services
-    why: "The Infection Preventionist's practice reference for the program §482.42(a) requires."
+    why: "The standard of care that fills the gap the removed bullet left; its four recommendations are what “techniques for pest control” means in practice."
 related_deficiencies:
-  - a-0747-infection-prevention-and-control
+  - a-0701-buildings
   - a-0750-sanitary-environment
+  - a-0758
 ---
 
-## Identifier and Official Title
+## What This Page Asserts, and What It Does Not
 
-**A-0749** is the tag for **§482.42(a)**, the infection prevention and control program standard beneath the [A-0747](/deficiencies/a-0747-infection-prevention-and-control/) condition.
+This page exists because facilities and vendors still search for, and cite, an A-0749 pest-control provision. Two things about A-0749 are verified on this reference; one thing is not, and this page does not assert it.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — the official tag title as printed in Appendix A Rev. 238 to be transcribed from the primary source.
+**Verified.** The 2016 edition of Appendix A, as archived, contained a bullet reading "Techniques for pest control" under the §482.42(a)(1) interpretive guidelines at A-0749. That is recorded on this reference's [State Operations Manual page](/authorities/cms-state-operations-manual/).
 
-## What It Enforces
+**Verified.** The current Appendix A, Rev. 238 (03-20-2026), contains no such bullet. A full-document extraction of Rev. 238 returns zero matches for "pest," "vermin," "rodent," "insect," or "infestation" anywhere in the 613-page manual (State Operations Manual page, verified May 25, 2026), and the operator's grep of the same document on September 10, 2026 confirmed zero occurrences of "pest," "vermin," "rodent," or "insect."
 
-§482.42(a) requires the hospital's infection prevention and control program to be organized and led as the regulation specifies.
+**Not verified, not asserted.** <span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — what A-0749 covers in Rev. 238, which subsection of §482.42 it maps to, and its official title line. The CMS site was unreachable from this build. An earlier version of this page described A-0749 as "the §482.42(a) tag"; that description was not verified against Rev. 238 and has been withdrawn.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — verbatim text of 42 CFR §482.42(a) to be transcribed from eCFR.
+## What This Means for a Facility Holding an A-0749 Citation
 
-## Why This Tag Is Searched: the Removed Pest-Control Bullet
+The operator's September 10, 2026 grep of Rev. 238 confirmed that hospital pest findings are cited under [A-0701](/deficiencies/a-0701-buildings/) (§482.41(a), physical plant) and [A-0750](/deficiencies/a-0750-sanitary-environment/) (§482.42(a)(3), sanitary environment). If a current Form 2567 cites pest activity under A-0749, read the regulation text printed beneath the tag on the form; that text, not the tag number, is what the plan of correction answers. If you were cited under a number that does not appear in Appendix A at all, see [A-0758 does not appear in Appendix A](/deficiencies/a-0758/).
 
-This reference's [State Operations Manual page](/authorities/cms-state-operations-manual/) records the following as a verified finding: the 2016 edition of Appendix A, as archived, contained a bullet reading "Techniques for pest control" under the §482.42(a)(1) interpretive guidelines at A-0749. That bullet does not appear in the current Rev. 238. A full-text extraction of Rev. 238 returns zero matches for "pest," "vermin," "rodent," "insect," or "infestation" anywhere in the 613-page manual.
-
-The practical consequence: a facility that receives an A-0749 citation for pest activity today is being cited under the general program requirement, not under any pest-specific guidance, and any vendor material or consultant template that quotes the "Techniques for pest control" bullet as current guidance is quoting a superseded archive.
+Any vendor material, consultant template, or prior research that quotes the "Techniques for pest control" bullet as current CMS guidance is quoting a superseded archive. This reference's [State Operations Manual page](/authorities/cms-state-operations-manual/) lists that claim among its investigated and disconfirmed claims.
 
 ## What the Surveyor Is Looking For
 
-With no pest-specific guidance to apply, a surveyor citing A-0749 for a pest condition is asserting that the infection prevention program is not addressing an infection risk it should be addressing. The evidence sought is program-level: whether pests appear in the infection control risk assessment, whether the program has a defined response to pest events in infection-sensitive areas, and whether the Infection Preventionist is engaged with the pest management program at all.
+With no pest-specific guidance anywhere in Appendix A, a surveyor citing any §482.42 tag for a pest condition is asserting that the infection prevention program is not addressing an infection risk it should be addressing. The evidence sought is program-level: whether pests appear in the infection control risk assessment, whether the program has a defined response to pest events in infection-sensitive areas, and whether the Infection Preventionist is engaged with the pest management program.
 
 ## Documentation That Satisfies It
 
@@ -59,20 +58,10 @@ With no pest-specific guidance to apply, a surveyor citing A-0749 for a pest con
 - Pest risk is absent from the infection control risk assessment
 - The infection prevention program has no defined role in the pest management program
 
-## Plan of Correction: What It Must Address
+## Plan of Correction
 
-A plan of correction is written on the Form 2567 opposite each cited deficiency and is the hospital's own document. The elements below are the structure CMS reviewers evaluate an acceptable plan against; they are not a template, and the plan is not acceptable simply because it has five headings.
-
-1. **Correction for what was found.** What was done about the specific condition the surveyor observed, and when. For a pest finding this is the remediation of the observed activity and the harborage that produced it, with the service records that prove it.
-2. **Identification of others affected.** How the hospital determined whether the same condition exists elsewhere. For pest activity this is the inspection of comparable areas, not only the room the surveyor entered.
-3. **Systemic change.** What changed in the program so the condition does not recur: the written pest management plan, action thresholds, exclusion repairs, vendor scope, infection prevention coordination, or training.
-4. **Monitoring.** How performance will be tracked and who reviews it, at what frequency, and where the results are reported. Trend reports reviewed by a named committee are the usual evidence.
-5. **Completion dates.** A date for each corrective action. The State Survey Agency verifies the plan on a revisit or by desk review.
-
-The plan is due within the period stated on the Form 2567 transmittal; this reference's methodology page notes that the 10-calendar-day submission deadline comes from the State Operations Manual, Exhibit 152, and that the 60-day period in 42 CFR §488.28 is the compliance expectation, not the submission deadline. Confirm both against the transmittal letter for the specific survey.
-
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — verbatim plan-of-correction criteria from the State Operations Manual, Chapter 7, have not been transcribed from the primary source during this build. The five elements above are presented as structure at MEDIUM confidence; see Confidence Notes.
+The plan-of-correction structure for CMS findings is set out on the [A-0701](/deficiencies/a-0701-buildings/) and [A-0750](/deficiencies/a-0750-sanitary-environment/) pages, which are the tags a pest finding is confirmed to be cited under.
 
 ## Confidence Notes
 
-MEDIUM confidence. The finding that the current Appendix A contains no pest guidance, and that the 2016 archive contained the A-0749 bullet, is carried from this reference's State Operations Manual page, verified by full-document extraction of Rev. 238 on May 25, 2026. The official tag title and the verbatim text of §482.42(a) have not been transcribed and are marked pending. The plan-of-correction structure has not been re-verified against State Operations Manual Chapter 7 during this build and is marked accordingly.
+MEDIUM confidence. The 2016-archive finding and the Rev. 238 zero-match finding are carried from this reference's State Operations Manual page (verified May 25, 2026) and the operator's grep of Rev. 238 (September 10, 2026). The current subject and title of A-0749 could not be fetched by this build and are not asserted.

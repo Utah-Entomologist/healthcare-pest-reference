@@ -48,7 +48,7 @@ CMS State Operations Manual, Publication 100-07, Appendix A — Survey Protocol,
 
 **Definitive finding: The current CMS State Operations Manual Appendix A contains no pest-related interpretive guidance.** A full-document text extraction of Rev. 238 (27,201 lines, ~1.48 million characters) followed by exhaustive case-insensitive search returns zero matches for the following terms across the entire document: "pest," "vermin," "rodent," "insect," "infestation," "roach," "cockroach," "rat," "mice," "mouse," or "integrated pest."
 
-The closest environment-sanitation language appears under A-0750 (the Infection Prevention and Control standard at §482.42):
+The closest environment-sanitation language appears under A-0750, the tag for §482.42(a)(3) (subsection mapping confirmed by the operator's grep of Rev. 238 on September 10, 2026):
 
 > "The hospital must provide a sanitary environment to avoid sources and transmission of infections and communicable diseases. There must be an active program for the prevention, control, and investigation of infections and communicable diseases."
 
@@ -76,19 +76,23 @@ Surveyors observing pest activity during a CMS validation survey cite the activi
 
 - Pest activity in patient-care areas, food service, or environmental services spaces is most commonly cited under A-0701 (Standard: Buildings) as a failure of the physical environment safety standard
 - Pest activity in food preparation areas may be cited under A-0722 (Standard: Facilities) for failure to maintain adequate facilities
-- Pest activity affecting infection prevention is cross-referenced to A-0747 (Condition: Infection Prevention and Control) and A-0750 (sanitary environment language)
+- Pest activity affecting infection prevention is cross-referenced to A-0747 (Condition: Infection Prevention and Control) and A-0750 (§482.42(a)(3), sanitary environment language)
+
+The operator's grep of Rev. 238 on September 10, 2026 confirmed A-0701 and A-0750 as the tags hospital pest findings are cited under, confirmed zero occurrences of "pest," "vermin," "rodent," or "insect" in the manual, and confirmed that tag A-0758, which circulates in some pest-control materials, does not exist: the sequence runs A-0750, A-0751, A-0760. See [A-0758 does not appear in Appendix A](/deficiencies/a-0758/).
 
 Severity escalation to condition-level deficiency is uncommon but documented in cases of active rodent infestation in dietary or sterile-processing areas.
 
 ## If You Are Responding to a Survey Finding
 
-Most readers arrive at this page holding a Form 2567. The tag on the form tells you which page to read next:
+Most readers arrive at this page holding a Form CMS-2567. The tag on the form tells you which page to read next. The operator's grep of Rev. 238 on September 10, 2026 confirmed that hospital pest findings are cited under A-0701 and A-0750; the other tags listed here are carried from this reference's Conditions of Participation page and were not re-verified against the PDF during the September 10 build (the CMS site was unreachable), which each page states.
 
-- [A-0700 — Condition: Physical Environment](/deficiencies/a-0700-physical-environment/): the condition-level citation for §482.41 as a whole, used when the deficiency is judged systemic.
-- [A-0701 — Standard: Buildings](/deficiencies/a-0701-buildings/): the tag most pest observations in patient-care and support areas are written to.
-- [A-0722 — Standard: Facilities](/deficiencies/a-0722-facilities/): the tag for pest activity in food preparation and other service areas.
-- [A-0747 — Condition: Infection Prevention and Control](/deficiencies/a-0747-infection-prevention-and-control/): the cross-reference when pest activity is framed as an infection control failure.
-- [A-0749](/deficiencies/a-0749-infection-prevention-and-control-program/) and [A-0750](/deficiencies/a-0750-sanitary-environment/): the §482.42 tags, including the one that carried the old pest-control bullet and the one that carries the current "sanitary environment" language.
+- [A-0701 — Standard: Buildings](/deficiencies/a-0701-buildings/) (§482.41(a)): the tag most pest observations in patient-care and support areas are written to. Confirmed.
+- [A-0750 — Sanitary Environment](/deficiencies/a-0750-sanitary-environment/) (§482.42(a)(3)): the tag that carries the manual's only sanitation language. Confirmed.
+- [A-0700 — Condition: Physical Environment](/deficiencies/a-0700-physical-environment/): the condition-level citation for §482.41 as a whole. Not re-verified this build.
+- [A-0722 — Standard: Facilities](/deficiencies/a-0722-facilities/): the tag for pest activity in food preparation and other service areas. Not re-verified this build.
+- [A-0747 — Condition: Infection Prevention and Control](/deficiencies/a-0747-infection-prevention-and-control/): the cross-reference when pest activity is framed as an infection control failure. Not re-verified this build.
+- [A-0749](/deficiencies/a-0749-infection-prevention-and-control-program/): the tag that carried the 2016 "Techniques for pest control" bullet, now gone; its current subject is not asserted.
+- [A-0758](/deficiencies/a-0758/): **does not exist** in Appendix A. If that number is on your paperwork, start there.
 
 If the hospital is Joint Commission accredited and the same observation appears on the accreditation report, see [PE.01.01.01](/deficiencies/pe-01-01-01-safe-adequate-environment/) for pest activity and [PE.02.01.01 EP 4](/deficiencies/pe-02-01-01-hazardous-materials-and-waste/) for pesticide storage.
 

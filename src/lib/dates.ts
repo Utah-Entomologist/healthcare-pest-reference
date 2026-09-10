@@ -17,7 +17,8 @@ export function gitLastModified(paths: string[]): string | undefined {
   if (cache.has(key)) return cache.get(key);
   let result: string | undefined;
   try {
-    const out = execSync(`git log -1 --format=%cs -- ${paths.map((p) => JSON.stringify(p)).join(' ')}`, {
+    const scope = paths.length ? ` -- ${paths.map((p) => JSON.stringify(p)).join(' ')}` : '';
+    const out = execSync(`git log -1 --format=%cs${scope}`, {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'ignore']
     }).trim();
@@ -27,6 +28,11 @@ export function gitLastModified(paths: string[]): string | undefined {
   }
   cache.set(key, result);
   return result;
+}
+
+/** ISO date of the repository's last commit, as a last resort for static pages. Never the build time. */
+export function repoLastCommitDate(): string | undefined {
+  return gitLastModified([]);
 }
 
 /** Latest of the given dates as YYYY-MM-DD, or undefined when none are set. */

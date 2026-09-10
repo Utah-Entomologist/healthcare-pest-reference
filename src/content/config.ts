@@ -82,6 +82,15 @@ const deficiencies = defineCollection({
     paywalled: z.boolean(),
     /** True when any section still carries a [CONTENT PENDING …] marker. Shown on the page. */
     content_pending: z.boolean().default(false),
+    /**
+     * Whether the identifier's existence and title were re-verified against the
+     * primary source. 'blocked' renders a [VERIFICATION BLOCKED — EGRESS] line
+     * in the source record; 'confirmed' requires verification_note to say by
+     * whom and when. 'correction' marks a page whose subject is a tag that does
+     * not exist (a correction of the public record).
+     */
+    verification_status: z.enum(['confirmed', 'blocked', 'correction']).default('blocked'),
+    verification_note: z.string().optional(),
     /** Successor or predecessor identifiers, for renumbered standards. */
     superseded_by: z.string().optional(),
     supersedes: z.string().optional(),

@@ -9,6 +9,8 @@ source_tier: 1
 source_confidence: "MEDIUM"
 paywalled: true
 content_pending: true
+verification_status: "blocked"
+verification_note: "Standard identifier carried from this reference's 2026 PE chapter page, which rests on The Joint Commission's public FAQ and September 2025 disposition report (verified May 25, 2026). Not re-fetched during the September 10, 2026 build: jointcommission.org was egress-blocked."
 superseded_by: "PE.02.01.01 EP 4"
 date_published: 2026-09-10
 governing_authorities:

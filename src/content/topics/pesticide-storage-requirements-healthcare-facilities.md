@@ -59,7 +59,7 @@ Federal pesticide law makes the product label enforceable. FIFRA, at 7 U.S.C. §
 
 Every registered pesticide label carries a Storage and Disposal section under EPA's labeling regulations at 40 CFR Part 156. Storing a product in a way the label prohibits (with food, at a temperature the label excludes, in an unlabeled secondary container) is use inconsistent with the labeling.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — verbatim text of the 40 CFR §156.10 storage-and-disposal labeling requirement to be transcribed from eCFR. The FIFRA quotation above is cited to the U.S. Code and has not been re-fetched during this build; see Confidence Notes.
+<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — verbatim text of the 40 CFR §156.10 storage-and-disposal labeling requirement could not be fetched from eCFR during the September 10, 2026 build and is not transcribed. The FIFRA quotation above is cited to the U.S. Code and was not re-fetched; see Confidence Notes.
 
 Two practical consequences. First, the label, not a general storage policy, is the first document a surveyor or state inspector will compare the shelf against. Second, an applicator who transfers product into an unlabeled spray bottle has created both a HazCom labeling violation and a label-law problem in one act.
 
@@ -71,7 +71,7 @@ Surveyors check for an eyewash station within reach of the pesticide storage and
 
 Whether a given pesticide is an "injurious corrosive material" is read from its SDS and label. Where it is, the eyewash has to be in the work area, not down the corridor.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — the 1910.151(c) quotation is cited to eCFR and has not been re-fetched during this build; see Confidence Notes.
+<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — the 1910.151(c) quotation is cited to eCFR and could not be re-fetched during the September 10, 2026 build; see Confidence Notes.
 
 ## State Rules
 
@@ -80,6 +80,8 @@ State pesticide control acts govern who may apply pesticides and, in most states
 Since July 11, 2025, state rules are also the only recordkeeping floor for restricted-use pesticides; the federal 7 CFR Part 110 requirement was rescinded. See the [rescission page](/authorities/usda-7cfr110-rescission/).
 
 Other states' rules are not yet on this reference. <span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — state-by-state storage provisions beyond Utah.
+
+**Dates.** The OSHA 1910.1200 text quoted above was verified against eCFR on May 25, 2026. This page was assembled on September 10, 2026 and carries no verification date of its own until the operator reviews it.
 
 ## Where the Finding Is Written
 
@@ -110,6 +112,13 @@ Carried from this reference's Hazard Communication and 2026 PE chapter pages:
 ## Special Areas
 
 Pharmacy compounding areas under USP <797> and hazardous drug areas under USP <800> effectively exclude pesticide storage and application inside the classified or containment space; pest management there is exclusion, sanitation, and mechanical control from outside the space. See the [<797>](/authorities/usp-797-sterile-compounding/) and [<800>](/authorities/usp-800-hazardous-drugs/) pages. Food service storage is additionally governed by the state-adopted Food Code; see the [Food Code page](/authorities/fda-food-code-2022/).
+
+## What These Rules Do Not Say
+
+- OSHA has no pesticide-specific storage standard. 29 CFR 1910.1200 governs pesticides because they are hazardous chemicals, not because they are pesticides; a facility looking for "the OSHA pesticide storage rule" will not find one.
+- Neither CMS Appendix A nor The Joint Commission's 2026 Physical Environment chapter contains a pesticide storage standard. Both score the OSHA and label substance under general hazardous-materials and physical-environment provisions.
+- The EPA label governs storage conditions for that product; it does not set facility-wide cabinet, room, or signage requirements. Those come from the label's own statements, from state rules where they exist, and from the facility's hazard communication program.
+- Nothing here creates a requirement that a healthcare facility store pesticides on site at all. Under the EPA's IPM hierarchy the correct inventory for many facilities is none.
 
 ## The Question Behind the Question
 

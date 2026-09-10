@@ -119,6 +119,14 @@ External surveyors (Joint Commission, when surveying VA facilities under shared 
 
 Common findings in VHA IPMOP reviews: missing PMO designation, applications in restricted areas without documented PMO prior approval, applicator certification gaps, incomplete recordkeeping, and IPMOP documents that have not been reviewed annually as required.
 
+## Currency of This Page
+
+Directive 1850.02 was issued December 22, 2022 and is active through December 22, 2027, subject to recertification. This page was last verified against the VA primary source on the date shown in the source record above. A currency re-check against va.gov was attempted on September 10, 2026 and could not be completed: <span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span>. No amendment, rescission, or recertification notice was known to this reference as of that date; confirm at the primary source link before relying on the directive's continued effect.
+
+## If a Surveyor Has Cited Pest Activity
+
+VA facilities are reviewed internally under this directive rather than by CMS A-tag. Where a VA facility is also surveyed by The Joint Commission or participates in Medicare, the same observation is written to the civilian standards covered in this reference's [survey deficiencies section](/deficiencies/): [A-0701](/deficiencies/a-0701-buildings/) and [A-0750](/deficiencies/a-0750-sanitary-environment/) under CMS, and [PE.01.01.01](/deficiencies/pe-01-01-01-safe-adequate-environment/) under The Joint Commission. The directive's prior-approval and recordkeeping provisions are, in practice, the documentation those citations ask for.
+
 ## Confidence Notes
 
 HIGH confidence. Directive 1850.02 publication date, supersession history, and key provisions verified directly from VA primary source. The directive is publicly available without paywall. Active period (December 22, 2022 through December 22, 2027, subject to recertification) verified. Predecessor directive (VHA Directive 7715, September 24, 2010) and predecessor handbook (VHA Handbook 7715, September 24, 2010) verified as superseded by current directive.

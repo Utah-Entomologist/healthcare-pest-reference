@@ -325,6 +325,13 @@ declare module 'astro:content' {
   collection: "deficiencies";
   data: InferEntrySchema<"deficiencies">
 } & { render(): Render[".md"] };
+"a-0758.md": {
+	id: "a-0758.md";
+  slug: "a-0758";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
 "ec-02-02-01-hazardous-materials-and-waste.md": {
 	id: "ec-02-02-01-hazardous-materials-and-waste.md";
   slug: "ec-02-02-01-hazardous-materials-and-waste";
