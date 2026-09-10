@@ -3,6 +3,7 @@ title: "FGI Guidelines for Design and Construction — Pest Exclusion in Healthc
 authority_type: "recognized authority"
 citation: "Facility Guidelines Institute (FGI), Guidelines for Design and Construction of Hospitals; Guidelines for Design and Construction of Outpatient Facilities; Guidelines for Design and Construction of Residential Health, Care, and Support Facilities. 2022 Edition."
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://fgiguidelines.org/"
 source_tier: 1
 source_confidence: "MEDIUM"

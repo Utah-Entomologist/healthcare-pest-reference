@@ -3,6 +3,7 @@ title: "NACMCF 1997 HACCP Principles — Pest Control as Prerequisite Program"
 authority_type: "recognized authority"
 citation: "National Advisory Committee on Microbiological Criteria for Foods, Hazard Analysis and Critical Control Point Principles and Application Guidelines, August 14, 1997, Appendix A — Examples of Common Prerequisite Programs"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.fsis.usda.gov/policy/advisory-committees/national-advisory-committee-microbiological-criteria-foods-nacmcf"
 source_tier: 1
 source_confidence: "HIGH"

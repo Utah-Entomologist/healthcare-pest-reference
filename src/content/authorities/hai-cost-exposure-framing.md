@@ -3,6 +3,7 @@ title: "Healthcare-Associated Infection Costs and Pest Exposure Financial Framin
 authority_type: "recognized authority"
 citation: "Multiple primary sources: Scott 2009 CDC HAI cost estimates; Zimlichman 2013 JAMA Internal Medicine per-event HAI costs; Sheele 2017 ICHE academic medical center bed bug operational costs; CMS Hospital Value-Based Purchasing program under §1886(o) Social Security Act"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.cdc.gov/hai/index.html"
 source_tier: 1
 source_confidence: "HIGH"

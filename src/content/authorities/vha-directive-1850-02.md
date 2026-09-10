@@ -3,6 +3,7 @@ title: "VHA Directive 1850.02 — Pest Management Operations Program"
 authority_type: "federal regulator"
 citation: "Department of Veterans Affairs, Veterans Health Administration Directive 1850.02, Pest Management Operations Program, December 22, 2022"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=10043"
 source_tier: 1
 source_confidence: "HIGH"

@@ -3,6 +3,7 @@ title: "EPA Integrated Pest Management in Health Care Facilities Toolkit (2021)"
 authority_type: "federal regulator"
 citation: "EPA Publication No. 907K21002, Integrated Pest Management in Health Care Facilities (July 2021)"
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.epa.gov/ipm/integrated-pest-management-health-care-facilities-toolkit"
 source_tier: 1
 source_confidence: "HIGH"

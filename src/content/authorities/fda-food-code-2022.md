@@ -3,6 +3,7 @@ title: "FDA Food Code 2022 — Pest Control in Healthcare Food Service"
 authority_type: "federal regulator"
 citation: "FDA Food Code 2022, Sections 6-501.111 and 6-202.13"
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.fda.gov/food/fda-food-code/food-code-2022"
 source_tier: 1
 source_confidence: "HIGH"

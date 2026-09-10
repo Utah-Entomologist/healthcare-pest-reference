@@ -3,6 +3,7 @@ title: "Utah Administrative Code R68-7 — Utah Pesticide Control Act Rules"
 authority_type: "state regulator"
 citation: "Utah Admin. Code R68-7, Utah Pesticide Control Act Rules, administered by Utah Department of Agriculture and Food (UDAF)"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://ag.utah.gov/pesticides/"
 source_tier: 1
 source_confidence: "HIGH"

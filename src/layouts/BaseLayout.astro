@@ -1,25 +1,43 @@
 ---
+import JsonLd from '../components/JsonLd.astro';
+import UpdateRegisterForm from '../components/UpdateRegisterForm.astro';
+import { breadcrumbSchema, organizationSchema, websiteSchema, type Crumb } from '../lib/schema';
+import { CONSULTING_PRACTICE_NAME, SITE_NAME, SITE_URL } from '../lib/site';
+
 export interface Props {
   title: string;
   description: string;
   canonical?: string;
-  authorityType?: string;
-  citation?: string;
-  lastVerified?: Date;
+  /**
+   * Breadcrumb trail for this page, excluding Home (added automatically).
+   * Emits a BreadcrumbList. Omit on the homepage.
+   */
+  breadcrumbs?: Crumb[];
+  /** Open Graph object type. Authority pages pass "article". */
+  ogType?: 'website' | 'article';
+  /** Keep utility pages (e.g. /unsubscribe/) out of search indexes. */
+  noindex?: boolean;
+  /** Hide the sitewide register form in the footer (used on the register pages themselves). */
+  hideFooterRegister?: boolean;
 }
 
 const {
   title,
   description,
   canonical,
-  authorityType,
-  citation,
-  lastVerified
+  breadcrumbs,
+  ogType = 'website',
+  noindex = false,
+  hideFooterRegister = false
 } = Astro.props;
 
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
-const siteName = 'Healthcare Pest Reference';
+const siteName = SITE_NAME;
 const currentPath = Astro.url.pathname;
+
+const crumbs: Crumb[] | undefined = breadcrumbs
+  ? [{ name: 'Home', url: `${SITE_URL}/` }, ...breadcrumbs]
+  : undefined;
 ---
 
 <!DOCTYPE html>
@@ -32,7 +50,7 @@ const currentPath = Astro.url.pathname;
   <title>{title} | {siteName}</title>
   <meta name="description" content={description} />
 
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content={ogType} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
@@ -46,29 +64,15 @@ const currentPath = Astro.url.pathname;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  {authorityType && (
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": title,
-      "description": description,
-      "url": canonicalURL,
-      "publisher": {
-        "@type": "Organization",
-        "name": siteName,
-        "url": "https://healthcarepestreference.org"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Trenton L. Frazer, BCE",
-        "jobTitle": "Board Certified Entomologist (BCE #B3413)"
-      },
-      "citation": citation,
-      "dateModified": lastVerified ? lastVerified.toISOString() : undefined
-    })} />
-  )}
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-  <style>
+  <JsonLd data={organizationSchema()} />
+  <JsonLd data={websiteSchema()} />
+  {crumbs && <JsonLd data={breadcrumbSchema(crumbs)} />}
+  <slot name="head" />
+
+  <!-- is:global: these rules style slotted page and Markdown content (main h1, main p, blockquote…), which Astro's default scoping would not reach. -->
+  <style is:global>
     :root {
       /* Deep healthcare green palette - clinical credibility */
       --color-primary: #1a3d2e;          /* deepest green, headings & primary brand */
@@ -434,6 +438,22 @@ const currentPath = Astro.url.pathname;
       text-decoration: underline;
     }
 
+    .site-footer-consulting-heading {
+      margin-top: 1.5rem;
+    }
+
+    .site-footer-note {
+      color: var(--color-text-meta);
+      font-size: 0.76rem;
+    }
+
+    .site-footer-register {
+      max-width: var(--max-width-wide);
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-rule);
+    }
+
     .site-footer-bottom {
       max-width: var(--max-width-wide);
       margin: 2rem auto 0;
@@ -564,12 +584,22 @@ const currentPath = Astro.url.pathname;
           <li>BCE #B3413 · General Entomology</li>
           <li><a href="https://entocert.org/roster" target="_blank" rel="noopener">Verify credentials</a></li>
         </ul>
+        <h4 class="site-footer-consulting-heading">Consulting</h4>
+        <ul>
+          <li><a href="/consulting/">{CONSULTING_PRACTICE_NAME}</a></li>
+          <li class="site-footer-note">Maintained independently of this reference.</li>
+        </ul>
       </div>
     </div>
+    {!hideFooterRegister && (
+      <div class="site-footer-register">
+        <UpdateRegisterForm variant="footer" idSuffix="footer" />
+      </div>
+    )}
     <div class="site-footer-bottom">
       <span>© 2026 Healthcare Pest Reference</span>
       <span>
-        <a href="/about/">About</a> · <a href="/methodology/">Methodology</a>
+        <a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/register/">Update Register</a>
       </span>
     </div>
   </footer>

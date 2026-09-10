@@ -3,6 +3,7 @@ title: "USP General Chapter <800> — Hazardous Drugs Handling in Healthcare Set
 authority_type: "recognized authority"
 citation: "United States Pharmacopeia, General Chapter <800> Hazardous Drugs — Handling in Healthcare Settings, Official December 1, 2019, Compendially Applicable November 1, 2023"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.usp.org/compounding/general-chapter-hazardous-drugs-handling-healthcare"
 source_tier: 1
 source_confidence: "MEDIUM"

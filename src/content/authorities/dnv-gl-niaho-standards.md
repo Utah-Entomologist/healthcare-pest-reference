@@ -3,6 +3,7 @@ title: "DNV-GL NIAHO Standards — Pest Management in DNV-Accredited Hospitals"
 authority_type: "accrediting body"
 citation: "DNV Healthcare USA, Inc., National Integrated Accreditation for Healthcare Organizations (NIAHO) Standards"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.dnv.com/healthcare/"
 source_tier: 1
 source_confidence: "MEDIUM"

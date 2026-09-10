@@ -3,6 +3,7 @@ title: "CMS State Operations Manual Appendix A — Hospital Survey Protocol"
 authority_type: "federal regulator"
 citation: "CMS Pub. 100-07, State Operations Manual, Appendix A, Rev. 238 (03-20-2026)"
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/downloads/som107ap_a_hospitals.pdf"
 source_tier: 1
 source_confidence: "HIGH"

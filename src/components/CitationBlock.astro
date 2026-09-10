@@ -1,0 +1,181 @@
+---
+/**
+ * Citation affordance rendered at the bottom of every authority page.
+ *
+ * - Suggested citation in a consistent format.
+ * - Canonical permalink with a copy button.
+ * - Last verified date, read from frontmatter. If none is recorded the block
+ *   says so in bracketed text; it never substitutes a build-time date.
+ * - Access date is filled in by the reader's browser at view time (it is the
+ *   date the reader accessed the page, which the build cannot know). Without
+ *   JavaScript the placeholder "[access date]" remains visible.
+ */
+import { AUTHOR, SITE_NAME } from '../lib/site';
+
+export interface Props {
+  title: string;
+  permalink: string;
+  lastVerified?: Date;
+}
+
+const { title, permalink, lastVerified } = Astro.props;
+
+const NOT_RECORDED = '[VERIFICATION DATE NOT RECORDED]';
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+
+const lastVerifiedText = lastVerified ? formatDate(lastVerified) : NOT_RECORDED;
+const lastVerifiedIso = lastVerified ? lastVerified.toISOString().slice(0, 10) : undefined;
+---
+
+<section class="citation-block" aria-labelledby="citation-heading">
+  <h2 id="citation-heading">Cite This Page</h2>
+
+  <p class="citation-label">Suggested citation</p>
+  <p class="citation-text" id="suggested-citation">
+    {AUTHOR.citationName} <span class="citation-title">“{title}.”</span>
+    <em>{SITE_NAME}</em>. <span class="citation-permalink-inline">{permalink}</span>.
+    Accessed <span class="citation-access-date" data-access-date>[access date]</span>.
+  </p>
+
+  <p class="citation-label">Permalink</p>
+  <div class="citation-permalink">
+    <input type="text" readonly value={permalink} aria-label="Canonical permalink" id="citation-permalink-input" />
+    <button type="button" class="citation-copy" data-copy-target="citation-permalink-input" aria-live="polite">Copy</button>
+  </div>
+
+  <p class="citation-label">Last verified against the primary source</p>
+  <p class="citation-verified">
+    {lastVerifiedIso
+      ? <time datetime={lastVerifiedIso}>{lastVerifiedText}</time>
+      : <span class="citation-not-recorded">{NOT_RECORDED}</span>}
+  </p>
+
+  <p class="citation-notice">
+    Citations should be verified against the primary source for any litigation-grade
+    use. The verification date above records when the operator last checked this page
+    against the source record; the source may have changed since.
+  </p>
+</section>
+
+<script>
+  // Access date: the reader's local date, formatted like the verification date.
+  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  document.querySelectorAll<HTMLElement>('[data-access-date]').forEach((el) => {
+    el.textContent = today;
+  });
+
+  // Copy the permalink. Falls back to selecting the text when the clipboard
+  // API is unavailable (non-secure context or older browser).
+  document.querySelectorAll<HTMLButtonElement>('.citation-copy').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const targetId = button.dataset.copyTarget;
+      const input = targetId ? (document.getElementById(targetId) as HTMLInputElement | null) : null;
+      if (!input) return;
+      const original = button.textContent;
+      try {
+        await navigator.clipboard.writeText(input.value);
+        button.textContent = 'Copied';
+      } catch {
+        input.focus();
+        input.select();
+        button.textContent = 'Select and copy';
+      }
+      window.setTimeout(() => {
+        button.textContent = original;
+      }, 2000);
+    });
+  });
+</script>
+
+<style>
+  .citation-block {
+    margin-top: 3.5rem;
+    padding: 1.5rem 1.6rem;
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-rule);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 2px;
+    font-size: 0.9rem;
+  }
+
+  .citation-block h2 {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .citation-label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-meta);
+    margin-bottom: 0.35rem;
+  }
+
+  .citation-text {
+    font-family: var(--font-serif);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .citation-permalink-inline {
+    word-break: break-all;
+  }
+
+  .citation-permalink {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .citation-permalink input {
+    flex: 1 1 16rem;
+    min-width: 0;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.82rem;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .citation-copy {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 2px;
+    background: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .citation-copy:hover {
+    background: var(--color-primary-light);
+  }
+
+  .citation-verified {
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  .citation-not-recorded {
+    color: var(--color-warning);
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.85rem;
+  }
+
+  .citation-notice {
+    margin-bottom: 0;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
+  }
+</style>

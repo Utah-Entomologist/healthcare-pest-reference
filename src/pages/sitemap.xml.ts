@@ -9,14 +9,18 @@ export const GET: APIRoute = async () => {
     { url: '/', priority: '1.0', changefreq: 'monthly' },
     { url: '/authorities/', priority: '0.9', changefreq: 'monthly' },
     { url: '/about/', priority: '0.7', changefreq: 'yearly' },
-    { url: '/methodology/', priority: '0.7', changefreq: 'yearly' }
+    { url: '/methodology/', priority: '0.7', changefreq: 'yearly' },
+    { url: '/consulting/', priority: '0.5', changefreq: 'yearly' },
+    { url: '/register/', priority: '0.5', changefreq: 'yearly' }
+    // /unsubscribe/ is deliberately excluded: it is a utility page marked noindex.
   ];
 
   const authorityPages = authorities.map(authority => ({
     url: `/authorities/${authority.slug}/`,
     priority: '0.8',
     changefreq: 'monthly',
-    lastmod: authority.data.last_verified.toISOString().split('T')[0]
+    // lastmod is only emitted when a verification date is recorded in frontmatter.
+    lastmod: authority.data.last_verified?.toISOString().split('T')[0]
   }));
 
   const allPages = [...staticPages, ...authorityPages];
