@@ -3,6 +3,7 @@ title: "Utah Administrative Code R432-100 — General Hospital Standards (Pest M
 authority_type: "state regulator"
 citation: "Utah Admin. Code R432-100-39, Maintenance Services, most recent amendment December 27, 2024"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://adminrules.utah.gov/public/rule/R432-100/Current%20Rules"
 source_tier: 1
 source_confidence: "MEDIUM"

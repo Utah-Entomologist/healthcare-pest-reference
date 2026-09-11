@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # VS Code
 .vscode/
+
+# Cloudflare Pages Functions local secrets (wrangler pages dev)
+.dev.vars

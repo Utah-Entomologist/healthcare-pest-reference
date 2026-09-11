@@ -3,6 +3,7 @@ title: "CDC HICPAC Guidelines for Environmental Infection Control — Pest Contr
 authority_type: "federal regulator"
 citation: "CDC HICPAC Guidelines for Environmental Infection Control in Health-Care Facilities (2003), Part II, Section E.V."
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.cdc.gov/infection-control/hcp/environmental-control/recommendations.html"
 source_tier: 1
 source_confidence: "HIGH"

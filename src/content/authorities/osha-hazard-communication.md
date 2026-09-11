@@ -3,6 +3,7 @@ title: "OSHA Hazard Communication Standard — Pesticide Storage and SDS Require
 authority_type: "federal regulator"
 citation: "29 CFR 1910.1200"
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-Z/section-1910.1200"
 source_tier: 1
 source_confidence: "HIGH"

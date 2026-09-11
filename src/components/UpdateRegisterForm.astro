@@ -1,0 +1,241 @@
+---
+/**
+ * Regulatory Update Register subscription form.
+ *
+ * Email only. No name, company, or phone. Nothing on the site is gated on it.
+ * Posts to /api/subscribe (a Cloudflare Pages Function, see functions/api/).
+ * With JavaScript the response is shown inline; without it the function
+ * redirects back to /register/ with a status in the query string.
+ *
+ * `variant="footer"` renders the compact sitewide version. `variant="page"`
+ * renders the fuller version used at the end of authority pages and on
+ * /register/. `idSuffix` keeps element ids unique when both appear on one page.
+ */
+export interface Props {
+  variant?: 'footer' | 'page';
+  idSuffix?: string;
+}
+
+const { variant = 'page', idSuffix = variant } = Astro.props;
+const emailId = `register-email-${idSuffix}`;
+const statusId = `register-status-${idSuffix}`;
+const formId = `register-form-${idSuffix}`;
+---
+
+<section class={`update-register update-register--${variant}`} aria-labelledby={`${formId}-heading`}>
+  <h2 id={`${formId}-heading`} class="update-register-heading">Regulatory Update Register</h2>
+
+  {variant === 'page' ? (
+    <p class="update-register-lede">
+      The regulatory record changes. The Joint Commission revises the Physical
+      Environment chapter annually. CMS reissues the State Operations Manual. AORN
+      republishes each year. USP chapters take effect on fixed dates. When an authority
+      on this reference changes, subscribers receive the change, its effective date,
+      and the documentation it affects.
+    </p>
+  ) : (
+    <p class="update-register-lede">
+      When an authority on this reference changes, subscribers receive the change,
+      its effective date, and the documentation it affects.
+    </p>
+  )}
+
+  <form id={formId} class="update-register-form" method="post" action="/api/subscribe" data-register-form>
+    <label for={emailId} class="update-register-label">Email address</label>
+    <div class="update-register-row">
+      <input
+        type="email"
+        id={emailId}
+        name="email"
+        required
+        autocomplete="email"
+        inputmode="email"
+        placeholder="name@hospital.org"
+        maxlength="254"
+      />
+      <button type="submit">Subscribe</button>
+    </div>
+    <!-- Honeypot: hidden from people, filled by bots. The function rejects submissions with a value here. -->
+    <div class="update-register-hp" aria-hidden="true">
+      <label for={`${emailId}-website`}>Leave this field empty</label>
+      <input type="text" id={`${emailId}-website`} name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <p id={statusId} class="update-register-status" role="status" aria-live="polite" data-register-status></p>
+  </form>
+
+  <p class="update-register-policy">
+    This list is used only for reference updates. No other mail is sent, and the address
+    is not shared. Every message includes an unsubscribe link, and you can
+    <a href="/unsubscribe/">unsubscribe here</a> at any time.
+  </p>
+</section>
+
+<script>
+  const messages: Record<string, string> = {
+    subscribed: 'Subscribed. You will receive a notice when an authority on this reference changes.',
+    invalid: 'That does not look like a valid email address. Please check it and try again.',
+    unavailable: 'The register is not accepting subscriptions right now. Please try again later.',
+    error: 'Something went wrong. Please try again later.'
+  };
+
+  document.querySelectorAll<HTMLFormElement>('[data-register-form]').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('[data-register-status]');
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!status || !button) return;
+      status.textContent = 'Submitting…';
+      status.dataset.state = 'pending';
+      button.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form)
+        });
+        const data = (await response.json().catch(() => ({}))) as { status?: string };
+        const key = data.status && messages[data.status] ? data.status : 'error';
+        status.textContent = messages[key];
+        status.dataset.state = key === 'subscribed' ? 'ok' : 'error';
+        if (key === 'subscribed') form.reset();
+      } catch {
+        status.textContent = messages.error;
+        status.dataset.state = 'error';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+  .update-register {
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    padding: 1.4rem 1.6rem;
+    background: var(--color-bg-subtle);
+    font-size: 0.9rem;
+  }
+
+  .update-register--page {
+    margin-top: 2.5rem;
+  }
+
+  .update-register--footer {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.84rem;
+    max-width: 34rem;
+  }
+
+  .update-register-heading {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 0.75rem;
+    padding: 0;
+    border: none;
+  }
+
+  .update-register--footer .update-register-heading {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .update-register-lede {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .update-register--footer .update-register-lede {
+    color: var(--color-text-muted);
+  }
+
+  .update-register-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .update-register-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .update-register-row input {
+    flex: 1 1 14rem;
+    min-width: 0;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .update-register-row button {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 2px;
+    background: var(--color-primary);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .update-register-row button:hover {
+    background: var(--color-primary-light);
+  }
+
+  .update-register-row button:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  .update-register-hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .update-register-status {
+    min-height: 1.2em;
+    margin: 0.6rem 0 0;
+    font-size: 0.84rem;
+    color: var(--color-text-muted);
+  }
+
+  .update-register-status[data-state='ok'] {
+    color: var(--color-confidence-high);
+    font-weight: 500;
+  }
+
+  .update-register-status[data-state='error'] {
+    color: var(--color-warning);
+  }
+
+  .update-register-policy {
+    margin: 0.85rem 0 0;
+    font-size: 0.8rem;
+    color: var(--color-text-meta);
+  }
+
+  .update-register-policy a {
+    color: var(--color-accent);
+  }
+</style>

@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL } from '../lib/site';
 ---
 
 <BaseLayout
   title="Methodology"
   description="Source tier hierarchy, confidence ratings, verification discipline, and the explicit list of fabricated claims investigated and excluded from the Healthcare Pest Reference."
+  breadcrumbs={[{ name: 'Methodology', url: `${SITE_URL}/methodology/` }]}
 >
   <h1>Methodology</h1>
 

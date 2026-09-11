@@ -3,6 +3,7 @@ title: "APIC Text of Infection Control and Epidemiology — Environmental Servic
 authority_type: "recognized authority"
 citation: "Association for Professionals in Infection Control and Epidemiology (APIC), APIC Text of Infection Control and Epidemiology, Environmental Services chapter"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://text.apic.org/"
 source_tier: 2
 source_confidence: "MEDIUM"

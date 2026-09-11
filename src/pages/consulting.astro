@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CONSULTING_PRACTICE_NAME, SITE_URL } from '../lib/site';
+
+const practice = CONSULTING_PRACTICE_NAME;
+---
+
+<BaseLayout
+  title="Consulting"
+  description={`${practice} is the professional consulting practice of Trenton L. Frazer, Board Certified Entomologist, author of the Healthcare Pest Reference. Accreditation readiness, plan-of-correction support, pest program design review, Entomologist of Record engagement, and expert witness work for healthcare facilities.`}
+  breadcrumbs={[{ name: 'Consulting', url: `${SITE_URL}/consulting/` }]}
+>
+  <style>
+    .separation {
+      background: var(--color-bg-subtle);
+      border-left: 3px solid var(--color-accent);
+      padding: 1.1rem 1.4rem;
+      margin: 0 0 2.5rem;
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+    }
+
+    .separation strong {
+      color: var(--color-primary);
+    }
+
+    .services {
+      margin-bottom: 1.5rem;
+    }
+
+    .services dt {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-top: 1.25rem;
+    }
+
+    .services dd {
+      margin: 0.3rem 0 0;
+      color: var(--color-text);
+    }
+
+    .contact-form {
+      margin-top: 1.5rem;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid var(--color-rule);
+      border-radius: 2px;
+      background: var(--color-bg-subtle);
+      font-size: 0.92rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin: 0.9rem 0 0.35rem;
+    }
+
+    .contact-form label:first-of-type {
+      margin-top: 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--color-rule);
+      border-radius: 2px;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    .contact-form textarea {
+      min-height: 8rem;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      margin-top: 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.6rem 1.1rem;
+      border: 1px solid var(--color-primary);
+      border-radius: 2px;
+      background: var(--color-primary);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: var(--color-primary-light);
+    }
+
+    .contact-form button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .contact-hp {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .contact-status {
+      min-height: 1.2em;
+      margin: 0.75rem 0 0;
+      font-size: 0.86rem;
+      color: var(--color-text-muted);
+    }
+
+    .contact-status[data-state='ok'] {
+      color: var(--color-confidence-high);
+      font-weight: 500;
+    }
+
+    .contact-status[data-state='error'] {
+      color: var(--color-warning);
+    }
+
+    .contact-note {
+      font-size: 0.82rem;
+      color: var(--color-text-meta);
+      margin: 0.85rem 0 0;
+    }
+  </style>
+
+  <h1>Consulting</h1>
+
+  <p class="separation">
+    <strong>Separation statement.</strong> The Healthcare Pest Reference is maintained
+    independently of the consulting practice described on this page. Engagement with
+    the practice is not required to use the reference, and the reference does not
+    change based on who is or is not a client.
+  </p>
+
+  <p>
+    The author of this reference, Trenton L. Frazer, Board Certified Entomologist
+    (BCE #B3413), maintains a professional consulting practice, {practice}. Through
+    that practice he can be retained by hospitals, health systems, and other
+    healthcare facilities for the work described below. The practice is national in
+    scope. Engagements are fee-based.
+  </p>
+
+  <p>
+    The BCE credential is held by Mr. Frazer personally and is issued by the
+    Entomological Society of America Certification Corporation. It can be verified
+    on the <a href="https://entocert.org/roster" target="_blank" rel="noopener">ESACC roster</a>.
+    {practice} is the practice through which he is retained; the credential is his,
+    not the practice's.
+  </p>
+
+  <h2>What a Board Certified Entomologist Can Be Retained to Do</h2>
+
+  <dl class="services">
+    <dt>Accreditation readiness assessment</dt>
+    <dd>
+      Review of a facility's pest management program against the accrediting body
+      and regulatory authorities that apply to it, ahead of a survey.
+    </dd>
+
+    <dt>Deficiency and plan-of-correction support</dt>
+    <dd>
+      Assistance responding to a pest-related survey finding: establishing what
+      the citation actually requires, what evidence closes it, and how the plan of
+      correction should be written and documented.
+    </dd>
+
+    <dt>Pest program design review</dt>
+    <dd>
+      Independent review of an existing or proposed pest management program,
+      contract, or vendor scope against the documentation the facility will be
+      asked to produce.
+    </dd>
+
+    <dt>Entomologist of Record engagement</dt>
+    <dd>
+      An ongoing arrangement under which a named Board Certified Entomologist is
+      responsible for the entomological basis of the facility's pest management
+      program and available to its infection prevention, environmental services,
+      and facilities leadership.
+    </dd>
+
+    <dt>Expert witness work</dt>
+    <dd>
+      Case review, opinion, and testimony in healthcare pest matters, for counsel
+      on either side.
+    </dd>
+  </dl>
+
+  <p>
+    The practice also serves regulated and sensitive environments beyond
+    healthcare where the same documentation discipline applies.
+  </p>
+
+  <h2>Contact</h2>
+
+  <p>
+    All inquiries about the practice, and all questions and corrections about the
+    reference, use the form below. Fees are discussed on inquiry; no schedule is
+    published here.
+  </p>
+
+  <form class="contact-form" method="post" action="/api/contact" data-contact-form>
+    <label for="contact-email">Email address</label>
+    <input type="email" id="contact-email" name="email" required autocomplete="email" maxlength="254" />
+
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" required maxlength="5000"></textarea>
+
+    <div class="contact-hp" aria-hidden="true">
+      <label for="contact-website">Leave this field empty</label>
+      <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <button type="submit">Send inquiry</button>
+    <p class="contact-status" role="status" aria-live="polite" data-contact-status></p>
+  </form>
+
+  <p class="contact-note">
+    Your address is used only to reply to your inquiry. It is not added to any list.
+  </p>
+
+  <script>
+    const messages: Record<string, string> = {
+      sent: 'Received. You will hear back at the address you provided.',
+      invalid: 'Please provide a valid email address and a message.',
+      unavailable: 'The contact form is not available right now. Please try again later.',
+      error: 'Something went wrong. Please try again later.'
+    };
+
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+    const status = document.querySelector<HTMLElement>('[data-contact-status]');
+    const button = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+    if (form && status && button) {
+      const params = new URLSearchParams(window.location.search);
+      const initial = params.get('status');
+      if (initial && messages[initial]) {
+        status.textContent = messages[initial];
+        status.dataset.state = initial === 'sent' ? 'ok' : 'error';
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        status.textContent = 'Sending…';
+        status.dataset.state = 'pending';
+        button.disabled = true;
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form)
+          });
+          const data = (await response.json().catch(() => ({}))) as { status?: string };
+          const key = data.status && messages[data.status] ? data.status : 'error';
+          status.textContent = messages[key];
+          status.dataset.state = key === 'sent' ? 'ok' : 'error';
+          if (key === 'sent') form.reset();
+        } catch {
+          status.textContent = messages.error;
+          status.dataset.state = 'error';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    }
+  </script>
+</BaseLayout>

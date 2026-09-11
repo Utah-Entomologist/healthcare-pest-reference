@@ -3,6 +3,7 @@ title: "CMS Conditions of Participation for Hospitals — Physical Environment"
 authority_type: "federal regulator"
 citation: "42 CFR Part 482, Subpart C, Section 482.41"
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-C/section-482.41"
 source_tier: 1
 source_confidence: "HIGH"

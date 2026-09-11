@@ -3,6 +3,7 @@ title: "AORN 2026 Guidelines for Perioperative Practice — Environmental Cleani
 authority_type: "recognized authority"
 citation: "Association of periOperative Registered Nurses (AORN), Guidelines for Perioperative Practice, 2026 Edition. Guideline for Environmental Cleaning."
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.aorn.org/guidelines"
 source_tier: 1
 source_confidence: "MEDIUM"

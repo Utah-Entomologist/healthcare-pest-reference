@@ -1,5 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import JsonLd from '../components/JsonLd.astro';
+import CitationBlock from '../components/CitationBlock.astro';
+import UpdateRegisterForm from '../components/UpdateRegisterForm.astro';
+import { articleSchema, personSchema } from '../lib/schema';
+import { SITE_URL } from '../lib/site';
 import type { CollectionEntry } from 'astro:content';
 
 export interface Props {
@@ -12,6 +17,7 @@ const {
   authority_type,
   citation,
   last_verified,
+  date_published,
   source_url,
   source_tier,
   source_confidence,
@@ -19,7 +25,19 @@ const {
   verbatim_available
 } = authority.data;
 
-const description = `${title}. Source: ${citation}. Last verified ${last_verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}.`;
+const NOT_RECORDED = '[VERIFICATION DATE NOT RECORDED]';
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+
+const lastVerifiedText = last_verified ? formatDate(last_verified) : NOT_RECORDED;
+const isoDate = (d?: Date) => (d ? d.toISOString().slice(0, 10) : undefined);
+
+const permalink = `${SITE_URL}/authorities/${authority.slug}/`;
+
+const description = last_verified
+  ? `${title}. Source: ${citation}. Last verified ${lastVerifiedText}.`
+  : `${title}. Source: ${citation}.`;
 
 const authorityTypeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulator',
@@ -27,15 +45,33 @@ const authorityTypeLabels: Record<string, string> = {
   'accrediting body': 'Accrediting Body',
   'recognized authority': 'Recognized Authority'
 };
+
+const article = articleSchema({
+  url: permalink,
+  headline: title,
+  description,
+  datePublished: isoDate(date_published),
+  dateModified: isoDate(last_verified),
+  citation,
+  citationUrl: source_url
+});
 ---
 
 <BaseLayout
   title={title}
   description={description}
-  authorityType={authority_type}
-  citation={citation}
-  lastVerified={last_verified}
+  canonical={permalink}
+  ogType="article"
+  breadcrumbs={[
+    { name: 'Authorities', url: `${SITE_URL}/authorities/` },
+    { name: title, url: permalink }
+  ]}
 >
+  <Fragment slot="head">
+    <JsonLd data={personSchema()} />
+    <JsonLd data={article} />
+  </Fragment>
+
   <h1>{title}</h1>
 
   <section class="authority-meta">
@@ -65,7 +101,7 @@ const authorityTypeLabels: Record<string, string> = {
       <dd>{verbatim_available ? 'Yes' : 'No — predecessor or paraphrase only'}</dd>
 
       <dt>Last Verified</dt>
-      <dd>{last_verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</dd>
+      <dd>{lastVerifiedText}</dd>
     </dl>
 
     <div class="verification-badge">
@@ -74,4 +110,8 @@ const authorityTypeLabels: Record<string, string> = {
   </section>
 
   <slot />
+
+  <CitationBlock title={title} permalink={permalink} lastVerified={last_verified} />
+
+  <UpdateRegisterForm variant="page" idSuffix="authority" />
 </BaseLayout>

@@ -3,6 +3,7 @@ title: "USP General Chapter <797> — Pharmaceutical Compounding for Sterile Pre
 authority_type: "recognized authority"
 citation: "United States Pharmacopeia, General Chapter <797> Pharmaceutical Compounding — Sterile Preparations, Official November 1, 2023"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.usp.org/compounding/general-chapter-797"
 source_tier: 1
 source_confidence: "MEDIUM"

@@ -3,6 +3,7 @@ title: "USDA Rescission of 7 CFR Part 110 — Federal Pesticide Recordkeeping Re
 authority_type: "federal regulator"
 citation: "USDA Final Rule, Rescission of 7 CFR Part 110, Federal Register Vol. 90 No. 90 (May 12, 2025), FR Doc 2025-08220, effective July 11, 2025"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://www.federalregister.gov/documents/2025/05/12/2025-08220/recordkeeping-requirements-for-certified-applicators-of-federally-restricted-use-pesticides"
 source_tier: 1
 source_confidence: "HIGH"

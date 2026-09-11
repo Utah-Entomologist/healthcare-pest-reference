@@ -1,0 +1,17 @@
+# Copy to .dev.vars for local `wrangler pages dev dist` runs. Never commit .dev.vars.
+# In production, set these as environment variables on the Cloudflare Pages project
+# (Settings → Environment variables). RESEND_API_KEY must be a "Secret".
+
+# Resend API key with permission to create and update contacts.
+# Create a dedicated key for this site; do not reuse the Falcon keys.
+RESEND_API_KEY=re_xxxxxxxxx
+
+# Resend segment that holds Regulatory Update Register subscribers.
+# Segment "Healthcare Pest Reference — Regulatory Update Register":
+RESEND_SEGMENT_ID=73bdf341-59a0-4b4d-b071-0bae790ed267
+
+# Consulting-page contact form. Both must be set or the form reports "unavailable".
+# CONTACT_FROM must be a sender on a domain verified in Resend for THIS site
+# (the reference domain or the practice domain) — never mail.myfalconpest.com.
+CONTACT_FROM="Healthcare Pest Reference <inquiries@healthcarepestreference.org>"
+CONTACT_FORWARD_TO=operator-inbox@example.com

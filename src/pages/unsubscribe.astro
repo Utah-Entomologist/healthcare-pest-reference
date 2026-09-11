@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL } from '../lib/site';
+---
+
+<BaseLayout
+  title="Unsubscribe"
+  description="Remove an email address from the Healthcare Pest Reference Regulatory Update Register."
+  breadcrumbs={[{ name: 'Unsubscribe', url: `${SITE_URL}/unsubscribe/` }]}
+  noindex
+  hideFooterRegister
+>
+  <style>
+    .unsubscribe-form {
+      margin-top: 1.5rem;
+      padding: 1.4rem 1.6rem;
+      border: 1px solid var(--color-rule);
+      border-radius: 2px;
+      background: var(--color-bg-subtle);
+      font-size: 0.92rem;
+    }
+
+    .unsubscribe-form label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .unsubscribe-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .unsubscribe-row input {
+      flex: 1 1 14rem;
+      min-width: 0;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--color-rule);
+      border-radius: 2px;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    .unsubscribe-row button {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.55rem 1rem;
+      border: 1px solid var(--color-primary);
+      border-radius: 2px;
+      background: var(--color-primary);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .unsubscribe-row button:disabled {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .unsubscribe-hp {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .unsubscribe-status {
+      min-height: 1.2em;
+      margin: 0.75rem 0 0;
+      font-size: 0.86rem;
+      color: var(--color-text-muted);
+    }
+
+    .unsubscribe-status[data-state='ok'] {
+      color: var(--color-confidence-high);
+      font-weight: 500;
+    }
+
+    .unsubscribe-status[data-state='error'] {
+      color: var(--color-warning);
+    }
+  </style>
+
+  <h1>Unsubscribe</h1>
+
+  <p>
+    Enter the address you subscribed with and it will be removed from the
+    Regulatory Update Register. The unsubscribe link at the bottom of any notice
+    does the same thing in one click.
+  </p>
+
+  <form class="unsubscribe-form" method="post" action="/api/unsubscribe" data-unsubscribe-form>
+    <label for="unsubscribe-email">Email address</label>
+    <div class="unsubscribe-row">
+      <input type="email" id="unsubscribe-email" name="email" required autocomplete="email" maxlength="254" />
+      <button type="submit">Unsubscribe</button>
+    </div>
+    <div class="unsubscribe-hp" aria-hidden="true">
+      <label for="unsubscribe-website">Leave this field empty</label>
+      <input type="text" id="unsubscribe-website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+    <p class="unsubscribe-status" role="status" aria-live="polite" data-unsubscribe-status></p>
+  </form>
+
+  <script>
+    const messages: Record<string, string> = {
+      unsubscribed: 'That address will receive no further notices from the register.',
+      invalid: 'That does not look like a valid email address. Please check it and try again.',
+      unavailable: 'Unsubscribe is not available right now. Use the link in any notice, or try again later.',
+      error: 'Something went wrong. Use the link in any notice, or try again later.'
+    };
+
+    const form = document.querySelector<HTMLFormElement>('[data-unsubscribe-form]');
+    const status = document.querySelector<HTMLElement>('[data-unsubscribe-status]');
+    const button = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+    if (form && status && button) {
+      const initial = new URLSearchParams(window.location.search).get('status');
+      if (initial && messages[initial]) {
+        status.textContent = messages[initial];
+        status.dataset.state = initial === 'unsubscribed' ? 'ok' : 'error';
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        status.textContent = 'Submitting…';
+        status.dataset.state = 'pending';
+        button.disabled = true;
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form)
+          });
+          const data = (await response.json().catch(() => ({}))) as { status?: string };
+          const key = data.status && messages[data.status] ? data.status : 'error';
+          status.textContent = messages[key];
+          status.dataset.state = key === 'unsubscribed' ? 'ok' : 'error';
+          if (key === 'unsubscribed') form.reset();
+        } catch {
+          status.textContent = messages.error;
+          status.dataset.state = 'error';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    }
+  </script>
+</BaseLayout>

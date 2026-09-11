@@ -3,6 +3,7 @@ title: "ESACC Board Certified Entomologist (BCE) Credential"
 authority_type: "recognized authority"
 citation: "Entomological Society of America Certification Corporation (ESACC), Board Certified Entomologist (BCE) Program, eligibility revised effective January 1, 2025"
 last_verified: 2026-05-25
+date_published: 2026-06-01
 source_url: "https://entocert.org/bce"
 source_tier: 1
 source_confidence: "HIGH"

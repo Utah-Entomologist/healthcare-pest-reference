@@ -3,6 +3,7 @@ title: "The Joint Commission 2026 Physical Environment Chapter — Pest Activity
 authority_type: "accrediting body"
 citation: "The Joint Commission, Comprehensive Accreditation Manual for Hospitals (CAMH), Physical Environment (PE) Chapter, effective January 1, 2026 via Accreditation 360"
 last_verified: 2026-05-25
+date_published: 2026-05-26
 source_url: "https://www.jointcommission.org/standards/standard-faqs/hospital-and-hospital-clinics/physical-environment-pe/"
 source_tier: 1
 source_confidence: "MEDIUM"

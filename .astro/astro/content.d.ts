@@ -141,6 +141,27 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"authorities": {
+"aorn-2026-perioperative-guidelines.md": {
+	id: "aorn-2026-perioperative-guidelines.md";
+  slug: "aorn-2026-perioperative-guidelines";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"apic-text-environmental-services.md": {
+	id: "apic-text-environmental-services.md";
+  slug: "apic-text-environmental-services";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"cdc-hicpac-environmental-guidelines.md": {
+	id: "cdc-hicpac-environmental-guidelines.md";
+  slug: "cdc-hicpac-environmental-guidelines";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "cms-conditions-of-participation.md": {
 	id: "cms-conditions-of-participation.md";
   slug: "cms-conditions-of-participation";
@@ -155,9 +176,107 @@ declare module 'astro:content' {
   collection: "authorities";
   data: InferEntrySchema<"authorities">
 } & { render(): Render[".md"] };
+"dnv-gl-niaho-standards.md": {
+	id: "dnv-gl-niaho-standards.md";
+  slug: "dnv-gl-niaho-standards";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"epa-ipm-toolkit-2021.md": {
+	id: "epa-ipm-toolkit-2021.md";
+  slug: "epa-ipm-toolkit-2021";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"esacc-bce-credential.md": {
+	id: "esacc-bce-credential.md";
+  slug: "esacc-bce-credential";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"fda-food-code-2022.md": {
+	id: "fda-food-code-2022.md";
+  slug: "fda-food-code-2022";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"fgi-guidelines-design-construction.md": {
+	id: "fgi-guidelines-design-construction.md";
+  slug: "fgi-guidelines-design-construction";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"hai-cost-exposure-framing.md": {
+	id: "hai-cost-exposure-framing.md";
+  slug: "hai-cost-exposure-framing";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"joint-commission-2026-pe-chapter.md": {
+	id: "joint-commission-2026-pe-chapter.md";
+  slug: "joint-commission-2026-pe-chapter";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"nacmcf-1997-haccp-prerequisite.md": {
+	id: "nacmcf-1997-haccp-prerequisite.md";
+  slug: "nacmcf-1997-haccp-prerequisite";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "osha-hazard-communication.md": {
 	id: "osha-hazard-communication.md";
   slug: "osha-hazard-communication";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"usda-7cfr110-rescission.md": {
+	id: "usda-7cfr110-rescission.md";
+  slug: "usda-7cfr110-rescission";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"usp-797-sterile-compounding.md": {
+	id: "usp-797-sterile-compounding.md";
+  slug: "usp-797-sterile-compounding";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"usp-800-hazardous-drugs.md": {
+	id: "usp-800-hazardous-drugs.md";
+  slug: "usp-800-hazardous-drugs";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"utah-r432-100-hospital-licensure.md": {
+	id: "utah-r432-100-hospital-licensure.md";
+  slug: "utah-r432-100-hospital-licensure";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"utah-r68-7-pesticide-applicator.md": {
+	id: "utah-r68-7-pesticide-applicator.md";
+  slug: "utah-r68-7-pesticide-applicator";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"vha-directive-1850-02.md": {
+	id: "vha-directive-1850-02.md";
+  slug: "vha-directive-1850-02";
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">

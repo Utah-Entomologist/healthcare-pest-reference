@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/site';
 import { getCollection } from 'astro:content';
 
 const authorities = await getCollection('authorities');
@@ -31,6 +32,7 @@ const totalCount = authorities.length;
 <BaseLayout
   title="Authority Index"
   description="Complete index of regulatory authorities covered by the Healthcare Pest Reference, organized by authority type."
+  breadcrumbs={[{ name: 'Authorities', url: `${SITE_URL}/authorities/` }]}
 >
   <style>
     .authority-list {
