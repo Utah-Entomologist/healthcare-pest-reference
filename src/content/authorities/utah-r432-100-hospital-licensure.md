@@ -19,6 +19,16 @@ services_applicable:
   - infection prevention and control
   - pest management program design
 verbatim_available: true
+summary: "One of the few state hospital licensure rules with an explicit pest mandate: the hospital must be kept “free from vermin and rodents.” Non-prescriptive about how."
+related_authorities:
+  - slug: utah-r68-7-pesticide-applicator
+    why: "The Utah applicator licensure framework that establishes the legal floor for who may apply pesticides in Utah hospitals."
+  - slug: cms-conditions-of-participation
+    why: "The federal parallel: the physical environment condition every Medicare-participating Utah hospital also answers to."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The federal standard of care Utah surveyors reference as operational guidance for what “a pest-control program” should contain."
+  - slug: joint-commission-2026-pe-chapter
+    why: "The accrediting body standard for Joint Commission-accredited Utah hospitals."
 ---
 
 ## Citation
@@ -110,9 +120,3 @@ MEDIUM confidence. The operative pest-control sentence at R432-100-39(1)(d) is v
 - **"Utah hospital licensing requires Board Certified Entomologists for pest management programs."** Disconfirmed. R432-100-39(1)(d) does not specify any applicator credential. The provision requires a pest-control program but does not name BCE, ACE, or any other specific credential.
 - **"R432-100-39 specifies pest threshold definitions for Utah hospitals."** Disconfirmed. The provision is non-prescriptive about program structure. Threshold definitions, monitoring frequency, and intervention hierarchy flow from broader standards of care (HICPAC, EPA IPM Toolkit, accrediting body standards), not from R432-100-39 itself.
 - **"Utah school IPM requirements at R392-200-7(12) also apply to Utah hospitals."** Disconfirmed. R392-200-18 (the correct citation for Utah school IPM, not R392-200-7(12)) applies specifically to schools, not to hospitals. Hospital pest management in Utah is governed by R432-100-39(1)(d) for licensed hospitals and by R432-150 series rules for skilled nursing facilities.
-
-## Related Authorities
-
-- [Utah R68-7 Pesticide Applicator Licensing](/authorities/utah-r68-7-pesticide-applicator/) — Utah state applicator licensure framework that establishes the legal floor for who may apply pesticides in Utah hospitals
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — federal standard of care referenced by Utah surveyors as operational guidance
-- [The Joint Commission 2026 PE Chapter](/authorities/joint-commission-2026-pe-chapter/) — accrediting body standard for Joint Commission-accredited Utah hospitals

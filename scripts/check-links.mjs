@@ -48,8 +48,24 @@ for (const file of files(DIST, '.html')) {
   }
 }
 
-// The sitemap must list every built page except those marked noindex.
+// The sitemap must list every built page except those marked noindex, with a
+// well-formed lastmod on every URL and a loc that equals the page's canonical.
 const sitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+for (const m of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+  const loc = m[1].match(/<loc>(.*?)<\/loc>/)?.[1];
+  const lastmod = m[1].match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
+  if (!loc) { failures.push('sitemap.xml: <url> without <loc>'); continue; }
+  if (!lastmod) failures.push(`sitemap.xml: ${loc} has no <lastmod>`);
+  else if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod) || Number.isNaN(Date.parse(lastmod))) failures.push(`sitemap.xml: ${loc} has malformed <lastmod> ${lastmod}`);
+  const route = loc.replace('https://healthcarepestreference.org', '');
+  if (route.endsWith('/')) {
+    const file = join(DIST, route, 'index.html');
+    if (existsSync(file)) {
+      const canonical = readFileSync(file, 'utf8').match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+      if (canonical !== loc) failures.push(`sitemap.xml: ${loc} differs from page canonical ${canonical}`);
+    }
+  }
+}
 for (const file of files(DIST, 'index.html')) {
   const html = readFileSync(file, 'utf8');
   const route = '/' + file.replace(/^dist\//, '').replace(/index\.html$/, '');

@@ -1,0 +1,138 @@
+---
+/**
+ * Layout for /topics/<slug>/ — a question that cuts across several
+ * authorities (e.g. pesticide storage requirements).
+ */
+import BaseLayout from './BaseLayout.astro';
+import JsonLd from '../components/JsonLd.astro';
+import CitationBlock from '../components/CitationBlock.astro';
+import UpdateRegisterForm from '../components/UpdateRegisterForm.astro';
+import RelatedAuthorities from '../components/RelatedAuthorities.astro';
+import { articleSchema, personSchema } from '../lib/schema';
+import { SITE_URL } from '../lib/site';
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  entry: CollectionEntry<'topics'>;
+}
+
+const { entry } = Astro.props;
+const {
+  title,
+  seo_title,
+  meta_description,
+  summary,
+  citation,
+  source_url,
+  source_confidence,
+  content_pending,
+  last_verified,
+  date_published,
+  governing_authorities
+} = entry.data;
+
+const NOT_RECORDED = '[VERIFICATION DATE NOT RECORDED]';
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const isoDate = (d?: Date) => (d ? d.toISOString().slice(0, 10) : undefined);
+
+const permalink = `${SITE_URL}/topics/${entry.slug}/`;
+const description = meta_description ?? summary ?? `${title}. Primary citation: ${citation}.`;
+
+const article = articleSchema({
+  url: permalink,
+  headline: title,
+  description,
+  datePublished: isoDate(date_published),
+  dateModified: isoDate(last_verified),
+  citation,
+  citationUrl: source_url
+});
+---
+
+<BaseLayout
+  title={seo_title ?? title}
+  description={description}
+  canonical={permalink}
+  ogType="article"
+  breadcrumbs={[
+    { name: 'Topics', url: `${SITE_URL}/topics/` },
+    { name: title, url: permalink }
+  ]}
+>
+  <Fragment slot="head">
+    <JsonLd data={personSchema()} />
+    <JsonLd data={article} />
+  </Fragment>
+
+  <p class="deficiency-kicker">Cross-authority topic</p>
+  <h1>{title}</h1>
+
+  {content_pending && (
+    <p class="pending-notice">
+      Parts of this page are awaiting primary-source text and are marked in the body.
+      Nothing marked as pending has been paraphrased from secondary summaries.
+    </p>
+  )}
+
+  <section class="authority-meta">
+    <div class="authority-meta-header">Source Record</div>
+    <dl>
+      <dt>Primary Citation</dt>
+      <dd>{citation}</dd>
+
+      <dt>Primary Source</dt>
+      <dd><a href={source_url} target="_blank" rel="noopener">{source_url}</a></dd>
+
+      <dt>Confidence</dt>
+      <dd class={source_confidence === 'HIGH' ? 'confidence-high' : 'confidence-medium'}>{source_confidence}</dd>
+
+      <dt>Last Verified</dt>
+      <dd>{last_verified ? formatDate(last_verified) : NOT_RECORDED}</dd>
+    </dl>
+
+    <div class="verification-badge">
+      <span>Maintained by <strong>Trenton L. Frazer, BCE #B3413</strong> · Board Certified Entomologist · <a href="/methodology/">verification methodology</a></span>
+    </div>
+  </section>
+
+  <slot />
+
+  <RelatedAuthorities entries={governing_authorities} heading="Governing Authorities" />
+
+  <CitationBlock title={title} permalink={permalink} lastVerified={last_verified} />
+
+  <UpdateRegisterForm variant="page" idSuffix="topic" />
+</BaseLayout>
+
+<style is:global>
+  .deficiency-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-meta);
+    margin-bottom: 0.75rem;
+  }
+
+  .pending-notice {
+    background: var(--color-bg-subtle);
+    border-left: 3px solid var(--color-confidence-medium);
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.75rem;
+  }
+
+  .content-pending {
+    display: inline-block;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.82rem;
+    color: var(--color-warning);
+    background: var(--color-bg-subtle);
+    padding: 0.2em 0.5em;
+    border: 1px dashed var(--color-warning);
+    border-radius: 2px;
+  }
+</style>

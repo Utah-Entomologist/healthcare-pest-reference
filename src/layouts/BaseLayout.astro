@@ -62,7 +62,8 @@ const crumbs: Crumb[] | undefined = breadcrumbs
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- display=optional: the web font is used only if it is available at first paint. No swap after render, so no layout shift from font loading. -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=optional" rel="stylesheet" />
 
   {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -73,6 +74,38 @@ const crumbs: Crumb[] | undefined = breadcrumbs
 
   <!-- is:global: these rules style slotted page and Markdown content (main h1, main p, blockquote…), which Astro's default scoping would not reach. -->
   <style is:global>
+    /* Marker for primary-source text that is pending, blocked, or unavailable. Used on every layout. */
+    .content-pending {
+      display: inline-block;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      font-size: 0.82rem;
+      color: var(--color-warning);
+      background: var(--color-bg-subtle);
+      padding: 0.2em 0.5em;
+      border: 1px dashed var(--color-warning);
+      border-radius: 2px;
+    }
+
+    /* Metric-adjusted fallbacks: when the web font is not used, these keep line
+       boxes the same size so a late font (or none) cannot shift layout. */
+    @font-face {
+      font-family: 'Inter Fallback';
+      src: local('Arial'), local('Helvetica');
+      size-adjust: 107%;
+      ascent-override: 90%;
+      descent-override: 22%;
+      line-gap-override: 0%;
+    }
+
+    @font-face {
+      font-family: 'IBM Plex Serif Fallback';
+      src: local('Georgia'), local('Times New Roman');
+      size-adjust: 103%;
+      ascent-override: 102%;
+      descent-override: 28%;
+      line-gap-override: 0%;
+    }
+
     :root {
       /* Deep healthcare green palette - clinical credibility */
       --color-primary: #1a3d2e;          /* deepest green, headings & primary brand */
@@ -98,8 +131,8 @@ const crumbs: Crumb[] | undefined = breadcrumbs
       --color-warning: #a3331f;
 
       /* Typography */
-      --font-serif: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'IBM Plex Serif', 'IBM Plex Serif Fallback', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
       /* Layout */
       --max-width-prose: 720px;
@@ -142,6 +175,7 @@ const crumbs: Crumb[] | undefined = breadcrumbs
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      min-height: 3.2rem; /* reserved: brand mark + tagline height, so a late font cannot grow the header */
     }
 
     .site-brand {
@@ -174,6 +208,9 @@ const crumbs: Crumb[] | undefined = breadcrumbs
       gap: 2rem;
       font-size: 0.92rem;
       font-weight: 500;
+      min-height: 2rem;      /* reserved line box */
+      align-items: center;
+      line-height: 1.5;
     }
 
     .site-nav a {
@@ -359,9 +396,12 @@ const crumbs: Crumb[] | undefined = breadcrumbs
 
     /* Verification badge */
     .verification-badge {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 0.5rem;
+      min-height: 2.6rem;    /* reserved: one line of 0.78rem text plus padding; wraps to two on narrow screens (see media query) */
+      line-height: 1.45;
+      contain: layout;
       background: var(--color-bg-emphasis);
       border: 1px solid var(--color-rule);
       border-radius: 3px;
@@ -528,6 +568,14 @@ const crumbs: Crumb[] | undefined = breadcrumbs
         margin-top: 0;
       }
 
+      .verification-badge {
+        min-height: 3.9rem;  /* two lines at mobile width */
+      }
+
+      .site-header-inner {
+        min-height: 5.5rem;  /* brand block and nav stack on mobile */
+      }
+
       .site-footer-inner {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -549,6 +597,7 @@ const crumbs: Crumb[] | undefined = breadcrumbs
       </a>
       <nav class="site-nav">
         <a href="/authorities/" class={currentPath.startsWith('/authorities') ? 'active' : ''}>Authorities</a>
+        <a href="/deficiencies/" class={currentPath.startsWith('/deficiencies') ? 'active' : ''}>Deficiencies</a>
         <a href="/methodology/" class={currentPath === '/methodology/' ? 'active' : ''}>Methodology</a>
         <a href="/about/" class={currentPath === '/about/' ? 'active' : ''}>About</a>
       </nav>

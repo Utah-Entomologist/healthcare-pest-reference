@@ -48,6 +48,20 @@ Two frontmatter dates carry meaning beyond the page itself:
   `Article.datePublished`. Existing pages carry the date of the commit that
   first added them.
 
+## Content Collections
+
+- `src/content/authorities/` — one page per regulatory authority, at
+  `/authorities/<slug>/`. `related_authorities` (3–5 `{ slug, why }` entries)
+  drives the Related Authorities list; an unknown slug fails the build.
+  `summary` is the one-line orientation on the hub. `seo_title` and
+  `meta_description` override the title tag and description without
+  changing the H1.
+- `src/content/deficiencies/` — one page per survey tag or Element of
+  Performance, at `/deficiencies/<slug>/`. `governing_authorities` and
+  `related_deficiencies` are validated the same way. `content_pending: true`
+  marks a page that still carries a `[CONTENT PENDING …]` marker.
+- `src/content/topics/` — cross-authority questions, at `/topics/<slug>/`.
+
 ## Build Checks
 
 ```sh

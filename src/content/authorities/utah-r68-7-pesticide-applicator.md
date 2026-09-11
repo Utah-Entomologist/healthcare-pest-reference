@@ -24,6 +24,18 @@ services_applicable:
   - pesticide storage and recordkeeping
   - applicator licensure and certification
 verbatim_available: true
+summary: "Utah’s pesticide applicator licensure rules. Category 7 (Structural and Health-Related) is the license for anyone applying pesticides for hire in a Utah hospital."
+related_authorities:
+  - slug: esacc-bce-credential
+    why: "The professional credential distinct from, and above, state applicator licensure."
+  - slug: utah-r432-100-hospital-licensure
+    why: "The Utah hospital licensure rule that requires a pest-control program in the first place."
+  - slug: usda-7cfr110-rescission
+    why: "After the federal rescission, Utah’s own recordkeeping rules are the operative requirement for restricted-use pesticide records."
+  - slug: osha-hazard-communication
+    why: "Federal pesticide storage and SDS requirements that overlay state applicator licensure."
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal IPM framework that determines when a licensed applicator should be applying anything at all."
 ---
 
 ## Citation
@@ -125,10 +137,3 @@ HIGH confidence. R68-7 framework structure, applicator classifications, category
 
 - **"Utah pesticide applicator licensure is interchangeable with BCE professional credentialing."** Disconfirmed. State applicator licensure is the legal floor for pesticide application. BCE is a separate voluntary professional credential. The two confer different authorities and serve different purposes.
 - **"Category 7 certification authorizes pest management program design and oversight in healthcare facilities."** Disconfirmed. Category 7 authorizes commercial pesticide application within the structural and health-related category. Program design, oversight, and sign-off authority are professional credentialing functions (BCE) rather than applicator licensure functions.
-
-## Related Authorities
-
-- [ESACC Board Certified Entomologist (BCE) Credential](/authorities/esacc-bce-credential/) — the professional credential distinct from state applicator licensure
-- [Utah R432-100 Hospital Licensure](/authorities/utah-r432-100-hospital-licensure/) — the Utah hospital licensure framework that requires a pest-control program
-- [USDA Rescission of 7 CFR Part 110](/authorities/usda-7cfr110-rescission/) — post-rescission, state recordkeeping rules (including Utah) constitute the operative compliance framework for restricted-use pesticide records
-- [OSHA Hazard Communication Standard](/authorities/osha-hazard-communication/) — federal pesticide storage and SDS requirements that overlay state applicator licensure

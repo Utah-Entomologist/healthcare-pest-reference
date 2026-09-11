@@ -22,6 +22,16 @@ services_applicable:
   - quality assurance
   - reimbursement and value-based purchasing
 verbatim_available: true
+summary: "The primary-source cost figures: CDC and JAMA HAI cost estimates, one hospital’s documented bed bug response costs, and the Medicare payment programs a pest finding can touch."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The healthcare facility pest management standards whose absence produces the exposure quantified here."
+  - slug: cms-conditions-of-participation
+    why: "The federal regulatory framework underlying CMS Hospital Value-Based Purchasing authority."
+  - slug: cms-state-operations-manual
+    why: "The survey manual and A-tags under which a pest observation becomes a citation with these consequences."
+  - slug: apic-text-environmental-services
+    why: "The infection prevention framework that integrates pest management with broader HAI prevention."
 ---
 
 ## Citation
@@ -114,9 +124,3 @@ HIGH confidence on all component primary sources. Scott 2009 publication identif
 - **"Average hospital pest litigation cost is $75,000 to $250,000."** Disconfirmed as unsourced. No primary-source dataset exists on hospital pest litigation costs. Plaintiff firms specializing in pest litigation explicitly state there is no average. The published verdict universe is biased toward plaintiff wins, larger awards, and cases attorneys publish; hospital settlements are disproportionately under non-disclosure agreement.
 - **"Park La Brea $3.5 million settlement is healthcare pest litigation precedent."** Disconfirmed. Park La Brea (Los Angeles Superior Court, December 14, 2017, $3.5 million awarded across 16 plaintiffs in 8 multifamily housing units) was a multifamily housing case under landlord premises liability, not a healthcare case.
 - **"Sheele 2017 was published in PNAS."** Disconfirmed. Sheele 2017 was published in Infection Control and Hospital Epidemiology (ICHE) 38(5):623-624. The Proceedings of the National Academy of Sciences (PNAS) published a 2019 commentary by Scarpino and Althouse that derived per-infestation figures from Sheele 2017; the PNAS commentary is a secondary citation, not the primary data publication.
-
-## Related Authorities
-
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — healthcare facility pest management standards
-- [CMS Conditions of Participation](/authorities/cms-conditions-of-participation/) — federal regulatory framework underlying CMS Hospital VBP authority
-- [APIC Text Environmental Services](/authorities/apic-text-environmental-services/) — infection prevention framework integrating pest management with broader HAI prevention

@@ -16,6 +16,18 @@ facility_types_applicable:
 services_applicable:
   - all hospital services
 verbatim_available: true
+summary: "The Medicare regulation every participating hospital answers to. No explicit pest language; pest findings are cited by inference under the physical environment safety standard."
+related_authorities:
+  - slug: cms-state-operations-manual
+    why: "The interpretive guidance surveyors use to apply §482.41 and §482.42 during a validation survey, and the source of the A-tags on a Form 2567."
+  - slug: joint-commission-2026-pe-chapter
+    why: "For deemed-status hospitals accredited by The Joint Commission, the accreditor standards that stand in for a routine CMS survey."
+  - slug: dnv-gl-niaho-standards
+    why: "For DNV-accredited hospitals, the NIAHO standards that incorporate §482.41 by reference and add ISO 9001 quality management."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The standard of care surveyors reach for when the regulation itself is silent on pests; referenced in the §482.42 infection control guidance."
+  - slug: hai-cost-exposure-framing
+    why: "The Medicare payment programs, authorized under the same statute, through which a physical environment failure becomes a financial exposure."
 ---
 
 ## Citation

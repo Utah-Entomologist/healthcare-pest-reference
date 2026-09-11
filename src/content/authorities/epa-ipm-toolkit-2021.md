@@ -3,10 +3,12 @@ title: "EPA Integrated Pest Management in Health Care Facilities Toolkit (2021)"
 authority_type: "federal regulator"
 citation: "EPA Publication No. 907K21002, Integrated Pest Management in Health Care Facilities (July 2021)"
 last_verified: 2026-05-25
+seo_title: "EPA Integrated Pest Management in Health Care Facilities Toolkit (2021): Six-Step IPM Framework, Recordkeeping, Chemical Control Hierarchy — Source Currently Unavailable at EPA"
+meta_description: "The EPA Region 7 toolkit Integrated Pest Management in Health Care Facilities (Publication 907K21002, July 2021): the six-step IPM program structure, the recordkeeping passage, and the chemical control hierarchy, as verified May 25, 2026. The EPA landing page and PDF returned HTTP 404 on September 10, 2026 and the citation is marked as currently unavailable at its published location."
 date_published: 2026-05-26
 source_url: "https://www.epa.gov/ipm/integrated-pest-management-health-care-facilities-toolkit"
 source_tier: 1
-source_confidence: "HIGH"
+source_confidence: "MEDIUM"
 paywalled: false
 facility_types_applicable:
   - acute-care hospital
@@ -24,7 +26,23 @@ services_applicable:
   - facilities management
   - pest management program design
 verbatim_available: true
+summary: "The federal six-step IPM framework for healthcare facilities: goals, inspection, action thresholds, a strict intervention hierarchy with chemicals last, evaluation, and documentation. Source currently unavailable: the EPA landing page and PDF returned 404 on September 10, 2026."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The infection control recommendations the toolkit operationalizes, including the high-risk areas an IPM plan must name."
+  - slug: vha-directive-1850-02
+    why: "The federal VA-system equivalent, with mandatory IPMOP, a named program officer, and prior approval for patient-care-area applications."
+  - slug: osha-hazard-communication
+    why: "The documentation obligations for whatever pesticides remain after the IPM hierarchy is applied."
+  - slug: apic-text-environmental-services
+    why: "The Infection Preventionist’s practice reference, aligned with the toolkit’s expectation that pest management is infection prevention infrastructure."
+  - slug: utah-r68-7-pesticide-applicator
+    why: "State applicator licensure: who may lawfully carry out the chemical-control step in a Utah facility."
 ---
+
+## Source Availability
+
+**The cited EPA location no longer serves this document.** On September 10, 2026 both the toolkit landing page (the source URL above) and the PDF path https://www.epa.gov/system/files/documents/2021-09/ipm-toolkit-2021.pdf returned HTTP 404 from two independent fetch methods. This build (September 11, 2026) could not reach EPA or any web archive to locate a moved or archived copy. The passages quoted below were verified against the document at its EPA location on May 25, 2026 and are retained as verified on that date; the page's confidence rating has been lowered from HIGH to MEDIUM because the primary source cannot currently be re-verified at its published location. Until EPA restores the document or an archived copy is placed in this reference's primary-source archive, cite this authority as "EPA Publication No. 907K21002 (July 2021), as verified May 25, 2026; not available at epa.gov as of September 10, 2026." <span class="content-pending">[SOURCE UNAVAILABLE — EPA URL RETURNS 404 AS OF 2026-09-10]</span>
 
 ## Citation
 
@@ -83,12 +101,8 @@ Common deficiencies include: pest programs that are calendar-driven rather than 
 
 ## Confidence Notes
 
-HIGH confidence. Toolkit publication number, date, and key passages verified directly from EPA primary source. The toolkit is publicly available without paywall and reproducible.
+MEDIUM confidence as of September 11, 2026. Toolkit publication number, date, and key passages were verified directly from the EPA primary source on May 25, 2026. The document was publicly available without paywall on that date. The EPA landing page and PDF returned HTTP 404 on September 10, 2026 and could not be re-verified or located in an archive by the September 11, 2026 build; see Source Availability above. The rating returns to HIGH when the document is re-verified at an EPA or archived location.
 
 ## Related Killed Claims
 
 No fabricated claims about the EPA IPM Toolkit identified in foundation research.
-
-## Related Authorities
-
-The six-step IPM framework in this toolkit is operationally consistent with the IPM expectations referenced in HICPAC Section E.V., the VHA Directive 1850.02 IPMOP requirements, and most state-level school IPM regulations. The toolkit is the federal civilian framework; VHA Directive 1850.02 is the federal VA-system equivalent with additional patient-care-area restrictions.

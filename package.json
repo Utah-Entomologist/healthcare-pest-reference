@@ -12,13 +12,15 @@
     "postbuild": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "validate": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "astro": "^4.16.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@types/node": "^22.20.2",
     "schema-dts": "^2.0.0",
     "typescript": "^5.9.3"
   }

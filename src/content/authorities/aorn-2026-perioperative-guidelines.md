@@ -20,6 +20,18 @@ services_applicable:
   - infection prevention and control
 verbatim_available: false
 verbatim_paywall_note: "AORN Guidelines for Perioperative Practice verbatim text is published through AORN eGuidelines+, which is subscription-only (~$300–600 per individual annually; institutional licenses higher). Operational requirements referenced on this page are publicly summarized in AORN's Clinical FAQs, AORN Journal abstracts, and conference proceedings."
+summary: "Perioperative standard of care. Treats visible pest activity in an operating room or sterile processing as an immediate cleaning failure and expects OR leadership coordination."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "Names operating rooms among the high-risk areas requiring a pest control strategy."
+  - slug: joint-commission-2026-pe-chapter
+    why: "The accreditor standard governing perioperative environmental safety, where an OR pest observation is cited."
+  - slug: usp-797-sterile-compounding
+    why: "Sterile compounding standards with overlapping environmental requirements in operating room-adjacent pharmacy spaces."
+  - slug: fgi-guidelines-design-construction
+    why: "The facility design standard AORN references for perioperative space construction and pest exclusion."
+  - slug: apic-text-environmental-services
+    why: "The infection prevention practice reference that AORN environmental cleaning recommendations align with."
 ---
 
 ## Citation
@@ -109,9 +121,3 @@ MEDIUM confidence. AORN Guidelines for Perioperative Practice verbatim text is p
 
 - **"AORN guidelines explicitly prohibit pesticide application in operating rooms."** Partially disconfirmed. AORN does not contain an explicit pesticide application prohibition. However, the guideline's environmental control requirements create substantial operational restrictions that result in operational equivalence to prohibition during active perioperative use.
 - **"AORN requires Board Certified Entomologists to design perioperative pest management programs."** Disconfirmed. AORN does not address pest management credentialing. BCE-led perioperative pest management is the highest-rigor available approach, but AORN itself does not require any specific credential.
-
-## Related Authorities
-
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — names operating rooms among the high-risk areas requiring pest control strategy
-- [The Joint Commission 2026 PE Chapter](/authorities/joint-commission-2026-pe-chapter/) — accreditor standard governing perioperative environmental safety
-- [USP General Chapter <797>](/authorities/usp-797-sterile-compounding/) — sterile compounding standards with overlapping environmental requirements applicable in operating room-adjacent pharmacy spaces

@@ -282,6 +282,94 @@ declare module 'astro:content' {
   data: InferEntrySchema<"authorities">
 } & { render(): Render[".md"] };
 };
+"deficiencies": {
+"a-0700-physical-environment.md": {
+	id: "a-0700-physical-environment.md";
+  slug: "a-0700-physical-environment";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"a-0701-buildings.md": {
+	id: "a-0701-buildings.md";
+  slug: "a-0701-buildings";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"a-0722-facilities.md": {
+	id: "a-0722-facilities.md";
+  slug: "a-0722-facilities";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"a-0747-infection-prevention-and-control.md": {
+	id: "a-0747-infection-prevention-and-control.md";
+  slug: "a-0747-infection-prevention-and-control";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"a-0749-infection-prevention-and-control-program.md": {
+	id: "a-0749-infection-prevention-and-control-program.md";
+  slug: "a-0749-infection-prevention-and-control-program";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"a-0750-sanitary-environment.md": {
+	id: "a-0750-sanitary-environment.md";
+  slug: "a-0750-sanitary-environment";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"a-0758.md": {
+	id: "a-0758.md";
+  slug: "a-0758";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"ec-02-02-01-hazardous-materials-and-waste.md": {
+	id: "ec-02-02-01-hazardous-materials-and-waste.md";
+  slug: "ec-02-02-01-hazardous-materials-and-waste";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"ec-02-06-01-safe-functional-environment.md": {
+	id: "ec-02-06-01-safe-functional-environment.md";
+  slug: "ec-02-06-01-safe-functional-environment";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"pe-01-01-01-safe-adequate-environment.md": {
+	id: "pe-01-01-01-safe-adequate-environment.md";
+  slug: "pe-01-01-01-safe-adequate-environment";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"pe-02-01-01-hazardous-materials-and-waste.md": {
+	id: "pe-02-01-01-hazardous-materials-and-waste.md";
+  slug: "pe-02-01-01-hazardous-materials-and-waste";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+};
+"topics": {
+"pesticide-storage-requirements-healthcare-facilities.md": {
+	id: "pesticide-storage-requirements-healthcare-facilities.md";
+  slug: "pesticide-storage-requirements-healthcare-facilities";
+  body: string;
+  collection: "topics";
+  data: InferEntrySchema<"topics">
+} & { render(): Render[".md"] };
+};
 
 	};
 
