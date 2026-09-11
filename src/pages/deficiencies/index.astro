@@ -7,7 +7,7 @@ const entries = await getCollection('deficiencies');
 
 const regimeOrder = ['CMS', 'The Joint Commission', 'DNV', 'State'] as const;
 const regimeLabels: Record<string, string> = {
-  CMS: 'CMS survey tags (Form 2567 A-tags)',
+  CMS: 'CMS survey tags (Form CMS-2567 hospital A-tags and long-term care F-tags)',
   'The Joint Commission': 'Joint Commission standards and Elements of Performance',
   DNV: 'DNV NIAHO standards',
   State: 'State survey citations'
@@ -123,7 +123,10 @@ const pendingCount = entries.filter((e) => e.data.content_pending).length;
     the citation names a tag or an Element of Performance. These pages take each
     identifier in turn: what it enforces, what the surveyor was looking for, the
     documentation that closes the finding, where facilities usually fail, and the
-    elements a plan of correction has to address.
+    elements a plan of correction has to address. If you do not know which regime's
+    identifier applies to your facility, or the number on your paperwork is not
+    listed here, start at <a href="/deficiencies/which-tag-is-pest-control/">Which
+    tag is pest control?</a>
   </p>
 
   <p class="index-note">

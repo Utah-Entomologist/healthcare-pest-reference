@@ -1,22 +1,25 @@
 ---
 identifier: "A-0722"
-title: "Standard: Facilities"
-summary: "The tag for pest activity in food preparation and other service areas. Enforces §482.41(d): the hospital must maintain adequate facilities for its services."
+title: "Standard: Facilities (§482.41(d)), with A-0724"
+seo_title: "A-0722 and A-0724 (42 CFR §482.41(d)): Facilities, Supplies, and Equipment — Verbatim CMS Guidance and the Hospital Pest Finding in Food Service and Support Areas"
+meta_description: "A-0722 is the CMS hospital survey tag for 42 CFR §482.41(d), Standard: Facilities; A-0724 is its sub-tag for §482.41(d)(2), facilities, supplies, and equipment maintained for safety and quality. Verbatim regulation, Interpretive Guidelines, and Survey Procedures from Appendix A Rev. 238 (03-20-2026). The A-0724 guidance sentence on the condition of the physical plant is the closest hospital-side hook for a pest finding under the Physical Environment condition."
+summary: "The standard-level tag for §482.41(d), the hospital must maintain adequate facilities for its services, and its sub-tag A-0724 (§482.41(d)(2)), whose guidance on the condition of the physical plant and the safe storage of supplies is the closest hospital-side hook for a pest finding in food service and support areas. Verified in Rev. 238."
 regime: "CMS"
-citation: "42 CFR §482.41(d), cited on Form 2567 under A-0722 per CMS State Operations Manual, Appendix A (Rev. 238, 03-20-2026)"
-source_url: "https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-G/part-482/subpart-C/section-482.41"
+citation: "42 CFR §482.41(d) and §482.41(d)(2), cited on Form CMS-2567 under A-0722 and A-0724 per CMS State Operations Manual, Appendix A (Rev. 238; Issued 03-20-26; Effective 09-05-25)"
+source_url: "https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/downloads/som107ap_a_hospitals.pdf"
 source_tier: 1
-source_confidence: "MEDIUM"
+source_confidence: "HIGH"
 paywalled: false
-content_pending: true
-verification_status: "blocked"
-verification_note: "Tag existence and official title not re-verified against Appendix A Rev. 238 during the September 10, 2026 build: the CMS site was egress-blocked. Carried from this reference's Conditions of Participation and State Operations Manual pages (verified May 25, 2026). Hold until re-verified."
+content_pending: false
+verification_status: "confirmed"
+verification_note: "Confirmed against the full text of Appendix A Rev. 238 (Issued 03-20-26; 613 pages; MD5 cf26c249b3c544aaecf7e130bfc1a1d6) on September 11, 2026, read from the reference's primary-source archive. Regulation text matched against 42 CFR §482.41(d) in the eCFR XML of Part 482 (point-in-time 2026-09-08)."
+last_verified: 2026-09-11
 date_published: 2026-09-10
 governing_authorities:
   - slug: cms-conditions-of-participation
     why: "The regulation this tag enforces, with the full verbatim text of §482.41(d)."
   - slug: cms-state-operations-manual
-    why: "The surveyor manual that assigns A-0722 and that contains no pest-specific interpretive guidance."
+    why: "The surveyor manual that assigns A-0722 and A-0724 and that contains no pest-specific interpretive guidance."
   - slug: fda-food-code-2022
     why: "The state-adopted food code with an explicit four-part pest control section that a state food inspector applies to the same kitchen."
   - slug: nacmcf-1997-haccp-prerequisite
@@ -26,25 +29,70 @@ governing_authorities:
 related_deficiencies:
   - a-0701-buildings
   - a-0700-physical-environment
+  - a-0750-sanitary-environment
 ---
 
 ## Identifier and Official Title
 
-**A-0722** is the tag for **§482.41(d) Standard: Facilities.** The title is quoted from 42 CFR §482.41(d) as reproduced on this reference's [Conditions of Participation page](/authorities/cms-conditions-of-participation/).
+**A-0722** is the tag for **42 CFR §482.41(d)**. The heading as printed in Appendix A Rev. 238 reads, verbatim:
 
-**Verification status.** <span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — this tag's existence and official title in Appendix A Rev. 238 were not re-verified during the September 10, 2026 build; the CMS site was unreachable. The tag is carried from this reference's [Conditions of Participation page](/authorities/cms-conditions-of-participation/) (verified May 25, 2026). The operator's September 10, 2026 grep of Rev. 238 confirmed that hospital pest findings are cited under [A-0701](/deficiencies/a-0701-buildings/) and [A-0750](/deficiencies/a-0750-sanitary-environment/); it did not address this tag. Treat this page as provisional until the tag is re-verified.
+> A-0722
+> (Rev. 238; Issued: 03-20-26; Effective: 09-05-25; Implantation: 09-05-25)
+> §482.41(d) Standard: Facilities
+
+Its sub-tags are **A-0723** (§482.41(d)(1), "Diagnostic and therapeutic facilities must be located for the safety of patients.") and **A-0724** (§482.41(d)(2), quoted below). Verified against the full text of Rev. 238 on September 11, 2026.
 
 ## What It Enforces (Verbatim)
 
+The standard, as printed under A-0722 and identical to 42 CFR §482.41(d) in eCFR:
+
 > (d) **Standard: Facilities.** The hospital must maintain adequate facilities for its services.
 
-In survey practice this is the tag for pest activity in food preparation areas and other service spaces, where the finding is framed as a failure to maintain adequate facilities for the service being delivered rather than as a general physical-plant safety failure under A-0701. The regulation itself contains no pest language; the framing is the surveyor's.
+The paragraph tagged A-0724:
+
+> (2) Facilities, supplies, and equipment must be maintained to ensure an acceptable level of safety and quality.
+
+The regulation contains no pest language; "pest," "vermin," "rodent," "insect," and "infestation" do not appear anywhere in Part 482 or in Appendix A Rev. 238 (0 occurrences, measured). In survey practice §482.41(d) is where pest activity in food preparation areas and other service spaces is framed as a failure to maintain adequate, safe facilities for the service being delivered rather than as a general physical-plant failure under [A-0701](/deficiencies/a-0701-buildings/). The framing is the surveyor's.
+
+## A-0722 Interpretive Guidelines and Survey Procedures (Verbatim, Complete)
+
+> Interpretive Guidelines §482.41(d)
+>
+> Adequate facilities means the hospital has facilities that are:
+>
+> • Designed and maintained in accordance with Federal, State and local laws, regulations and guidelines; and
+>
+> • Designed and maintained to reflect the scope and complexity of the services it offers in accordance with accepted standards of practice.
+>
+> Survey Procedures §482.41(d)
+>
+> • Observe the facility layout and determine if the patient's needs are met. Toilets, sinks, specialized equipment, etc. should be accessible.
+>
+> • Review the facility's water supply and distribution system to ensure that the water quality is acceptable for its intended use (drinking water, irrigation water, lab water, etc.). Review the facility water quality monitoring and, as appropriate, treatment system.
+
+"Designed and maintained in accordance with Federal, State and local laws, regulations and guidelines" is the sentence that pulls the state-adopted [FDA Food Code](/authorities/fda-food-code-2022/) and its pest control section into a hospital kitchen finding.
+
+## A-0724 Interpretive Guidelines (Verbatim, the Facilities and Supplies Passages)
+
+> Interpretive Guidelines §482.41(d)(2)
+>
+> Facilities
+>
+> The hospital must ensure that the condition of the physical plant and overall hospital environment is developed and maintained in a manner that provides an acceptable level of safety and well-being of patients, staff and visitors.
+>
+> Supplies
+>
+> The hospital must ensure that supplies are maintained to provide an acceptable level of safety and quality for patients. [...]
+>
+> Supplies must be stored in such a manner to ensure their safety (e.g., protection against theft or damage, contamination, or deterioration), as well as that the storage practices do not violate fire codes or otherwise endanger patients (e.g., storage of flammables, blocking passageways, storage of contaminated or dangerous materials, safe storage practices for poisons, etc.).
+
+The rest of the A-0724 guidance concerns equipment maintenance and Alternate Equipment Management programs and is not pest-relevant. The "condition of the physical plant ... safety and well-being" sentence (which also appears, in slightly different form, under A-0701) is the closest hospital-side hook for a pest finding under the Physical Environment condition; the supplies passage is where pest-contaminated stock in a storeroom is written.
 
 ## What the Surveyor Is Looking For
 
 In dietary and food service the surveyor's observation is usually specific: droppings in dry storage, cockroach evidence at floor-wall junctions or behind equipment, flies at a receiving door, gnaw marks on packaging. The surveyor then looks for the four things the FDA Food Code requires of any food establishment, because the state food inspector will look for the same four: routine inspection of incoming shipments, routine inspection of the premises, documented methods when pests are found, and elimination of harborage conditions.
 
-The hospital's own kitchen inspection logs, the pest vendor's service records for the kitchen, and the dietary manager's account of what happened after the last observation are the evidence the surveyor weighs.
+The hospital's own kitchen inspection logs, the pest vendor's service records for the kitchen, and the dietary manager's account of what happened after the last observation are the evidence the surveyor weighs. Note that hospital dietary services also carry their own condition, §482.28, whose Appendix A guidance (tag A-0618) expects written policies covering "Guidelines for kitchen sanitation" and "Integration of the food and dietetic service into the hospital-wide QAPI and Infection Control programs"; a kitchen pest finding may be written there as well.
 
 ## Documentation That Satisfies It
 
@@ -52,6 +100,7 @@ The hospital's own kitchen inspection logs, the pest vendor's service records fo
 - Kitchen self-inspection logs with pest evidence as a line item
 - Pest vendor service records for dietary showing inspection, sanitation, exclusion, and mechanical controls as well as any chemical application, with products selected for food-service use
 - Work orders closing harborage and entry conditions (floor drains, wall penetrations, door seals, equipment gaps)
+- Supply-storage inspection records showing stock protected against contamination, which is what the A-0724 guidance asks for
 - The HACCP prerequisite program documentation, where the kitchen runs HACCP
 - Coordination records between dietary, environmental services, and the pest vendor
 
@@ -64,18 +113,26 @@ The hospital's own kitchen inspection logs, the pest vendor's service records fo
 
 ## Plan of Correction: What It Must Address
 
-A plan of correction is written on the Form 2567 opposite each cited deficiency and is the hospital's own document. The elements below are the structure CMS reviewers evaluate an acceptable plan against; they are not a template, and the plan is not acceptable simply because it has five headings.
+Appendix A's own survey protocol (Rev. 238, exit-conference instructions) tells surveyors to:
 
-1. **Correction for what was found.** What was done about the specific condition the surveyor observed, and when. For a pest finding this is the remediation of the observed activity and the harborage that produced it, with the service records that prove it.
-2. **Identification of others affected.** How the hospital determined whether the same condition exists elsewhere. For pest activity this is the inspection of comparable areas, not only the room the surveyor entered.
-3. **Systemic change.** What changed in the program so the condition does not recur: the written pest management plan, action thresholds, exclusion repairs, vendor scope, infection prevention coordination, or training.
-4. **Monitoring.** How performance will be tracked and who reviews it, at what frequency, and where the results are reported. Trend reports reviewed by a named committee are the usual evidence.
-5. **Completion dates.** A date for each corrective action. The State Survey Agency verifies the plan on a revisit or by desk review.
+> Inform the facility that a written plan of correction must be submitted to the survey agency within 10 calendar days following receipt of the written statement of deficiencies.
 
-The plan is due within the period stated on the Form 2567 transmittal; this reference's methodology page notes that the 10-calendar-day submission deadline comes from the State Operations Manual, Exhibit 152, and that the 60-day period in 42 CFR §488.28 is the compliance expectation, not the submission deadline. Confirm both against the transmittal letter for the specific survey.
+and to explain the required characteristics of a plan of correction, which the protocol lists verbatim as:
 
-<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — verbatim plan-of-correction criteria from the State Operations Manual, Chapter 7, could not be fetched from cms.gov during the September 10, 2026 build and are not transcribed. The five elements above are presented as structure at MEDIUM confidence; see Confidence Notes.
+> Corrective action to be taken for each individual affected by the deficient practice, including any system changes that must be made;
+>
+> • The position of the person who will monitor the corrective action and the frequency of monitoring;
+>
+> • Dates each corrective action will be completed;
+>
+> • The administrator or appropriate individual must sign and date the Form CMS-2567 before returning it to the survey agency; and
+>
+> • The submitted plan of correction must meet the approval of the State agency, or in some cases the CMS Regional Office for it to be acceptable.
+
+The protocol's post-survey section adds that 42 CFR 488.28(a) allows certification with deficiencies "only if the facility has submitted an acceptable plan of Correction [POC] for achieving compliance within a reasonable period of time acceptable to the Secretary," and that "After a POC is submitted, the surveying entity makes the determination of the appropriateness of the POC."
+
+For a kitchen or storeroom pest finding the plan has to show: remediation of the observed activity and the harborage that produced it, with the service records; inspection of the other food and supply areas; the system change (receiving inspection, thresholds, a route from dietary to the vendor, harborage work orders, disposal of contaminated stock); the position that monitors it and how often; and a completion date for each action. The structure is not a template, and the surveying entity decides whether the plan is acceptable.
 
 ## Confidence Notes
 
-MEDIUM confidence. The verbatim regulation text is carried from this reference's Conditions of Participation page, verified against eCFR on May 25, 2026. The A-tag assignment is carried from that page and from the State Operations Manual page. The Food Code and HACCP framing is carried from those authority pages. The plan-of-correction structure has not been re-verified against State Operations Manual Chapter 7 during this build and is marked accordingly.
+HIGH confidence. The tag headings, regulation text, Interpretive Guidelines, and Survey Procedures are transcribed from Appendix A Rev. 238 (Issued 03-20-26), read in full from the reference's archived copy of the CMS PDF on September 11, 2026. The regulation text was matched against the eCFR XML of 42 CFR Part 482. The Food Code and HACCP framing is carried from those authority pages. The description of survey practice is the reference's characterization, not CMS text.

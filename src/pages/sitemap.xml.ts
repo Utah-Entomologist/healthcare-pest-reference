@@ -21,6 +21,7 @@ export const GET: APIRoute = async () => {
     { url: '/', priority: '1.0', changefreq: 'monthly', sources: ['src/pages/index.astro'] },
     { url: '/authorities/', priority: '0.9', changefreq: 'monthly', sources: ['src/pages/authorities/index.astro', 'src/content/authorities'] },
     { url: '/deficiencies/', priority: '0.9', changefreq: 'monthly', sources: ['src/pages/deficiencies/index.astro', 'src/content/deficiencies'] },
+    { url: '/deficiencies/which-tag-is-pest-control/', priority: '0.8', changefreq: 'monthly', sources: ['src/pages/deficiencies/which-tag-is-pest-control.astro'] },
     { url: '/topics/', priority: '0.6', changefreq: 'monthly', sources: ['src/pages/topics/index.astro', 'src/content/topics'] },
     { url: '/about/', priority: '0.7', changefreq: 'yearly', sources: ['src/pages/about.astro'] },
     { url: '/methodology/', priority: '0.7', changefreq: 'yearly', sources: ['src/pages/methodology.astro'] },

@@ -74,6 +74,18 @@ const crumbs: Crumb[] | undefined = breadcrumbs
 
   <!-- is:global: these rules style slotted page and Markdown content (main h1, main p, blockquote…), which Astro's default scoping would not reach. -->
   <style is:global>
+    /* Marker for primary-source text that is pending, blocked, or unavailable. Used on every layout. */
+    .content-pending {
+      display: inline-block;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+      font-size: 0.82rem;
+      color: var(--color-warning);
+      background: var(--color-bg-subtle);
+      padding: 0.2em 0.5em;
+      border: 1px dashed var(--color-warning);
+      border-radius: 2px;
+    }
+
     /* Metric-adjusted fallbacks: when the web font is not used, these keep line
        boxes the same size so a late font (or none) cannot shift layout. */
     @font-face {
