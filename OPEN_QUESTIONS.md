@@ -1,7 +1,98 @@
 # Open Questions
 
-Two runs are logged here. Run 2 items (September 10, 2026) are first; Run 1
-items follow and remain open unless marked otherwise.
+Three runs are logged here, newest first. Items remain open unless marked
+otherwise.
+
+---
+
+# Run 3 — September 10, 2026 (verification and crawl)
+
+## Merge blocker
+
+### R3-1. Four A-tags could not be re-verified against Appendix A; PR #2 is held
+
+Every primary-source host (cms.gov, ecfr.gov, jointcommission.org, va.gov,
+federalregister.gov, govinfo.gov, api.indexnow.org, web.archive.org) was
+egress-blocked, and no copy of the Appendix A PDF exists in the connected
+Google Drive. Under the Run 3 rule the build did not proceed on memory.
+
+Status of every tag asserted in the deficiency section:
+
+| Tag | Status | Basis |
+| --- | --- | --- |
+| A-0701 | Confirmed | Operator's grep of Rev. 238, 2026-09-10 (exists; §482.41(a); pest findings cited here) |
+| A-0750 | Confirmed | Same grep (exists; §482.42(a)(3); pest findings cited here). Page citation corrected from "§482.42" to "§482.42(a)(3)". |
+| A-0758 | Does not exist | Same grep (sequence A-0750 → A-0751 → A-0760). Correction page built at `/deficiencies/a-0758/`. |
+| A-0700 | Blocked | Carried from the CoP page (verified 2026-05-25); not re-verified. Page marked. |
+| A-0722 | Blocked | Same. |
+| A-0747 | Blocked | Same. |
+| A-0749 | Blocked, premise withdrawn | The 2016-archive bullet and the Rev. 238 zero-match are verified (SOM page). The page's former description of A-0749 as "the §482.42(a) tag" was not verified and has been removed; current subject not asserted. |
+| PE.01.01.01, PE.02.01.01 EP 4, EC.02.06.01, EC.02.02.01 EP 5 | Blocked | Carried from the 2026 PE chapter page (TJC public FAQ, verified 2026-05-25); jointcommission.org not reachable. |
+
+What the operator needs to do before merging PR #2 (with PR #3 applied):
+open the Rev. 238 PDF and confirm, for A-0700, A-0722, A-0747, and
+A-0749, that the tag exists and what its title line says; then set
+`verification_status: "confirmed"` and a `verification_note` on each
+page, or delete the page if the tag does not exist. Also transcribe the
+A-0701 and A-0750 title lines and the §482.42(a)(3) text into the A-0758,
+A-0701, and A-0750 pages and clear their blocked markers. Estimated time:
+under thirty minutes with the PDF open.
+
+### R3-2. What A-0751 and A-0760 cover
+
+The A-0758 correction page names the two adjacent tags because the grep
+established the sequence, but does not say what they cover. Add one line
+each from the PDF if useful to a reader holding a mistyped citation.
+
+## Verification items
+
+### R3-3. VHA Directive 1850.02 currency
+
+The directive's active period (through 2027-12-22, subject to
+recertification) is stated in the body. A currency re-check against va.gov
+was blocked. The page now says so. Re-check when egress permits or by hand.
+
+### R3-4. FIFRA §136j(a)(2)(G), 29 CFR 1910.151(c), 40 CFR §156.10
+
+Still cited-not-refetched on the pesticide storage page; markers changed
+from "pending" to "[VERIFICATION BLOCKED — EGRESS]" where egress was the
+cause. Same operator action as Run 2 item R2-2.
+
+### R3-5. Form CMS-2567 layout description
+
+The A-0758 page describes the form's columns (ID Prefix Tag, summary
+statement, provider's plan of correction, completion date) from the
+standard form. Not re-fetched; marked. Confirm against a current form.
+
+## Crawl and measurement
+
+### R3-6. IndexNow submission has never run
+
+`npm run indexnow` posts changed URLs (git-derived lastmod within
+`INDEXNOW_DAYS`, default 2) when `INDEXNOW_ENABLED=1`. It has not run from
+this environment (api.indexnow.org blocked) and is not wired into the
+Cloudflare build command. To enable: set `INDEXNOW_ENABLED=1` on the
+Production environment only and change the build command to
+`npm run build && npm run indexnow`. Run it once by hand with `--all` after
+the soft-404 fix deploys. Expect 403 until the key file is served as
+`text/plain` at the apex, which depends on the 404 fix.
+
+### R3-7. Core Web Vitals fix needs field confirmation
+
+Fonts now load with `display=optional` and metric-adjusted local fallbacks;
+the nav, header row, and verification badge reserve their height. This
+removes the font-swap shift Cloudflare attributed to those elements, at the
+cost that first-visit renders may use the fallback fonts. Re-read the CLS
+report after 28 days; if "poor" persists, the remaining source is something
+this run could not observe from a static build.
+
+### R3-8. HAI page "unknown to Google"
+
+The sitemap entry is well-formed, matches the page canonical exactly
+(trailing slash), carries a valid lastmod, and the page returns 200 with a
+self-canonical. The validator now fails the build if any of those drift.
+Nothing structural remains; the URL should resolve on Google's next sitemap
+read. If it does not within two weeks, request indexing by hand.
 
 ---
 

@@ -9,6 +9,8 @@ source_tier: 1
 source_confidence: "MEDIUM"
 paywalled: false
 content_pending: true
+verification_status: "blocked"
+verification_note: "Tag existence and official title not re-verified against Appendix A Rev. 238 during the September 10, 2026 build: the CMS site was egress-blocked. Carried from this reference's Conditions of Participation and State Operations Manual pages (verified May 25, 2026). Hold until re-verified."
 date_published: 2026-09-10
 governing_authorities:
   - slug: cms-conditions-of-participation
@@ -29,6 +31,8 @@ related_deficiencies:
 ## Identifier and Official Title
 
 **A-0722** is the tag for **§482.41(d) Standard: Facilities.** The title is quoted from 42 CFR §482.41(d) as reproduced on this reference's [Conditions of Participation page](/authorities/cms-conditions-of-participation/).
+
+**Verification status.** <span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — this tag's existence and official title in Appendix A Rev. 238 were not re-verified during the September 10, 2026 build; the CMS site was unreachable. The tag is carried from this reference's [Conditions of Participation page](/authorities/cms-conditions-of-participation/) (verified May 25, 2026). The operator's September 10, 2026 grep of Rev. 238 confirmed that hospital pest findings are cited under [A-0701](/deficiencies/a-0701-buildings/) and [A-0750](/deficiencies/a-0750-sanitary-environment/); it did not address this tag. Treat this page as provisional until the tag is re-verified.
 
 ## What It Enforces (Verbatim)
 
@@ -70,7 +74,7 @@ A plan of correction is written on the Form 2567 opposite each cited deficiency 
 
 The plan is due within the period stated on the Form 2567 transmittal; this reference's methodology page notes that the 10-calendar-day submission deadline comes from the State Operations Manual, Exhibit 152, and that the 60-day period in 42 CFR §488.28 is the compliance expectation, not the submission deadline. Confirm both against the transmittal letter for the specific survey.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — verbatim plan-of-correction criteria from the State Operations Manual, Chapter 7, have not been transcribed from the primary source during this build. The five elements above are presented as structure at MEDIUM confidence; see Confidence Notes.
+<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — verbatim plan-of-correction criteria from the State Operations Manual, Chapter 7, could not be fetched from cms.gov during the September 10, 2026 build and are not transcribed. The five elements above are presented as structure at MEDIUM confidence; see Confidence Notes.
 
 ## Confidence Notes
 

@@ -144,7 +144,8 @@ const pendingCount = entries.filter((e) => e.data.content_pending).length;
             <span class="tag-id">{entry.data.identifier}</span>
             <a class="tag-title" href={`/deficiencies/${entry.slug}/`}>{entry.data.title}</a>
             {entry.data.summary && <p class="tag-summary">{entry.data.summary}</p>}
-            {entry.data.content_pending && <span class="tag-pending">Primary-source text pending</span>}
+            {entry.data.verification_status === 'blocked' && <span class="tag-pending">Identifier not re-verified this build (egress blocked)</span>}
+            {entry.data.verification_status !== 'blocked' && entry.data.content_pending && <span class="tag-pending">Primary-source text pending</span>}
           </li>
         ))}
       </ul>

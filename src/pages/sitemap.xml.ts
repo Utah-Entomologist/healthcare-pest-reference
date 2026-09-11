@@ -1,11 +1,13 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { lastModified } from '../lib/dates';
+import { lastModified, repoLastCommitDate } from '../lib/dates';
 
 /**
  * lastmod policy: the last git commit touching the page's source file(s),
  * falling back to the latest frontmatter date. Never the build time.
- * /unsubscribe/ is deliberately excluded: it is a utility page marked noindex.
+ * /unsubscribe/ and /404/ are deliberately excluded: utility pages marked noindex.
+ *
+ * Every <loc> ends with a trailing slash, matching the canonical each page emits.
  */
 export const GET: APIRoute = async () => {
   const site = 'https://healthcarepestreference.org';
@@ -24,7 +26,7 @@ export const GET: APIRoute = async () => {
     { url: '/methodology/', priority: '0.7', changefreq: 'yearly', sources: ['src/pages/methodology.astro'] },
     { url: '/consulting/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/consulting.astro'] },
     { url: '/register/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/register.astro'] }
-  ].map((page) => ({ ...page, lastmod: lastModified(page.sources) }));
+  ].map((page) => ({ ...page, lastmod: lastModified(page.sources) ?? repoLastCommitDate() }));
 
   const authorityPages = authorities.map((entry) => ({
     url: `/authorities/${entry.slug}/`,

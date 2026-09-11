@@ -1,14 +1,16 @@
 ---
 identifier: "A-0750"
-title: "Sanitary Environment and Active Infection Prevention Program (§482.42)"
+title: "Sanitary Environment (§482.42(a)(3))"
 summary: "The tag that carries the only sanitation language in the current Appendix A: the hospital must provide a sanitary environment and an active program for the prevention, control, and investigation of infections. Pest control is not named."
 regime: "CMS"
-citation: "42 CFR §482.42, cited on Form 2567 under A-0750 per CMS State Operations Manual, Appendix A (Rev. 238, 03-20-2026)"
+citation: "42 CFR §482.42(a)(3), cited on Form 2567 under A-0750 per CMS State Operations Manual, Appendix A (Rev. 238, 03-20-2026)"
 source_url: "https://www.cms.gov/Regulations-and-Guidance/Guidance/Manuals/downloads/som107ap_a_hospitals.pdf"
 source_tier: 1
 source_confidence: "MEDIUM"
 paywalled: false
 content_pending: true
+verification_status: "confirmed"
+verification_note: "Confirmed by the operator's grep of Appendix A Rev. 238 (03-20-2026) on September 10, 2026; not independently re-fetched by this build because the CMS site was egress-blocked."
 date_published: 2026-09-10
 governing_authorities:
   - slug: cms-state-operations-manual
@@ -27,9 +29,9 @@ related_deficiencies:
 
 ## Identifier and Official Title
 
-**A-0750** is a tag under **§482.42** and carries, in the current Appendix A, the sanitary-environment language quoted below.
+**A-0750** is the tag for **§482.42(a)(3)**, the sanitary-environment provision of the infection prevention and control condition. The operator's grep of Appendix A Rev. 238 (03-20-2026) on September 10, 2026 confirmed the tag, its mapping to §482.42(a)(3), and that hospital pest findings are cited under A-0750 and [A-0701](/deficiencies/a-0701-buildings/).
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — the official tag title as printed in Appendix A Rev. 238 to be transcribed from the primary source.
+<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — the official tag title line as printed in Appendix A Rev. 238 could not be fetched by this build and is not transcribed here.
 
 ## What It Enforces (Verbatim, from Appendix A Rev. 238)
 
@@ -39,7 +41,7 @@ The following is the only sanitation language in the entire 613-page Appendix A,
 
 Pest control is not named. A pest finding cited to A-0750 is a finding that the environment is not sanitary, or that the active program did not prevent, control, or investigate a source of infection, with pest activity as the source.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — the corresponding verbatim text of 42 CFR §482.42 to be transcribed from eCFR.
+<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — the verbatim text of 42 CFR §482.42(a)(3) could not be fetched by this build (eCFR egress-blocked) and is not transcribed here.
 
 ## What the Surveyor Is Looking For
 
@@ -71,8 +73,8 @@ A plan of correction is written on the Form 2567 opposite each cited deficiency 
 
 The plan is due within the period stated on the Form 2567 transmittal; this reference's methodology page notes that the 10-calendar-day submission deadline comes from the State Operations Manual, Exhibit 152, and that the 60-day period in 42 CFR §488.28 is the compliance expectation, not the submission deadline. Confirm both against the transmittal letter for the specific survey.
 
-<span class="content-pending">[CONTENT PENDING — OPERATOR SOURCE REQUIRED]</span> — verbatim plan-of-correction criteria from the State Operations Manual, Chapter 7, have not been transcribed from the primary source during this build. The five elements above are presented as structure at MEDIUM confidence; see Confidence Notes.
+<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — verbatim plan-of-correction criteria from the State Operations Manual, Chapter 7, could not be fetched from cms.gov during the September 10, 2026 build and are not transcribed. The five elements above are presented as structure at MEDIUM confidence; see Confidence Notes.
 
 ## Confidence Notes
 
-MEDIUM confidence. The Appendix A quotation and the finding that it is the manual's only sanitation language are carried from this reference's State Operations Manual page, verified by full-document extraction of Rev. 238 on May 25, 2026. The official tag title and the verbatim text of §482.42 have not been transcribed and are marked pending. The plan-of-correction structure has not been re-verified against State Operations Manual Chapter 7 during this build and is marked accordingly.
+MEDIUM confidence. The Appendix A quotation and the finding that it is the manual's only sanitation language are carried from this reference's State Operations Manual page, verified by full-document extraction of Rev. 238 on May 25, 2026. The tag's existence and its mapping to §482.42(a)(3) were confirmed by the operator's grep of Rev. 238 on September 10, 2026. The official tag title line and the verbatim text of §482.42(a)(3) could not be fetched by this build and are marked blocked. The plan-of-correction structure has not been re-verified against State Operations Manual Chapter 7 during this build and is marked accordingly.

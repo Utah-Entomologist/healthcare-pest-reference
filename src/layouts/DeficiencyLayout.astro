@@ -32,6 +32,8 @@ const {
   source_confidence,
   paywalled,
   content_pending,
+  verification_status,
+  verification_note,
   superseded_by,
   supersedes,
   last_verified,
@@ -128,6 +130,14 @@ const article = articleSchema({
         </>
       )}
 
+      <dt>Identifier Verification</dt>
+      <dd>
+        {verification_status === 'confirmed' && <span class="confidence-high">Confirmed against the primary source</span>}
+        {verification_status === 'blocked' && <span class="verification-blocked">[VERIFICATION BLOCKED — EGRESS]</span>}
+        {verification_status === 'correction' && <span class="confidence-high">Correction of the public record</span>}
+        {verification_note && <span class="verification-note"> {verification_note}</span>}
+      </dd>
+
       <dt>Last Verified</dt>
       <dd>{last_verified ? formatDate(last_verified) : NOT_RECORDED}</dd>
     </dl>
@@ -196,6 +206,20 @@ const article = articleSchema({
     padding: 0.2em 0.5em;
     border: 1px dashed var(--color-warning);
     border-radius: 2px;
+  }
+
+  .verification-blocked {
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.82rem;
+    color: var(--color-warning);
+    font-weight: 600;
+  }
+
+  .verification-note {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.84rem;
   }
 
   .related-deficiencies ul {

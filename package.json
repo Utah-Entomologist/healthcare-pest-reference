@@ -12,7 +12,8 @@
     "postbuild": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "validate": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "astro": "^4.16.0"
