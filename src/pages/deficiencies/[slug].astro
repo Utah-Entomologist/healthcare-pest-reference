@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import DeficiencyLayout from '../../layouts/DeficiencyLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('deficiencies');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<DeficiencyLayout entry={entry}>
+  <Content />
+</DeficiencyLayout>

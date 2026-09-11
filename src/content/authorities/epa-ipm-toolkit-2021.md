@@ -24,6 +24,18 @@ services_applicable:
   - facilities management
   - pest management program design
 verbatim_available: true
+summary: "The federal six-step IPM framework for healthcare facilities: goals, inspection, action thresholds, a strict intervention hierarchy with chemicals last, evaluation, and documentation."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The infection control recommendations the toolkit operationalizes, including the high-risk areas an IPM plan must name."
+  - slug: vha-directive-1850-02
+    why: "The federal VA-system equivalent, with mandatory IPMOP, a named program officer, and prior approval for patient-care-area applications."
+  - slug: osha-hazard-communication
+    why: "The documentation obligations for whatever pesticides remain after the IPM hierarchy is applied."
+  - slug: apic-text-environmental-services
+    why: "The Infection Preventionist’s practice reference, aligned with the toolkit’s expectation that pest management is infection prevention infrastructure."
+  - slug: utah-r68-7-pesticide-applicator
+    why: "State applicator licensure: who may lawfully carry out the chemical-control step in a Utah facility."
 ---
 
 ## Citation
@@ -88,7 +100,3 @@ HIGH confidence. Toolkit publication number, date, and key passages verified dir
 ## Related Killed Claims
 
 No fabricated claims about the EPA IPM Toolkit identified in foundation research.
-
-## Related Authorities
-
-The six-step IPM framework in this toolkit is operationally consistent with the IPM expectations referenced in HICPAC Section E.V., the VHA Directive 1850.02 IPMOP requirements, and most state-level school IPM regulations. The toolkit is the federal civilian framework; VHA Directive 1850.02 is the federal VA-system equivalent with additional patient-care-area restrictions.

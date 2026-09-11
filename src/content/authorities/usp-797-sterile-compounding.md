@@ -22,6 +22,18 @@ services_applicable:
   - environmental cleaning and disinfection
 verbatim_available: false
 verbatim_paywall_note: "USP General Chapter <797> verbatim text is published in the United States Pharmacopeia–National Formulary (USP-NF), which is subscription-only ($1,000+/year for institutional access). Effective date (November 1, 2023) and operational requirements are publicly verifiable through USP FAQ documents and state pharmacy board adoption materials."
+summary: "Sterile compounding environmental standards. No pest language, but any pest evidence in a classified space is a contamination event, and pesticide application inside one is effectively barred."
+related_authorities:
+  - slug: usp-800-hazardous-drugs
+    why: "Companion chapter for hazardous drug areas, with overlapping containment and decontamination requirements that constrain pest management the same way."
+  - slug: osha-hazard-communication
+    why: "Safety Data Sheet and labeling requirements for any pesticide stored near or used around compounding areas."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "Names central sterile-supply areas among the high-risk zones a pest control strategy must cover."
+  - slug: fgi-guidelines-design-construction
+    why: "The design standard <797> relies on for compounding facility construction, including the junction sealing and surface requirements that exclude pests."
+  - slug: aorn-2026-perioperative-guidelines
+    why: "Perioperative environmental standards for the operating room-adjacent spaces where sterile preparations are used."
 ---
 
 ## Citation
@@ -105,9 +117,3 @@ MEDIUM confidence. USP General Chapter <797> verbatim text is paywalled in the U
 
 - **"USP <797> explicitly prohibits pesticide application in classified compounding areas."** Partially disconfirmed. USP <797> does not contain an explicit prohibition on pesticide application. However, the chapter's environmental cleanliness requirements create substantial practical restrictions that result in operational equivalence to prohibition in most compounding facilities.
 - **"USP <797> requires pharmacy compounding facilities to contract with Board Certified Entomologists."** Disconfirmed. USP <797> does not address pest management credentialing. The BCE credential is the highest-rigor available answer to compounding-area pest management complexity, but USP <797> itself does not require any specific credential.
-
-## Related Authorities
-
-- [USP General Chapter <800> — Hazardous Drugs](/authorities/usp-800-hazardous-drugs/) — companion chapter addressing hazardous drug handling, with overlapping environmental requirements
-- [OSHA Hazard Communication Standard](/authorities/osha-hazard-communication/) — pesticide SDS requirements applicable in pharmacy compounding contexts
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — healthcare facility pest management standards referenced as standard of care by pharmacy accreditation

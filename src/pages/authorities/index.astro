@@ -4,6 +4,7 @@ import { SITE_URL } from '../../lib/site';
 import { getCollection } from 'astro:content';
 
 const authorities = await getCollection('authorities');
+const bySlug = new Map<string, (typeof authorities)[number]>(authorities.map((a) => [a.slug, a]));
 
 const grouped = authorities.reduce((acc, authority) => {
   const type = authority.data.authority_type;
@@ -26,15 +27,151 @@ const typeLabels: Record<string, string> = {
   'recognized authority': 'Recognized Authorities'
 };
 
+const typeOrientation: Record<string, string> = {
+  'federal regulator':
+    'Binding on every facility in their scope. CMS and OSHA are enforced by survey and inspection; CDC, EPA, FDA, and USDA material becomes binding through adoption or by reference in survey guidance.',
+  'accrediting body':
+    'Binding on hospitals that hold the accreditation. For deemed-status hospitals, the accreditor survey stands in for the routine CMS survey, so these standards are where a pest observation is usually first written up.',
+  'state regulator':
+    'Binding within the state. Hospital licensure rules set the facility obligation; pesticide control rules set who may apply what. Utah is the depth prototype; other states follow the same two-part pattern.',
+  'recognized authority':
+    'Not regulations. Standards of care that surveyors, infection preventionists, and counsel measure against when the regulation itself is silent, which for pest control is most of the time.'
+};
+
+/**
+ * "Which regime governs me": the situation a reader is in, mapped to the
+ * authorities that apply. Every slug is validated below so the hub can never
+ * link to a page that does not exist.
+ */
+const situations: { situation: string; slugs: string[]; note: string }[] = [
+  {
+    situation: 'Any hospital that bills Medicare',
+    slugs: ['cms-conditions-of-participation', 'cms-state-operations-manual'],
+    note: 'The Conditions of Participation are the floor. Appendix A is how a state surveyor applies them, and where the A-tags on a Form 2567 come from.'
+  },
+  {
+    situation: 'Hospital accredited by The Joint Commission',
+    slugs: ['joint-commission-2026-pe-chapter'],
+    note: 'Pest activity is cited under PE.01.01.01; pesticide storage and Safety Data Sheet deficiencies under PE.02.01.01 EP 4.'
+  },
+  {
+    situation: 'Hospital accredited by DNV',
+    slugs: ['dnv-gl-niaho-standards'],
+    note: 'Same substantive expectations as The Joint Commission, surveyed annually, with ISO 9001 quality-management documentation on top.'
+  },
+  {
+    situation: 'Any facility with a pesticide on the premises',
+    slugs: ['osha-hazard-communication', 'epa-ipm-toolkit-2021', 'utah-r68-7-pesticide-applicator'],
+    note: 'HazCom governs the container on the shelf; the EPA toolkit governs whether it should be there; state rules govern who may apply it.'
+  },
+  {
+    situation: 'Dietary, cafeteria, or any food service',
+    slugs: ['fda-food-code-2022', 'nacmcf-1997-haccp-prerequisite'],
+    note: 'The state-adopted Food Code has an explicit pest control section. If the kitchen runs HACCP, pest control is a named prerequisite program.'
+  },
+  {
+    situation: 'Pharmacy compounding or hazardous drug handling',
+    slugs: ['usp-797-sterile-compounding', 'usp-800-hazardous-drugs'],
+    note: 'Neither chapter mentions pests. Both make pest evidence a contamination event and pesticide application inside a classified space effectively impossible.'
+  },
+  {
+    situation: 'Operating rooms and sterile processing',
+    slugs: ['aorn-2026-perioperative-guidelines', 'fgi-guidelines-design-construction'],
+    note: 'AORN is the perioperative standard of care; FGI is the design standard that determines how well the space excludes pests to begin with.'
+  },
+  {
+    situation: 'Infection prevention program design or audit',
+    slugs: ['cdc-hicpac-environmental-guidelines', 'apic-text-environmental-services', 'epa-ipm-toolkit-2021'],
+    note: 'HICPAC is the federal standard of care; the APIC Text is the Infection Preventionist’s working reference; the EPA toolkit is the program structure.'
+  },
+  {
+    situation: 'Utah-licensed hospital',
+    slugs: ['utah-r432-100-hospital-licensure', 'utah-r68-7-pesticide-applicator'],
+    note: 'Utah is one of the few states with an explicit “free from vermin and rodents” licensure requirement, plus its own applicator licensure rule.'
+  },
+  {
+    situation: 'VA medical facility',
+    slugs: ['vha-directive-1850-02'],
+    note: 'The most prescriptive federal healthcare pest standard: mandatory program, named officer, prior approval for patient-care-area applications.'
+  },
+  {
+    situation: 'Vetting a pest management vendor’s credentials',
+    slugs: ['esacc-bce-credential', 'utah-r68-7-pesticide-applicator'],
+    note: 'State licensure is the legal minimum. The BCE is the credential that answers HICPAC’s call for a credentialed specialist.'
+  },
+  {
+    situation: 'Building the business case',
+    slugs: ['hai-cost-exposure-framing'],
+    note: 'The primary-source cost figures and the Medicare payment programs a pest finding can touch.'
+  }
+];
+
+for (const s of situations) {
+  for (const slug of s.slugs) {
+    if (!bySlug.has(slug)) throw new Error(`Authorities hub: unknown slug "${slug}" in situation "${s.situation}"`);
+  }
+}
+
 const totalCount = authorities.length;
 ---
 
 <BaseLayout
-  title="Authority Index"
-  description="Complete index of regulatory authorities covered by the Healthcare Pest Reference, organized by authority type."
+  title="Authority Index: Which Pest Control Regulations Govern a Healthcare Facility"
+  description="Every regulatory authority covered by the Healthcare Pest Reference, grouped by authority class with a one-line orientation for each, and a guide to which regime governs which kind of healthcare facility, department, or situation."
   breadcrumbs={[{ name: 'Authorities', url: `${SITE_URL}/authorities/` }]}
 >
   <style>
+    .index-summary {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.55;
+      margin-bottom: 2rem;
+      color: var(--color-text);
+    }
+
+    .situations {
+      list-style: none;
+      margin: 0 0 1rem;
+      padding: 0;
+    }
+
+    .situations li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-rule);
+    }
+
+    .situations li:last-child {
+      border-bottom: none;
+    }
+
+    .situation-name {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .situation-links {
+      margin: 0 0 0.35rem;
+      font-size: 0.95rem;
+    }
+
+    .situation-links a {
+      color: var(--color-accent);
+    }
+
+    .situation-note {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+    }
+
+    .class-orientation {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
     .authority-list {
       list-style: none;
       margin: 0 0 2rem;
@@ -68,41 +205,77 @@ const totalCount = authorities.length;
       text-underline-offset: 3px;
     }
 
+    .authority-summary {
+      margin: 0 0 0.3rem;
+      font-size: 0.92rem;
+      color: var(--color-text);
+    }
+
     .authority-citation {
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       color: var(--color-text-meta);
       font-family: var(--font-sans);
     }
 
-    .index-summary {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      line-height: 1.55;
-      margin-bottom: 2.5rem;
-      color: var(--color-text);
+    .cross-links {
+      background: var(--color-bg-subtle);
+      border-left: 3px solid var(--color-accent);
+      padding: 1rem 1.3rem;
+      margin: 2.5rem 0;
+      font-size: 0.92rem;
     }
   </style>
 
   <h1>Authority Index</h1>
 
   <p class="index-summary">
-    {totalCount} regulatory authorities currently published. Pages grouped by
-    authority type and listed with their formal citation. Each authority page
-    contains verbatim text where available, plain-language summary, applicability
-    scope, documentation evidence required, surveyor behavior, source confidence
-    rating, and explicit notes on any adjacent claims that have been investigated
-    and disconfirmed.
+    {totalCount} regulatory authorities currently published. Almost none of them
+    mention pests by name; the work of this reference is establishing, from the
+    primary source, how each one is actually applied to pest activity and pesticide
+    handling in a healthcare facility. Start with your situation below, or browse by
+    authority class.
   </p>
 
-  {typeOrder.map(type => grouped[type] && (
+  <h2>Which Regime Governs Me</h2>
+
+  <ul class="situations">
+    {situations.map((s) => (
+      <li>
+        <div class="situation-name">{s.situation}</div>
+        <p class="situation-links">
+          {s.slugs.map((slug, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={`/authorities/${slug}/`}>{bySlug.get(slug)!.data.title}</a>
+            </>
+          ))}
+        </p>
+        <p class="situation-note">{s.note}</p>
+      </li>
+    ))}
+  </ul>
+
+  <p class="cross-links">
+    Already holding a citation? The <a href="/deficiencies/">survey deficiencies section</a>
+    takes each CMS A-tag and Joint Commission Element of Performance in turn: what it
+    enforces, what the surveyor was looking for, and what a plan of correction must address.
+    For pesticide storage specifically, see the
+    <a href="/topics/pesticide-storage-requirements-healthcare-facilities/">pesticide storage requirements</a> topic page.
+  </p>
+
+  <h2>By Authority Class</h2>
+
+  {typeOrder.map((type) => grouped[type] && (
     <section>
-      <h2>{typeLabels[type]}</h2>
+      <h3>{typeLabels[type]}</h3>
+      <p class="class-orientation">{typeOrientation[type]}</p>
       <ul class="authority-list">
         {grouped[type]
           .sort((a, b) => a.data.title.localeCompare(b.data.title))
-          .map(authority => (
+          .map((authority) => (
             <li>
               <a href={`/authorities/${authority.slug}/`}>{authority.data.title}</a>
+              {authority.data.summary && <p class="authority-summary">{authority.data.summary}</p>}
               <span class="authority-citation">{authority.data.citation}</span>
             </li>
           ))}

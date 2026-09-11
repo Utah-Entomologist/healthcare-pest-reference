@@ -24,6 +24,16 @@ services_applicable:
   - cafeteria
   - patient meal preparation
 verbatim_available: true
+summary: "The federal HACCP principles name pest control as a prerequisite program. Advisory, but the foundation for any healthcare food service that runs a HACCP-based system."
+related_authorities:
+  - slug: fda-food-code-2022
+    why: "The state-adopted regulatory framework that actually governs hospital food service; NACMCF is the science behind its risk-based provisions."
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal IPM framework operationally aligned with NACMCF’s “effective pest control” prerequisite."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The standard of care reference for healthcare facility pest control, including kitchens and cafeterias."
+  - slug: usda-7cfr110-rescission
+    why: "Federal HACCP regulations for meat, poultry, seafood, and juice reference NACMCF; the federal RUP recordkeeping rule that sat alongside them was rescinded in 2025."
 ---
 
 ## Citation
@@ -108,9 +118,3 @@ HIGH confidence. The 1997 NACMCF document and Appendix A pest control verbatim t
 
 - **"NACMCF requires HACCP plans for hospital food service."** Disconfirmed. NACMCF is advisory and does not require anything. Hospital food service is not subject to mandatory federal HACCP regulation. Hospital food service is governed by state-adopted Food Code provisions, which may incorporate HACCP-style risk-based approaches but do not universally require formal HACCP plans.
 - **"NACMCF establishes pest control as one of seven required HACCP principles."** Disconfirmed. NACMCF establishes seven HACCP **principles** (Conduct hazard analysis, Determine critical control points, Establish critical limits, Establish monitoring procedures, Establish corrective actions, Establish verification procedures, Establish record-keeping and documentation procedures). Pest control is named separately as a **prerequisite program**, not as one of the seven principles. The two concepts are different — principles are the HACCP system itself; prerequisite programs are foundational infrastructure on which the HACCP system operates.
-
-## Related Authorities
-
-- [FDA Food Code 2022 — Pest Control in Healthcare Food Service](/authorities/fda-food-code-2022/) — the state-adopted regulatory framework that governs hospital food service
-- [EPA IPM in Health Care Facilities Toolkit (2021)](/authorities/epa-ipm-toolkit-2021/) — the federal IPM framework operationally aligned with NACMCF's "effective pest control" framing
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — the standard of care reference for healthcare facility pest control

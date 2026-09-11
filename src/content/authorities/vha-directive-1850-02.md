@@ -24,6 +24,16 @@ services_applicable:
   - operating room and sterile processing
   - pest management program design
 verbatim_available: true
+summary: "The most prescriptive federal healthcare pest standard: mandatory IPM operations program, a named program officer, prior approval before any patient-care-area application, three-year records."
+related_authorities:
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal civilian IPM framework the directive parallels and extends."
+  - slug: osha-hazard-communication
+    why: "Pesticide storage and SDS requirements that apply to VA facilities as a federal employer."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "Referenced by VHA infection prevention programs as standard of care."
+  - slug: cms-conditions-of-participation
+    why: "The Medicare condition that also applies to VA facilities participating in Medicare and Medicaid."
 ---
 
 ## Citation
@@ -116,9 +126,3 @@ HIGH confidence. Directive 1850.02 publication date, supersession history, and k
 ## Related Killed Claims
 
 No fabricated claims about VHA Directive 1850.02 identified in foundation research.
-
-## Related Authorities
-
-- [EPA IPM in Health Care Facilities Toolkit (2021)](/authorities/epa-ipm-toolkit-2021/) — the federal civilian IPM framework operationally aligned with VHA Directive 1850.02
-- [OSHA Hazard Communication Standard](/authorities/osha-hazard-communication/) — pesticide storage and SDS requirements applicable to VA facilities as federal employer
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — referenced by VHA infection prevention programs as standard of care

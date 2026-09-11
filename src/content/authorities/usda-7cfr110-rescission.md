@@ -23,6 +23,16 @@ services_applicable:
   - pesticide recordkeeping
   - restricted-use pesticide applications
 verbatim_available: true
+summary: "Effective July 11, 2025, the federal restricted-use pesticide recordkeeping rule is gone. State rules are now the only recordkeeping floor, and “7 CFR §110.3” is an obsolete citation."
+related_authorities:
+  - slug: osha-hazard-communication
+    why: "Pesticide inventory, SDS, and labeling obligations that were never part of 7 CFR Part 110 and are unchanged by the rescission."
+  - slug: epa-ipm-toolkit-2021
+    why: "Federal IPM documentation guidance, including record retention, that stands independent of Part 110."
+  - slug: utah-r68-7-pesticide-applicator
+    why: "An example of the state framework that now constitutes the operative RUP recordkeeping requirement."
+  - slug: fda-food-code-2022
+    why: "The food service pest control provisions that reference pesticide use in food establishments; records for those applications are now state-governed."
 ---
 
 ## Citation
@@ -102,8 +112,3 @@ HIGH confidence. Federal Register publication details (Volume 90, Number 90, May
 
 - **"7 CFR Part 110 federal recordkeeping requirements for restricted-use pesticides remain in effect."** Disconfirmed as of July 11, 2025. Any training material, contract template, or compliance reference citing 7 CFR §110.3 (or any other Part 110 provision) as a current authority is using superseded regulation.
 - **"USDA recordkeeping requirements differ from EPA pesticide labeling requirements."** Disconfirmed. EPA pesticide labeling requirements under 40 CFR Part 156 continue to apply. The rescinded 7 CFR Part 110 was a separate USDA recordkeeping overlay on top of EPA labeling — not a substitute for it. Post-rescission, EPA labeling requirements remain unchanged; only the USDA-administered application record requirements have been removed.
-
-## Related Authorities
-
-- [OSHA Hazard Communication Standard](/authorities/osha-hazard-communication/) — pesticide SDS and labeling requirements (unchanged by USDA rescission)
-- [EPA IPM in Health Care Facilities Toolkit (2021)](/authorities/epa-ipm-toolkit-2021/) — federal IPM framework with documentation guidance independent of 7 CFR Part 110

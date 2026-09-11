@@ -25,6 +25,18 @@ services_applicable:
   - pest management program design
 verbatim_available: false
 verbatim_paywall_note: "APIC Text of Infection Control and Epidemiology verbatim text is published through APIC's online text platform, which requires APIC membership ($310+ annually for individuals) or institutional subscription. Operational requirements summarized on this page are derived from publicly available APIC position statements, AJIC (American Journal of Infection Control) published articles, APIC conference proceedings, and accrediting body summaries that reference APIC Text as standard of care for U.S. infection prevention practice."
+summary: "The Infection Preventionist’s practice reference. Positions pest management as infection prevention infrastructure and sets the audit expectations IPs apply to pest programs."
+related_authorities:
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The federal infection prevention recommendations referenced throughout the APIC Text."
+  - slug: joint-commission-2026-pe-chapter
+    why: "The accrediting body standard that references APIC Text as standard of care for infection prevention."
+  - slug: epa-ipm-toolkit-2021
+    why: "The federal IPM framework operationally aligned with APIC Text expectations."
+  - slug: aorn-2026-perioperative-guidelines
+    why: "Perioperative environmental cleaning standards that share APIC’s treatment of visible pest activity as a cleaning failure."
+  - slug: hai-cost-exposure-framing
+    why: "The primary-source cost figures behind the infection prevention case for pest management."
 ---
 
 ## Citation
@@ -115,9 +127,3 @@ MEDIUM confidence. The APIC Text is paywalled through APIC's online text platfor
 
 - **"The APIC Text contains specific pest threshold definitions for healthcare facility pest management."** Cannot be verified without APIC Text access. APIC's general framework is non-prescriptive about specific thresholds; threshold definitions are typically developed by individual facility IP programs in coordination with pest management vendors. Any source claiming specific APIC-defined pest thresholds should be verified against the actual APIC Text language before reliance.
 - **"APIC requires Board Certified Entomologists for healthcare facility pest management."** Disconfirmed. APIC does not address pest management credentialing in publicly accessible position statements. BCE-led programs are the highest-rigor available approach, but APIC itself does not require any specific credential.
-
-## Related Authorities
-
-- [CDC HICPAC Section E.V.](/authorities/cdc-hicpac-environmental-guidelines/) — federal infection prevention standard referenced throughout APIC Text
-- [The Joint Commission 2026 PE Chapter](/authorities/joint-commission-2026-pe-chapter/) — accrediting body standard that references APIC Text as standard of care
-- [EPA IPM in Health Care Facilities Toolkit (2021)](/authorities/epa-ipm-toolkit-2021/) — federal IPM framework operationally aligned with APIC Text expectations

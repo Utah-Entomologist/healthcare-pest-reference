@@ -21,6 +21,18 @@ services_applicable:
   - pesticide storage and handling
 verbatim_available: false
 verbatim_paywall_note: "Full 2026 PE chapter verbatim text is published in The Joint Commission's CAMH e-edition, which is subscription-only. Predecessor EC chapter verbatim text (EC.02.06.01 and EC.02.02.01 EP 5) is publicly verifiable and confirmed by TJC's disposition report to transfer substantively into PE.01.01.01 and PE.02.01.01 respectively."
+summary: "The 2026 Physical Environment chapter has no pest-specific standard. Pest activity is cited under PE.01.01.01; pesticide storage and SDS deficiencies under PE.02.01.01 EP 4."
+related_authorities:
+  - slug: cms-conditions-of-participation
+    why: "The Medicare regulation the accreditor’s deemed-status survey stands in for; the same observation maps to §482.41."
+  - slug: cms-state-operations-manual
+    why: "The CMS surveyor manual and A-tags, for hospitals that receive a state validation or complaint survey in addition to accreditation."
+  - slug: dnv-gl-niaho-standards
+    why: "The alternative hospital accreditation framework, with substantively identical pest expectations and ISO 9001 documentation."
+  - slug: osha-hazard-communication
+    why: "The federal standard behind PE.02.01.01 EP 4: written program, inventory, Safety Data Sheets, labeling, and training for every pesticide on site."
+  - slug: cdc-hicpac-environmental-guidelines
+    why: "The infection control standard of care surveyors reference when scoring pest activity under PE.01.01.01."
 ---
 
 ## Citation
