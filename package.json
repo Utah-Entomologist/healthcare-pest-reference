@@ -13,7 +13,8 @@
     "validate": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "verify:live": "node scripts/verify-live.mjs"
   },
   "dependencies": {
     "astro": "^4.16.0"

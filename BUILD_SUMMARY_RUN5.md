@@ -168,10 +168,37 @@ started — #1, #2 and #3 on September 11 at 06:20–06:22 UTC and #4 at 06:26
 UTC. Nothing was outstanding to merge. This run's work is merged to `main` on
 top of them.
 
-**Live verification and the IndexNow POST could not be performed.** Every
-outbound host is refused by the agent proxy (`CONNECT tunnel failed, response
-403`), the site included. The three checks and the IndexNow submission are
-in R5-1 with exact commands.
+**Live verification and the IndexNow POST could not be performed**, and the
+reason is now pinned down exactly. The agent proxy refuses `CONNECT` to every
+outbound host with a 403, and the gateway's response body says why:
+
+```
+Host not in allowlist: healthcarepestreference.org
+```
+
+That is an egress allowlist on the Claude Code environment, not a fault in the
+site or the network. The proxy README is explicit that a 403 is an
+organization policy denial that must not be retried or routed around, so this
+run reported it rather than working around it. **Adding these four hosts to
+the environment's allowlist would let a future run verify its own work:**
+`healthcarepestreference.org`, `www.healthcarepestreference.org`,
+`api.indexnow.org`, `www.epa.gov`.
+
+In the meantime this run added **`scripts/verify-live.mjs`**, so the operator
+runs one command from any machine with internet access:
+
+```
+npm run verify:live      # then, if it passes:
+INDEXNOW_ENABLED=1 npm run indexnow -- --all
+```
+
+`verify:live` checks the nonsense-path 404 (and reports explicitly if the body
+is the homepage, which would mean the Pages project is in single-page-
+application mode), the www 301 at `/` and on a deep path with the path
+preserved, that following the redirect does not loop, the key file's status,
+`Content-Type` and exact body, and that every sitemap URL returns 200 with a
+matching self-canonical. It exits non-zero if anything fails and sends
+nothing.
 
 ---
 
@@ -259,8 +286,8 @@ recertified or rescinded. It already links into the deficiency section
 
 | Item | Status |
 |---|---|
-| Live 404 / www / key-file checks | **Not run.** Outbound HTTPS refused by proxy. Commands in R5-1. |
-| IndexNow POST | **Not sent.** Same cause. `npm run indexnow` is wired and mock-tested. |
+| Live 404 / www / key-file / sitemap checks | **Not run.** Host not in the environment's egress allowlist. Now one command: `npm run verify:live`. |
+| IndexNow POST | **Not sent.** Same cause. `INDEXNOW_ENABLED=1 npm run indexnow -- --all`. |
 | EPA toolkit PDF in the Drive folder | **Not placed.** Download blocked (403). One-step fix in R5-1. |
 | `contact_submissions` CSV and summary | **Not produced.** Project not reachable. SQL in R5-3. |
 | Page pinpoints for the EPA quotations | **Not recorded.** Needs the PDF. |

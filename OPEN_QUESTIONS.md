@@ -17,11 +17,42 @@ otherwise.
 
 ### R5-1. Outbound HTTPS is still refused; EPA PDF not archived, live checks and IndexNow not run
 
-`curl` to `https://www.epa.gov/system/files/documents/2021-07/integrated-pest-management-toolkit-2021.pdf` returned `CONNECT tunnel failed, response 403` from the agent proxy, as did every other outbound host. Consequences, all carried from R4-1:
+`curl` to `https://www.epa.gov/system/files/documents/2021-07/integrated-pest-management-toolkit-2021.pdf` returned `CONNECT tunnel failed, response 403` from the agent proxy, as did every other outbound host tried.
+
+**The cause is now known exactly, and it is a one-line fix.** The proxy's own status endpoint records the denials:
+
+```
+www.epa.gov:443                      connect_rejected
+healthcarepestreference.org:443      connect_rejected
+www.healthcarepestreference.org:443  connect_rejected
+api.indexnow.org:443                 connect_rejected
+```
+
+and the gateway returns, as the response body:
+
+```
+Host not in allowlist: healthcarepestreference.org
+```
+
+This is an **egress allowlist on the Claude Code environment**, not a site or network fault. The agent proxy README is explicit that a 403/407 is an organization policy denial and must not be retried or routed around, so this run did not attempt to. **To let a future run do its own live verification, add these four hosts to the environment's network allowlist:** `healthcarepestreference.org`, `www.healthcarepestreference.org`, `api.indexnow.org`, `www.epa.gov`. That single change closes items 1, 2 and 3 below permanently.
+
+Consequences, all carried from R4-1:
 
 1. The EPA toolkit PDF could not be downloaded into `HPR-Primary-Sources`. **One-step fix for the operator:** download that URL on any machine with internet access and drop it into the Drive folder as `EPA_IPM_HealthCareFacilities_Toolkit_907K21002_2021-07.pdf`. The EPA page then rises from MEDIUM to HIGH and its three quoted passages can be pinpointed to pages.
-2. The three live checks (nonsense path returns 404; www 301s to apex; key file serves `text/plain`) could not be run against the deployed site. The commands are in R4-1 and are unchanged.
-3. The IndexNow submission could not be POSTed. `npm run indexnow` is wired and tested against a mock; it needs `INDEXNOW_ENABLED=1` and a machine with egress.
+2. The live checks could not be run against the deployed site. **This run added `scripts/verify-live.mjs`, so this is now one command** from any machine with internet access, once the production deploy finishes:
+
+   ```
+   npm run verify:live
+   ```
+
+   It checks all six things at once and exits non-zero if any fails: a nonsense path returns a real 404 (and says so explicitly if the body is the homepage, which would mean the Pages project is in single-page-application mode); the www host 301s to the apex both at `/` and on a deep path with the path preserved; following that redirect does not loop; the IndexNow key file returns 200 as `text/plain` with exactly the key as its body; and every URL in the sitemap returns 200 with a self-canonical that matches. The script is read-only — it sends nothing.
+3. The IndexNow submission could not be POSTed. `npm run indexnow` is wired and tested against a mock; it needs `INDEXNOW_ENABLED=1` and a machine with egress. Run it after `npm run verify:live` passes:
+
+   ```
+   INDEXNOW_ENABLED=1 npm run indexnow -- --all
+   ```
+
+   Run `--all` this once rather than the default changed-only selection: this run changed ten pages and added none, but the corrections are the point of the run and every corrected URL should be re-crawled.
 
 ### R5-2. Quotations whose sources are not in the Drive folder
 
