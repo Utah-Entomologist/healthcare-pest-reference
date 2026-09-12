@@ -32,7 +32,19 @@
 const WWW_HOST = 'www.healthcarepestreference.org';
 const APEX_HOST = 'healthcarepestreference.org';
 
-export const onRequest: PagesFunction = async (context) => {
+/**
+ * Minimal shape of the Pages Functions context this middleware uses. Declared
+ * locally, as the handlers in functions/api/ do, rather than depending on the
+ * ambient `PagesFunction` type: @cloudflare/workers-types is not installed, so
+ * the global does not exist and `astro check` fails on it. Only `request` and
+ * `next` are needed here.
+ */
+interface MiddlewareContext {
+  request: Request;
+  next: () => Promise<Response>;
+}
+
+export const onRequest = async (context: MiddlewareContext): Promise<Response> => {
   const url = new URL(context.request.url);
 
   if (url.hostname.toLowerCase() === WWW_HOST) {
