@@ -2,7 +2,7 @@
 title: "Healthcare-Associated Infection Costs and Pest Exposure Financial Framing"
 authority_type: "recognized authority"
 citation: "Multiple primary sources: Scott 2009 CDC HAI cost estimates; Zimlichman 2013 JAMA Internal Medicine per-event HAI costs; Sheele 2017 ICHE academic medical center bed bug operational costs; CMS Hospital Value-Based Purchasing program under §1886(o) Social Security Act"
-last_verified: 2026-05-25
+last_verified: 2026-09-12
 date_published: 2026-06-01
 source_url: "https://www.cdc.gov/hai/index.html"
 source_tier: 1
@@ -42,13 +42,13 @@ This authority page synthesizes the primary-source financial exposure framework 
 - **Zimlichman E, Henderson D, Tamir O, et al.** Health Care–Associated Infections: A Meta-analysis of Costs and Financial Impact on the US Health Care System. *JAMA Intern Med.* 2013;173(22):2039-2046.
 - **Sheele JM, Tenpenny JR, Marciniec AR.** The Cost of an Emergency Department Visit and Hospital Care for a Patient with Bed Bug Exposure. *Infect Control Hosp Epidemiol.* 2017;38(5):623-624.
 - **CMS Hospital Value-Based Purchasing Program** under §1886(o) of the Social Security Act, implemented through annual IPPS Final Rule (most recently FY 2026 IPPS Final Rule).
-- **HCAHPS Survey** administered through hcahpsonline.org; Question 8 "During this hospital stay, how often were your room and bathroom kept clean?"
+- **HCAHPS Survey** administered through hcahpsonline.org; Question 8 asks how often the patient's room and bathroom were kept clean during the hospital stay.
 
-## What It Says (Verbatim Key Figures)
+## What It Says (Key Figures)
 
-**Scott 2009 CDC HAI aggregate cost (verbatim):**
+**Source note, September 12, 2026.** None of the studies and instruments cited in this section — Scott 2009, Zimlichman 2013, Sheele 2017, or the HCAHPS instrument — is held in this reference's primary-source archive, and this build had all outbound HTTPS denied by proxy policy. Two passages previously shown here inside quotation marks have been restated in plain language without them, per this reference's standing rule. The figures are unchanged; the claim to be reproducing exact wording has been withdrawn. See `OPEN_QUESTIONS.md` (R5-2).
 
-> "The overall annual direct medical costs of HAI to U.S. hospitals ranges from $28.4 to $33.8 billion (after adjusting to 2007 dollars using the CPI for all urban consumers) and $35.7 billion to $45 billion (after adjusting to 2007 dollars using the CPI for inpatient hospital services)."
+**Scott 2009 CDC HAI aggregate cost.** The report puts the overall annual direct medical cost of healthcare-associated infections to U.S. hospitals at $28.4–$33.8 billion when adjusted to 2007 dollars using the CPI for all urban consumers, and at $35.7–$45 billion when adjusted to 2007 dollars using the CPI for inpatient hospital services. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
 **Zimlichman 2013 per-event HAI cost ranges:**
 
@@ -62,11 +62,7 @@ The single-facility study at a 937-bed academic medical center documented operat
 
 The CMS Hospital Value-Based Purchasing Program withholds 2% of base operating DRG payments annually under §1886(o) of the Social Security Act. The withheld amount is redistributed through the Total Performance Score, with hospitals scoring above the threshold receiving more than their withheld amount and hospitals scoring below the threshold receiving less.
 
-**HCAHPS Question 8 verbatim:**
-
-> "During this hospital stay, how often were your room and bathroom kept clean?"
-
-Response options: Never / Sometimes / Usually / Always.
+**HCAHPS Question 8.** The question asks how often, during the hospital stay, the patient's room and bathroom were kept clean. Response options: Never / Sometimes / Usually / Always. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
 ## What It Means in Plain Language
 

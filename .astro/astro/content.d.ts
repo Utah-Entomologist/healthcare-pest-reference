@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"authorities": {
+"485-725e-pest-control.md": {
+	id: "485-725e-pest-control.md";
+  slug: "485-725e-pest-control";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "aorn-2026-perioperative-guidelines.md": {
 	id: "aorn-2026-perioperative-guidelines.md";
   slug: "aorn-2026-perioperative-guidelines";
@@ -342,6 +349,20 @@ declare module 'astro:content' {
 "ec-02-06-01-safe-functional-environment.md": {
 	id: "ec-02-06-01-safe-functional-environment.md";
   slug: "ec-02-06-01-safe-functional-environment";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"f925-plan-of-correction.md": {
+	id: "f925-plan-of-correction.md";
+  slug: "f925-plan-of-correction";
+  body: string;
+  collection: "deficiencies";
+  data: InferEntrySchema<"deficiencies">
+} & { render(): Render[".md"] };
+"f925.md": {
+	id: "f925.md";
+  slug: "f925";
   body: string;
   collection: "deficiencies";
   data: InferEntrySchema<"deficiencies">

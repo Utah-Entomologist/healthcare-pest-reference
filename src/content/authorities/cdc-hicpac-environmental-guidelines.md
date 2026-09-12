@@ -2,7 +2,7 @@
 title: "CDC HICPAC Guidelines for Environmental Infection Control — Pest Control Recommendations"
 authority_type: "federal regulator"
 citation: "CDC HICPAC Guidelines for Environmental Infection Control in Health-Care Facilities (2003), Part II, Section E.V."
-last_verified: 2026-05-25
+last_verified: 2026-09-12
 date_published: 2026-05-26
 source_url: "https://www.cdc.gov/infection-control/hcp/environmental-control/recommendations.html"
 source_tier: 1
@@ -61,7 +61,9 @@ Section E.V. contains exactly four recommendations on pest control in healthcare
 
 **E.V.4 (Category II):**
 
-> "Place laboratory specimens (e.g., fixed sputum smears) in covered containers for disposal."
+>  "Place laboratory specimens (e.g., fixed sputum smears) in covered containers for overnight storage."
+
+**Correction (September 12, 2026):** this page previously ended that sentence "for **disposal**." The guideline says "for **overnight storage**." The point of the recommendation is that cockroaches and ants feed on fixed sputum smears overnight, so the smears must be covered while stored — not that they must be discarded. Verified against the CDC/HICPAC *Guidelines for Environmental Infection Control in Health-Care Facilities* (2003, updated 2019) held in this reference's primary-source archive.
 
 ## HICPAC Category Definitions
 

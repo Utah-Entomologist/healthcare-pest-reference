@@ -2,7 +2,7 @@
 title: "FDA Food Code 2022 — Pest Control in Healthcare Food Service"
 authority_type: "federal regulator"
 citation: "FDA Food Code 2022, Sections 6-501.111 and 6-202.13"
-last_verified: 2026-05-25
+last_verified: 2026-09-12
 date_published: 2026-05-26
 source_url: "https://www.fda.gov/food/fda-food-code/food-code-2022"
 source_tier: 1
@@ -46,11 +46,13 @@ U.S. Food and Drug Administration, Food Code 2022. Section 6-501.111 "Controllin
 
 **Section 6-501.111 Controlling Pests:**
 
-> "The presence of insects, rodents, and other pests shall be controlled to minimize their presence on the PREMISES by:
+>  "The PREMISES shall be maintained free of insects, rodents, and other pests. The presence of insects, rodents, and other pests shall be controlled to eliminate their presence on the PREMISES by:
 > (A) Routinely inspecting incoming shipments of FOOD and supplies;
 > (B) Routinely inspecting the PREMISES for evidence of pests;
-> (C) Using methods, if pests are found, such as trapping devices or other means of pest control as specified under §§ 7-202.12, 7-206.12, and 7-206.13; and (Pf)
+> (C) Using methods, if pests are found, such as trapping devices or other means of pest control as specified under §§ 7-202.12, 7-206.12, and 7-206.13; <sup>Pf</sup> and
 > (D) Eliminating harborage conditions."
+
+**Correction (September 12, 2026):** this page previously rendered the second sentence as "controlled to **minimize** their presence." The 2022 Food Code says **eliminate**. That is not a stylistic difference — *minimize* is a tolerance standard and *eliminate* is an absolute one, and the change is the whole point of the provision. The opening sentence, "The PREMISES shall be maintained free of insects, rodents, and other pests," was also missing and has been restored. Verified against the FDA Food Code 2022 full document, §6-501.111, held in this reference's primary-source archive.
 
 Subsection (C) is designated **Pf (Priority Foundation)** — a violation severity classification indicating an item that supports, facilitates, or enables one or more priority items.
 
