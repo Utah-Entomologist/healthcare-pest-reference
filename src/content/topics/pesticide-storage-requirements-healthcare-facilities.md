@@ -4,6 +4,7 @@ seo_title: "Pesticide Storage Requirements in Hospitals and Healthcare Facilitie
 meta_description: "What governs a pesticide stored in a hospital: OSHA 29 CFR 1910.1200 (written program, inventory, Safety Data Sheets every shift, labeling, training), the EPA label under FIFRA, the eyewash rule in 1910.151(c), state applicator rules, and the Joint Commission standard (PE.02.01.01 EP 4) the finding is written to."
 summary: "OSHA compliant pesticide storage is not one rule. It is the HazCom standard, the EPA label, the eyewash rule, state applicator rules, and the accreditor standard the finding is written to, all applied to the same shelf."
 citation: "29 CFR 1910.1200 (OSHA Hazard Communication Standard); 7 U.S.C. §136j(a)(2)(G) (FIFRA); 29 CFR 1910.151(c); state pesticide control rules"
+last_verified: 2026-09-12
 source_url: "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-Z/section-1910.1200"
 source_confidence: "MEDIUM"
 content_pending: true
@@ -67,11 +68,11 @@ Two practical consequences. First, the label, not a general storage policy, is t
 
 Surveyors check for an eyewash station within reach of the pesticide storage and mixing location. The requirement is OSHA's medical services and first aid rule, 29 CFR 1910.151(c):
 
-> "Where the eyes or body of any person may be exposed to injurious corrosive materials, suitable facilities for quick drenching or flushing of the eyes and body shall be provided within the work area for immediate emergency use."
+The rule requires that, where the eyes or body of any person may be exposed to injurious corrosive materials, suitable facilities for quick drenching or flushing of the eyes and body be provided within the work area for immediate emergency use. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
-Whether a given pesticide is an "injurious corrosive material" is read from its SDS and label. Where it is, the eyewash has to be in the work area, not down the corridor.
+Whether a given pesticide is an injurious corrosive material is read from its SDS and label. Where it is, the eyewash has to be in the work area, not down the corridor.
 
-<span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — the 1910.151(c) quotation is cited to eCFR and could not be re-fetched during the September 10, 2026 build; see Confidence Notes.
+**Source note, September 12, 2026.** This passage was previously shown inside quotation marks. **No copy of 29 CFR 1910.151 is held in this reference's primary-source archive** — the archive holds 29 CFR 1910.1200 (Hazard Communication), a different section — and this build had all outbound HTTPS denied by proxy policy, so eCFR could not be reached. The quotation marks have been removed and the requirement restated, per this reference's standing rule. The HazCom passages elsewhere on this page **are** verified against the archived 1910.1200 text. See `OPEN_QUESTIONS.md` (R5-2).
 
 ## State Rules
 

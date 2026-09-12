@@ -2,7 +2,7 @@
 title: "USDA Rescission of 7 CFR Part 110 — Federal Pesticide Recordkeeping Requirements"
 authority_type: "federal regulator"
 citation: "USDA Final Rule, Rescission of 7 CFR Part 110, Federal Register Vol. 90 No. 90 (May 12, 2025), FR Doc 2025-08220, effective July 11, 2025"
-last_verified: 2026-05-25
+last_verified: 2026-09-12
 date_published: 2026-06-01
 source_url: "https://www.federalregister.gov/documents/2025/05/12/2025-08220/recordkeeping-requirements-for-certified-applicators-of-federally-restricted-use-pesticides"
 source_tier: 1
@@ -41,13 +41,22 @@ U.S. Department of Agriculture, Agricultural Marketing Service. Final Rule: Resc
 
 ## What It Says (Verbatim, Key Passages)
 
-**Action statement (Federal Register summary):**
+**Correction (September 12, 2026).** The passage previously shown here as the Federal Register summary — beginning "The U.S. Department of Agriculture (USDA) is rescinding the regulations governing recordkeeping requirements…" and continuing "…unnecessarily duplicative of State, Tribal, and Environmental Protection Agency (EPA) recordkeeping requirements that already exist" — **does not appear in the document.** Neither the word "duplicative" nor the phrase "is rescinding" occurs anywhere in it. It has been removed and replaced with the document's actual SUMMARY and DATES text, read from the Federal Register page held in this reference's primary-source archive.
 
-> "The U.S. Department of Agriculture (USDA) is rescinding the regulations governing recordkeeping requirements for certified applicators of federally restricted use pesticides (RUPs). USDA has determined that these regulations are unnecessarily duplicative of State, Tribal, and Environmental Protection Agency (EPA) recordkeeping requirements that already exist."
+**SUMMARY, verbatim:**
 
-**Effective date:**
+>  "This action rescinds regulations pertaining to Recordkeeping on Restricted Use Pesticides by Certified Applicators; Surveys and Reports."
 
-> "This final rule is effective July 11, 2025."
+**AGENCY and ACTION, verbatim:**
+
+>  "AGENCY: Agricultural Marketing Service (AMS), U.S. Department of Agriculture.
+> ACTION: Final rule."
+
+**DATES, verbatim:**
+
+>  "The final rule is effective July 11, 2025."
+
+The page previously rendered that last sentence as "**This** final rule is effective July 11, 2025." The document says "**The** final rule."
 
 **Scope of rescission:**
 

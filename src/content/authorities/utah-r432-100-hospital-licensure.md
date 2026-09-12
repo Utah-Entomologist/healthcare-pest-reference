@@ -1,12 +1,14 @@
 ---
 title: "Utah Administrative Code R432-100 — General Hospital Standards (Pest Management Provisions)"
 authority_type: "state regulator"
-citation: "Utah Admin. Code R432-100-39, Maintenance Services, most recent amendment December 27, 2024"
-last_verified: 2026-05-25
+citation: "Utah Admin. Code R432-100-38(1)(d), Maintenance Services, most recent amendment June 5, 2026"
+last_verified: 2026-09-12
+seo_title: "Utah Admin. Code R432-100-38(1)(d): The Pest-Control Requirement for Utah-Licensed Hospitals (Amended June 5, 2026)"
+meta_description: "Utah's explicit hospital pest mandate is R432-100-38(1)(d), not R432-100-39: “The licensee shall ensure a pest-control program is conducted to ensure the hospital is free from any vermin or rodent.” Verbatim text, the correct section number, the June 5, 2026 amendment date, and what Utah surveyors actually look for."
 date_published: 2026-06-01
 source_url: "https://adminrules.utah.gov/public/rule/R432-100/Current%20Rules"
 source_tier: 1
-source_confidence: "MEDIUM"
+source_confidence: "HIGH"
 paywalled: false
 facility_types_applicable:
   - acute-care hospital
@@ -19,7 +21,7 @@ services_applicable:
   - infection prevention and control
   - pest management program design
 verbatim_available: true
-summary: "One of the few state hospital licensure rules with an explicit pest mandate: the hospital must be kept “free from vermin and rodents.” Non-prescriptive about how."
+summary: "One of the few state hospital licensure rules with an explicit pest mandate: a pest-control program must keep the hospital “free from any vermin or rodent.” Non-prescriptive about how."
 related_authorities:
   - slug: utah-r68-7-pesticide-applicator
     why: "The Utah applicator licensure framework that establishes the legal floor for who may apply pesticides in Utah hospitals."
@@ -31,25 +33,51 @@ related_authorities:
     why: "The accrediting body standard for Joint Commission-accredited Utah hospitals."
 ---
 
+## Correction Notice (September 12, 2026)
+
+Three errors on this page have been corrected against the rule text as published by the Utah Office of Administrative Rules:
+
+| Was | Is |
+|---|---|
+| Section **R432-100-39** | Section **R432-100-38(1)(d)**. R432-100-39 is *Emergency Operations Plan* and has nothing to do with pest control. |
+| Most recent amendment **December 27, 2024** | **June 5, 2026** (portal effective date 06/05/2026; rule footer "Date of Last Change: June 5, 2026"; Notice of Continuation August 22, 2025). |
+| Quoted as "free from vermin and rodents" | The rule reads **"free from any vermin or rodent"** — singular, and *or*, not *and*. The wording matters: the standard is not met by excluding one and tolerating the other. |
+
 ## Citation
 
-Utah Administrative Code R432-100, General Hospital Standards. Promulgated by the Utah Department of Health and Human Services, Health Care Facility Licensing. Section R432-100-39 "Maintenance Services" contains the operative pest management provision for Utah-licensed hospitals. Most recent amendment to R432-100-39: December 27, 2024.
+Utah Administrative Code R432-100, General Hospital Standards. Promulgated by the Utah Department of Health and Human Services, Health Care Facility Licensing. Authorizing law: Sections 26B-1-202, 26B-2-202, 26B-2-203. Section **R432-100-38, "Maintenance Services," subsection (1)(d)** contains the operative pest management provision for Utah-licensed hospitals. Date of last change: **June 5, 2026**. Notice of Continuation: August 22, 2025.
+
+Official copies exposed by the Utah Office of Administrative Rules portal API: [rule page](https://adminrules.utah.gov/public/rule/R432-100/Current%20Rules) · [PDF](https://adminrules.utah.gov/api/public/getPDF/uac-pdf/e980e412-e31a-4b6c-8088-6f38343cb4e2.pdf) · [HTML](https://adminrules.utah.gov/api/public/getHTML/uac-html/e980e412-e31a-4b6c-8088-6f38343cb4e2.html).
 
 ## What It Says (Verbatim)
 
-**R432-100-39 Maintenance Services, subsection (1)(d):**
+**R432-100-38 Maintenance Services, subsection (1)(d):**
 
-> "The licensee shall ensure a pest-control program is conducted to ensure the hospital is free from vermin and rodents."
+> "The licensee shall ensure a pest-control program is conducted to ensure the hospital is free from any vermin or rodent."
 
-This is the operative pest management sentence in the Utah hospital licensure framework. It establishes a direct requirement that every Utah-licensed hospital maintain a pest-control program.
+This is the operative pest management sentence in the Utah hospital licensure framework. It establishes a direct requirement that every Utah-licensed hospital maintain a pest-control program, and it states the outcome that program must achieve.
 
-**Surrounding subsection context:**
+**Surrounding subsection context (verbatim, R432-100-38 in full):**
 
-R432-100-39 broadly governs maintenance services for Utah-licensed hospitals. Subsections address general facility maintenance, equipment maintenance, exterior grounds, waste management, and infection prevention coordination. The pest-control provision at (1)(d) is the explicit operative requirement; pest management is also addressed indirectly through other R432-100 sections governing infection prevention, environmental services, and food service.
+> "(1)(a) The licensee shall provide maintenance services to ensure that hospital equipment and grounds are maintained in a clean and sanitary condition and in a state of good repair for the safety and well-being of patients, staff, and visitors.
+> (b) The administrator shall employ a person qualified by experience and training to oversee hospital maintenance.
+> (c) If the licensee contracts for maintenance services, the licensee shall secure a signed and dated agreement that details the services provided.
+> (d) The licensee shall ensure a pest-control program is conducted to ensure the hospital is free from any vermin or rodent.
+> (e) The licensee shall maintain each entrance, exit, step, ramp, and outside walkway in a safe condition regarding snow, ice, and other hazards.
+> (2) The licensee shall test, calibrate, and maintain any patient care equipment in accordance with the specifications from the manufacturer and make testing frequency and calibration documentation, whether conducted internally or by an outside agency, available for department review.
+> (3) The licensee shall ensure hot water at public and patient faucets is delivered between 105 to 120 degrees F."
+
+Two things follow from reading the whole section rather than the one sentence. First, (1)(c) means a hospital that **contracts** its pest control must hold a signed, dated agreement detailing the services provided — a documentation requirement distinct from the program requirement in (1)(d). Second, (1)(a)'s "clean and sanitary condition … for the safety and well-being of patients, staff, and visitors" is the general standard the pest provision sits inside, and it reaches grounds as well as the building.
+
+**The adjacent housekeeping section, R432-100-37(1), verbatim:**
+
+> "The licensee shall provide housekeeping services to maintain a clean, safe, sanitary, and healthy environment in the hospital."
+
+Pest management is also reached indirectly through R432-100-31 (pets), R432-100-32(4) (dietary sanitation, which incorporates Rule R392-100), and R432-100-37 (housekeeping).
 
 ## What It Means in Plain Language
 
-Utah is one of the few U.S. states with an explicit pest-control mandate written into hospital licensing regulation. Many states address pest control only by inference through general infection prevention or facility maintenance standards. Utah's R432-100-39(1)(d) is direct: every Utah-licensed hospital must have an active pest-control program with documented effectiveness in maintaining the hospital free from vermin and rodents.
+Utah is one of the few U.S. states with an explicit pest-control mandate written into hospital licensing regulation. Many states address pest control only by inference through general infection prevention or facility maintenance standards. Utah's R432-100-38(1)(d) is direct: every Utah-licensed hospital must have an active pest-control program, and that program must keep the hospital free from any vermin or rodent.
 
 The provision is intentionally non-prescriptive about how the pest-control program must be structured:
 
@@ -88,18 +116,19 @@ R432-100 binds Utah-licensed facilities through state licensure. Out-of-state ho
 
 ## Documentation Evidence Required
 
-For Utah hospital compliance with R432-100-39(1)(d):
+For Utah hospital compliance with R432-100-38(1)(d):
 
 - Written pest management plan addressing the facility's pest-control program structure
 - Service contract or in-house program documentation
 - Service records demonstrating program execution
 - Trend reporting demonstrating program effectiveness over time
 - Integration documentation with infection prevention and environmental services
-- Applicator credential verification (state-licensed applicator at minimum; BCE-credentialed applicator for highest-rigor programs)
+- Applicator credential verification. Note that R432-100-38(1)(d) itself names no credential; the licensure floor comes from [Utah R68-7](/authorities/utah-r68-7-pesticide-applicator/), not from this rule.
+- If pest control is contracted: the signed, dated services agreement required by R432-100-38(1)(c)
 
 ## How Surveyors Evaluate It
 
-Utah Department of Health and Human Services hospital licensing surveyors evaluate R432-100-39(1)(d) compliance during routine licensure surveys (typically every two years) and during complaint-driven surveys. Surveyors evaluate:
+Utah Department of Health and Human Services hospital licensing surveyors evaluate R432-100-38(1)(d) compliance during routine licensure surveys (typically every two years) and during complaint-driven surveys. Surveyors evaluate:
 
 - Existence of a written pest management plan
 - Active execution of the pest-control program (service records, trend reports)
@@ -107,16 +136,21 @@ Utah Department of Health and Human Services hospital licensing surveyors evalua
 - Coordination with infection prevention
 - Applicator credential verification
 
-Surveyors typically do not prescribe specific program structure; they evaluate whether the requirement that the hospital be "free from vermin and rodents" is being met operationally.
+Surveyors typically do not prescribe specific program structure; they evaluate whether the requirement that the hospital be "free from any vermin or rodent" is being met operationally.
 
 Common findings: missing or outdated pest management plan documentation, gaps in service records, observed pest activity during physical inspection, lack of trend reporting demonstrating program effectiveness, and inadequate integration with infection prevention.
 
 ## Confidence Notes
 
-MEDIUM confidence. The operative pest-control sentence at R432-100-39(1)(d) is verified from Utah primary source. The "most recent amendment" date of December 27, 2024 is also verified. Surrounding subsection structure is verified through Cornell LII and Justia legal aggregators because the Utah adminrules.utah.gov portal is JavaScript-rendered and resisted direct primary-source fetch during foundation verification. The operative pest sentence is the load-bearing element on this page; surrounding context is reliable but verified through secondary aggregators rather than direct primary fetch.
+**HIGH confidence as of September 12, 2026.** Raised from MEDIUM. The full text of R432-100 as rendered by the Utah Office of Administrative Rules is now held in this reference's primary-source archive (`Utah_AdminCode_R432-100_GeneralHospitalStandards_LastChange_2026-06-05.txt`, captured from adminrules.utah.gov on September 11, 2026). Every quotation on this page was read from that capture: the section number, the section heading, the full text of R432-100-38, R432-100-37(1), the amendment date, and the authorizing law.
+
+The earlier MEDIUM rating reflected that surrounding subsection structure had been taken from Cornell LII and Justia aggregators rather than the primary source. That is what produced the three errors corrected above — the aggregator-derived section number, date, and paraphrased quotation were all wrong. No text on this page now rests on a secondary aggregator.
 
 ## Related Killed Claims
 
-- **"Utah hospital licensing requires Board Certified Entomologists for pest management programs."** Disconfirmed. R432-100-39(1)(d) does not specify any applicator credential. The provision requires a pest-control program but does not name BCE, ACE, or any other specific credential.
-- **"R432-100-39 specifies pest threshold definitions for Utah hospitals."** Disconfirmed. The provision is non-prescriptive about program structure. Threshold definitions, monitoring frequency, and intervention hierarchy flow from broader standards of care (HICPAC, EPA IPM Toolkit, accrediting body standards), not from R432-100-39 itself.
-- **"Utah school IPM requirements at R392-200-7(12) also apply to Utah hospitals."** Disconfirmed. R392-200-18 (the correct citation for Utah school IPM, not R392-200-7(12)) applies specifically to schools, not to hospitals. Hospital pest management in Utah is governed by R432-100-39(1)(d) for licensed hospitals and by R432-150 series rules for skilled nursing facilities.
+- **"Utah hospital licensing requires Board Certified Entomologists for pest management programs."** Disconfirmed. R432-100-38(1)(d) does not specify any applicator credential. The provision requires a pest-control program but does not name BCE, ACE, or any other specific credential.
+- **"R432-100-38 specifies pest threshold definitions for Utah hospitals."** Disconfirmed. The provision is non-prescriptive about program structure. Threshold definitions, monitoring frequency, and intervention hierarchy flow from broader standards of care (HICPAC, EPA IPM Toolkit, accrediting body standards), not from R432-100-38 itself.
+- **"Utah school IPM requirements at R392-200-7(12) also apply to Utah hospitals."** Disconfirmed. R392-200-18 (the correct citation for Utah school IPM, not R392-200-7(12)) applies specifically to schools, not to hospitals. Hospital pest management in Utah is governed by R432-100-38(1)(d) for licensed hospitals and by R432-150 series rules for skilled nursing facilities.
+
+- **"The Utah hospital pest provision is R432-100-39."** Disconfirmed on September 12, 2026, and carried on this page until that date. R432-100-39 is *Emergency Operations Plan*. The pest provision is R432-100-38(1)(d).
+- **"The rule requires the hospital to be free from vermin and rodents."** Disconfirmed as a quotation. The rule says "free from any vermin or rodent." The paraphrase was rendered inside quotation marks on this page until September 12, 2026.

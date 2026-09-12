@@ -1,7 +1,70 @@
 # Open Questions
 
-Four runs are logged here, newest first. Items remain open unless marked
+Five runs are logged here, newest first. Items remain open unless marked
 otherwise.
+
+---
+
+# Run 5 — September 12, 2026 (integrity corrections, quotation audit, ship)
+
+## Resolved this run
+
+- **R4-3 — resolved.** The EPA toolkit's live URL, exact title, publication number, page count, table of contents, and three verbatim passages were recovered from the pointer file `EPA_IPM_HealthCareFacilities_Toolkit_907K21002_2021-07_LOCATION.md` in the Drive folder. The page now cites the live PDF path and records the 2026-02-26 Wayback snapshot. The binary itself is still not in the folder — see R5-1.
+- **R4-4 — resolved.** Every quotation on the VHA 1850.02 page was re-verified on September 12, 2026 against an independent extraction of the archived directive. All matched.
+- **R4-8 — carried forward.** `last_verified` is 2026-09-12 on the ten pages corrected or re-verified this run.
+
+## Blocked by the build environment
+
+### R5-1. Outbound HTTPS is still refused; EPA PDF not archived, live checks and IndexNow not run
+
+`curl` to `https://www.epa.gov/system/files/documents/2021-07/integrated-pest-management-toolkit-2021.pdf` returned `CONNECT tunnel failed, response 403` from the agent proxy, as did every other outbound host. Consequences, all carried from R4-1:
+
+1. The EPA toolkit PDF could not be downloaded into `HPR-Primary-Sources`. **One-step fix for the operator:** download that URL on any machine with internet access and drop it into the Drive folder as `EPA_IPM_HealthCareFacilities_Toolkit_907K21002_2021-07.pdf`. The EPA page then rises from MEDIUM to HIGH and its three quoted passages can be pinpointed to pages.
+2. The three live checks (nonsense path returns 404; www 301s to apex; key file serves `text/plain`) could not be run against the deployed site. The commands are in R4-1 and are unchanged.
+3. The IndexNow submission could not be POSTed. `npm run indexnow` is wired and tested against a mock; it needs `INDEXNOW_ENABLED=1` and a machine with egress.
+
+### R5-2. Quotations whose sources are not in the Drive folder
+
+The site-wide audit this run checked all 112 quoted passages against the folder. Seven passages had **no source in the folder at all**: the four ESACC/entocert.org BCE requirement passages, the Scott 2009 HAI cost figure, HCAHPS Question 8, and 29 CFR 1910.151(c) (the folder holds 29 CFR 1910.1200, a different section). Under the standing rule that a quotation mark is a factual claim, their quotation marks were removed and the content restated in plain language with a marker. **To restore them as quotations, add to the folder:** the entocert.org BCE eligibility and recertification pages, Scott (2009) *The Direct Medical Costs of Healthcare-Associated Infections in U.S. Hospitals*, the current HCAHPS instrument, and the eCFR text of 29 CFR 1910.151.
+
+### R5-3. Supabase `contact_submissions` export still could not be performed (carried from R4-2)
+
+Re-confirmed this run and the finding is unchanged. `list_organizations` returns exactly one organization, `mrqqxylczoxlhbcbnnlf` ("FrazerFalcons's Org"), holding three projects: `falcon-community-portal` (paused), `falcon-crm`, `falcon-ipm`. **`wahrmlnygnlyfdbvwkhd` is not among them**, and `get_project` on that ref returns "You do not have permission to perform this action." Neither active project contains a `contact_submissions` table. The paused project timed out on connect and was deliberately not restored, since restoring a paused project is a side-effecting change to someone's infrastructure and it is in any case the wrong project.
+
+Note also that **this site does not write contact submissions to any database**: `functions/api/contact.ts` forwards one email through Resend and stores nothing. `contact_submissions` belongs to a different property (utahentomologist.com, per Run 2's notes), in a Lovable-Cloud-managed project not linked to the connected Supabase account.
+
+No CSV was produced and no summary of the inquiries was made. **To export by hand:** open the project in the Lovable dashboard (or the Supabase dashboard if it has been claimed) and run
+
+```sql
+select id, name, email, phone, message, created_at
+from public.contact_submissions
+order by created_at;
+```
+
+Save the result outside the repository — it contains personal data — as `contact_submissions_<date>.csv`. The count / topics / healthcare share / unanswered summary can be produced from it in a later run. **Alternatively**, to unblock this permanently: link `wahrmlnygnlyfdbvwkhd` to the Supabase account the connector uses, and it becomes a one-command export.
+
+## Corrections made this run that the operator should know about
+
+### R5-4. Six integrity failures corrected, three of them found by the audit rather than reported
+
+The brief named three (the EPA page's three fabricated quotations, the Utah R432-100 citation and date, and the Utah R68-7 CEU citation). The site-wide audit found three more of the same kind:
+
+- **FDA Food Code 6-501.111** was quoted as "controlled to **minimize** their presence on the PREMISES." The 2022 Food Code says **eliminate**. A tolerance standard had been printed where the source states an absolute one. The provision's opening sentence was also missing.
+- **CDC/HICPAC** was quoted as "in covered containers for **disposal**." The guideline says "for **overnight storage**." The recommendation exists because cockroaches and ants feed on fixed sputum smears overnight; "disposal" inverts its point.
+- **USDA 7 CFR 110 rescission** carried a blockquote presented as the Federal Register summary that **does not appear in the document**. Neither "duplicative" nor "is rescinding" occurs anywhere in it. Replaced with the actual SUMMARY, AGENCY/ACTION and DATES text. The effective-date sentence was also misquoted ("This final rule" for "The final rule").
+- A fourth, on the **Utah R68-7** page and not in the brief: Category 7 was quoted as naming "institutions such as schools, hospitals." R68-7-7(7) says "dwelling, educational institution, or medical institution." The substance was right; the quotation was not.
+
+### R5-5. `CMS_Tag_Verification.md` has one error: A-0763 does exist
+
+The Run 3 memo lists A-0763 among the tags absent from the A-0740–A-0799 range. **A-0763 exists** in Appendix A Rev. 238 at §482.42(b)(2)(iii), with the standard "(Rev. 238; Issued: 03-20-26)" heading. Confirmed by two independent extractions of the same PDF. The live `/deficiencies/a-0758/` page's sequence was already correct — it includes A-0763 — so nothing on the site was wrong; the memo is. Every other finding in the memo was re-measured this run and holds, including the zero counts for pest/vermin/rodent/insect/infestation across all 613 pages, `sanitary` = 6 and `housekeeping` = 9. **Action: correct the memo in Drive** so a later run does not "fix" the page to match it.
+
+### R5-6. The www redirect needed a mechanism `_redirects` cannot provide on Cloudflare Pages
+
+The documented `_redirects` rule has been deployed since the Run 2–4 merge on September 11, and the www host was still serving the full site with no redirect on September 12. That is the expected behaviour if Cloudflare Pages matches `_redirects` sources as URL paths: a source beginning with a scheme and hostname never matches an incoming request. The rule is kept — it is correct and it is what takes effect on a host that supports hostname matching — and `functions/_middleware.ts` was added to perform the 301 at the edge. It fires only when the request hostname is exactly the www host and rewrites it to a different hostname, so it cannot loop. **This needs a live check to confirm** (R5-1, item 2). If the middleware is for any reason not desired, the alternative is a Cloudflare Redirect Rule in the dashboard, which is not reproducible from the repository.
+
+### R5-7. There is no catch-all rewrite in the repository
+
+The brief asked for one to be removed. `public/_redirects` contains only the www rule; there is no `[[path]]` function, no SPA fallback, and no `/* /index.html 200` line anywhere in the repo. `src/pages/404.astro` exists and builds to `dist/404.html`, which is what Cloudflare Pages serves with a 404 status. If a nonsense path still returns the homepage after this deploy, the cause is in the **Pages project settings**, not the repository — check that the project is not configured as a single-page application, and that the build output directory is `dist`.
 
 ---
 

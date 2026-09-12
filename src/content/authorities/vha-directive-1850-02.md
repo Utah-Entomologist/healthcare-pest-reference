@@ -4,7 +4,7 @@ seo_title: "VHA Directive 1850.02, Pest Management Operations Program (December 
 meta_description: "VHA Directive 1850.02, Pest Management Operations Program, issued December 22, 2022 and scheduled for recertification on or before the last working day of December 2027. Verbatim policy statement, the Pest Management Officer's responsibilities (48-hour response to sightings, quarterly record review, prior approval for pesticide applications in operating rooms and sterile processing), the twelve required elements of the Integrated Pest Management Operations Plan, the pest management contract scope, training requirements, and the VHA ban on 2,4-D."
 authority_type: "federal regulator"
 citation: "Department of Veterans Affairs, Veterans Health Administration Directive 1850.02, Pest Management Operations Program, December 22, 2022 (recertification scheduled on or before the last working day of December 2027)"
-last_verified: 2026-09-11
+last_verified: 2026-09-12
 date_published: 2026-06-01
 source_url: "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=10078"
 source_tier: 1
@@ -48,7 +48,7 @@ The transmittal sheet states, verbatim:
 
 Two consequences. The directive does not expire in December 2027; it remains national VHA policy until VHA recertifies or rescinds it. And the recertification window is the date a reader should re-check this page against va.gov, because a recertified directive may carry amended text under the same number.
 
-This page was verified against the reference's archived copy of the directive (156,036 bytes, as published by VA) on September 11, 2026. A live re-check of va.gov was not possible from this build; no amendment, recertification, or rescission notice was known to this reference as of that date.
+This page was verified against the reference's archived copy of the directive (156,036 bytes, as published by VA) on September 11, 2026, and **every quotation on it was re-verified independently on September 12, 2026** against a fresh extraction of the same archived PDF, byte-for-byte the size VA published. All passages matched. A live re-check of va.gov was not possible from either build — outbound HTTPS is refused by proxy policy in this environment — so no amendment, recertification, or rescission notice later than December 22, 2022 is known to this reference. The recertification window below is the date to re-check.
 
 **Correction to this page's earlier text.** Until September 11, 2026 this page quoted five passages attributed to "Section 2" and "Sections 3.a–3.e" of the directive, including a "Pesticide Manager Officer," a "minimum of three years" record-retention rule, and a policy statement about protecting "Veterans, employees, and visitors from pests and pesticide exposure." None of those passages appears in the directive. The role is the Pest Management Officer; records are governed by the VHA Records Control Schedule, not a stated three-year period; and the supersession history was also wrong (the directive rescinds VHA Directive 1850.02(1) of April 6, 2017, not a 2010 Directive 7715). Every quotation below is transcribed from the directive itself.
 

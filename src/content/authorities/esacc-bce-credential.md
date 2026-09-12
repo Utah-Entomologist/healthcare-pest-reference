@@ -2,7 +2,7 @@
 title: "ESACC Board Certified Entomologist (BCE) Credential"
 authority_type: "recognized authority"
 citation: "Entomological Society of America Certification Corporation (ESACC), Board Certified Entomologist (BCE) Program, eligibility revised effective January 1, 2025"
-last_verified: 2026-05-25
+last_verified: 2026-09-12
 date_published: 2026-06-01
 source_url: "https://entocert.org/bce"
 source_tier: 1
@@ -42,38 +42,32 @@ related_authorities:
 
 Entomological Society of America Certification Corporation (ESACC), 170 Jennifer Rd., Suite 230, Annapolis, MD 21401. Board Certified Entomologist (BCE) Program. ESACC is a tax-exempt 501(c)(6) nonprofit operating as the certifying body for ESA-administered professional credentials. The BCE credential traces its lineage to the American Registry of Certified Entomologists (1970), which became the American Registry of Professional Entomologists (ARPE), which in 1992 was absorbed by ESA and renamed the BCE program. ESACC was established as a separate corporate entity in 2010. Current BCE eligibility criteria became effective January 1, 2025.
 
-## What It Says (Verbatim, Current Requirements)
+## What It Says (Current Requirements)
 
-**Educational requirement (entocert.org/bce/eligibility, verbatim):**
+**Source note, September 12, 2026.** The requirements below were read from entocert.org in earlier builds. **No copy of the ESACC eligibility pages is held in this reference's primary-source archive**, and this build had all outbound HTTPS denied by proxy policy, so they could not be re-verified. Under this reference's standing rule — a quotation mark is a factual claim — the passages that were previously shown here inside quotation marks have been **restated in plain language without quotation marks**. The substance is unchanged; only the claim to be reproducing ESACC's exact wording has been withdrawn. Each restatement is marked. Quotation marks return when the pages are archived. See `OPEN_QUESTIONS.md` (R5-2).
 
-> "Bachelor's Degree (or equivalent), majoring, in a biological or life science, to include at least 4 term length (semester, trimester, quarter) courses/research credits in Entomology. Entomology course work can be completed outside of a degree, provided they are offered by an accredited institution (online coursework counts). For those with an advanced degree, the same requirements hold true. If your advanced degree meets the requirements, your undergraduate degree does not need to."
+**Educational requirement** (entocert.org/bce/eligibility). A bachelor's degree or equivalent majoring in a biological or life science, including at least four term-length courses or research credits in entomology. Entomology coursework may be completed outside the degree if offered by an accredited institution, and online coursework counts. The same requirements apply to holders of advanced degrees; where an advanced degree satisfies them, the undergraduate degree need not. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
 Accepted biological and life sciences include: Biology (Marine, Environmental, Vector, Plant, Wildlife, Vertebrate, Invertebrate), Biochemistry, General Zoology, Ecology (Marine, Environmental, Vector, Plant, Wildlife, Vertebrate, Invertebrate), Environmental Sciences, Agronomy, Forestry, Cell Biology, and Molecular Biology or Molecular Science.
 
-**Experiential requirement (verbatim):**
+**Experiential requirement.** Three years of relevant experience for a bachelor's degree holder, two for a master's, one for a PhD. Experience both before and after the degree counts, but it must be full-time work outside a university setting; work done in pursuit of any degree does not count toward the experiential requirement. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
-> "For those with a bachelor's degree, at least 3 years of relevant experience; for those with a master's degree, at least 2 years of relevant experience; for those with a PhD degree, at least 1 years of relevant experience. Work experience before and after your degree counts. 'Work experience' requires full-time work outside of university setting. Work done in pursuit of any degree (Bachelor's, Master's, Phd, etc) does not count toward this BCE experiential requirement."
+**Examination requirement.** In addition to the other requirements, an applicant must score at least 70% on the BCE Core (Qualifying) examination and on at least one specialty examination. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
-**Examination requirement (verbatim):**
-
-> "To become a BCE, in addition to fulfilling the other requirements, each applicant must score at least 70% on the BCE Core or Qualifying exam and at least one specialty examination."
-
-**Four BCE specialties (verbatim):**
+**Four BCE specialties:**
 
 1. Urban and Industrial Entomology
 2. Medical and Veterinary Entomology
 3. General Entomology
 4. Plant-Related Entomology
 
-**Professional Maintenance and Certification (verbatim):**
-
-> "The BCE must have a minimum of 120 total CEUs for the three-year reporting period, with at least 72 of those coming from Category A."
+**Professional maintenance and recertification.** A BCE must accumulate a minimum of 120 total CEUs over the three-year reporting period, at least 72 of them from Category A. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
 Category A CEU sources include college coursework, professional conferences, training, credentialing examinations, refereed articles, and several reading and editing activities. Category B (no minimum requirement) includes consulting, teaching, business meetings, committee service, offices held, presentations, authorship, honors, and community service.
 
 **Code of Ethics:**
 
-BCEs are bound by a published Code of Ethics organized in five sections: Obligations to Society, Obligations to the Public, Obligations to the Profession, Obligations to Employers and Clients, and Obligations to Fellow Entomologists. Per the BCE program page: "BCEs who willfully and knowingly violate the BCE Code of Ethics face the risk of certification revocation."
+BCEs are bound by a published Code of Ethics organized in five sections: Obligations to Society, Obligations to the Public, Obligations to the Profession, Obligations to Employers and Clients, and Obligations to Fellow Entomologists. Per the BCE program page, a BCE who willfully and knowingly violates the Code of Ethics risks revocation of the certification. <span class="content-pending">[RESTATED — NO COPY IN PRIMARY-SOURCE ARCHIVE]</span>
 
 ## What It Means in Plain Language
 
