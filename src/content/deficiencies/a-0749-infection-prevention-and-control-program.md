@@ -92,7 +92,7 @@ Under A-0749 the evidence is program-level and documentary, exactly as the Surve
 - The infection control risk assessment, with pest activity as an assessed environmental risk
 - Program policy assigning responsibility for pest events in infection-sensitive areas to the infection prevention program, and the route by which a pest sighting reaches it
 - Evidence of Infection Preventionist review of pest management records and trend reports, on a stated schedule
-- The pest management plan's coverage of the high-risk areas HICPAC names (kitchens, laundries, central sterile supply, operating rooms, loading docks, construction areas), with infection prevention sign-off
+- The pest management plan's coverage of the high-risk areas HICPAC names (kitchens, cafeterias, laundries, central sterile supply, operating rooms, loading docks, construction areas), with infection prevention sign-off
 - Evidence the program is applied at outpatient locations as well as inpatient units
 
 ## Where Facilities Most Commonly Fail

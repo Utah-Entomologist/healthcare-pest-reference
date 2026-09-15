@@ -33,21 +33,23 @@ related_authorities:
     why: "The accrediting body standard for Joint Commission-accredited Utah hospitals."
 ---
 
-## Correction Notice (September 12, 2026)
+## Correction Notice (September 12, 2026; history corrected September 15, 2026)
 
-Three errors on this page have been corrected against the rule text as published by the Utah Office of Administrative Rules:
+Three items on this page were brought current on September 12, 2026 against the rule text as published by the Utah Office of Administrative Rules. They were **superseded, not wrong**: the earlier section number, amendment date, and wording were the rule's own under the version amended December 27, 2024, taken from aggregators that had not yet posted the June 5, 2026 amendment. The amendment renumbered nothing in this section but changed the wording; the section number had already moved from -39 to -38 in an intervening filing.
 
-| Was | Is |
+| Was (rule as amended December 27, 2024) | Is (rule as amended June 5, 2026) |
 |---|---|
-| Section **R432-100-39** | Section **R432-100-38(1)(d)**. R432-100-39 is *Emergency Operations Plan* and has nothing to do with pest control. |
-| Most recent amendment **December 27, 2024** | **June 5, 2026** (portal effective date 06/05/2026; rule footer "Date of Last Change: June 5, 2026"; Notice of Continuation August 22, 2025). |
-| Quoted as "free from vermin and rodents" | The rule reads **"free from any vermin or rodent"** — singular, and *or*, not *and*. The wording matters: the standard is not met by excluding one and tolerating the other. |
+| Section **R432-100-39**, Maintenance Services — the section's number under the December 27, 2024 version, which aggregators (Cornell LII) still render | Section **R432-100-38(1)(d)**. Under the current rule, R432-100-39 is *Emergency Operations Plan* and has nothing to do with pest control. |
+| Most recent amendment **December 27, 2024** (Utah State Bulletin No. 2025-01) | **June 5, 2026** (portal effective date 06/05/2026; rule footer "Date of Last Change: June 5, 2026"; Notice of Continuation August 22, 2025). |
+| Quoted as "free from vermin and rodents" — the wording of the rule before June 5, 2026 | The amended rule reads **"free from any vermin or rodent"** — singular, and *or*, not *and*. The wording matters: the standard is not met by excluding one and tolerating the other. |
+
+The amendment history, from official sources: the Utah State Bulletin of December 1, 2025 (Vol. 2025 No. 23, Filing ID 57644, "Amendment") prints the proposed text of R432-100-38(1)(d) as "free from any vermin [and rodents]or rodent" — bracketed text is deleted text — and the amendment took effect June 5, 2026. Two things a reader tracing the section will meet: the official psychiatric specialty-hospital rule, R432-101-32(2)(d) (effective November 1, 2023), still cross-references "Maintenance Services, R432-100-39," the section's former number; and a posted draft amendment to R432-100 (Utah Public Notice Website file 1465445; not filed in the Bulletin, no effective date) would insert new sections at -9 and -10 and move Maintenance Services to R432-100-40. The current rule is the June 5, 2026 text.
 
 ## Citation
 
 Utah Administrative Code R432-100, General Hospital Standards. Promulgated by the Utah Department of Health and Human Services, Health Care Facility Licensing. Authorizing law: Sections 26B-1-202, 26B-2-202, 26B-2-203. Section **R432-100-38, "Maintenance Services," subsection (1)(d)** contains the operative pest management provision for Utah-licensed hospitals. Date of last change: **June 5, 2026**. Notice of Continuation: August 22, 2025.
 
-Official copies exposed by the Utah Office of Administrative Rules portal API: [rule page](https://adminrules.utah.gov/public/rule/R432-100/Current%20Rules) · [PDF](https://adminrules.utah.gov/api/public/getPDF/uac-pdf/e980e412-e31a-4b6c-8088-6f38343cb4e2.pdf) · [HTML](https://adminrules.utah.gov/api/public/getHTML/uac-html/e980e412-e31a-4b6c-8088-6f38343cb4e2.html).
+Official copies exposed by the Utah Office of Administrative Rules portal API: [rule page](https://adminrules.utah.gov/public/rule/R432-100/Current%20Rules) · [PDF](https://adminrules.utah.gov/api/public/getfile/uac-pdf/e980e412-e31a-4b6c-8088-6f38343cb4e2.pdf/R432-100.pdf) · [HTML](https://adminrules.utah.gov/api/public/getHTML/uac-html/e980e412-e31a-4b6c-8088-6f38343cb4e2.html).
 
 ## What It Says (Verbatim)
 
@@ -103,12 +105,7 @@ Utah surveyors typically defer to broader standards of care (HICPAC, accrediting
 
 ## Who It Applies To
 
-R432-100 applies to all hospitals licensed by Utah Department of Health and Human Services. This includes:
-
-- General acute-care hospitals
-- Critical access hospitals
-- Psychiatric hospitals
-- Rehabilitation hospitals
+R432-100 is the general hospital rule (R432-100-1(2)(b): "This rule sets standards for the construction and operation of a general hospital."). Critical access hospitals (R432-106-7(1)), rehabilitation hospitals (R432-103-12(4)), and psychiatric hospitals (R432-101-32(2)(d), which still cites the section by its former number, -39) are licensed under their own rules and reach R432-100-38 by cross-reference.
 
 Long-term care facilities are governed by separate Utah administrative rules (R432-150 series). Ambulatory surgery centers are governed by separate rules (R432-500 series). Skilled nursing facilities are governed by R432-150.
 
@@ -128,7 +125,7 @@ For Utah hospital compliance with R432-100-38(1)(d):
 
 ## How Surveyors Evaluate It
 
-Utah Department of Health and Human Services hospital licensing surveyors evaluate R432-100-38(1)(d) compliance during routine licensure surveys (typically every two years) and during complaint-driven surveys. Surveyors evaluate:
+Utah Department of Health and Human Services hospital licensing surveyors evaluate R432-100-38(1)(d) compliance during routine licensure surveys and during complaint-driven surveys. Surveyors evaluate:
 
 - Existence of a written pest management plan
 - Active execution of the pest-control program (service records, trend reports)
@@ -144,7 +141,7 @@ Common findings: missing or outdated pest management plan documentation, gaps in
 
 **HIGH confidence as of September 12, 2026.** Raised from MEDIUM. The full text of R432-100 as rendered by the Utah Office of Administrative Rules is now held in this reference's primary-source archive (`Utah_AdminCode_R432-100_GeneralHospitalStandards_LastChange_2026-06-05.txt`, captured from adminrules.utah.gov on September 11, 2026). Every quotation on this page was read from that capture: the section number, the section heading, the full text of R432-100-38, R432-100-37(1), the amendment date, and the authorizing law.
 
-The earlier MEDIUM rating reflected that surrounding subsection structure had been taken from Cornell LII and Justia aggregators rather than the primary source. That is what produced the three errors corrected above — the aggregator-derived section number, date, and paraphrased quotation were all wrong. No text on this page now rests on a secondary aggregator.
+The earlier MEDIUM rating reflected that surrounding subsection structure had been taken from Cornell LII and Justia aggregators rather than the primary source. The earlier section number, date, and wording were those of the rule as amended December 27, 2024, taken from aggregators that had not yet posted the June 5, 2026 amendment. The amendment renumbered nothing in this section but changed the wording; the section number had already moved from -39 to -38 in an intervening filing. No text on this page now rests on a secondary aggregator.
 
 ## Related Killed Claims
 
@@ -153,4 +150,4 @@ The earlier MEDIUM rating reflected that surrounding subsection structure had be
 - **"Utah school IPM requirements at R392-200-7(12) also apply to Utah hospitals."** Disconfirmed. R392-200-18 (the correct citation for Utah school IPM, not R392-200-7(12)) applies specifically to schools, not to hospitals. Hospital pest management in Utah is governed by R432-100-38(1)(d) for licensed hospitals and by R432-150 series rules for skilled nursing facilities.
 
 - **"The Utah hospital pest provision is R432-100-39."** Disconfirmed on September 12, 2026, and carried on this page until that date. R432-100-39 is *Emergency Operations Plan*. The pest provision is R432-100-38(1)(d).
-- **"The rule requires the hospital to be free from vermin and rodents."** Disconfirmed as a quotation. The rule says "free from any vermin or rodent." The paraphrase was rendered inside quotation marks on this page until September 12, 2026.
+- **"The rule requires the hospital to be free from vermin and rodents."** Disconfirmed as a quotation of the current rule. "Free from vermin and rodents" was the rule's wording until the June 5, 2026 amendment struck "and rodents" and inserted "or rodent"; a page citing the rule after that date must quote the amended text. The superseded wording was rendered inside quotation marks on this page until September 12, 2026.

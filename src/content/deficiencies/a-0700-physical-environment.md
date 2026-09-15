@@ -75,7 +75,7 @@ The surveyor's evidence is the same as for the standard-level tags: direct obser
 Because the citation is systemic, the response has to show a functioning program, not a single remediation:
 
 - A written pest management plan that names the high-risk areas HICPAC lists (kitchens, cafeterias, laundries, central sterile-supply, operating rooms, loading docks, construction areas) and states action thresholds for each
-- Service records showing inspection, exclusion, and sanitation steps as well as any chemical application, in the order the EPA IPM framework prescribes
+- Service records showing inspection, exclusion, and sanitation steps as well as any chemical application, in the order the EPA IPM framework describes
 - Trend reports covering every location of the hospital, reviewed by a named committee on a stated schedule
 - QAPI records showing facility-maintenance and pest-related findings are tracked there, as the guidance requires
 - Evidence of infection prevention involvement in the program

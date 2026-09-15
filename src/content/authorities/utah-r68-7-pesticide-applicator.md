@@ -1,5 +1,5 @@
 ---
-title: "Utah Administrative Code R68-7 — Utah Pesticide Control Act Rules"
+title: "Utah Administrative Code R68-7 — Utah Pesticide Control Rule"
 authority_type: "state regulator"
 citation: "Utah Admin. Code R68-7, Utah Pesticide Control Rule, administered by Utah Department of Agriculture and Food (UDAF), last changed September 7, 2022"
 last_verified: 2026-09-12
@@ -40,7 +40,7 @@ related_authorities:
 
 ## Citation
 
-Utah Administrative Code Title R68 (Department of Agriculture and Food), Chapter 7 (Utah Pesticide Control Act Rules). Administered by the Utah Department of Agriculture and Food (UDAF), 4315 South 2700 West, Suite 2100, Taylorsville, UT 84129. R68-7 implements the Utah Pesticide Control Act (Utah Code Title 4, Chapter 14) and establishes the legal framework for pesticide application, applicator licensure, recordkeeping, and enforcement in Utah.
+Utah Administrative Code Title R68 (Department of Agriculture and Food), Chapter 7 (Utah Pesticide Control Rule). Administered by the Utah Department of Agriculture and Food (UDAF), 4315 South 2700 West, Taylorsville, UT 84129 (the address is UDAF's own, from its Pesticide Licenses page; the rule states no address). R68-7 implements the Utah Pesticide Control Act (Utah Code Title 4, Chapter 14) and establishes the legal framework for pesticide application, applicator licensure, recordkeeping, and enforcement in Utah.
 
 ## What It Says (Operative Provisions)
 
@@ -48,9 +48,9 @@ R68-7 establishes three applicator classifications and a set of certification ca
 
 **Applicator classifications:**
 
-- **Commercial applicators:** Apply pesticides for hire on properties not owned by their employer
-- **Non-commercial applicators:** Apply pesticides as employees of the property owner on property owned, leased, or rented by the employer
-- **Private applicators:** Apply restricted-use pesticides on agricultural land or facilities owned by the applicator
+- **Commercial applicators:** Use or apply pesticides for hire or compensation (R68-7-2(1)); the definition turns on compensation, not on who owns the property
+- **Non-commercial applicators:** Employees applying restricted use pesticides on their employer's property or property under its control (R68-7-2(8); license required by R68-7-12(1))
+- **Private applicators:** Apply restricted-use pesticides for producing an agricultural commodity on property the applicator owns, rents, or leases, or on another's property without compensation (R68-7-2(12))
 
 **Certification categories relevant to healthcare facilities:**
 
@@ -61,16 +61,11 @@ Category names and scope below are the rule's own, from R68-7-7. Full verbatim t
 - **Category 12 — Vertebrate Animal Pest Control:** applicators applying pesticides for the **outdoor** control of vertebrate pests such as rodents, birds, bats, predators, or domestic animal pests. Excludes Regulatory Pest Control (9), and specifically excludes sodium cyanide and sodium fluoroacetate.
 - **Category 15 — Wood Destroying Organisms Pest Control:** applicators applying pesticides to control termites, carpenter ants, wood-boring or tunneling insects, bees, wasps, wood-decaying fungi, and other pests destroying wood products.
 
-The Category 7 / Category 12 boundary is the one that catches healthcare facilities out. Rodent work **inside** the building and within three feet of it is Category 7; rodent and bird work **beyond** that — dumpster corrals, loading docks set back from the wall, roof and grounds — is Category 12. A vendor certified only in Category 7 is not certified for the exterior rodent program most hospitals actually need.
+The Category 7 / Category 12 boundary is the one that catches healthcare facilities out. Vertebrate work in or on the building and within three feet of it (farther only where the product label permits) is Category 7; the outdoor vertebrate program beyond that — dumpster corrals, set-back loading docks, grounds — is Category 12. A vendor certified only in Category 7 is not certified for the exterior rodent program most hospitals actually need.
 
 **Examination requirement:**
 
-Commercial and Non-Commercial applicators must score 70% or higher on the General Standards examination and at least one category examination. Each category requires a separate examination.
-
-**License fees (Commercial Applicator):**
-
-- 3-year license: $65
-- 1-year license: $55 + $35 for each of the next two years
+Commercial and Non-Commercial applicators must score 70% or higher on the pesticide applicator core test (UDAF: "general/core exam") and at least one category examination. Each category requires a separate examination.
 
 **Continuing Education Unit (CEU) requirement — R68-7-11(10)(c)(ii), verbatim and complete:**
 
@@ -134,7 +129,7 @@ The operative words for healthcare are **"medical institution"** — the rule do
 R68-7 applies to all commercial and non-commercial pesticide applicators operating in Utah. For healthcare facility pest management contexts:
 
 - Contracted pest management providers serving Utah hospitals, SNFs, ambulatory surgery centers, and other healthcare facilities
-- In-house facility staff who apply pesticides as part of employment (non-commercial applicator licensure)
+- In-house staff who apply *restricted use* pesticides as employees (non-commercial applicator licensure, R68-7-12); general-use products applied by employees on the employer's own property carry no R68-7 license requirement
 - Pest management programs in Utah VA medical facilities, IHS facilities, and federal property within Utah (where state licensure interacts with federal jurisdiction)
 
 Out-of-state licensed applicators must obtain Utah reciprocity or Utah licensure before applying pesticides commercially in Utah hospitals.
