@@ -1,9 +1,9 @@
 ---
-identifier: "PE.02.01.01 EP 4"
+identifier: "PE.02.01.01"
 title: "Hazardous Materials and Waste"
-summary: "The 2026 Physical Environment standard under which pesticide storage, labeling, and Safety Data Sheet deficiencies are cited. EP 4 is the successor to EC.02.02.01 EP 5. The documentation that closes it is defined by OSHA HazCom."
+summary: "The 2026 Physical Environment standard under which pesticide storage, labeling, and Safety Data Sheet deficiencies are cited: EP 1 for inventory, EP 2 for safety data sheets, EP 3 for labeling, EP 4 for handling and storage. The documentation that closes it is defined by OSHA HazCom."
 regime: "The Joint Commission"
-citation: "The Joint Commission, Comprehensive Accreditation Manual for Hospitals, Physical Environment chapter, PE.02.01.01 EP 4, effective January 1, 2026"
+citation: "The Joint Commission, Comprehensive Accreditation Manual for Hospitals, Physical Environment chapter, PE.02.01.01 (EPs 1–4), effective January 1, 2026"
 source_url: "https://www.jointcommission.org/standards/standard-faqs/hospital-and-hospital-clinics/physical-environment-pe/"
 source_tier: 1
 source_confidence: "MEDIUM"
@@ -11,11 +11,11 @@ paywalled: true
 content_pending: true
 verification_status: "blocked"
 verification_note: "Standard identifier carried from this reference's 2026 PE chapter page, which rests on The Joint Commission's public FAQ and September 2025 disposition report (verified May 25, 2026). Not re-fetched during the September 10, 2026 build: jointcommission.org was egress-blocked."
-supersedes: "EC.02.02.01 EP 5"
+supersedes: "EC.02.02.01 EP 5 (this reference's reading; not verified against the 2026 chapter)"
 date_published: 2026-09-10
 governing_authorities:
   - slug: joint-commission-2026-pe-chapter
-    why: "The authority page for the 2026 PE chapter and the EC.02.02.01 EP 5 to PE.02.01.01 EP 4 transfer."
+    why: "The authority page for the 2026 PE chapter and the PE.02.01.01 element mapping."
   - slug: osha-hazard-communication
     why: "The federal standard whose written program, inventory, SDS, labeling, and training requirements are what this EP is scored against for pesticides."
   - slug: epa-ipm-toolkit-2021
@@ -29,13 +29,13 @@ related_deficiencies:
 
 ## Identifier and Official Title
 
-**PE.02.01.01 — Hazardous Materials and Waste**, Element of Performance 4, in the Physical Environment chapter of the Comprehensive Accreditation Manual for Hospitals effective January 1, 2026. The title is carried from this reference's [2026 PE chapter page](/authorities/joint-commission-2026-pe-chapter/).
+**PE.02.01.01 — Hazardous Materials and Waste**, Elements of Performance 1 through 4, in the Physical Environment chapter of the Comprehensive Accreditation Manual for Hospitals effective January 1, 2026. The title is carried from this reference's [2026 PE chapter page](/authorities/joint-commission-2026-pe-chapter/).
 
 ## What It Enforces
 
-<span class="content-pending">[CONTENT PENDING — PAYWALLED SOURCE]</span> — the verbatim text of PE.02.01.01 EP 4 is published in the CAMH e-edition, which is subscription-only, and is not reproduced here.
+<span class="content-pending">[CONTENT PENDING — PAYWALLED SOURCE]</span> — the verbatim text of PE.02.01.01 and its Elements of Performance is published in the CAMH e-edition, which is subscription-only, and is not reproduced here.
 
-What is publicly established, and recorded on the authority page: EP 4 is the successor to EC.02.02.01 EP 5, which addressed written hazardous materials management plans, inventory requirements, Safety Data Sheet accessibility, and labeling. The Joint Commission's September 2025 disposition report confirms the transfer without substantive change. For pesticides, the substantive requirements are those of OSHA 29 CFR 1910.1200, which is reproduced verbatim on the [Hazard Communication page](/authorities/osha-hazard-communication/) and which requires, at (e)(1), a written hazard communication program with a list of the hazardous chemicals present, and at (g)(8), Safety Data Sheets "readily accessible during each work shift to employees when they are in their work area(s)."
+Recorded on the authority page: the 2026 chapter splits the subject across four elements: EP 1 (a written, current inventory of hazardous materials and waste), EP 2 (the permits, licenses, manifests, and safety data sheets required by law and regulation), EP 3 (labeling of hazardous materials and waste), and EP 4 (policies and procedures to protect patients and staff from exposure, including handling, storage, and spill response). A pesticide-storage finding is cited to PE.02.01.01 as a whole; an inventory finding lands on EP 1, a safety-data-sheet finding on EP 2, a labeling finding on EP 3, and a handling-and-storage finding on EP 4. This reference reads EC.02.02.01 EP 5, the legacy element under which pesticide storage findings were cited, as having moved into PE.02.01.01 with the 2026 consolidation; the 2026 chapter's EC matrix, which now applies only to non-hospital programs, omits EP 5, which is consistent with that reading but does not state it, and the mapping has not been verified against the licensed 2026 chapter. For pesticides, the substantive requirements are those of OSHA 29 CFR 1910.1200, which is reproduced verbatim on the [Hazard Communication page](/authorities/osha-hazard-communication/) and which requires, at (e)(1), a written hazard communication program with a list of the hazardous chemicals present, and at (g)(8), Safety Data Sheets "readily accessible during each work shift to employees when they are in their work area(s)."
 
 ## What the Surveyor Is Looking For
 
@@ -43,7 +43,7 @@ Carried from the authority pages: the surveyor opens the pesticide storage locat
 
 ## Documentation That Satisfies It
 
-Carried from the authority page's survey-readiness list for PE.02.01.01 EP 4:
+Carried from the authority page's survey-readiness list for PE.02.01.01:
 
 - Written Hazard Communication Program per OSHA 29 CFR 1910.1200
 - Master pesticide inventory
@@ -72,4 +72,4 @@ Joint Commission findings are answered with an Evidence of Standards Compliance 
 
 ## Confidence Notes
 
-MEDIUM confidence. The standard title, the EP 5 to EP 4 transfer, and the description of surveyor practice are carried from this reference's 2026 PE chapter and Hazard Communication pages. The OSHA quotations are carried from the Hazard Communication page, verified against eCFR on May 25, 2026. Verbatim EP text requires CAMH access and is marked pending. The ESC structure has not been verified against current ESC instructions during this build and is marked accordingly.
+MEDIUM confidence. The standard title and the description of surveyor practice are carried from this reference's 2026 PE chapter and Hazard Communication pages; the element mapping (EP 1 inventory, EP 2 safety data sheets, EP 3 labeling, EP 4 handling and storage) was verified September 15, 2026 against the licensed 2026 chapter, by identifier and paraphrase only; the EC.02.02.01 EP 5 lineage is this reference's reading and is not verified against the 2026 chapter. The OSHA quotations are carried from the Hazard Communication page, verified against eCFR on May 25, 2026. Verbatim EP text requires CAMH access and is marked pending. The ESC structure has not been verified against current ESC instructions during this build and is marked accordingly.

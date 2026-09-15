@@ -1,7 +1,7 @@
 ---
 title: "Pesticide Storage Requirements in Healthcare Facilities"
 seo_title: "Pesticide Storage Requirements in Hospitals and Healthcare Facilities: OSHA 1910.1200, EPA Label Law, State Rules, and What Surveyors Cite"
-meta_description: "What governs a pesticide stored in a hospital: OSHA 29 CFR 1910.1200 (written program, inventory, Safety Data Sheets every shift, labeling, training), the EPA label under FIFRA, the eyewash rule in 1910.151(c), state applicator rules, and the Joint Commission standard (PE.02.01.01 EP 4) the finding is written to."
+meta_description: "What governs a pesticide stored in a hospital: OSHA 29 CFR 1910.1200 (written program, inventory, Safety Data Sheets every shift, labeling, training), the EPA label under FIFRA, the eyewash rule in 1910.151(c), state applicator rules, and the Joint Commission standard (PE.02.01.01) the finding is written to."
 summary: "OSHA compliant pesticide storage is not one rule. It is the HazCom standard, the EPA label, the eyewash rule, state applicator rules, and the accreditor standard the finding is written to, all applied to the same shelf."
 citation: "29 CFR 1910.1200 (OSHA Hazard Communication Standard); 7 U.S.C. §136j(a)(2)(G) (FIFRA); 29 CFR 1910.151(c); state pesticide control rules"
 last_verified: 2026-09-12
@@ -13,7 +13,7 @@ governing_authorities:
   - slug: osha-hazard-communication
     why: "The federal standard for every pesticide on the shelf: written program, inventory, Safety Data Sheets accessible every shift, labeling, training. Verbatim text is on this page."
   - slug: joint-commission-2026-pe-chapter
-    why: "Where a pesticide storage finding is actually written in a Joint Commission hospital: PE.02.01.01 EP 4."
+    why: "Where a pesticide storage finding is actually written in a Joint Commission hospital: PE.02.01.01."
   - slug: epa-ipm-toolkit-2021
     why: "The federal IPM hierarchy, chemicals last, which determines how much product should be stored on site at all."
   - slug: utah-r68-7-pesticide-applicator
@@ -32,7 +32,7 @@ governing_authorities:
 | The product label | FIFRA, 7 U.S.C. §136j(a)(2)(G); labeling rules at 40 CFR Part 156 | Storage and disposal as the label directs; the label is enforceable law |
 | Emergency eyewash | OSHA 29 CFR 1910.151(c) | Quick-drenching facilities where eyes or body may be exposed to injurious corrosive materials |
 | State pesticide rules | State pesticide control acts and rules (Utah: R68-7) | Applicator licensure and, in most states, storage, labeling, and recordkeeping requirements for applicators |
-| The accreditor standard | Joint Commission PE.02.01.01 EP 4 (formerly EC.02.02.01 EP 5) | The standard the finding is written to; scored on the OSHA substance above |
+| The accreditor standard | Joint Commission PE.02.01.01 (EP 1 inventory, EP 2 safety data sheets, EP 3 labeling, EP 4 handling and storage; before 2026, EC.02.02.01 EP 5 on this reference's reading) | The standard the finding is written to; scored on the OSHA substance above |
 
 Each row is taken up below.
 
@@ -86,7 +86,7 @@ Other states' rules are not yet on this reference. <span class="content-pending"
 
 ## Where the Finding Is Written
 
-In a Joint Commission-accredited hospital, a pesticide storage deficiency is cited under [PE.02.01.01 EP 4](/deficiencies/pe-02-01-01-hazardous-materials-and-waste/) (before 2026, [EC.02.02.01 EP 5](/deficiencies/ec-02-02-01-hazardous-materials-and-waste/)). Under a CMS survey, pesticide storage conditions that threaten patient safety are cited by inference under the physical environment tags, most often [A-0701](/deficiencies/a-0701-buildings/). Neither regime has a pesticide-specific standard; both score the OSHA substance.
+In a Joint Commission-accredited hospital, a pesticide storage deficiency is cited under [PE.02.01.01](/deficiencies/pe-02-01-01-hazardous-materials-and-waste/) — EP 1 for inventory, EP 2 for safety data sheets, EP 3 for labeling, EP 4 for handling and storage — (before 2026, [EC.02.02.01 EP 5](/deficiencies/ec-02-02-01-hazardous-materials-and-waste/)). Under a CMS survey, pesticide storage conditions that threaten patient safety are cited by inference under the physical environment tags, most often [A-0701](/deficiencies/a-0701-buildings/). Neither regime has a pesticide-specific standard; both score the OSHA substance.
 
 ## What the Surveyor Checks at the Cabinet
 
