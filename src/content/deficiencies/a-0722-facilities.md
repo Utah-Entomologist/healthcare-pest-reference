@@ -90,7 +90,7 @@ The rest of the A-0724 guidance concerns equipment maintenance and Alternate Equ
 
 ## What the Surveyor Is Looking For
 
-In dietary and food service the surveyor's observation is usually specific: droppings in dry storage, cockroach evidence at floor-wall junctions or behind equipment, flies at a receiving door, gnaw marks on packaging. The surveyor then looks for the four things the FDA Food Code requires of any food establishment, because the state food inspector will look for the same four: routine inspection of incoming shipments, routine inspection of the premises, documented methods when pests are found, and elimination of harborage conditions.
+In dietary and food service the surveyor's observation is usually specific: droppings in dry storage, cockroach evidence at floor-wall junctions or behind equipment, flies at a receiving door, gnaw marks on packaging. The surveyor then looks for the four things the FDA Food Code requires of any food establishment, because the state food inspector will look for the same four: routine inspection of incoming shipments, routine inspection of the premises, methods when pests are found, and elimination of harborage conditions.
 
 The hospital's own kitchen inspection logs, the pest vendor's service records for the kitchen, and the dietary manager's account of what happened after the last observation are the evidence the surveyor weighs. Note that hospital dietary services also carry their own condition, §482.28, whose Appendix A guidance (tag A-0618) expects written policies covering "Guidelines for kitchen sanitation" and "Integration of the food and dietetic service into the hospital-wide QAPI and Infection Control programs"; a kitchen pest finding may be written there as well.
 

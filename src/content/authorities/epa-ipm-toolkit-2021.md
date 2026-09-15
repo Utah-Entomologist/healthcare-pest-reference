@@ -100,7 +100,7 @@ The toolkit's sixth section is *Document and Communicate Pest Management Activit
 The specific record fields and the three-year retention period that this page formerly attributed to EPA are not in the document. If you need an enforceable list of required service-record contents, the toolkit is the wrong source. Two real ones:
 
 - **Utah Admin. Code R68-7-11(11)** imposes nine required elements on every commercial pesticide application record, requires the record within 24 hours of application, and sets a **two-year** retention period. See [Utah R68-7](/authorities/utah-r68-7-pesticide-applicator/).
-- **VHA Directive 1850.02** requires a written Integrated Pest Management Operations Plan at every VA medical facility, reviewed annually, with recordkeeping as a mandatory plan element. See [VHA Directive 1850.02](/authorities/vha-directive-1850-02/).
+- **VHA Directive 1850.02** requires a written Integrated Pest Management Operations Plan at every VA medical facility, reviewed annually, with recordkeeping as a mandatory plan element; its contract scope names the record categories — inspection reports, pest sightings, pesticide application and follow-up activities (¶3.d) — without prescribing record fields. See [VHA Directive 1850.02](/authorities/vha-directive-1850-02/).
 
 ## What It Means in Plain Language
 
