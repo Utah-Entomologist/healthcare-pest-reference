@@ -58,7 +58,7 @@ Pest control is addressed by inference under the umbrella requirement that "the 
 
 ## Who It Applies To
 
-All hospitals participating in Medicare. This includes acute-care hospitals, critical access hospitals (with modifications under 42 CFR Part 485 Subpart F), psychiatric hospitals, and rehabilitation hospitals. Skilled nursing facilities, long-term care facilities, ambulatory surgery centers, and other non-hospital settings are governed by separate Conditions of Participation.
+All hospitals participating in Medicare under 42 CFR Part 482 — acute-care, psychiatric, and rehabilitation hospitals. Critical access hospitals are not surveyed under §482.41; their physical-plant condition is 42 CFR §485.623 (Part 485 Subpart F, Appendix W), and only a CAH's psychiatric or rehabilitation distinct part unit must meet Part 482 subparts A–D (§485.647(a)). Skilled nursing facilities, long-term care facilities, ambulatory surgery centers, and other non-hospital settings are governed by separate Conditions of Participation.
 
 ## Documentation Evidence Required
 
@@ -88,4 +88,4 @@ HIGH confidence. Full verbatim text reproduced from eCFR primary source. Subsect
 The following claims about CMS pest authority have been investigated and disconfirmed:
 
 - **"CMS State Operations Manual Appendix A contains pest interpretive guidance under A-0749 or other A-tags."** Disconfirmed by full-document grep of Rev. 238. Zero pest vocabulary anywhere in the 613-page current manual.
-- **"42 CFR §488.28 contains verbatim '10 calendar days' Plan of Correction submission requirement."** Wrong CFR location. §488.28 specifies a 60-day compliance expectation. The 10-day PoC submission deadline lives in CMS State Operations Manual Pub. 100-07, Exhibit 152.
+- **"42 CFR §488.28 contains verbatim '10 calendar days' Plan of Correction submission requirement."** Wrong CFR location. §488.28 specifies a 60-day compliance expectation (§488.28(d)). The 10-calendar-day submission instruction is sub-regulatory: for hospitals it is in Appendix A's survey protocol (Task 5, Exit Conference: "within 10 calendar days following receipt of the written statement of deficiencies"); the CAH model letters in SOM Chapter 9 (Exhibits 151 and 152) carry the same ten-day clock.

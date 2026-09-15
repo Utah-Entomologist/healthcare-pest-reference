@@ -93,7 +93,7 @@ Among these, the Board Certified Entomologist credential carries the highest evi
 
 CDC HICPAC guidelines are not regulations and are not directly enforceable. They function as the standard of care reference cited by accrediting bodies (The Joint Commission, DNV-GL, HFAP, CIHQ), infection prevention professionals, state survey agencies, plaintiff and defense attorneys in healthcare litigation, and risk management consultants. They apply by reference to all U.S. healthcare facilities providing patient care.
 
-The Joint Commission's Infection Prevention and Control standards explicitly reference HICPAC guidelines as a primary source. CMS State Operations Manual references HICPAC guidelines in interpretive guidance for §482.42 (Infection Prevention and Control Conditions of Participation). State health departments and accrediting bodies use HICPAC as the de facto national standard of care for environmental infection control.
+The Joint Commission's Infection Prevention and Control standards explicitly reference HICPAC guidelines as a primary source. State health departments and accrediting bodies use HICPAC as the de facto national standard of care for environmental infection control.
 
 ## Documentation Evidence Required
 

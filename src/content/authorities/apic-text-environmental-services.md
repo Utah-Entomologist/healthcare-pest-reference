@@ -93,7 +93,6 @@ The APIC Text is referenced as standard of care by:
 
 - The Joint Commission Infection Prevention and Control standards
 - DNV-GL NIAHO Infection Prevention standards
-- CMS State Operations Manual interpretive guidance for §482.42 Infection Prevention and Control
 - State health department infection prevention surveys
 
 ## Documentation Evidence Required
