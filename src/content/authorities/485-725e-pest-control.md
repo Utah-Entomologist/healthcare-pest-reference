@@ -147,7 +147,7 @@ For the same organization's building, §485.723 (physical environment) separatel
 | Pest language in the surveyor manual | None (Appendix A Rev. 238: 0 occurrences) | Not in verified source set | Not in verified source set | Yes (Appendix PP, F925: definition, procedures, probes) |
 | How a pest finding is written | By inference under §482.41(a), §482.41(d)(2), or §482.42(a)(3) | By inference under §485.623(b) | Directly under §485.725(e) | Directly under F925 |
 
-The hospital side has to reason from "safety and well-being of patients" and "clean and sanitary environment" to a pest observation. Subpart H organizations do not; the regulation names the pests and the program.
+The hospital side has to reason from "safety and well-being of patients" and "clean and sanitary environment" to a pest observation. Subpart H organizations do not; the regulation names the outcome and the means.
 
 ## Documentation Evidence Required
 
