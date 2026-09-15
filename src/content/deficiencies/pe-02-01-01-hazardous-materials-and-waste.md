@@ -39,7 +39,7 @@ Recorded on the authority page: the 2026 chapter splits the subject across four 
 
 ## What the Surveyor Is Looking For
 
-Carried from the authority pages: the surveyor opens the pesticide storage location and checks that an SDS exists for every pesticide visible; that the SDS file is accessible to staff on the shift being surveyed (the night-shift walkthrough is a common technique); that container labels match SDS records; that expired pesticides are not on the shelf; that pesticide storage is segregated from food, sterile supplies, medications, and personal protective equipment; that secondary containment is present where required; and that an eyewash station is within the distance 29 CFR 1910.151(c) requires.
+Carried from the authority pages: the surveyor opens the pesticide storage location and checks that an SDS exists for every pesticide visible; that the SDS file is accessible to staff on the shift being surveyed (the night-shift walkthrough is a common technique); that container labels match SDS records; that expired pesticides are not on the shelf; that pesticide storage is segregated from food, sterile supplies, medications, and personal protective equipment; that secondary containment is present where required; and that, wherever a stored pesticide is an injurious corrosive material, quick-drenching or flushing facilities are provided within the work area for immediate emergency use, per 29 CFR 1910.151(c) — the rule sets no distance; the familiar ten-second/55-foot figure is ANSI Z358.1, not OSHA.
 
 ## Documentation That Satisfies It
 
@@ -51,7 +51,7 @@ Carried from the authority page's survey-readiness list for PE.02.01.01:
 - Pesticide container labels per GHS requirements
 - Pesticide storage segregation from food, sterile supplies, medications, and PPE
 - Secondary containment where required
-- Eyewash station within required distance per 29 CFR 1910.151(c)
+- Quick-drenching or flushing facilities within the work area for immediate emergency use, wherever a stored pesticide is an injurious corrosive material, per 29 CFR 1910.151(c) (the rule sets no distance; the familiar ten-second/55-foot figure is ANSI Z358.1, not OSHA)
 
 The storage question across all the governing authorities is brought together on the [pesticide storage requirements](/topics/pesticide-storage-requirements-healthcare-facilities/) topic page.
 

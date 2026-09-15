@@ -98,7 +98,7 @@ Carried from this reference's Hazard Communication and 2026 PE chapter pages:
 - Expired pesticides are not present on the shelf
 - Pesticide storage is segregated from food, sterile supplies, medications, and personal protective equipment
 - Secondary containment is present where required
-- An eyewash station is within the distance 1910.151(c) requires
+- Quick-drenching or flushing facilities are provided within the work area for immediate emergency use wherever a stored pesticide is an injurious corrosive material (1910.151(c) sets no distance; ten seconds/55 feet is ANSI Z358.1, not OSHA)
 
 ## Documentation That Satisfies It
 

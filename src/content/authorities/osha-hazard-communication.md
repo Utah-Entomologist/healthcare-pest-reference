@@ -50,7 +50,7 @@ related_authorities:
 
 > "The employer shall maintain in the workplace copies of the required safety data sheets for each hazardous chemical, and shall ensure that they are readily accessible during each work shift to employees when they are in their work area(s). (Electronic access and other alternatives to maintaining paper copies of the safety data sheets are permitted as long as no barriers to immediate employee access in each workplace are created by such options.)"
 
-**Container Labeling (29 CFR 1910.1200(f))** requires labeling of every hazardous chemical container with product identifier, signal word, hazard statements, pictograms, and precautionary statements.
+**Container Labeling (29 CFR 1910.1200(f)(6))** requires the employer to label every hazardous chemical container in the workplace, either with the full shipped-container elements — product identifier, signal word, hazard statement(s), pictogram(s), precautionary statement(s) — or with a product identifier plus words or symbols conveying the hazards, used together with the rest of the hazard communication program. (The five-element list is §1910.1200(f)(1)'s, which binds the chemical manufacturer, importer, or distributor for containers leaving the workplace; a hospital's own duty is (f)(6).)
 
 **Employee Training (29 CFR 1910.1200(h))** requires training on initial assignment and whenever a new hazard is introduced.
 
@@ -88,7 +88,7 @@ OSHA HazCom is the documentation backbone for pesticide-related findings during 
 - That expired pesticides are not present on the storage shelf
 - That pesticide storage is segregated from food, sterile supplies, medications, and PPE
 - That secondary containment is present where required
-- That an eyewash station is within required distance per 29 CFR 1910.151(c)
+- That quick-drenching or flushing facilities are provided within the work area for immediate emergency use wherever a stored pesticide is an injurious corrosive material, per 29 CFR 1910.151(c) — the rule sets no distance; the familiar ten-second/55-foot figure is ANSI Z358.1, not OSHA
 
 Common citation patterns under PE.02.01.01 (and its legacy predecessor EC.02.02.01 EP 5) include uninventoried pesticide containers, missing SDS, expired products on shelf, improper segregation, missing secondary containment, and SDS access barriers on non-day shifts.
 

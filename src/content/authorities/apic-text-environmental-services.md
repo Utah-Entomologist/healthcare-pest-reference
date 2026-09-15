@@ -25,7 +25,7 @@ services_applicable:
   - pest management program design
 verbatim_available: false
 verbatim_paywall_note: "APIC Text of Infection Control and Epidemiology verbatim text is published through APIC's online text platform, which requires APIC membership ($310+ annually for individuals) or institutional subscription. Operational requirements summarized on this page are derived from publicly available APIC position statements, AJIC (American Journal of Infection Control) published articles, APIC conference proceedings, and accrediting body summaries that reference APIC Text as standard of care for U.S. infection prevention practice."
-summary: "The Infection Preventionist’s practice reference. Positions pest management as infection prevention infrastructure and sets the audit expectations IPs apply to pest programs."
+summary: "The Infection Preventionist’s practice reference. This reference reads it as positioning pest management as infection prevention infrastructure and as the frame for the audit expectations IPs apply to pest programs."
 related_authorities:
   - slug: cdc-hicpac-environmental-guidelines
     why: "The federal infection prevention recommendations referenced throughout the APIC Text."
@@ -45,27 +45,27 @@ Association for Professionals in Infection Control and Epidemiology (APIC). APIC
 
 ## What It Says (Operative Provisions Relevant to Pest Management)
 
-The APIC Text Environmental Services chapter addresses pest management as a component of broader environmental infection control. Operative provisions referenced in publicly accessible APIC materials and AJIC articles include:
+The APIC Text's Environmental Services chapter (Chapter 108, in the section "Infection Prevention for Support Services and the Care Environment"; public record dated April 28, 2025) covers EVS department structure, the role of environmental cleaning in preventing HAIs, disinfectant principles and types, and IP/EVS collaboration. Its public summary does not mention pest control. What follows is this reference's reading of infection-prevention practice as that chapter organizes it — not APIC's text, which is licensed and unread here, and none of it is quoted:
 
 **Pest management as infection prevention infrastructure:**
 
-APIC positions pest management not as a facilities operations function but as infection prevention infrastructure. Pest activity in healthcare environments constitutes an infection prevention concern requiring Infection Preventionist (IP) involvement in program design, monitoring, and incident response.
+This reference reads infection-prevention practice as treating pest management not as a facilities operations function but as infection prevention infrastructure: pest activity in a healthcare environment is an infection prevention concern that calls for Infection Preventionist (IP) involvement in program design, monitoring, and incident response.
 
 **Integration with environmental services:**
 
-The APIC Text framework integrates pest management with environmental services (EVS) protocols. Pest activity findings during EVS rounds must be reported to the Infection Preventionist for evaluation and response. Pest management vendor service must be coordinated with EVS scheduling to avoid disruption of cleaning and disinfection cycles.
+This reference reads the chapter's IP/EVS collaboration model as reaching pest management: pest activity found on EVS rounds is reported to the IP for evaluation and response, and vendor service is coordinated with EVS scheduling so cleaning and disinfection cycles are not disrupted.
 
 **Pest-as-vector concerns:**
 
-The APIC Text addresses the published literature on arthropods and rodents as vectors of healthcare-associated organisms — including ESBL-producing Enterobacterales (cockroach-mediated transmission documented in the Cotton 2000 ICHE outbreak), MRSA, VRE, Clostridioides difficile spores, and other resistant organisms. Pest exclusion is framed as a component of multi-drug-resistant organism control programs.
+The published literature on arthropods and rodents as vectors of healthcare-associated organisms — cockroaches carrying MRSA and resistant Enterobacterales, bed bugs in healthcare settings, drain flies and other flies in operating rooms and perioperative departments — is citable to the primary papers; four of them are references #127–#132 in AORN's public evidence table for its Guideline for Environmental Cleaning (see the AORN page). On that literature, this reference reads pest exclusion as a component of multi-drug-resistant organism control, and does not attribute that reading to the APIC Text.
 
 **Construction and renovation pest concerns:**
 
-Construction and renovation activities are documented as periods of elevated pest exposure risk in healthcare environments. The APIC Text framework requires Infection Control Risk Assessment (ICRA) processes to address pest exclusion during construction, including barrier integrity, dust control coordination, and pest monitoring escalation.
+This reference reads construction and renovation as periods of elevated pest exposure and reads the Infection Control Risk Assessment (ICRA) process as the place pest exclusion during construction belongs — barrier integrity, dust control coordination, and pest monitoring escalation. No public APIC material states an ICRA pest requirement; this is the reference's reading, not APIC's text.
 
 **Documentation and audit expectations:**
 
-The APIC Text aligns with The Joint Commission and DNV-GL standards in expecting documented pest management programs subject to periodic audit. Audit expectations include written IPM plans, service records, trend reporting, and integration with the facility's broader infection prevention plan.
+This reference reads the audit expectations an IP applies to a pest program as: a written IPM plan, service records, trend reporting, and integration with the facility's broader infection prevention plan. That reading is not attributed to the APIC Text.
 
 ## What It Means in Plain Language
 

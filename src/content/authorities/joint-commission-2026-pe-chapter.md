@@ -89,7 +89,7 @@ For Joint Commission survey readiness in pest management:
 - Pesticide container labels per GHS requirements
 - Pesticide storage segregation from food, sterile supplies, medications, and PPE
 - Secondary containment where required
-- Eyewash station within required distance per 29 CFR 1910.151(c)
+- Quick-drenching or flushing facilities within the work area for immediate emergency use, wherever a stored pesticide is an injurious corrosive material, per 29 CFR 1910.151(c) (the rule sets no distance; the familiar ten-second/55-foot figure is ANSI Z358.1, not OSHA)
 
 ## How Surveyors Evaluate It
 
