@@ -45,7 +45,31 @@ Correction Notice pages (epa-ipm-toolkit-2021, utah-r432-100, cdc-hicpac, fda-fo
 
 **Observed, not applied (no row specifies them):** the USDA page's Confidence Notes still say USDA's "duplicative" rationale was "verified verbatim from the Federal Register summary," which the page's own Correction block and Batch 5 row U1 establish is absent from the document; the methodology page carries the same "Part I (a separate document)" wording that C19 corrected on the CDC page; the CoP page's `facility_types_applicable` frontmatter still lists critical access hospital after C20; the two "Trenton" body sentences aside, `OPEN_QUESTIONS.md` R5-1 is untouched (only its EPA-archive item is closed by E22).
 
-**Push access.** This session could clone the repository but not push to it (`add_repo` with push access was refused: push access to `utah-entomologist/healthcare-pest-reference` is needed for Claude to make changes there). The branch and its seven commits are exported as a git bundle and a patch series to the Drive folder alongside this file.
+**Push access (2026-09-15).** The session that wrote the seven commits could clone the repository but not push to it, so it exported them as a git bundle and a patch series to the Drive folder. They were published unchanged on 2026-09-23 (see below).
+
+### Re-verification and publication — 2026-09-23
+
+The 2026-09-15 bundle (`HPR_fix-verification-batches-1-5.bundle`, Drive) was fetched unchanged onto `fix/verification-batches-1-5`. It sits directly on `main` (52a97d1), so nothing had to be merged or rebased. Before it was pushed, the branch was checked again, row by row, against the five reports, and the gates were re-run:
+
+```
+astro check: 0 errors, 0 warnings, 0 hints
+46 pages built
+210 JSON-LD blocks against 2,314 schema.org types / 1,531 properties → OK
+1,084 internal links + sitemap → OK
+old strings, 83 checks across every CORRECTED/UNSUPPORTED row (visible text and raw HTML of dist/): 80 render 0; the other 3 are explained below
+replacement strings, 55 checks: all render where specified (U6's corrected PDF route renders as the link href)
+"Trenton L.": 0 · "Trenton S. Frazer": 84 rendered · "Frazer, Trenton S.": 36 suggested citations
+Correction Notice pages: utah-r432-100 (was/is table renders as a table), epa-ipm-toolkit-2021, cdc-hicpac, fda-food-code-2022 (inline correction blocks render)
+```
+
+The three remaining old-string hits were checked and left alone, because none is the corrected text. (1) "central sterile-supply areas" still appears unquoted in the CDC page's documentation list. C4 corrects the verbatim E.V.1 quotation only, and the same paraphrase is the report's near-miss C24. (2) "is the most recent published edition" appears on the AORN page, where it is about AORN, not the Food Code. (3) "Cotton 2000" appears on the HAI-cost page, which no row touches; L8 removed it from the APIC page only.
+
+Two differences from the correction prompt, where the reports govern:
+
+- **R432-100 renumbering.** The prompt says the June 5, 2026 amendment "renumbered the section to 38." Batch 2 row U17 says the amendment "renumbered nothing in this section but changed the wording; the section number had already moved from -39 to -38 in an intervening filing." The Correction Notice follows the report.
+- **The two "Not in verified source set" cells on the 485.725(e) page.** Only one of them is Appendix W: the critical access hospital column, now filled with C-0914 and C-0924. The other belongs to Subpart H organizations. Their surveyor appendix is SOM Appendix E, which none of the five batches fetched (Batch 3 §7 item 7). Filling that cell with Appendix W text would attribute a CAH manual to Subpart H organizations, so it still reads "Not in verified source set."
+
+`PERSON_ID` in `src/lib/site.ts` keeps its fragment `#trenton-l-frazer`. It is a stable JSON-LD `@id`, not rendered text, and changing it would orphan the identifier already published.
 
 Nothing was sent, nothing was spent, nothing was merged or deployed.
 
