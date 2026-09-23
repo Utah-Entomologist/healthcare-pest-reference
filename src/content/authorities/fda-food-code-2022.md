@@ -1,7 +1,7 @@
 ---
 title: "FDA Food Code 2022 — Pest Control in Healthcare Food Service"
 authority_type: "federal regulator"
-citation: "FDA Food Code 2022, Sections 6-501.111 and 6-202.13"
+citation: "FDA Food Code 2022 (January 18, 2023 version), as amended by the Supplement to the 2022 Food Code (November 2024), Sections 6-501.111 and 6-202.13"
 last_verified: 2026-09-12
 date_published: 2026-05-26
 source_url: "https://www.fda.gov/food/fda-food-code/food-code-2022"
@@ -40,7 +40,9 @@ related_authorities:
 
 ## Citation
 
-U.S. Food and Drug Administration, Food Code 2022. Section 6-501.111 "Controlling Pests" and Section 6-202.13 "Insect Control Devices, Design and Installation." The 2022 Food Code is the most recent published edition.
+U.S. Food and Drug Administration, Food Code 2022 (January 18, 2023 version). Section 6-501.111 "Controlling Pests" and Section 6-202.13 "Insect Control Devices, Design and Installation." The 2022 Food Code (January 18, 2023 version) is the most recent full edition. FDA issued a Supplement to the 2022 Food Code in November 2024 (December 2024 version), which revises the 2022 text effective upon issuance; it does not alter §6-501.111 or §6-202.13.
+
+**Supplement to the 2022 Food Code** (FDA, released November 4, 2024; posted PDF "December 2024 Version," 65 pages): https://www.fda.gov/media/183271/download. The Supplement states that its changes "constitute revisions to the 2022 Food Code effective upon issuance."
 
 ## What It Says (Verbatim)
 
@@ -58,16 +60,16 @@ Subsection (C) is designated **Pf (Priority Foundation)** — a violation severi
 
 **Section 6-202.13 Insect Control Devices, Design and Installation:**
 
-> "(A) INSECT CONTROL DEVICES that are used to electrocute or stun flying insects shall be designed to retain the insect within the device.
-> (B) INSECT CONTROL DEVICES shall be installed so that:
+> "(A) Insect control devices that are used to electrocute or stun flying insects shall be designed to retain the insect within the device.
+> (B) Insect control devices shall be installed so that:
 > (1) The devices are not located over a FOOD preparation area; and
-> (2) Dead insects and insect fragments are prevented from being impelled onto or falling on EXPOSED FOOD; CLEAN EQUIPMENT, UTENSILS, and LINENS; and unwrapped SINGLE-SERVICE and SINGLE-USE ARTICLES."
+> (2) Dead insects and insect fragments are prevented from being impelled onto or falling on exposed FOOD; clean EQUIPMENT, UTENSILS, and LINENS; and unwrapped SINGLE-SERVICE and SINGLE-USE ARTICLES."
 
 All Section 6-202.13 items are classified as **Core** items (lowest violation severity classification).
 
 ## What It Means in Plain Language
 
-The FDA Food Code is the federal model code for retail food establishment regulation. It is not itself directly enforceable at the federal level — it becomes enforceable through state adoption. All 50 states, the District of Columbia, and U.S. territories adopt some version of the Food Code, with adoption versions ranging from the 1995 edition through the 2022 edition depending on the state's regulatory cycle.
+The FDA Food Code is the federal model code for retail food establishment regulation. It is not itself directly enforceable at the federal level — it becomes enforceable through state adoption. Per FDA's 2024 adoption report, 50 of the 51 state-level jurisdictions (the states and DC) have adopted some version of the Food Code — Maryland is the exception, and New York's restaurant agency has not adopted while its retail-food agency has — and adopted versions range from the 1995 edition through the 2022 edition (with Supplement). Of the territories, Guam, CNMI, Puerto Rico, and the Virgin Islands have adopted; American Samoa has not.
 
 For healthcare facilities, the Food Code applies to dietary services, cafeteria operations, patient meal preparation, and any other food service operation within the facility. Hospital food service is governed by Food Code provisions, not by federal HACCP regulations.
 
@@ -77,7 +79,7 @@ Section 6-501.111 establishes the four-component pest control framework for food
 3. **Pest control methods if pests are found** — intervention when activity is detected
 4. **Elimination of harborage conditions** — sanitation and structural exclusion
 
-The Pf (Priority Foundation) designation on subsection (C) means that failure to use appropriate pest control methods when pests are found is a citation-grade violation in any FDA Food Code inspection. Pf violations require correction within a specified timeframe (typically 10 days or as specified by the regulatory authority).
+The Pf (Priority Foundation) designation on subsection (C) means that failure to use appropriate pest control methods when pests are found is a citation-grade violation in any FDA Food Code inspection. Under §8-405.11 a Pf violation is to be corrected at the time of inspection; the regulatory authority may agree to or specify a longer time frame, not to exceed 10 calendar days after the inspection.
 
 Section 6-202.13 governs flying insect control devices (commonly called bug zappers or fly killers). The provisions require devices to retain insects (not throw insect fragments into the environment) and prohibit device installation over food preparation areas.
 
@@ -98,7 +100,7 @@ Coverage does NOT include:
 - Clinical laboratory operations
 - Sterile processing (governed by separate standards)
 
-Each state adopts a specific Food Code version. Healthcare facilities should verify their state's adopted version and effective date. Most states currently operate under the 2017, 2019, or 2022 Food Code editions.
+Each state adopts a specific Food Code version. Healthcare facilities should verify their state's adopted version and effective date. Most states currently operate under the 2013, 2017, or 2022 edition (36 states per FDA's 2024 adoption report), some with the edition's Supplement.
 
 ## Documentation Evidence Required
 
@@ -117,7 +119,7 @@ For Section 6-202.13 compliance:
 
 ## How Surveyors Evaluate It
 
-State health department food service inspectors evaluate healthcare food service operations against the state-adopted Food Code version. Inspections occur at frequencies set by state law (typically annually for healthcare food service, more frequently for higher-risk operations).
+State health department food service inspectors evaluate healthcare food service operations against the state-adopted Food Code version. Inspection frequency is set by the adopting state; the model Food Code's baseline is at least once every 6 months (§8-401.10(A)), with longer intervals permitted under a written risk-based schedule (§8-401.10(B)).
 
 Inspector focus areas under Section 6-501.111:
 

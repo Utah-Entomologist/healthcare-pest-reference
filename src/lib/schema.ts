@@ -77,7 +77,7 @@ export function websiteSchema(): WithContext<WebSite> {
  *
  * The credential is modelled as `hasCredential` on the Person, recognized by
  * ESACC. It is deliberately not attached to any Organization: the BCE is
- * held by Trenton L. Frazer personally, not by any firm.
+ * held by Trenton S. Frazer personally, not by any firm.
  */
 export function personSchema(): WithContext<Person> {
   const credential: EducationalOccupationalCredential = {

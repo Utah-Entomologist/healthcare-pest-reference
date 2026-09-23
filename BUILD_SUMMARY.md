@@ -4,6 +4,77 @@ Overnight run, September 9–10, 2026. Branch
 `claude/phase-1-capture-and-integrity-ek2s8l` (see OPEN_QUESTIONS.md item 11
 on the branch name). Nothing was merged or deployed.
 
+## Verification record — 2026-09-15: Batches 1–5 applied
+
+Five Chrome verification runs swept all 62 pages on both properties (healthcarepestreference.org, 45 pages; frazerappliedentomology.com, 17 pages) against every source they cite. Each assertion received a verdict and the verbatim source text. The five reports are the specification for the correction branch `fix/verification-batches-1-5`; nothing was re-verified, reinterpreted, or improved. One commit per batch, in order.
+
+| Batch | Sources | Rows | Verified | Corrected | Unsupported |
+|---|---|---|---|---|---|
+| 1 | VHA 1850.02 · CMS Appendix PP Rev. 232 · FDA Food Code 2022 (+ Dec 2024 Supplement) | 110 | 96 | 13 | 1 |
+| 2 | CDC/HICPAC 2003 (upd. 2019) · Utah R432-100 · Utah R68-7 · EPA 907K21002 | 112 | 77 | 32 | 3 |
+| 3 | CMS Appendix A Rev. 238 · Appendix W Rev. 200 · 42 CFR Parts 482/483/485 | 61 | 54 | 5 | 2 |
+| 4 | TJC 2026 PE Essentials · DNV NIAHO (Rev 18 public) · ACHC 2025 07.07.01 | 35 | 24 | 7 | 4 |
+| 5 | OSHA 1910.1200/.151 · USDA 7 CFR 110 rescission · NACMCF 1997 · licensed identifiers · credentials | 42 | 31 | 7 | 4 |
+| **Total** | | **360** | **282** | **64** | **14** |
+
+**Reports.** Google Drive folder `HPR-Primary-Sources` (ID `11d6Jg9zfbUkixIZfCkIxwrKqepoAcDND`): `Verification_Batch_1_2026-09-15.md` through `Verification_Batch_5_2026-09-15.md`.
+
+**Rows applied in this repository, by commit:**
+
+| Batch | Rows | Pages |
+|---|---|---|
+| 1 | V19, V23, V40, C6 (unsupported → restated as what the source shows), C17, C23, C26, F4, F6 (item 7: Supplement to the 2022 Food Code, with the FDA URL, in the citation block and the citation line the index pages render), F8, F11, F14, F15, F19 | vha-directive-1850-02, epa-ipm-toolkit-2021, f925, fda-food-code-2022, a-0722-facilities |
+| 2 | C1, C4, C10, C14, C15, C16, C17 (also /methodology/), C19, C25; U4, U6, U13, U15 (unsupported → deleted), U17, U19 and the Correction Notice rewritten as superseded-not-wrong (item 2); P2 (frontmatter title, so the H1, suggested citation, and nine Related Authorities blurbs), P4 (unsupported → suite number dropped, address attributed to UDAF), P5, P6, P7, P12, P13, P14 (unsupported → fee schedule deleted), P24; E6, E8, E11, E12, E16, E19, E20, E21, E22, E25, E31, with the toolkit's stated position on pesticides restored verbatim and pinpointed (item 3) and the MEDIUM caveat retired | cdc-hicpac-environmental-guidelines, methodology, a-0749, utah-r432-100-hospital-licensure, utah-r68-7-pesticide-applicator, epa-ipm-toolkit-2021, a-0700-physical-environment |
+| 3 | A16; A28 (CoP page and /methodology/); A31 and A32 (unsupported → deleted); C20; item 8 (the Appendix W cell filled from Rev. 200 — 0 occurrences, C-0914 and C-0924 verbatim; the Subpart H cell left "Not in verified source set" because SOM Appendix E was in no batch's source set) | a-0747, cms-conditions-of-participation, methodology, cdc-hicpac, apic-text-environmental-services, 485-725e-pest-control |
+| 4 | T5; T8 (every place the site routed pesticide inventory/SDS/labeling to "EP 4"); T9, T10, T11 (L1), T14 (unsupported → restated as this reference's reading, no quotation); D8 with the DNV page rewritten in the report's wording (item 4) | joint-commission-2026-pe-chapter, pe-01-01-01, pe-02-01-01, ec-02-02-01, ec-02-06-01, pesticide-storage topic, osha, cms-state-operations-manual, authorities index, which-tag router, dnv-gl-niaho-standards |
+| 5 | O4; O5 (three pages named, plus the same line on the TJC authority page); U5, U6; L5, L6, L8, L10 (unsupported → restated as this reference's reading, no quotation, no attribution to the publisher); L9 (item 6: 2026 FGI Codes for Planning and Design, released August 31, 2026; fgicodes.org); item 9 (AORN evidence table, references #127–#132); C1 (item 1: Trenton L. → Trenton S. in three templates, site.ts, and two body sentences — 119 rendered instances, now zero); C3 | osha-hazard-communication, pe-02-01-01, pesticide-storage topic, joint-commission-2026-pe-chapter, usda-7cfr110-rescission, aorn, apic, fgi, esacc-bce-credential, layouts, site.ts, about, consulting, index |
+
+**The F925 corrections (first commit).** `PROMPT_ClaudeCode_F925_Corrections.md` was not found in Drive (searched by title and full text). Its source documents were: `F925_Verification_2026-09-15.md` (six outreach claims verified against Appendix PP Rev. 232 and SOM Chapter 7 Rev. 244) and `F925_Live_Site_Audit_2026-09-15.md`, which flags exactly ten live instances across both properties, each with the exact page text and a replacement. Those ten are the ten strings; none had been merged. The eight on this site — five on `/deficiencies/f925/` (the "two directions" sentence, the F812 section heading, the "four places" lead-in, the Food Code related-authority blurb, and the "infection control program" presupposition), the F925 summary rendered on `/deficiencies/`, the which-tag router's F925 card, and one sentence on `/authorities/485-725e-pest-control/` — are applied as the branch's first commit; the two on frazerappliedentomology.com are applied there. The audit's "do not touch" items (plan-of-correction attribution, severity guidance, the four near-misses) were left as they were.
+
+**Build verification after the edits (2026-09-15):**
+
+```
+astro check: 0 errors, 0 warnings, 0 hints (38 files)
+46 pages built
+210 JSON-LD blocks checked against 2,314 schema.org types and 1,531 properties → OK
+1,084 internal links + sitemap → OK
+old string from every applied row, visible text and raw HTML of dist/: 0 renders each
+"Trenton L.": 0 (was 119 rendered instances across 45 pages); "Trenton S." on 46 of 46 pages
+Correction Notice pages (epa-ipm-toolkit-2021, utah-r432-100, cdc-hicpac, fda-food-code-2022): render their correction blocks; the R432-100 was/is table renders as a table
+```
+
+**Observed, not applied (no row specifies them):** the USDA page's Confidence Notes still say USDA's "duplicative" rationale was "verified verbatim from the Federal Register summary," which the page's own Correction block and Batch 5 row U1 establish is absent from the document; the methodology page carries the same "Part I (a separate document)" wording that C19 corrected on the CDC page; the CoP page's `facility_types_applicable` frontmatter still lists critical access hospital after C20; the two "Trenton" body sentences aside, `OPEN_QUESTIONS.md` R5-1 is untouched (only its EPA-archive item is closed by E22).
+
+**Push access (2026-09-15).** The session that wrote the seven commits could clone the repository but not push to it, so it exported them as a git bundle and a patch series to the Drive folder. They were published unchanged on 2026-09-23 (see below).
+
+### Re-verification and publication — 2026-09-23
+
+The 2026-09-15 bundle (`HPR_fix-verification-batches-1-5.bundle`, Drive) was fetched unchanged onto `fix/verification-batches-1-5`. It sits directly on `main` (52a97d1), so nothing had to be merged or rebased. Before it was pushed, the branch was checked again, row by row, against the five reports, and the gates were re-run:
+
+```
+astro check: 0 errors, 0 warnings, 0 hints
+46 pages built
+210 JSON-LD blocks against 2,314 schema.org types / 1,531 properties → OK
+1,084 internal links + sitemap → OK
+old strings, 83 checks across every CORRECTED/UNSUPPORTED row (visible text and raw HTML of dist/): 80 render 0; the other 3 are explained below
+replacement strings, 55 checks: all render where specified (U6's corrected PDF route renders as the link href)
+"Trenton L.": 0 · "Trenton S. Frazer": 84 rendered · "Frazer, Trenton S.": 36 suggested citations
+Correction Notice pages: utah-r432-100 (was/is table renders as a table), epa-ipm-toolkit-2021, cdc-hicpac, fda-food-code-2022 (inline correction blocks render)
+```
+
+The three remaining old-string hits were checked and left alone, because none is the corrected text. (1) "central sterile-supply areas" still appears unquoted in the CDC page's documentation list. C4 corrects the verbatim E.V.1 quotation only, and the same paraphrase is the report's near-miss C24. (2) "is the most recent published edition" appears on the AORN page, where it is about AORN, not the Food Code. (3) "Cotton 2000" appears on the HAI-cost page, which no row touches; L8 removed it from the APIC page only.
+
+Two differences from the correction prompt, where the reports govern:
+
+- **R432-100 renumbering.** The prompt says the June 5, 2026 amendment "renumbered the section to 38." Batch 2 row U17 says the amendment "renumbered nothing in this section but changed the wording; the section number had already moved from -39 to -38 in an intervening filing." The Correction Notice follows the report.
+- **The two "Not in verified source set" cells on the 485.725(e) page.** Only one of them is Appendix W: the critical access hospital column, now filled with C-0914 and C-0924. The other belongs to Subpart H organizations. Their surveyor appendix is SOM Appendix E, which none of the five batches fetched (Batch 3 §7 item 7). Filling that cell with Appendix W text would attribute a CAH manual to Subpart H organizations, so it still reads "Not in verified source set."
+
+`PERSON_ID` in `src/lib/site.ts` keeps its fragment `#trenton-l-frazer`. It is a stable JSON-LD `@id`, not rendered text, and changing it would orphan the identifier already published.
+
+Nothing was sent, nothing was spent, nothing was merged or deployed.
+
+---
+
 ## Verification performed
 
 | Check | Result |

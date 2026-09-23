@@ -20,7 +20,7 @@ services_applicable:
   - infection prevention and control
 verbatim_available: false
 verbatim_paywall_note: "AORN Guidelines for Perioperative Practice verbatim text is published through AORN eGuidelines+, which is subscription-only (~$300–600 per individual annually; institutional licenses higher). Operational requirements referenced on this page are publicly summarized in AORN's Clinical FAQs, AORN Journal abstracts, and conference proceedings."
-summary: "Perioperative standard of care. Treats visible pest activity in an operating room or sterile processing as an immediate cleaning failure and expects OR leadership coordination."
+summary: "Perioperative standard of care. This reference reads it as treating visible pest activity in an operating room or sterile processing as an immediate cleaning failure and expecting OR leadership coordination; AORN's public evidence table for the Guideline for Environmental Cleaning carries six pest citations."
 related_authorities:
   - slug: cdc-hicpac-environmental-guidelines
     why: "Names operating rooms among the high-risk areas requiring a pest control strategy."
@@ -42,15 +42,19 @@ Association of periOperative Registered Nurses (AORN). Guidelines for Perioperat
 
 The AORN Guideline for Environmental Cleaning establishes evidence-based recommendations for cleaning and disinfecting perioperative spaces — operating rooms, sterile processing departments, sub-sterile areas, and adjacent perioperative zones. The Guideline for a Safe Environment of Care addresses physical environment risk factors that affect perioperative patient safety.
 
-The 2026 edition addresses pest activity in the perioperative environment through two operative provisions:
+This reference reads the 2026 edition as bearing on pest activity in the perioperative environment in two ways. Nothing below is quoted from the guideline, which is licensed and unread here; each is the reference's reading, and the public support for it is AORN's own evidence table, cited at the end of this section.
 
 **Visible pest activity as immediate cleaning failure:**
 
-AORN positions any visible evidence of insects, rodents, or pest activity in perioperative spaces as a critical cleaning and environmental control failure requiring immediate response. The 2023 AORN Clinical Issues column (published in AORN Journal) on perioperative pest management specifically addressed "insect parts" as a perioperative cleaning concern — flying insects, ant trails, and any insect fragments observed in operating rooms or sterile processing areas constitute critical findings.
+This reference reads AORN's environmental cleaning requirements as treating any visible evidence of insects, rodents, or pest activity in perioperative spaces — flying insects, ant trails, insect fragments in operating rooms or sterile processing areas — as a critical cleaning and environmental control failure requiring immediate response. The one AORN publication on the subject that is free and reachable, an *Outpatient Surgery* article hosted on aorn.org (Joe Paone, "Infection Prevention: Got Creepy Crawlies in Your ORs?", February 10, 2025), says on the record that "Everybody needs a plan for what to do if there is an infestation."
 
 **Pest exclusion as facility design requirement:**
 
-AORN guidelines reference Facility Guidelines Institute (FGI) Guidelines for Design and Construction as the standard for perioperative facility design. Pest exclusion features — sealed wall and floor junctions, screened ventilation intakes, automatic-closing doors at perioperative perimeter, no exterior windows in operating rooms — are required design elements that simultaneously serve infection prevention and pest exclusion.
+This reference reads AORN as pointing to the Facility Guidelines Institute's design standard (the 2022 *Guidelines for Design and Construction*; from August 31, 2026, the *FGI Codes for Planning and Design*) for perioperative facility design, and reads that standard as calling for pest exclusion features — sealed wall and floor junctions, screened ventilation intakes, automatic-closing doors at the perioperative perimeter, no exterior windows in operating rooms — that simultaneously serve infection prevention and pest exclusion. The design list is in substance FGI's, not AORN's, and is quoted from neither.
+
+**What AORN publishes free that supports the reading above:**
+
+AORN posts the evidence table behind its Guideline for Environmental Cleaning at cm2.aorn.org. Its reference list carries six consecutive pest citations, references #127 through #132: the moth fly *Clogmia albipunctata* as a mechanical vector of bacterial pathogens in German hospitals; bed bugs in healthcare settings; MRSA isolated from hospital cockroaches; a Psychodidae (drain fly) infestation in an operating room; "fly rounds" as an epidemiologic tool during a Sarcophagidae fly infestation of a community hospital's perioperative department; and the joint CDC/EPA bed bug statement. The guideline engages the pest literature six references deep. That table — AORN's own document, public, citable by reference number — is the support for the reading above; the licensed guideline text is not quoted.
 
 **Pesticide application restrictions in perioperative spaces:**
 
@@ -115,7 +119,7 @@ Common findings in perioperative pest management evaluation: pest exclusion desi
 
 ## Confidence Notes
 
-MEDIUM confidence. AORN Guidelines for Perioperative Practice verbatim text is paywalled in AORN eGuidelines+. Operational requirements summarized on this page are derived from publicly available AORN Clinical FAQs, AORN Journal abstracts and excerpts, conference proceedings, and accrediting body summaries referencing AORN as standard of care. The 2026 edition is the most recent published edition as of the verification date. Verbatim quotation of AORN guideline language requires institutional or individual AORN subscription access.
+MEDIUM confidence. AORN Guidelines for Perioperative Practice verbatim text is paywalled in AORN eGuidelines+. The operative points on this page are this reference's reading, voiced as such; their public support is AORN's evidence table for the Guideline for Environmental Cleaning (references #127–#132, verified September 15, 2026) and the aorn.org *Outpatient Surgery* article cited above. The 2026 edition is the most recent published edition as of the verification date. Verbatim quotation of AORN guideline language requires institutional or individual AORN subscription access.
 
 ## Related Killed Claims
 

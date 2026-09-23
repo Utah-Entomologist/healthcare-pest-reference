@@ -1,7 +1,7 @@
 ---
 title: "DNV-GL NIAHO Standards — Pest Management in DNV-Accredited Hospitals"
 authority_type: "accrediting body"
-citation: "DNV Healthcare USA, Inc., National Integrated Accreditation for Healthcare Organizations (NIAHO) Standards"
+citation: "DNV Healthcare USA, Inc., National Integrated Accreditation for Healthcare Organizations (NIAHO) Accreditation Requirements, Interpretive Guidelines and Surveyor Guidance, Revision 25-1 (September 8, 2025), IC.1"
 last_verified: 2026-05-25
 date_published: 2026-06-01
 source_url: "https://www.dnv.com/healthcare/"
@@ -17,8 +17,8 @@ services_applicable:
   - infection prevention and control
   - pesticide storage and handling
 verbatim_available: false
-verbatim_paywall_note: "DNV-GL NIAHO Standards verbatim text is published through DNV Healthcare's standards manual, which is provided to accredited and applicant facilities under accreditation agreement. Operational requirements referenced on this page are publicly summarized in DNV Healthcare's overview materials, ISO 9001 framework documentation (NIAHO is built on ISO 9001 quality management principles), and CMS deeming authority documentation."
-summary: "NIAHO incorporates the CMS Conditions of Participation by reference and adds ISO 9001 quality management. Pest expectations match The Joint Commission; documentation expectations are more structured."
+verbatim_paywall_note: "The revision in force, Revision 25-1 (September 8, 2025), is licensed and is held by the operator; it is cited by identifier and paraphrase only. The older Revision 18 (February 5, 2018) is publicly posted by a third party (the California Hospital Association) and contains the same IC.1 provision; it corroborates the substance but is not the revision cited."
+summary: "NIAHO incorporates the CMS Conditions of Participation by reference and adds ISO 9001 quality management. IC.1 names pest control as one element of a sanitary physical environment that the hospital's documented infection-prevention policies must cover — a written obligation with nothing defining its content."
 related_authorities:
   - slug: cms-conditions-of-participation
     why: "The federal regulation NIAHO incorporates by reference."
@@ -38,7 +38,11 @@ DNV Healthcare USA, Inc. (formerly DNV GL Healthcare, formerly Det Norske Verita
 
 ## What It Says (Operative Provisions Relevant to Pest Management)
 
-NIAHO does not contain a pest-control-specific standard. Pest activity and pesticide handling are addressed under operative standards by inference, similar to The Joint Commission's 2026 Physical Environment framework. Two operative NIAHO areas govern pest management:
+NIAHO has no standard dedicated to pest control, but it does not leave the subject to inference: IC.1's interpretive guidelines name pest control as one element of maintaining a sanitary physical environment that the organization's documented infection-prevention policies and procedures must include. A DNV-accredited hospital therefore owes a written policy that covers pest control and has nothing telling it what to put in one. The operative NIAHO areas:
+
+**IC.1 — Infection Prevention and Control System:**
+
+IC.1 requires a process to maintain a sanitary environment and a documented process, policies, and procedures defining how infections and communicable diseases are prevented, controlled, and investigated. Its interpretive guidelines list what those documented policies and procedures must include; under maintenance of a sanitary physical environment the list runs to seven elements — ventilation and water quality control; safe air handling in areas of special ventilation; food sanitation, storage, and handling; cleaning and disinfecting surfaces, carpeting, and furniture; textiles reprocessing, storage, and distribution; disposal of regulated and non-regulated waste; and pest control. Pest control is the whole of the last item. No method, no frequency, and no record format are specified anywhere in the revision. The obligation is real, documented, and entirely undefined as to content.
 
 **Physical environment standards:**
 
@@ -62,7 +66,7 @@ DNV-GL is the second-largest healthcare accreditor in the U.S. after The Joint C
 
 For pest management programs serving DNV-accredited facilities:
 
-1. **The substantive pest management expectations are essentially identical to Joint Commission-accredited facilities.** CMS Conditions of Participation apply to both. HICPAC standards of care apply to both. OSHA requirements apply to both. The fundamental operational requirements are the same.
+1. **The federal floor is the same as for Joint Commission-accredited facilities, but the accreditor obligation is not.** CMS Conditions of Participation, HICPAC standards of care, and OSHA requirements apply to both. The Joint Commission's 2026 Physical Environment chapter names no pest requirement; NIAHO IC.1 names pest control as a subject the hospital's documented infection-prevention policies and procedures must address.
 2. **The distinctive DNV requirement is ISO 9001-aligned quality management.** Pest management program documentation in DNV facilities should include written quality objectives, measurable performance indicators (key performance indicators or KPIs), periodic management review documentation, and continuous improvement evidence. This is more structured than what Joint Commission surveyors typically require.
 3. **DNV surveys are annual.** DNV conducts annual on-site surveys, compared to Joint Commission's three-year survey cycle. This means DNV-accredited facilities face more frequent external review and require pest management programs that maintain consistent compliance year-round.
 4. **DNV uses ISO 9001 audit terminology and methodology.** Surveyors evaluating pest management programs may use ISO-derived terminology (nonconformity, corrective action, preventive action, management review) rather than Joint Commission terminology (RFI, ESC, ITL). The substance is similar; the language differs.
@@ -109,7 +113,7 @@ Common findings: pest management programs that meet operational requirements but
 
 ## Confidence Notes
 
-MEDIUM confidence. NIAHO Standards verbatim text is provided to accredited facilities under accreditation agreement and is not publicly available without DNV relationship. Operational requirements summarized on this page are derived from publicly available DNV Healthcare overview materials, CMS deeming authority documentation, ISO 9001 framework documentation, and accreditation industry analysis. DNV's market position as the second-largest U.S. healthcare accreditor and the annual survey cycle are verifiable from public CMS deeming authority records. Specific verbatim NIAHO requirement language requires DNV relationship for verification.
+MEDIUM confidence. The IC.1 provision — pest control named among the elements the documented infection-prevention policies and procedures must include, inside maintenance of a sanitary physical environment — was verified on September 15, 2026 against the publicly posted Revision 18 (February 5, 2018; "pest" occurs once in its 228 pages, in that bullet) and is recorded by the operator as persisting in the licensed Revision 25-1 (September 8, 2025), the revision in force. Revision 25-1 was not read by the September 15 verification; the citation is by identifier and paraphrase only. The ISO 9001 overlay, the physical-environment and hazardous-materials descriptions, and the annual survey cycle are drawn from public DNV Healthcare materials and CMS deeming records.
 
 ## Related Killed Claims
 

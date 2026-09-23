@@ -1,10 +1,10 @@
 ---
-title: "FGI Guidelines for Design and Construction — Pest Exclusion in Healthcare Facility Design"
+title: "FGI Codes for Planning and Design (2026) and Guidelines for Design and Construction (2022) — Pest Exclusion in Healthcare Facility Design"
 authority_type: "recognized authority"
-citation: "Facility Guidelines Institute (FGI), Guidelines for Design and Construction of Hospitals; Guidelines for Design and Construction of Outpatient Facilities; Guidelines for Design and Construction of Residential Health, Care, and Support Facilities. 2022 Edition."
+citation: "Facility Guidelines Institute (FGI), 2026 FGI Codes for Planning and Design (released August 31, 2026), with the 2026 FGI Handbooks for Planning and Design; and the 2022 Guidelines for Design and Construction of Hospitals, of Outpatient Facilities, and of Residential Health, Care, and Support Facilities — the edition under which existing facilities were designed and which most state licensing rules still adopt by reference"
 last_verified: 2026-05-25
 date_published: 2026-06-01
-source_url: "https://fgiguidelines.org/"
+source_url: "https://fgicodes.org/"
 source_tier: 1
 source_confidence: "MEDIUM"
 paywalled: true
@@ -27,7 +27,7 @@ services_applicable:
   - loading dock design
   - mechanical room design
 verbatim_available: false
-verbatim_paywall_note: "FGI Guidelines verbatim text is published by the Facility Guidelines Institute and is available through ASHE (American Society for Healthcare Engineering) at approximately $200-$400 per volume. Operational requirements referenced on this page are publicly summarized in FGI overview materials, state hospital licensing regulations that adopt FGI by reference, and ASHE/HFM (Health Facilities Management) published articles."
+verbatim_paywall_note: "FGI Codes, Handbooks, and Guidelines verbatim text is published by the Facility Guidelines Institute and is available through ASHE (American Society for Healthcare Engineering) at approximately $200-$400 per volume. Operational requirements referenced on this page are publicly summarized in FGI overview materials, state hospital licensing regulations that adopt FGI by reference, and ASHE/HFM (Health Facilities Management) published articles."
 summary: "The healthcare design and construction standard adopted by about 40 states. Builds pest exclusion into the envelope, loading docks, kitchens, mechanical rooms, and sterile spaces."
 related_authorities:
   - slug: cdc-hicpac-environmental-guidelines
@@ -42,15 +42,15 @@ related_authorities:
 
 ## Citation
 
-Facility Guidelines Institute (FGI). 2022 Edition Guidelines comprising three documents: Guidelines for Design and Construction of Hospitals; Guidelines for Design and Construction of Outpatient Facilities; and Guidelines for Design and Construction of Residential Health, Care, and Support Facilities. FGI publishes a new edition every four years; the 2022 edition is the current standard as of the verification date. The 2026 edition is under development with planned publication later in 2026.
+Facility Guidelines Institute (FGI). *2026 FGI Codes for Planning and Design*, released August 31, 2026, with the *2026 FGI Handbooks for Planning and Design*; primary source https://fgicodes.org/ (the former fgiguidelines.org now redirects there). With the 2026 release FGI renamed the work: the *Codes* carry the minimum compliance requirements and the *Handbooks* the commentary, technical guidance, and best practice. The *2022 Guidelines for Design and Construction* — three documents: of Hospitals; of Outpatient Facilities; and of Residential Health, Care, and Support Facilities — remain the edition under which existing facilities were designed and which most state licensing rules still adopt by reference, and are the version that governs the buildings this page is about. FGI publishes on a four-year cycle.
 
 ## What It Says (Operative Provisions Relevant to Pest Management)
 
-FGI Guidelines are the U.S. standard for healthcare facility design and construction, adopted by reference in the hospital licensing rules of approximately 40 U.S. states. The guidelines address pest exclusion through architectural and mechanical design requirements at the facility envelope and at critical pest-vulnerable interior spaces.
+FGI's documents — the 2022 *Guidelines for Design and Construction* and, from August 31, 2026, the *FGI Codes for Planning and Design* — are the U.S. standard for healthcare facility design and construction; the Guidelines are adopted by reference in the hospital licensing rules of approximately 40 U.S. states. **Everything below is this reference's reading of the design standard, not FGI's text.** FGI publishes no free text at this granularity, and none of the items below is quoted from or confirmed against any public FGI material; where a state licensing rule adopts FGI by reference, that rule — free and quotable — is the place to anchor a specific requirement.
 
 **Building envelope pest exclusion:**
 
-FGI specifies design requirements for the healthcare facility envelope that simultaneously serve infection control, energy efficiency, and pest exclusion:
+This reference reads the design standard's envelope requirements as simultaneously serving infection control, energy efficiency, and pest exclusion:
 
 - Exterior wall penetrations sealed against pest entry
 - Roof junctions and parapet details designed to prevent pest harborage
@@ -61,7 +61,7 @@ FGI specifies design requirements for the healthcare facility envelope that simu
 
 **Kitchen and dietary area design:**
 
-FGI specifies design requirements for hospital kitchens, cafeterias, and food storage areas that incorporate pest exclusion:
+This reference reads the design standard's kitchen, cafeteria, and food-storage requirements as incorporating pest exclusion:
 
 - Floor-to-wall coving requirements eliminating right-angle harborage
 - Drain design preventing pest passage through the sanitary sewer system
@@ -71,7 +71,7 @@ FGI specifies design requirements for hospital kitchens, cafeterias, and food st
 
 **Sterile processing and pharmacy compounding design:**
 
-FGI specifies design requirements for sterile processing departments, pharmacy compounding areas, and other critical clean spaces:
+This reference reads the design standard's requirements for sterile processing departments, pharmacy compounding areas, and other critical clean spaces as including:
 
 - Air pressure relationships preventing pest-laden air movement into clean spaces
 - Wall, floor, and ceiling junction sealing
@@ -80,7 +80,7 @@ FGI specifies design requirements for sterile processing departments, pharmacy c
 
 **Mechanical and electrical room design:**
 
-FGI specifies pest exclusion requirements for mechanical rooms, electrical rooms, telecommunications closets, and other support spaces commonly affected by pest activity:
+This reference reads the design standard as reaching pest exclusion in mechanical rooms, electrical rooms, telecommunications closets, and other support spaces commonly affected by pest activity:
 
 - Penetration sealing requirements
 - Drain pan and condensate management preventing standing water harborage
@@ -89,7 +89,7 @@ FGI specifies pest exclusion requirements for mechanical rooms, electrical rooms
 
 **Loading dock design:**
 
-FGI specifies loading dock design that addresses pest exclusion at one of the highest-risk pest entry zones in any healthcare facility:
+This reference reads the design standard's loading dock provisions as addressing pest exclusion at one of the highest-risk pest entry zones in any healthcare facility:
 
 - Dock leveler seal requirements
 - Air curtain or dock seal requirements at active dock openings
@@ -98,14 +98,14 @@ FGI specifies loading dock design that addresses pest exclusion at one of the hi
 
 ## What It Means in Plain Language
 
-FGI Guidelines are the architectural and engineering standard that determines how U.S. healthcare facilities are designed and built. The guidelines are not directly enforceable as federal regulation, but they are adopted by reference in state hospital licensing rules (approximately 40 states), referenced by The Joint Commission and DNV-GL as standard of care for facility design, and referenced by Authorities Having Jurisdiction (AHJs) during facility permitting and construction inspection.
+FGI's Guidelines (2022) and Codes (2026) are the architectural and engineering standard that determines how U.S. healthcare facilities are designed and built. The guidelines are not directly enforceable as federal regulation, but they are adopted by reference in state hospital licensing rules (approximately 40 states), referenced by The Joint Commission and DNV-GL as standard of care for facility design, and referenced by Authorities Having Jurisdiction (AHJs) during facility permitting and construction inspection.
 
 The practical implication for pest management programs serving healthcare facilities:
 
 1. **Pest exclusion is built into facility design.** A healthcare facility constructed under FGI Guidelines has architectural pest exclusion features that pest management programs can leverage. A facility constructed without FGI compliance (or under older FGI editions) may have architectural deficiencies requiring elevated operational pest management to compensate.
 2. **Renovation and addition work must maintain pest exclusion design.** Every renovation, addition, or major repair project in an FGI-compliant facility must maintain pest exclusion features. Pest management programs should be consulted during renovation planning to ensure architectural pest exclusion is preserved or improved.
-3. **Loading docks, kitchens, and mechanical rooms are the highest-leverage pest exclusion zones.** FGI guidelines specifically address these zones because they are documented as the highest-frequency pest entry points in healthcare facilities. Pest management programs that focus on these zones address the architectural-level pest exclusion failures most likely to undermine the broader pest management effort.
-4. **Sterile spaces have specialized architectural pest exclusion.** Operating rooms, sterile processing, pharmacy compounding, and other critical clean spaces have FGI-specified architectural pest exclusion features that must be maintained throughout the facility lifecycle. Loss of these features through deferred maintenance constitutes both an infection control failure and a pest exclusion failure.
+3. **Loading docks, kitchens, and mechanical rooms are the highest-leverage pest exclusion zones.** This reference reads the design standard as addressing these zones, which are the highest-frequency pest entry points in healthcare facilities. Pest management programs that focus on these zones address the architectural-level pest exclusion failures most likely to undermine the broader pest management effort.
+4. **Sterile spaces have specialized architectural pest exclusion.** Operating rooms, sterile processing, pharmacy compounding, and other critical clean spaces have, on this reference's reading of the design standard, architectural pest exclusion features that must be maintained throughout the facility lifecycle. Loss of these features through deferred maintenance constitutes both an infection control failure and a pest exclusion failure.
 
 ## Who It Applies To
 
@@ -139,7 +139,7 @@ State health department surveyors evaluate FGI compliance directly in states tha
 Surveyors evaluating pest management in the context of FGI compliance look for:
 
 - Architectural pest exclusion features in good repair (door seals, screens, penetrations)
-- Kitchen, dietary, and food storage design compliance with FGI pest exclusion requirements
+- Kitchen, dietary, and food storage design compliance with the pest exclusion features this reference reads the design standard as calling for
 - Loading dock pest exclusion features functional and maintained
 - Sterile space design integrity (junction sealing, pressure relationships, surface materials)
 - Mechanical and electrical room pest exclusion maintenance
@@ -148,7 +148,7 @@ Common findings: deteriorated door seals at exterior openings, damaged window sc
 
 ## Confidence Notes
 
-MEDIUM confidence. FGI Guidelines verbatim text is paywalled (sold through ASHE at approximately $200-$400 per volume). Operational requirements summarized on this page are derived from publicly available FGI overview materials, state hospital licensing regulations that adopt FGI by reference (verifiable through state administrative code), ASHE/HFM published articles, and architectural industry analysis. The 2022 edition is the current standard as of the verification date; the 2026 edition is under development. State adoption status varies and should be verified against individual state hospital licensing rules.
+MEDIUM confidence. FGI's text is licensed (sold through ASHE at approximately $200-$400 per volume). The design points on this page are this reference's reading, voiced as such, derived from state hospital licensing regulations that adopt FGI by reference (verifiable through state administrative code), ASHE/HFM published articles, and architectural industry analysis; no public FGI material confirms them at this granularity. Edition and title verified September 15, 2026: the 2026 FGI Codes for Planning and Design were released August 31, 2026 and rename the work; fgiguidelines.org redirects to fgicodes.org; the 2022 Guidelines for Design and Construction remain the edition most state licensing rules adopt by reference. State adoption status varies and should be verified against individual state hospital licensing rules.
 
 ## Related Killed Claims
 

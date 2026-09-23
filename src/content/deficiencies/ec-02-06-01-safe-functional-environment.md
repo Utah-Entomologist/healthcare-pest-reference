@@ -11,7 +11,7 @@ paywalled: true
 content_pending: true
 verification_status: "blocked"
 verification_note: "Standard identifier carried from this reference's 2026 PE chapter page, which rests on The Joint Commission's public FAQ and September 2025 disposition report (verified May 25, 2026). Not re-fetched during the September 10, 2026 build: jointcommission.org was egress-blocked."
-superseded_by: "PE.01.01.01 (EPs 1, 2, and 3)"
+superseded_by: "PE.01.01.01 (this reference's reading; not verified against the 2026 chapter)"
 date_published: 2026-09-10
 governing_authorities:
   - slug: joint-commission-2026-pe-chapter
@@ -33,9 +33,9 @@ related_deficiencies:
 
 ## Status
 
-Effective January 1, 2026, EC.02.06.01 EPs 1, 2, and 3 transferred to [PE.01.01.01 — Safe, Adequate Environment](/deficiencies/pe-01-01-01-safe-adequate-environment/). The Joint Commission's September 2025 disposition report states that "no new concepts have been introduced" and that standards and EPs were "reorganized, consolidated, and renumbered without substantive change to the underlying compliance expectations."
+Effective January 1, 2026, the Environment of Care chapter was consolidated into the Physical Environment chapter for hospitals. This reference reads EC.02.06.01 EPs 1, 2, and 3 as having moved to [PE.01.01.01 — Safe and Adequate Physical Environment](/deficiencies/pe-01-01-01-safe-adequate-environment/); the 2026 chapter enumerates no EC.02.06.01 EP text, so the mapping has not been verified against it. TJC's September 2025 disposition report describes the consolidation as a reorganisation and renumbering that introduces no new concepts and does not change the underlying compliance expectations.
 
-A facility holding an EC.02.06.01 citation from a 2025 survey answers it under the process in force when it was issued; a facility preparing for a 2026 survey should work from PE.01.01.01. The substantive expectations are the same. This reference's [2026 PE chapter page](/authorities/joint-commission-2026-pe-chapter/) also records that EC.02.06.01 never contained an explicit integrated pest management EP, so any material claiming a pest-specific EP under this standard is mistaken.
+A facility holding an EC.02.06.01 citation from a 2025 survey answers it under the process in force when it was issued; a facility preparing for a 2026 survey should work from PE.01.01.01. The substantive expectations are the same. This reference's [2026 PE chapter page](/authorities/joint-commission-2026-pe-chapter/) also records that this reference has found no explicit integrated pest management EP in EC.02.06.01, so material claiming a pest-specific EP under this standard is, on that reading, mistaken.
 
 ## What the Surveyor Was Looking For
 

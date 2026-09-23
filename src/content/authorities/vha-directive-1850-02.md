@@ -154,7 +154,7 @@ This page was verified against the reference's archived copy of the directive (1
 >
 > f. Pest. A pest is any insect, rodent, nematode, fungus or weed that can cause damage to humans, agriculture or other animals.
 
-The IPMOP template and the EPS Bed Bug Management Guide the directive references are on internal VA websites; the directive itself notes at each reference that "This is an internal VA website that is not available to the public."
+The IPMOP template and the EPS Bed Bug Management Guide the directive references are on internal VA websites; the directive itself notes at each reference that the site is an internal VA website not available to the public (at seven references, verbatim: "This is an internal VA website that is not available to the public."; at ¶2.e(2), "These are internal VA websites that are not available to the public.").
 
 ## What It Means in Plain Language
 
@@ -162,7 +162,7 @@ VHA Directive 1850.02 is the pest management standard for the Veterans Health Ad
 
 1. **The program is mandatory and written.** Every VA medical facility must have an IPMOP, "one document," reviewed annually, whether pest management is in-house, contracted, or both, and it must address twelve enumerated subjects.
 2. **A named officer is accountable.** The Director designates a Pest Management Officer in writing; the PMO is the chief of the service the program falls under, not a designee.
-3. **Response and review are timed.** Sightings are addressed within 48 hours and logged, with corrective action reported back to the employee who reported them; the PMO reviews all records at least quarterly and tracks trends; the PMP (or vendor) provides records for review at least every six months.
+3. **Response and review are timed.** Sightings are addressed within 48 hours and logged, with corrective action reported back to the employee who reported them; the PMO reviews all records at least quarterly and tracks trends; the PMP provides records to the PMO for review at least every six months (the directive places the same documentation duty on a contracted vendor at ¶2.h(10) and ¶3.d without stating an interval).
 4. **Prior approval before application in patient care and restricted areas.** The PMO must approve any pesticide application in patient care or restricted areas, operating rooms and sterile processing named. No civilian healthcare standard requires this level of pre-application control.
 5. **Applicator credentials are specified.** PMPs must be trained and certified in Public Health Pest Control and the other applicable categories; restricted-use pesticides may be handled only by PMPs or under their direct supervision.
 6. **Storage and hazard communication are specified.** Current inventory, SDS availability, a labeled, ventilated, lit storage area with a spill kit, and equipment marked "Contaminated with Pesticides."

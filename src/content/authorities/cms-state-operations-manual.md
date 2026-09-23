@@ -23,7 +23,7 @@ related_authorities:
   - slug: cms-conditions-of-participation
     why: "Start with the regulation itself. §482.41 is what an A-0700-series tag enforces, and its verbatim text is the first thing a plan of correction has to quote back."
   - slug: joint-commission-2026-pe-chapter
-    why: "If the hospital is Joint Commission accredited, the same observation is scored as PE.01.01.01 (pest activity) or PE.02.01.01 EP 4 (pesticide storage). Read this next to align the two responses."
+    why: "If the hospital is Joint Commission accredited, the same observation is scored as PE.01.01.01 (pest activity) or PE.02.01.01 (pesticide storage). Read this next to align the two responses."
   - slug: dnv-gl-niaho-standards
     why: "If the hospital is DNV accredited instead, the NIAHO framework incorporates §482.41 by reference and expects ISO 9001-style corrective and preventive action."
   - slug: cdc-hicpac-environmental-guidelines
@@ -96,7 +96,7 @@ Most readers arrive at this page holding a Form CMS-2567. The tag on the form te
 - [A-0749 — Methods for Preventing and Controlling Transmission](/deficiencies/a-0749-infection-prevention-and-control-program/) (§482.42(a)(2)): the tag whose 2016-era predecessor carried the "Techniques for pest control" bullet, now gone; its current subject carries no pest language.
 - [A-0758](/deficiencies/a-0758/): **does not exist** in Appendix A. If that number is on your paperwork, start there.
 
-If the hospital is Joint Commission accredited and the same observation appears on the accreditation report, see [PE.01.01.01](/deficiencies/pe-01-01-01-safe-adequate-environment/) for pest activity and [PE.02.01.01 EP 4](/deficiencies/pe-02-01-01-hazardous-materials-and-waste/) for pesticide storage.
+If the hospital is Joint Commission accredited and the same observation appears on the accreditation report, see [PE.01.01.01](/deficiencies/pe-01-01-01-safe-adequate-environment/) for pest activity and [PE.02.01.01](/deficiencies/pe-02-01-01-hazardous-materials-and-waste/) for pesticide storage.
 
 ## Confidence Notes
 

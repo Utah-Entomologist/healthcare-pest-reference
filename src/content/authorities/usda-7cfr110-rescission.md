@@ -37,7 +37,7 @@ related_authorities:
 
 ## Citation
 
-U.S. Department of Agriculture, Agricultural Marketing Service. Final Rule: Rescission of Recordkeeping Requirements for Certified Applicators of Federally Restricted Use Pesticides. 7 CFR Part 110. Published in the Federal Register, Volume 90, Number 90, May 12, 2025. FR Doc Number 2025-08220. Effective date: July 11, 2025.
+U.S. Department of Agriculture, Agricultural Marketing Service. Final Rule: rescission of 7 CFR Part 110, Recordkeeping on Restricted Use Pesticides by Certified Applicators; Surveys and Reports. (The Federal Register's printed heading for the document reads "Rescission of Recordkeeping on Restricted Use Pesticides by Certified Applications" — "Applications" is the Register's own typographical error for "Applicators.") Published in the Federal Register, Volume 90, Number 90, May 12, 2025. FR Doc Number 2025-08220. Effective date: July 11, 2025.
 
 ## What It Says (Verbatim, Key Passages)
 
@@ -60,7 +60,7 @@ The page previously rendered that last sentence as "**This** final rule is effec
 
 **Scope of rescission:**
 
-Title 7 of the Code of Federal Regulations, Chapter I, Subchapter B, Part 110 — Recordkeeping Requirements for Certified Applicators of Federally Restricted Use Pesticides — is rescinded in its entirety. Sections rescinded include §110.1 (Purpose and scope), §110.2 (Definitions), §110.3 (Records of restricted use pesticide application), §110.4 (Access to records), §110.5 (Cooperative agreements), §110.6 (Compliance), and §110.7 (Penalties).
+Title 7 of the Code of Federal Regulations, Chapter I, Subchapter B, Part 110 — Recordkeeping on Restricted Use Pesticides by Certified Applicators; Surveys and Reports — is removed in its entirety. The final rule enumerates no sections; its amendatory text reads only "PART 110—[REMOVED] ■ 1. Remove part 110." As it read immediately before removal (eCFR point-in-time June 1, 2025), Part 110 contained nine sections: §110.1 Scope; §110.2 Definitions; §110.3 Records, retention, and access to records; §110.4 Demonstration of compliance; §110.5 Availability of records to facilitate medical treatment; §110.6 Federal cooperation with States; §110.7 Penalties; §110.8 Administrative procedures; §110.9 Miscellaneous.
 
 ## What It Means in Plain Language
 

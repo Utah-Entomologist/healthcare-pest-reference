@@ -18,11 +18,11 @@ export const PERSON_ID = `${SITE_URL}/about/#trenton-l-frazer`;
 /**
  * The author of the reference.
  *
- * The BCE credential is held by Trenton L. Frazer personally. It is never
+ * The BCE credential is held by Trenton S. Frazer personally. It is never
  * attributed to any firm. See src/lib/schema.ts personSchema().
  */
 export const AUTHOR = {
-  name: 'Trenton L. Frazer',
+  name: 'Trenton S. Frazer',
   givenName: 'Trenton',
   familyName: 'Frazer',
   honorificSuffix: 'BCE',
@@ -31,7 +31,7 @@ export const AUTHOR = {
   bceSpecialty: 'General Entomology',
   rosterUrl: 'https://entocert.org/roster',
   /** Citation-style name: family name first. */
-  citationName: 'Frazer, Trenton L.'
+  citationName: 'Frazer, Trenton S.'
 } as const;
 
 /** Certifying body for the BCE credential. */

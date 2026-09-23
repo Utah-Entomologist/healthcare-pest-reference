@@ -115,7 +115,18 @@ The common error is to read "42 CFR Part 485" as "critical access hospitals" and
 > (4) The premises are clean and orderly; and
 > (5) There is proper ventilation, lighting, and temperature control in all pharmaceutical, patient care, and food preparation areas.
 
-A CAH pest finding is written by inference under that language, exactly as a hospital finding is written by inference under §482.41; the CAH surveyor manual (Appendix W) and its C-tags were not in the verified source set for this page and are not characterized here.
+A CAH pest finding is written by inference under that language, exactly as a hospital finding is written by inference under §482.41. The CAH surveyor manual, Appendix W (Rev. 200, 02-21-20; 306 pages; verified September 15, 2026 against the archived copy, 1,222,465 bytes), contains no occurrence of pest, vermin, rodent, insect, or infestation. The maintenance standard is tagged **C-0914** (p. 80), verbatim:
+
+> §485.623(b) Standard: Maintenance
+> The CAH has housekeeping and preventive maintenance programs to ensure that--
+
+and the clean-and-orderly standard is tagged **C-0924** (p. 90), verbatim:
+
+> §485.623(b)(4) The premises are clean and orderly; and
+> Interpretive Guidelines §485.623(b)(4)
+> "Clean and orderly" means an uncluttered physical environment where patients and staff can function safely. Equipment and supplies are stored in proper spaces, not in corridors. Spills are not left unattended. There are no floor obstructions. The area is neat and well kept. There is no evidence of peeling paint, visible water leaks, or plumbing problems.
+
+The CAH infection-control condition, §485.640, is tagged C-1150. So a CAH pest finding, written by inference, lands on C-0924.
 
 **Hospitals** are governed by 42 CFR Part 482, which contains no occurrence of "pest," "rodent," "insect," or "vermin" (0 in the Part 482 eCFR XML), and whose surveyor manual, Appendix A Rev. 238, contains none either (0 in 613 pages). See the [Conditions of Participation page](/authorities/cms-conditions-of-participation/) and [A-0758 does not appear in Appendix A](/deficiencies/a-0758/).
 
@@ -144,10 +155,10 @@ For the same organization's building, §485.723 (physical environment) separatel
 | | Hospitals (Part 482) | Critical access hospitals (Part 485 Subpart F) | Subpart H organizations | Nursing homes (Part 483) |
 | --- | --- | --- | --- | --- |
 | Explicit pest standard in the CFR | None | None | **§485.725(e)** | **§483.90(i)(4)** |
-| Pest language in the surveyor manual | None (Appendix A Rev. 238: 0 occurrences) | Not in verified source set | Not in verified source set | Yes (Appendix PP, F925: definition, procedures, probes) |
-| How a pest finding is written | By inference under §482.41(a), §482.41(d)(2), or §482.42(a)(3) | By inference under §485.623(b) | Directly under §485.725(e) | Directly under F925 |
+| Pest language in the surveyor manual | None (Appendix A Rev. 238: 0 occurrences) | None (Appendix W Rev. 200: 0 occurrences; C-0914 and C-0924 are the maintenance tags) | Not in verified source set | Yes (Appendix PP, F925: definition, procedures, probes) |
+| How a pest finding is written | By inference under §482.41(a), §482.41(d)(2), or §482.42(a)(3) | By inference under §485.623(b) (Appendix W tags C-0914 and C-0924) | Directly under §485.725(e) | Directly under F925 |
 
-The hospital side has to reason from "safety and well-being of patients" and "clean and sanitary environment" to a pest observation. Subpart H organizations do not; the regulation names the pests and the program.
+The hospital side has to reason from "safety and well-being of patients" and "clean and sanitary environment" to a pest observation. Subpart H organizations do not; the regulation names the outcome and the means.
 
 ## Documentation Evidence Required
 

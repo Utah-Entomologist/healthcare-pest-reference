@@ -1,6 +1,6 @@
 ---
 identifier: "PE.01.01.01"
-title: "Safe, Adequate Environment"
+title: "Safe and Adequate Physical Environment"
 summary: "The 2026 Physical Environment standard under which pest activity observed during a Joint Commission survey is cited. Successor to EC.02.06.01 EPs 1–3. No pest-specific EP exists; the surveyor cites the standard with a narrative of what was observed."
 regime: "The Joint Commission"
 citation: "The Joint Commission, Comprehensive Accreditation Manual for Hospitals, Physical Environment chapter, PE.01.01.01, effective January 1, 2026"
@@ -11,7 +11,7 @@ paywalled: true
 content_pending: true
 verification_status: "blocked"
 verification_note: "Standard identifier carried from this reference's 2026 PE chapter page, which rests on The Joint Commission's public FAQ and September 2025 disposition report (verified May 25, 2026). Not re-fetched during the September 10, 2026 build: jointcommission.org was egress-blocked."
-supersedes: "EC.02.06.01 EP 1, 2, and 3"
+supersedes: "EC.02.06.01 EPs 1, 2, and 3 (this reference's reading; not verified against the 2026 chapter)"
 date_published: 2026-09-10
 governing_authorities:
   - slug: joint-commission-2026-pe-chapter
@@ -30,13 +30,13 @@ related_deficiencies:
 
 ## Identifier and Official Title
 
-**PE.01.01.01 — Safe, Adequate Environment**, in the Physical Environment chapter of the Comprehensive Accreditation Manual for Hospitals effective January 1, 2026. The title is carried from this reference's [2026 PE chapter page](/authorities/joint-commission-2026-pe-chapter/).
+**PE.01.01.01 — Safe and Adequate Physical Environment**, in the Physical Environment chapter of the Comprehensive Accreditation Manual for Hospitals effective January 1, 2026. The title is carried from this reference's [2026 PE chapter page](/authorities/joint-commission-2026-pe-chapter/).
 
 ## What It Enforces
 
 <span class="content-pending">[CONTENT PENDING — PAYWALLED SOURCE]</span> — the verbatim standard and Element of Performance text for PE.01.01.01 is published in the CAMH e-edition, which is subscription-only, and is not reproduced here. This reference does not paraphrase proprietary standard text from secondary summaries.
 
-What is publicly established, and recorded on the authority page: PE.01.01.01 is the successor to EC.02.06.01, whose EPs 1, 2, and 3 transferred to it. The Joint Commission's September 2025 disposition report for the 2026 chapter consolidation states: "No new concepts have been introduced. Standards and EPs have been reorganized, consolidated, and renumbered without substantive change to the underlying compliance expectations." Neither the 2026 standard nor its predecessor contains a pest-specific Element of Performance.
+Recorded on the authority page: This reference reads PE.01.01.01 as the successor to EC.02.06.01 (EPs 1, 2, and 3); the 2026 chapter enumerates no EC.02.06.01 EP text, so the mapping has not been verified against it. TJC's September 2025 disposition report describes the consolidation as a reorganisation and renumbering that introduces no new concepts and does not change the underlying compliance expectations. The 2026 standard contains no pest-specific Element of Performance (verified September 15, 2026: no pest vocabulary anywhere in the 2026 chapter); this reference has found none in its predecessor either.
 
 ## What the Surveyor Is Looking For
 

@@ -20,8 +20,8 @@ services_applicable:
   - infection prevention and control
   - pesticide storage and handling
 verbatim_available: false
-verbatim_paywall_note: "Full 2026 PE chapter verbatim text is published in The Joint Commission's CAMH e-edition, which is subscription-only. Predecessor EC chapter verbatim text (EC.02.06.01 and EC.02.02.01 EP 5) is publicly verifiable and confirmed by TJC's disposition report to transfer substantively into PE.01.01.01 and PE.02.01.01 respectively."
-summary: "The 2026 Physical Environment chapter has no pest-specific standard. Pest activity is cited under PE.01.01.01; pesticide storage and SDS deficiencies under PE.02.01.01 EP 4."
+verbatim_paywall_note: "Full 2026 PE chapter verbatim text is published in The Joint Commission's CAMH e-edition, which is subscription-only. This reference reads the predecessor EC chapter elements (EC.02.06.01 EPs 1–3 and EC.02.02.01 EP 5) as having moved into PE.01.01.01 and PE.02.01.01 respectively; the mapping has not been verified against the licensed 2026 chapter."
+summary: "The 2026 Physical Environment chapter has no pest-specific standard. Pest activity is cited under PE.01.01.01; pesticide storage and SDS deficiencies under PE.02.01.01 (EP 1 for inventory, EP 2 for safety data sheets, EP 3 for labeling, EP 4 for handling and storage)."
 related_authorities:
   - slug: cms-conditions-of-participation
     why: "The Medicare regulation the accreditor’s deemed-status survey stands in for; the same observation maps to §482.41."
@@ -30,7 +30,7 @@ related_authorities:
   - slug: dnv-gl-niaho-standards
     why: "The alternative hospital accreditation framework, with substantively identical pest expectations and ISO 9001 documentation."
   - slug: osha-hazard-communication
-    why: "The federal standard behind PE.02.01.01 EP 4: written program, inventory, Safety Data Sheets, labeling, and training for every pesticide on site."
+    why: "The federal standard behind PE.02.01.01: written program, inventory, Safety Data Sheets, labeling, and training for every pesticide on site."
   - slug: cdc-hicpac-environmental-guidelines
     why: "The infection control standard of care surveyors reference when scoring pest activity under PE.01.01.01."
 ---
@@ -43,17 +43,17 @@ The Joint Commission, Comprehensive Accreditation Manual for Hospitals (CAMH). P
 
 The 2026 PE chapter does not contain a pest-control-specific standard or Element of Performance (EP). Pest activity and pesticide handling are addressed under two operative standards by inference:
 
-**PE.01.01.01 — Safe, Adequate Environment**
+**PE.01.01.01 — Safe and Adequate Physical Environment**
 
-Catch-all standard for observed environmental conditions that compromise patient or staff safety. Pest activity observed during survey is cited here. Legacy predecessor: EC.02.06.01 (with EP 1, 2, and 3 transferring to PE.01.01.01).
+Catch-all standard for observed environmental conditions that compromise patient or staff safety. Pest activity observed during survey is cited here. Legacy predecessor, on this reference's reading: EC.02.06.01 (EPs 1, 2, and 3); the 2026 chapter enumerates no EC.02.06.01 EP text, so the mapping has not been verified against it.
 
-Per The Joint Commission's September 2025 disposition report for the 2026 chapter consolidation: "No new concepts have been introduced. Standards and EPs have been reorganized, consolidated, and renumbered without substantive change to the underlying compliance expectations."
+TJC's September 2025 disposition report describes the consolidation as a reorganisation and renumbering that introduces no new concepts and does not change the underlying compliance expectations.
 
 **PE.02.01.01 — Hazardous Materials and Waste**
 
-Operative standard for pesticide storage, container labeling, Safety Data Sheet accessibility, and pesticide handling. Pest control deficiencies related to pesticide storage are cited here. Legacy predecessor: EC.02.02.01 (with EP 5 specifically transferring to PE.02.01.01 EP 4).
+Operative standard for pesticide storage, container labeling, Safety Data Sheet accessibility, and pesticide handling. Pest control deficiencies related to pesticide storage are cited here, and the 2026 chapter splits the subject across four elements: EP 1 (a written, current inventory of hazardous materials and waste), EP 2 (the permits, licenses, manifests, and safety data sheets required by law and regulation), EP 3 (labeling of hazardous materials and waste), and EP 4 (policies and procedures to protect patients and staff from exposure, including handling, storage, and spill response). A pesticide-storage finding is cited to PE.02.01.01 as a whole; an inventory finding lands on EP 1, a safety-data-sheet finding on EP 2, a labeling finding on EP 3, and a handling-and-storage finding on EP 4. This reference reads EC.02.02.01 EP 5, the legacy element under which pesticide storage findings were cited, as having moved into PE.02.01.01 with the 2026 consolidation; the 2026 chapter's EC matrix, which now applies only to non-hospital programs, omits EP 5, which is consistent with that reading but does not state it, and the mapping has not been verified against the licensed 2026 chapter.
 
-Verbatim EP language remains paywalled in the CAMH e-edition. Predecessor EC.02.02.01 EP 5 verbatim text addresses written hazardous materials management plans, inventory requirements, Safety Data Sheet accessibility, and labeling — all of which TJC's disposition report confirms transfer to PE.02.01.01 EP 4 without substantive change.
+Verbatim EP language is licensed in the CAMH e-edition and is not reproduced here. The predecessor element, EC.02.02.01 EP 5, addressed written hazardous materials management plans, inventory requirements, Safety Data Sheet accessibility, and labeling; in the 2026 chapter the inventory, safety-data-sheet, and labeling subjects sit at EP 1, EP 2, and EP 3, not EP 4.
 
 ## What It Means in Plain Language
 
@@ -62,9 +62,9 @@ For pest management in Joint Commission-accredited hospitals, the 2026 PE chapte
 1. **Pest activity observed during survey** → cited under PE.01.01.01 as a failure of safe, adequate environment
 2. **Pesticide storage, SDS, labeling deficiencies** → cited under PE.02.01.01 as a failure of hazardous materials and waste management
 
-The 2026 PE chapter does not contain an explicit Integrated Pest Management Element of Performance. The legacy EC.02.06.01 standard never contained an explicit IPM EP either — pest management has consistently been addressed by inference under environmental safety and hazardous materials standards. The 2026 reorganization renames the standards but does not change this structural reality.
+The 2026 PE chapter does not contain an explicit Integrated Pest Management Element of Performance. This reference has found no explicit IPM EP in the legacy EC.02.06.01 standard either; on that reading, pest management has consistently been addressed by inference under environmental safety and hazardous materials standards. The 2026 reorganization renames the standards but does not change this structural reality.
 
-**The practical implication:** A Joint Commission-accredited hospital's pest management program is evaluated against general environmental safety and hazardous materials standards, not against a pest-specific standard. A surveyor observing pest activity does not have a discrete "pest" EP to cite; the surveyor cites PE.01.01.01 with narrative description of the observed activity. A surveyor finding pesticide storage deficiencies cites PE.02.01.01 EP 4.
+**The practical implication:** A Joint Commission-accredited hospital's pest management program is evaluated against general environmental safety and hazardous materials standards, not against a pest-specific standard. A surveyor observing pest activity does not have a discrete "pest" EP to cite; the surveyor cites PE.01.01.01 with narrative description of the observed activity. A surveyor finding pesticide storage deficiencies cites PE.02.01.01 — EP 1 for inventory, EP 2 for safety data sheets, EP 3 for labeling, EP 4 for handling and storage.
 
 ## Who It Applies To
 
@@ -82,14 +82,14 @@ For Joint Commission survey readiness in pest management:
 - Trend reports showing pest activity over time
 - Evidence of corrective action in response to observed activity
 
-**For PE.02.01.01 EP 4 (pesticide handling):**
+**For PE.02.01.01 (pesticide handling):**
 - Written Hazard Communication Program per OSHA 29 CFR 1910.1200
 - Master pesticide inventory
 - Safety Data Sheet for every pesticide, readily accessible every shift
 - Pesticide container labels per GHS requirements
 - Pesticide storage segregation from food, sterile supplies, medications, and PPE
 - Secondary containment where required
-- Eyewash station within required distance per 29 CFR 1910.151(c)
+- Quick-drenching or flushing facilities within the work area for immediate emergency use, wherever a stored pesticide is an injurious corrosive material, per 29 CFR 1910.151(c) (the rule sets no distance; the familiar ten-second/55-foot figure is ANSI Z358.1, not OSHA)
 
 ## How Surveyors Evaluate It
 
@@ -98,7 +98,7 @@ Joint Commission surveyors use Tracer Methodology during the Building Tour activ
 Surveyor citation paths:
 
 - **Pest activity in patient-care area, food service, sterile processing, or pharmacy** → PE.01.01.01 EP 1, 2, or 3 (depending on specific condition)
-- **Pesticide storage deficiencies** (missing SDS, expired products, improper segregation, unlabeled containers, missing secondary containment) → PE.02.01.01 EP 4
+- **Pesticide storage deficiencies** (missing SDS, expired products, improper segregation, unlabeled containers, missing secondary containment) → PE.02.01.01 (EP 1 inventory; EP 2 safety data sheets; EP 3 labeling; EP 4 handling and storage)
 - **Patient harm associated with pest exposure** → may escalate to Immediate Threat to Life (ITL) review depending on harm severity; not a TJC-defined sentinel event unless harm meets the death/severe harm/permanent harm threshold
 - **Systemic pest management program failures** → may be cited at the standard level (PE.01.01.01) rather than the EP level, with broader scope and likelihood scoring under the SAFER Matrix
 
@@ -106,7 +106,7 @@ Common findings cited under PE.01.01.01 and PE.02.01.01 include uninventoried pe
 
 ## Confidence Notes
 
-MEDIUM confidence. The 2026 PE chapter's verbatim EP text is published in the Comprehensive Accreditation Manual for Hospitals e-edition, which is subscription-only ($895+/year per facility). Substantive transfer from legacy EC.02.06.01 and EC.02.02.01 EP 5 to PE.01.01.01 and PE.02.01.01 EP 4 is confirmed by The Joint Commission's own September 2025 disposition report ("no new concepts have been introduced"). The disposition report and FAQ #000001280 are publicly accessible and form the basis for the substantive claims on this page. Verbatim quotation of 2026 EP text requires institutional CAMH access.
+MEDIUM confidence. The 2026 PE chapter's verbatim EP text is published in the Comprehensive Accreditation Manual for Hospitals e-edition, which is subscription-only ($895+/year per facility). The mapping from legacy EC.02.06.01 and EC.02.02.01 EP 5 to PE.01.01.01 and PE.02.01.01 is this reference's reading of The Joint Commission's September 2025 disposition report, which describes the consolidation as a reorganisation and renumbering that introduces no new concepts; that report was not in the September 15, 2026 verification's source set, and the 2026 chapter does not itself state the mapping. The PE.01.01.01 title and the PE.02.01.01 element mapping (EP 1 inventory, EP 2 safety data sheets, EP 3 labeling, EP 4 handling and storage) were verified September 15, 2026 against the licensed 2026 Physical Environment chapter, by identifier and paraphrase only. Verbatim quotation of 2026 EP text requires institutional CAMH access.
 
 ## Related Killed Claims
 
