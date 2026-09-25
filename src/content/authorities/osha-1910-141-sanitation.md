@@ -59,10 +59,12 @@ Paragraph (a)(1) states the scope: "permanent places of employment." A jail, pri
 
 Whether a given facility's employer is subject to OSHA enforcement, a state occupational safety and health plan, or neither depends on who the employer is:
 
-- **County and state employers.** Coverage of state and local government employees depends on whether the state operates an OSHA-approved state plan that covers public employers. The list of those states, and the status of Utah's plan, are being verified against OSHA and state primary sources. See the open questions on the [methodology page](/methodology/#open-questions).
-- **Federal facilities** and **privately operated facilities** are covered through different routes, also being verified.
+- **County and state employers, nationally.** OSHA's State Plans page says, for states without a State Plan (Alabama, for example): "State and local government workers are not covered by federal OSHA." Public employees are covered where a State Plan covers them. OSHA's State Plans page: "There are currently 22 State Plans covering both private sector and state and local government workers, and seven State Plans covering only state and local government workers."
+- **County and state employers, in Utah.** OSHA: "Utah operates an OSHA-approved State Plan covering most private sector workers and all state and local government workers." Utah's rule R614-1-4.A.3 incorporates "29 CFR 1910.6 and 1910.21 through the end of part 1910, of the July 1, 2025, edition." Section 1910.141 falls inside that range by number, so paragraph (a)(5) is Utah law for a county jail or state prison as a workplace, enforced by the Utah Occupational Safety and Health Division (UOSH).
+- **Federal employers.** OSHA's Utah State Plan page: "UOSH does not cover federal government employers including USPS." How OSHA requirements reach a federal detention facility's own staff is not established on this page.
+- **Privately operated facilities** are private sector workplaces, covered by federal OSHA or by a State Plan that covers the private sector.
 
-Nothing on this page asserts coverage for any specific facility until that verification is published.
+The applicability statements above were read from OSHA's State Plans pages and from Utah Admin. Code R614-1 (Date of Last Change May 22, 2026) on September 24, 2026.
 
 ## Documentation Evidence
 
@@ -76,4 +78,4 @@ The regulation does not prescribe a record. Records that show each element of pa
 
 ## Confidence Notes
 
-HIGH confidence for the quoted text. Both paragraphs were read verbatim from the eCFR on September 24, 2026. Applicability to public employers is not asserted on this page; see "Who It Applies To."
+HIGH confidence for the quoted text. Both paragraphs were read verbatim from the eCFR on September 24, 2026. HIGH confidence for Utah public-employer coverage: OSHA's Utah State Plan page and Utah Admin. Code R614-1-4.A.3 were both read on September 24, 2026. The step from "1910.21 through the end of part 1910" to Section 1910.141 is numeric, and is stated as such. Coverage of federal employers is not asserted.

@@ -18,6 +18,8 @@ services_applicable:
 verbatim_available: true
 summary: "ICE's food service standard. It assigns pest control in the food service department to the facility, requires receiving inspection for pest infestation, prohibits pest harborage in storage, and points food preparation to the FDA Food Code."
 related_authorities:
+  - slug: ice-pbnds-2011-food-service
+    why: "The equivalent standard for dedicated facilities, which names the Food Service Administrator and an outside exterminator."
   - slug: fda-food-code-2022
     why: "Standard 4.1 directs that food be prepared and served in compliance with the most recent version of the FDA food code."
   - slug: osha-1910-141-sanitation
@@ -74,7 +76,9 @@ For the kitchen itself, Section II.E.2 points to the FDA Food Code. That is the 
 
 ## Who It Applies To
 
-This page records the text of Standard 4.1 as ICE publishes it. Which detention facilities are held to the National Detention Standards 2019, as opposed to ICE's Performance-Based National Detention Standards, is stated in ICE's detention standards documentation rather than in Standard 4.1, and is being verified. See the open questions on the [methodology page](/methodology/#open-questions).
+Standard 4.1 does not state its own scope. ICE's overview of the 2019 standards does: it describes dedicated immigration detention facilities as "now largely covered by a separate set of standards – the Performance Based National Detention Standards (PBNDS)," and calls this version of the NDS "designed for non-dedicated facilities" (ICE, *National Detention Standards 2019*, overview, https://www.ice.gov/doclib/detention-standards/2019/overview.pdf, read September 24, 2026).
+
+Which standard set applies to a particular facility is fixed by its agreement with ICE. The PBNDS 2011 food service standard, which names the Food Service Administrator and an outside exterminator, is on its own page.
 
 ## Documentation Evidence
 

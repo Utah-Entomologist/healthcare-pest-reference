@@ -3,7 +3,7 @@ title: "Utah Administrative Code R68-7 — Pesticide Applicator Licensing in Jai
 seo_title: "Utah R68-7 Pesticide Applicator Licensing — Jails and Prisons"
 authority_type: "state regulator"
 citation: "Utah Admin. Code R68-7, Utah Pesticide Control Rule, administered by Utah Department of Agriculture and Food (UDAF), last changed September 7, 2022"
-last_verified: 2026-09-12
+last_verified: 2026-09-24
 date_published: 2026-09-24
 source_url: "https://adminrules.utah.gov/public/rule/R68-7/Current%20Rules"
 source_tier: 1
@@ -110,10 +110,22 @@ The operative word for corrections is **"prison."** The definition names it expr
 R68-7 applies to all commercial and non-commercial pesticide applicators operating in Utah. For correctional facilities:
 
 - **Contracted pest management providers** serving Utah jails and prisons apply for compensation, so they are commercial applicators and need current Utah commercial licensure in the categories that match the work
-- **Facility employees** who apply *restricted use* pesticides on the employer's property need non-commercial applicator licensure (R68-7-12); general-use products applied by employees on the employer's own property carry no R68-7 license requirement
+- **Facility employees applying restricted use pesticides** need a non-commercial applicator license. The rule names government employers expressly (verbatim below).
 - **Government employees** fall within Category 8's non-commercial branch only in government-sponsored public health programs
 
-Which license, if any, applies to a county or state corrections employee who applies general-use products inside a facility, and how that interacts with a facility's own policy, is being verified; see the open questions on the [methodology page](/methodology/#open-questions).
+**R68-7-2(8), verbatim:**
+
+> "(8) "Non-commercial pesticide applicator" means any person working as an employee of any entity, firm, or government agency who uses or demonstrates the use of any restricted use pesticide on the entity's property, or any property occupied, managed, or under the direction or authority of any entity, firm, or government agency, and does not require a commercial pesticide applicator's license."
+
+**R68-7-12(1), verbatim:**
+
+> "(1) Non-Commercial Pesticide Applicator License Required. (a) A non-commercial pesticide applicator license is required for applying restricted use pesticides for a city, county, state, or federal government entity, or for corporations, businesses, or any other entity that does not require a commercial pesticide applicator license. (b) No person shall purchase, use, or demonstrate the use of any restricted use pesticide without becoming certified and obtaining a non-commercial pesticide applicator license issued by the department. (c) Each person performing the physical act of applying restricted use pesticides shall be certified and have a valid non-commercial pesticide applicator license."
+
+**General-use products applied by staff.** The commercial license requirement, R68-7-9(1)(a), reads in full:
+
+> "(a) Each person performing the physical act of applying a pesticide, shall be certified by the department and have a valid license issued by the department. No person shall apply, advertise for, solicit, or hold oneself out as willing to engage in the business of applying any pesticide for hire or compensation to the land or property of another at any time without becoming certified as a pesticide applicator, obtaining a commercial pesticide applicator license, and: (i) obtaining a commercial pesticide business license, as described in Section 4-14-111 issued by the department; or (ii) working for a company that has already obtained a commercial pesticide business license."
+
+The second sentence is limited to work "for hire or compensation to the land or property of another," which a county or state employee treating the employer's own facility is not doing. The first sentence is not worded with that limit, and sits under the subsection heading "Commercial Pesticide Applicator and Commercial Pesticide Business License Required." This reference has not obtained UDAF's reading of how the first sentence applies to a public employee applying general-use products in the employer's own building, and does not state one. A facility relying on staff application should confirm it with UDAF in writing.
 
 ## Documentation Evidence
 
@@ -129,7 +141,7 @@ UDAF conducts compliance inspections of licensed pesticide applicators and compl
 
 ## Confidence Notes
 
-**HIGH confidence as of September 12, 2026.** The full text of R68-7 as rendered by the Utah Office of Administrative Rules is held in the primary-source archive shared with the companion Healthcare Pest Reference (captured from adminrules.utah.gov on September 11, 2026). Every quotation on this page was read from that capture: R68-7-7(7), R68-7-11(10), R68-7-11(11), and R68-7-19(8).
+**HIGH confidence as of September 24, 2026.** The quotations from R68-7-7(7), R68-7-11(10), R68-7-11(11), and R68-7-19(8) were first verified on September 12, 2026, against a capture shared with the companion Healthcare Pest Reference. On September 24, 2026, every quotation on this page, including R68-7-2(8), R68-7-9(1)(a), and R68-7-12(1), was checked against a fresh capture of the rule from the Utah Office of Administrative Rules.
 
 Rule currency: Date of Last Change September 7, 2022; Notice of Continuation November 17, 2025. A 2022 rule that received a Notice of Continuation in 2025 is current, not stale — the continuation is Utah's five-year review confirming the rule remains in force.
 

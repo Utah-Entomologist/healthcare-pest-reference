@@ -148,9 +148,37 @@ declare module 'astro:content' {
   collection: "authorities";
   data: InferEntrySchema<"authorities">
 } & { render(): Render[".md"] };
+"ice-nds-2019-environmental-health-safety.md": {
+	id: "ice-nds-2019-environmental-health-safety.md";
+  slug: "ice-nds-2019-environmental-health-safety";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "ice-nds-2019-food-service.md": {
 	id: "ice-nds-2019-food-service.md";
   slug: "ice-nds-2019-food-service";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"ice-pbnds-2011-environmental-health-safety.md": {
+	id: "ice-pbnds-2011-environmental-health-safety.md";
+  slug: "ice-pbnds-2011-environmental-health-safety";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"ice-pbnds-2011-food-service.md": {
+	id: "ice-pbnds-2011-food-service.md";
+  slug: "ice-pbnds-2011-food-service";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"ohio-5120-1-8-05-jail-sanitation.md": {
+	id: "ohio-5120-1-8-05-jail-sanitation.md";
+  slug: "ohio-5120-1-8-05-jail-sanitation";
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">
@@ -162,9 +190,30 @@ declare module 'astro:content' {
   collection: "authorities";
   data: InferEntrySchema<"authorities">
 } & { render(): Render[".md"] };
+"utah-r392-100-food-service-sanitation.md": {
+	id: "utah-r392-100-food-service-sanitation.md";
+  slug: "utah-r392-100-food-service-sanitation";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "utah-r68-7-pesticide-applicator.md": {
 	id: "utah-r68-7-pesticide-applicator.md";
   slug: "utah-r68-7-pesticide-applicator";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"utah-udc-correctional-standards.md": {
+	id: "utah-udc-correctional-standards.md";
+  slug: "utah-udc-correctional-standards";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"virginia-6vac15-40-1150-vermin-pest-control.md": {
+	id: "virginia-6vac15-40-1150-vermin-pest-control.md";
+  slug: "virginia-6vac15-40-1150-vermin-pest-control";
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">

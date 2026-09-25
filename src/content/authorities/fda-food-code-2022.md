@@ -2,8 +2,8 @@
 title: "FDA Food Code 2022 — Pest Control in Correctional Food Service"
 seo_title: "FDA Food Code §6-501.111 Pest Control — Jail and Prison Kitchens"
 authority_type: "federal regulator"
-citation: "FDA Food Code 2022 (January 18, 2023 version), as amended by the Supplement to the 2022 Food Code (November 2024), Sections 6-501.111 and 6-202.13"
-last_verified: 2026-09-12
+citation: "FDA Food Code 2022 (January 18, 2023 version), as amended by the Supplement to the 2022 Food Code (November 2024), Sections 1-201.10(B) (Food establishment), 6-501.111, and 6-202.13"
+last_verified: 2026-09-24
 date_published: 2026-09-24
 source_url: "https://www.fda.gov/food/fda-food-code/food-code-2022"
 source_tier: 1
@@ -25,6 +25,8 @@ related_authorities:
     why: "Directs that detention food be prepared and served in compliance with the most recent version of the FDA food code."
   - slug: osha-1910-141-sanitation
     why: "The workplace vermin-control paragraph that covers the same kitchen as a place of employment."
+  - slug: utah-r392-100-food-service-sanitation
+    why: "The Utah rule that incorporates the 2022 Food Code, including Section 6-501.111, and does not exempt jails or prisons."
   - slug: utah-r68-7-pesticide-applicator
     why: "Who may apply pesticides in a Utah facility's kitchen when Section 6-501.111(C) calls for pest control methods."
 ---
@@ -76,9 +78,15 @@ Section 6-202.13 governs flying insect control devices (commonly called bug zapp
 
 ## Who It Applies To
 
-The Food Code becomes enforceable through state adoption, and each state adopts a specific version. Whether a state's adopted code, and its food inspection program, reach a jail or prison kitchen depends on that state's definition of a food establishment and on which agency inspects correctional food service. That question is being verified state by state; see the open questions on the [methodology page](/methodology/#open-questions). This page does not assert that any state inspects correctional kitchens under its food code.
+The Food Code becomes enforceable through state adoption, and each state adopts a specific version.
 
-Independently of state adoption, ICE's detention food service standard directs compliance with the most recent version of the FDA Food Code (Standard 4.1, Section II.E.2).
+**The model definition names institutions.** Section 1-201.10(B) defines a "Food establishment" as an operation that "stores, prepares, packages, serves, vends FOOD directly to the CONSUMER, or otherwise provides FOOD for human consumption such as a restaurant; satellite or catered feeding location; catering operation if the operation provides FOOD directly to a CONSUMER or to a conveyance used to transport people; market; vending location; conveyance used to transport people; institution; or FOOD bank." The definition's list of exclusions does not name correctional facilities.
+
+**Utah.** Utah Admin. Code R392-100-4(1)(b) incorporates "the 2022 version of the U.S. Food and Drug Administration Food Code," with the December 2024 Supplement, and Section 6-501.111 is not among the provisions Utah leaves out. The rule's exemption list, R392-100-3(1), does not name jails or prisons. For secure facilities housing state inmates, Utah Department of Corrections Standard G-05 requires the health authority having jurisdiction to inspect the food service area at least once a year. See the related R392-100 and Utah Correctional Standards pages.
+
+**Other states.** Whether another state's adopted code and inspection program reach a jail or prison kitchen depends on that state's rules and on which agency inspects correctional food service. This page does not assert that for any state other than Utah.
+
+Independently of state adoption, ICE's detention food service standard directs compliance with the most recent version of the FDA Food Code (NDS 2019 Standard 4.1, Section II.E.2).
 
 ## Documentation Evidence
 
@@ -108,4 +116,4 @@ Inspector focus areas under Section 6-501.111:
 
 ## Confidence Notes
 
-HIGH confidence. Section 6-501.111 and Section 6-202.13 verbatim text reproduced from the FDA primary source and last verified September 12, 2026. Pf (Priority Foundation) and Core classifications verified against FDA Food Code violation severity definitions. The ICE Standard 4.1 quotation was read from the ICE primary source on September 24, 2026.
+HIGH confidence. Section 6-501.111 and Section 6-202.13 verbatim text was first verified September 12, 2026, and re-verified, with the Section 1-201.10(B) definition, against FDA's 2022 Food Code PDF on September 24, 2026. The Utah statements were read from R392-100 and the Utah Correctional Standards the same day. Pf (Priority Foundation) and Core classifications verified against FDA Food Code violation severity definitions. The ICE Standard 4.1 quotation was read from the ICE primary source on September 24, 2026.
