@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL, CONTACT_EMAIL } from '../../lib/site';
+import { AUTHORITIES, ROWS, CADENCE_LABELS, CADENCE_ORDER } from '../../data/complianceMap';
+
+const byAuth = AUTHORITIES.map((a) => ({ ...a, rows: ROWS.filter((r) => r.auth === a.key) }));
+const authNames = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.name]));
+const authSlugs = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.slug]));
+const rowCount = ROWS.length;
+---
+
+<BaseLayout
+  title="Pest Compliance Map for Jails, Prisons, and Detention Facilities"
+  description="Select a facility profile and see which pest control authorities apply, what each requires, the record that proves it, how often, and who the text names as responsible. Printable as an inspection checklist."
+  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Compliance Map', url: `${SITE_URL}/tools/compliance-map/` }]}
+>
+  <style is:global>
+    .lede { font-size: 1.05rem; max-width: 46rem; }
+    .notice { border-left: 3px solid var(--color-accent); padding: 0.75rem 1rem; background: rgba(58, 90, 120, 0.06); font-size: 0.92rem; max-width: 46rem; margin: 1.5rem 0 2rem; }
+    .profile { border: 1px solid var(--color-rule); border-radius: 6px; padding: 1.25rem; margin: 0 0 2rem; }
+    .profile h2 { margin-top: 0; font-size: 1.15rem; }
+    .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem 1.5rem; }
+    .field label, .field legend { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 0.35rem; }
+    .field select { width: 100%; padding: 0.45rem; font: inherit; border: 1px solid var(--color-rule); border-radius: 4px; background: transparent; color: inherit; }
+    .field fieldset { border: 0; margin: 0; padding: 0; }
+    .opt { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.92rem; margin: 0.25rem 0; font-weight: 400 !important; }
+    .opt input { margin-top: 0.2rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+    .btn { display: inline-block; padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font: inherit; font-size: 0.92rem; cursor: pointer; text-decoration: none; }
+    .btn.secondary { background: transparent; color: var(--color-primary); }
+    .summary { margin: 0 0 2rem; }
+    .summary ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+    .summary li { padding: 0.35rem 0; border-bottom: 1px solid var(--color-rule); font-size: 0.93rem; }
+    .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.1rem 0.45rem; border-radius: 3px; margin-right: 0.5rem; }
+    .badge.applies { background: #1f5c3a; color: #fff; }
+    .badge.check { background: #8a5a00; color: #fff; }
+    .badge.na { background: #6b7280; color: #fff; }
+    .reason { color: var(--color-text-muted); font-size: 0.86rem; display: block; margin-top: 0.15rem; }
+    .cadence { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.75rem; margin: 0.75rem 0 2rem; }
+    .cad { border: 1px solid var(--color-rule); border-radius: 6px; padding: 0.75rem; font-size: 0.86rem; }
+    .cad h3 { font-size: 0.95rem; margin: 0 0 0.35rem; }
+    .cad ul { margin: 0; padding-left: 1rem; }
+    table.map { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 2rem; }
+    table.map th, table.map td { border-bottom: 1px solid var(--color-rule); padding: 0.55rem 0.5rem; vertical-align: top; text-align: left; }
+    table.map thead th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-meta); }
+    tr.auth-head th { background: rgba(31, 45, 58, 0.06); font-size: 0.95rem; padding-top: 0.75rem; }
+    tr.auth-head a { color: var(--color-primary); }
+    .cite { font-size: 0.78rem; color: var(--color-text-meta); display: block; margin-top: 0.2rem; }
+    details.q summary { cursor: pointer; font-size: 0.8rem; color: var(--color-accent); margin-top: 0.3rem; }
+    details.q blockquote { margin: 0.35rem 0 0; font-size: 0.84rem; }
+    .should { font-size: 0.72rem; font-weight: 700; color: #8a5a00; }
+    .box { width: 1rem; height: 1rem; border: 1.5px solid currentColor; display: inline-block; vertical-align: middle; }
+    .print-only { display: none; }
+    [hidden] { display: none !important; }
+    @media (max-width: 720px) {
+      table.map thead { display: none; }
+      table.map tr { display: block; border-bottom: 1px solid var(--color-rule); padding: 0.5rem 0; }
+      table.map td, table.map th { display: block; border: 0; padding: 0.2rem 0; }
+      table.map td[data-label]::before { content: attr(data-label) ": "; font-weight: 600; font-size: 0.8rem; color: var(--color-text-meta); }
+      td.col-box { display: none; }
+    }
+    @media print {
+      .site-header, .site-footer, nav, .profile, .actions, .no-print, .breadcrumbs, details.q summary { display: none !important; }
+      .print-only { display: block; }
+      details.q { display: none; }
+      body { font-size: 10pt; }
+      table.map { font-size: 8.5pt; }
+      table.map tr { page-break-inside: avoid; }
+      .cad { page-break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+
+  <h1>Pest Compliance Map</h1>
+  <p class="lede">
+    Every pest control requirement on this reference, in one place: what the authority requires, the record that shows it was met,
+    how often, and who the text names as responsible. Set your facility's profile and the map keeps only the authorities that
+    reach it. Print it, and it becomes the inspection checklist.
+  </p>
+  <p class="notice">
+    This map lists what each authority's text requires and the record that would show it. It is not a determination that any
+    facility complies, and it is not legal advice. Which authorities govern a facility is set by its jurisdiction, its operator,
+    and its agreements. Every requirement links to the authority page that quotes the source.
+  </p>
+
+  <div class="print-only">
+    <p><strong>Facility:</strong> ______________________________ &nbsp; <strong>Reviewed by:</strong> ______________________ &nbsp; <strong>Date:</strong> ____________</p>
+    <p><strong>Profile:</strong> <span id="print-profile">All authorities</span></p>
+  </div>
+
+  <form class="profile no-print" id="profile" onsubmit="return false">
+    <h2>Facility profile</h2>
+    <div class="fields">
+      <div class="field">
+        <label for="f-state">State</label>
+        <select id="f-state" name="state">
+          <option value="UT" selected>Utah</option>
+          <option value="OH">Ohio</option>
+          <option value="VA">Virginia</option>
+          <option value="OTHER">Another state</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-op">Who operates it</label>
+        <select id="f-op" name="op">
+          <option value="county" selected>County jail</option>
+          <option value="state">State prison</option>
+          <option value="bop">Federal Bureau of Prisons institution</option>
+          <option value="private">Privately operated facility</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-ice">ICE detainees</label>
+        <select id="f-ice" name="ice">
+          <option value="none" selected>None</option>
+          <option value="pbnds">Yes, agreement uses PBNDS 2011</option>
+          <option value="nds">Yes, agreement uses NDS 2019</option>
+          <option value="unsure">Yes, not sure which standards</option>
+        </select>
+      </div>
+      <div class="field">
+        <fieldset>
+          <legend>Also true of this facility</legend>
+          <label class="opt"><input type="checkbox" id="f-kitchen" checked /> Food is prepared on site</label>
+          <label class="opt"><input type="checkbox" id="f-usms" /> Holds U.S. Marshals Service prisoners under a detention agreement</label>
+          <label class="opt" id="opt-udc"><input type="checkbox" id="f-udc" checked /> Houses Utah state inmates</label>
+          <label class="opt" id="opt-slco"><input type="checkbox" id="f-slco" /> Located in Salt Lake County</label>
+        </fieldset>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn" id="print-btn">Print checklist or save as PDF</button>
+      <a class="btn secondary" id="review-link" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applicability review request (Corrections Pest Reference)')}`}>Request an applicability review</a>
+    </div>
+  </form>
+
+  <section class="summary" id="summary" aria-live="polite">
+    <h2>Authorities for this profile</h2>
+    <p class="no-print" id="summary-fallback">All {AUTHORITIES.length} authorities and {rowCount} requirements are shown below. Turn on JavaScript to filter them to a facility profile.</p>
+    <ul id="summary-list"></ul>
+  </section>
+
+  <section id="cadence-section" hidden>
+    <h2>Proof calendar</h2>
+    <p class="no-print">How often each record has to exist, for this profile.</p>
+    <div class="cadence" id="cadence"></div>
+  </section>
+
+  <h2>Requirements and proof records</h2>
+  <table class="map">
+    <thead>
+      <tr>
+        <th class="col-box" scope="col">On file</th>
+        <th scope="col">Requirement</th>
+        <th scope="col">Record that shows it</th>
+        <th scope="col">How often</th>
+        <th scope="col">Named responsible</th>
+      </tr>
+    </thead>
+    {byAuth.map((a) => (
+      <tbody data-auth={a.key}>
+        <tr class="auth-head">
+          <th colspan="5" scope="rowgroup">
+            <a href={`/authorities/${a.slug}/`}>{a.name}</a>
+            <span class="cite">{a.group}</span>
+          </th>
+        </tr>
+        {a.rows.map((r) => (
+          <tr data-row={r.id} data-kitchen={r.kitchen ? '1' : '0'} data-cad={r.cadence.join(' ')}>
+            <td class="col-box"><span class="box" aria-hidden="true"></span></td>
+            <td data-label="Requirement">
+              {r.requirement}
+              {r.should && <span class="should"> SHOULD</span>}
+              <span class="cite">{a.name}, {r.cite}</span>
+              <details class="q"><summary>Source text</summary><blockquote>"{r.quote}"</blockquote></details>
+            </td>
+            <td data-label="Record">{r.evidence}</td>
+            <td data-label="How often">{r.frequency}</td>
+            <td data-label="Named responsible">{r.owner}</td>
+          </tr>
+        ))}
+      </tbody>
+    ))}
+  </table>
+
+  <p class="no-print">
+    Want the facility-specific version, checked against your agreements and walked on site? See
+    <a href="/consulting/">Consulting</a>. Writing a pest control contract? Start from the
+    <a href="/tools/scope-of-work/">model scope of work</a>.
+  </p>
+
+  <script define:vars={{ AUTH_NAMES: authNames, AUTH_SLUGS: authSlugs, CAD_LABELS: CADENCE_LABELS, CAD_ORDER: CADENCE_ORDER, EMAIL: CONTACT_EMAIL }}>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var F = { state: $('f-state'), op: $('f-op'), ice: $('f-ice'), kitchen: $('f-kitchen'), usms: $('f-usms'), udc: $('f-udc'), slco: $('f-slco') };
+      var L = { UT: 'Utah', OH: 'Ohio', VA: 'Virginia', OTHER: 'Another state', county: 'County jail', state: 'State prison', bop: 'Federal Bureau of Prisons institution', 'private': 'Privately operated facility' };
+      function answers() {
+        return { state: F.state.value, op: F.op.value, ice: F.ice.value, kitchen: F.kitchen.checked, usms: F.usms.checked, udc: F.udc.checked, slco: F.slco.checked };
+      }
+      function A(why) { return { s: 'applies', why: why }; }
+      function C(why) { return { s: 'check', why: why }; }
+      function N(why) { return { s: 'na', why: why }; }
+      var NO_FOOD = 'No food is prepared on site.';
+      function status(key, a) {
+        var UT = a.state === 'UT';
+        var pub = a.op === 'county' || a.op === 'state';
+        switch (key) {
+          case 'osha':
+            if (a.op === 'private') return A('A private-sector workplace, covered by federal OSHA or by a State Plan that covers the private sector.');
+            if (a.op === 'bop') return C('How OSHA requirements reach a federal employer is not established on this reference.');
+            if (UT) return A("Utah's State Plan covers state and local government workers, and Utah rule R614-1-4 incorporates Part 1910.");
+            if (a.state === 'VA') return C("OSHA lists Virginia's State Plan as covering state and local government workers; its adoption of 1910.141 is not verified here.");
+            if (a.state === 'OH') return N('OSHA: Ohio has no State Plan, and state and local government workers are not covered by federal OSHA.');
+            return C('Depends on whether your state runs an OSHA-approved State Plan that covers public employers.');
+          case 'fda':
+            if (!a.kitchen) return N(NO_FOOD);
+            if (UT) return A('Utah adopts the 2022 Food Code through R392-100, which does not exempt jails or prisons.');
+            if (a.ice === 'nds') return A('ICE NDS 2019 Standard 4.1 directs compliance with the most recent FDA food code.');
+            return C("Depends on your state's adoption of the Food Code and on who inspects your kitchen.");
+          case 'r392':
+            if (!UT) return null;
+            return a.kitchen ? A('Utah food service establishments; the exemption list does not include jails or prisons.') : N(NO_FOOD);
+          case 'r687':
+            if (!UT) return null;
+            return a.op === 'bop' ? C('Governs pesticide application in Utah; its reach onto federal property is not established here.') : A('Every commercial pesticide application in Utah, and staff use of restricted use pesticides.');
+          case 'udc':
+            if (!UT || a.op === 'bop') return null;
+            if (a.op === 'state') return A('State prisons are Utah Department of Corrections facilities.');
+            if (a.udc) return A('The facility houses offenders under Utah Department of Corrections jurisdiction.');
+            return N('Applies to facilities housing offenders under Utah Department of Corrections jurisdiction.');
+          case 'slco':
+            if (!UT || !a.slco || a.op === 'bop') return null;
+            return A('Correctional institutions in Salt Lake County. Whether the 2007 text has been amended is being confirmed.');
+          case 'grama':
+            if (!UT || a.op === 'bop') return null;
+            return pub ? A('Records of Utah governmental entities, including county jails and state prisons.') : C("Governs records held by governmental entities, including records of a contractor's services.");
+          case 'pbnds12':
+          case 'pbnds41':
+            if (a.ice === 'pbnds') return (key === 'pbnds41' && !a.kitchen) ? N(NO_FOOD) : A('The ICE agreement uses PBNDS 2011.');
+            if (a.ice === 'unsure') return C('Confirm which standard set your ICE agreement uses.');
+            return null;
+          case 'nds11':
+          case 'nds41':
+            if (a.ice === 'nds') return (key === 'nds41' && !a.kitchen) ? N(NO_FOOD) : A('The ICE agreement uses NDS 2019.');
+            if (a.ice === 'unsure') return C('Confirm which standard set your ICE agreement uses.');
+            return null;
+          case 'usms':
+            return a.usms ? A('To the extent the Marshals Service detention agreement incorporates the handbook.') : null;
+          case 'bop1614':
+            return a.op === 'bop' ? A('Bureau-owned or -operated facilities.') : null;
+          case 'bop4700':
+            if (a.op !== 'bop') return null;
+            return a.kitchen ? A('The Bureau Food Service program.') : N(NO_FOOD);
+          case 'ohio':
+            return (a.state === 'OH' && a.op === 'county') ? C('The rule applies to full service jails in Ohio.') : null;
+          case 'va':
+            return (a.state === 'VA' && a.op === 'county') ? C("Part of Virginia's Minimum Standards for Jails and Lockups; confirm the chapter's applicability to your facility.") : null;
+        }
+        return null;
+      }
+      function profileText(a) {
+        var p = [L[a.state], L[a.op]];
+        if (a.state === 'UT' && (a.op === 'county' || a.op === 'private')) p.push(a.udc ? 'houses state inmates' : 'no state inmates');
+        if (a.state === 'UT' && a.slco) p.push('Salt Lake County');
+        p.push(a.ice === 'none' ? 'no ICE detainees' : a.ice === 'pbnds' ? 'ICE (PBNDS 2011)' : a.ice === 'nds' ? 'ICE (NDS 2019)' : 'ICE (standards unconfirmed)');
+        if (a.usms) p.push('USMS prisoners');
+        p.push(a.kitchen ? 'food prepared on site' : 'no food prepared on site');
+        return p.join(' · ');
+      }
+      var LABEL = { applies: 'Applies', check: 'Check', na: 'Does not apply' };
+      function render() {
+        var a = answers();
+        $('opt-udc').hidden = !(a.state === 'UT' && (a.op === 'county' || a.op === 'private'));
+        $('opt-slco').hidden = !(a.state === 'UT' && a.op !== 'bop');
+        $('summary-fallback').hidden = true;
+        var active = {};
+        Object.keys(AUTH_NAMES).forEach(function (k) { var st = status(k, a); if (st) active[k] = st; });
+        var list = $('summary-list');
+        list.innerHTML = '';
+        ['applies', 'check', 'na'].forEach(function (s) {
+          Object.keys(active).filter(function (k) { return active[k].s === s; }).forEach(function (k) {
+            var li = document.createElement('li');
+            var badge = document.createElement('span');
+            badge.className = 'badge ' + s;
+            badge.textContent = LABEL[s];
+            var link = document.createElement('a');
+            link.setAttribute('href', ['', 'authorities', AUTH_SLUGS[k], ''].join('/'));
+            link.textContent = AUTH_NAMES[k];
+            var reason = document.createElement('span');
+            reason.className = 'reason';
+            reason.textContent = active[k].why;
+            li.appendChild(badge);
+            li.appendChild(link);
+            li.appendChild(reason);
+            list.appendChild(li);
+          });
+        });
+        var cad = {};
+        document.querySelectorAll('tbody[data-auth]').forEach(function (tb) {
+          var k = tb.getAttribute('data-auth');
+          var st = active[k];
+          var show = !!st && st.s !== 'na';
+          var visible = 0;
+          tb.querySelectorAll('tr[data-row]').forEach(function (tr) {
+            var hide = !show || (tr.getAttribute('data-kitchen') === '1' && !a.kitchen);
+            tr.hidden = hide;
+            if (!hide) {
+              visible++;
+              var cite = tr.querySelector('.cite').textContent;
+              tr.getAttribute('data-cad').split(' ').forEach(function (c) { (cad[c] = cad[c] || []).push(cite); });
+            }
+          });
+          tb.hidden = !show || visible === 0;
+          var head = tb.querySelector('.auth-head th');
+          head.querySelectorAll('.badge').forEach(function (b) { b.remove(); });
+          if (show) {
+            var b = document.createElement('span');
+            b.className = 'badge ' + st.s;
+            b.textContent = LABEL[st.s];
+            head.insertBefore(b, head.firstChild);
+          }
+        });
+        var box = $('cadence');
+        box.innerHTML = '';
+        CAD_ORDER.forEach(function (c) {
+          if (!cad[c]) return;
+          var d = document.createElement('div');
+          d.className = 'cad';
+          d.innerHTML = '<h3>' + CAD_LABELS[c] + ' <span class="cite">' + cad[c].length + ' requirement' + (cad[c].length === 1 ? '' : 's') + '</span></h3><ul>' + cad[c].map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
+          box.appendChild(d);
+        });
+        $('cadence-section').hidden = Object.keys(cad).length === 0;
+        var prof = profileText(a);
+        $('print-profile').textContent = prof;
+        var body = 'Facility name:\n\nProfile from the Compliance Map: ' + prof + '\n\nWhat prompted the review (upcoming inspection, a finding, contract rebid, litigation, other):\n\nBest phone:\n';
+        $('review-link').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Applicability review request (Corrections Pest Reference)') + '&body=' + encodeURIComponent(body);
+      }
+      Object.keys(F).forEach(function (k) { F[k].addEventListener('change', render); });
+      $('print-btn').addEventListener('click', function () { window.print(); });
+      render();
+    })();
+  </script>
+</BaseLayout>

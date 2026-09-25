@@ -11,25 +11,30 @@ The same list is published on /methodology/#open-questions.
 2. **Food code reach outside Utah.** Per state, whether jail and prison kitchens are inspected
    under the adopted food code, and by which agency. Ohio 5120:1-8-05(E) requires an annual
    inspection "by local or state health authorities" for full service jails (on the Ohio page).
-3. **BOP OSH policy.** P4700.08 §11.18(a) refers to "the Program Statement National Occupational
-   Safety and Health" by title. P1600.11 (and guesses 1600.12, 1600.13) return bop.gov's 404
-   page as of 2026-09-24. Find the current number on bop.gov/policy and quote its pest control
-   section in full.
 7. **DOJ OIG 25-062** (June 17, 2025), Concurrent Inspections of BOP Food Service Operations:
    insects in a food warehouse and rodent evidence at FCI Tallahassee; dead rodent at FCI
    Mendota; BOP response. Raw PDF held (OIG_25-062.pdf); its text layer has OCR errors, so
    quote from the HTML report page or a clean read before building a /record/ page.
-4. **Utah county jails holding no state inmates.** What standards they operate under (Utah Code
-   Title 17 Ch. 22; Utah Sheriffs' Association jail standards), what is public, and what the
-   public text says about pests and sanitation.
+4. **Utah Sheriffs' Association jail standards.** utahsheriffs.org publishes none (site search:
+   "No search results could be found for query: jail standards."). Davis County's corrections page
+   says its jail is inspected annually against them. 63G-2-301(3)(u) makes them normally public:
+   request the text from a county by GRAMA. Title 17 was recodified (Ch. 22 -> Ch. 72, eff.
+   11/6/2025); 64-13-12 is the only Code mention of "jail standards".
+8. **Salt Lake County Health Regulation #34 currency.** 2007 text published; confirm whether amended
+   or superseded (county regulations index loads dynamically).
 5. **General-use pesticides applied by Utah facility staff.** How UDAF reads the first sentence of
    R68-7-9(1)(a) ("Each person performing the physical act of applying a pesticide, shall be
    certified...") for a public employee applying general-use products in the employer's own
    building. Ask UDAF in writing.
-6. **USMS.** usmarshals.gov returned 403 to a direct download on 2026-09-24 (Federal Performance-
-   Based Detention Standards). Read through a browser.
 
 ## Closed 2026-09-24
+
+- **BOP OSH policy.** P1614.01 Occupational Safety (6/22/2026) rescinds 1600.14; §47 Pest Control.
+- **USMS.** FPBDS Version 12 (eff. 5/1/2025) read from prod.usmarshals.gov; F.2.4. Note: F.2.4 cites
+  5-ALDF-4D-04, which the handbook's appendix lists as a health services standard (vermin standard
+  is 5-ALDF-1A-03). Stated on the page.
+- **Utah records access.** 63G-2-301(1)(d), (3)(b)-(d), (3)(u); 77-16b-102(1); 64-13-12.
+- **Salt Lake County.** Health Regulation #34 §4.4.8 Insect and Rodent Control; §6 annual inspection.
 
 - **Current BOP Food Service Manual.** P4700.08 (May 7, 2026), rescinds 4700.07 (4/8/2024).
   Pest text at Ch. 11 §17(a), §17(c), §18(a)-(c). On the BOP page.

@@ -18,6 +18,8 @@ services_applicable:
 verbatim_available: true
 summary: "The Bureau of Prisons' current food service policy, issued May 7, 2026. Its rodent and insect control section tracks the FDA Food Code's four-part pest paragraph and adds one step: findings of pests are reported to the institution's Safety Department."
 related_authorities:
+  - slug: bop-p1614-01-occupational-safety
+    why: "The Bureau's current occupational safety program statement, whose Section 47 sets the institution-wide pest control plan, monthly inspections, and pesticide logs."
   - slug: fda-food-code-2022
     why: "Section 18(a) follows the structure of Food Code Section 6-501.111, and 18(b) follows Section 6-202.13; the manual directs readers to the current Food Code for definitions."
   - slug: ice-pbnds-2011-food-service
@@ -79,7 +81,7 @@ Section 18(a) is the FDA Food Code's pest paragraph, restated as Bureau policy: 
 
 Section 18(c) sets the exclusion standard for Food Service: gaps along floors, walls, and ceilings filled or closed; windows closed or screened; exterior doors solid, self-closing, and tight-fitting, with air curtains where doors stay open for deliveries.
 
-The manual points beyond itself for the program: the Bureau's National Occupational Safety and Health program statement, and each institution's written plan for pest control.
+The manual points beyond itself for the program: the Bureau's National Occupational Safety and Health program statement, and each institution's written plan for pest control. The current occupational safety program statement is P1614.01, whose Section 47 requires that written plan, monthly institution-wide inspections, and pesticide application logs.
 
 ## Who It Applies To
 
@@ -96,4 +98,4 @@ By its own terms: the Food Service program "throughout the Federal Bureau of Pri
 
 ## Confidence Notes
 
-HIGH confidence. Every quotation was read from the Bureau's PDF at the source link on September 24, 2026, and checked against a full text extraction. The PDF's page headers read "4700.08 5/7/2026" on some pages and "4700.08 x/x/2026" on others; the program statement's cover gives the date as May 7, 2026. The Bureau's National Occupational Safety and Health program statement is referred to by title only; its current number and pest control text have not been read. See the open questions on the [methodology page](/methodology/#open-questions).
+HIGH confidence. Every quotation was read from the Bureau's PDF at the source link on September 24, 2026, and checked against a full text extraction. The PDF's page headers read "4700.08 5/7/2026" on some pages and "4700.08 x/x/2026" on others; the program statement's cover gives the date as May 7, 2026. The manual names the National Occupational Safety and Health program statement by title only. That document, P1600.14, was rescinded on June 22, 2026 by Program Statement 1614.01, Occupational Safety, whose Section 47 is the Bureau's pest control requirement. See the related P1614.01 page.

@@ -14,12 +14,14 @@ const grouped = authorities.reduce((acc, authority) => {
   return acc;
 }, {} as Record<string, typeof authorities>);
 
-const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'recognized authority'];
+const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'state statute', 'local regulator', 'recognized authority'];
 
 const typeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulators',
   'federal agency standard': 'Federal Detention and Corrections Standards',
   'state regulator': 'State Regulators',
+  'state statute': 'State Statutes',
+  'local regulator': 'Local Health Regulations',
   'recognized authority': 'Recognized Authorities'
 };
 
@@ -111,12 +113,22 @@ const totalCount = authorities.length;
   </div>
 
   <div class="scope-note">
-    <strong>Version 0.1, September 2026.</strong> The reference currently covers {totalCount}
-    authorities, each quoted from its primary source. Federal detention and prison standards,
-    state jail standards, and the public enforcement record are being added as each is
-    verified. Items under verification are listed openly on the
-    <a href="/methodology/#open-questions">methodology page</a>.
+    <strong>Version 0.3, September 2026.</strong> The reference currently covers {totalCount}
+    authorities, each quoted from its primary source: OSHA, the FDA Food Code, the Bureau of
+    Prisons, ICE, the U.S. Marshals Service, Utah, and two comparison states. The public
+    enforcement record is being added as each document is verified. Items under verification
+    are listed openly on the <a href="/methodology/#open-questions">methodology page</a>.
   </div>
+
+  <h2>Working Tools</h2>
+
+  <p>
+    The <a href="/tools/compliance-map/">Pest Compliance Map</a> pairs every requirement on
+    this reference with the record that shows it was met, how often, and who the text names as
+    responsible. Set a facility profile and print it as an inspection checklist. The
+    <a href="/tools/scope-of-work/">Model Scope of Work</a> is contract language for a pest
+    management solicitation, with a Word download.
+  </p>
 
   <h2>Authority Index</h2>
 

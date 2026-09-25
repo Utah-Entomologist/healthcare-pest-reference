@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/site';
+import { Content } from '../../data/scope-of-work.md';
+---
+
+<BaseLayout
+  title="Model Scope of Work: Pest Management for Jails, Prisons, and Detention Facilities"
+  description="Free model contract language for a correctional facility pest management scope of work: licensed applicators, monthly service, device maps, required application records, written findings, pesticide management, exclusion, and buyer-protective contract terms. Word download."
+  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Model Scope of Work', url: `${SITE_URL}/tools/scope-of-work/` }]}
+>
+  <style is:global>
+    .lede { font-size: 1.05rem; max-width: 46rem; }
+    .dl { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0 2.25rem; }
+    .btn { display: inline-block; padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font-size: 0.92rem; text-decoration: none; cursor: pointer; font: inherit; }
+    .btn.secondary { background: transparent; color: var(--color-primary); }
+    .sow { max-width: 46rem; }
+    .sow h2 { font-size: 1.2rem; margin-top: 2rem; }
+    .sow p { margin: 0.6rem 0; }
+    @media print {
+      .site-header, .site-footer, nav, .dl, .breadcrumbs, .no-print { display: none !important; }
+      body { font-size: 10.5pt; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+
+  <h1>Model Scope of Work: Pest Management for Jails, Prisons, and Detention Facilities</h1>
+  <p class="lede">
+    Contract language an agency can drop into a pest control solicitation or renewal. It asks for what the authorities on this
+    reference ask for, in the form an inspector will want to see: licensed applicators, a fixed service frequency, a device map,
+    complete application records, written findings with owners, and contract terms that keep the agency in control.
+  </p>
+  <div class="dl">
+    <a class="btn" href="/downloads/Model_Scope_of_Work_Correctional_Pest_Management.docx" download>Download Word (.docx)</a>
+    <button type="button" class="btn secondary" onclick="window.print()">Print or save as PDF</button>
+    <a class="btn secondary no-print" href="/tools/compliance-map/">Compliance Map</a>
+  </div>
+
+  <div class="sow">
+    <Content />
+  </div>
+
+  <p class="no-print">
+    Questions about adapting it to a specific facility or solicitation: <a href="/consulting/">Consulting</a>.
+  </p>
+</BaseLayout>

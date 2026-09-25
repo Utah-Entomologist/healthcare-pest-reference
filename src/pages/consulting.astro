@@ -10,6 +10,8 @@ import {
 } from '../lib/site';
 
 const practice = CONSULTING_PRACTICE_NAME;
+const reviewBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nHouses state inmates, ICE detainees, or U.S. Marshals prisoners?\n\nFood prepared on site?\n\nWhat prompted the review (upcoming inspection, a finding, contract rebid, litigation, other):\n\nBest phone:\n';
+const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applicability review request (Corrections Pest Reference)')}&body=${encodeURIComponent(reviewBody)}`;
 ---
 
 <BaseLayout
@@ -30,6 +32,10 @@ const practice = CONSULTING_PRACTICE_NAME;
     .services { margin-bottom: 1.5rem; }
     .services dt { font-family: var(--font-sans); font-weight: 600; color: var(--color-primary); margin-top: 1.25rem; }
     .services dd { margin: 0.3rem 0 0; color: var(--color-text); }
+    .triggers { margin: 0.5rem 0 1.5rem; }
+    .triggers li { margin: 0.3rem 0; }
+    .cta { display: inline-block; margin: 0.5rem 0 2rem; padding: 0.6rem 1.1rem; border-radius: 4px; background: var(--color-primary); color: #fff; text-decoration: none; font-size: 0.95rem; }
+    .cta:hover { background: var(--color-accent); color: #fff; }
     .contact-card {
       margin-top: 1.5rem;
       padding: 1.4rem 1.6rem;
@@ -76,6 +82,40 @@ const practice = CONSULTING_PRACTICE_NAME;
     <a href="https://entocert.org/roster" target="_blank" rel="noopener">ESACC roster</a>.
   </p>
 
+  <h2>Facility Pest Compliance Review</h2>
+
+  <p>
+    A fixed-fee engagement that answers two questions for one facility: which pest control
+    authorities reach it, and whether its records show each requirement was met. It starts
+    with the facility's jurisdiction, operator, and agreements (ICE, U.S. Marshals Service,
+    state inmate housing), continues with an escorted walk of the kitchen, receiving,
+    storage, housing, intake, and perimeter, and ends with a written review organized by
+    authority: requirement, record found, gap, and who owns the correction. It is a review
+    of what the records and conditions show on the day, not a certification of compliance.
+  </p>
+
+  <p>Facilities usually call at one of these points:</p>
+  <ul class="triggers">
+    <li>Before an ACA, ICE, U.S. Marshals Service, Department of Corrections, or health department inspection</li>
+    <li>After an inspection finding, a pest-related grievance, or an outbreak of bed bugs, lice, or rodents</li>
+    <li>When a pest control contract is up for renewal or rebid</li>
+    <li>When a new administrator or food service contractor takes over</li>
+    <li>When a claim or lawsuit names pest conditions (engaged through counsel)</li>
+  </ul>
+
+  <p>
+    The <a href="/tools/compliance-map/">Compliance Map</a> is the free, self-serve version.
+    For a facility-specific applicability review, send the facility's profile:
+  </p>
+  <a class="cta" href={reviewHref}>Request an applicability review</a>
+
+  <p>
+    A note on records: in Utah, a correctional facility's contracts, its contractors'
+    service records, and the results of inspections against its standards are normally
+    public records under <a href="/authorities/utah-grama-correctional-facility-records/">Utah Code 63G-2-301</a>.
+    Facilities that want a review conducted at the direction of counsel should say so at the outset.
+  </p>
+
   <h2>What a Board Certified Entomologist Can Be Retained to Do</h2>
 
   <dl class="services">
@@ -93,6 +133,12 @@ const practice = CONSULTING_PRACTICE_NAME;
       next decision point.
     </dd>
 
+    <dt>Solicitation drafting</dt>
+    <dd>
+      A pest management scope of work written for the facility's authorities and security
+      procedures, built from the free <a href="/tools/scope-of-work/">model scope of work</a>.
+    </dd>
+
     <dt>Entomologist of Record engagement</dt>
     <dd>
       An ongoing arrangement under which a named Board Certified Entomologist is
@@ -103,7 +149,9 @@ const practice = CONSULTING_PRACTICE_NAME;
     <dt>Expert witness work</dt>
     <dd>
       Case review, opinion, and testimony in matters involving pest conditions in
-      correctional and detention facilities, for counsel on either side.
+      correctional and detention facilities, for counsel on either side. See
+      <a href="https://frazerappliedentomology.com/services/expert-witness/">expert witness services</a>
+      at {practice}.
     </dd>
   </dl>
 

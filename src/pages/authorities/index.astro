@@ -12,12 +12,14 @@ const grouped = authorities.reduce((acc, authority) => {
   return acc;
 }, {} as Record<string, typeof authorities>);
 
-const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'recognized authority'];
+const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'state statute', 'local regulator', 'recognized authority'];
 
 const typeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulators',
   'federal agency standard': 'Federal Detention and Corrections Standards',
   'state regulator': 'State Regulators',
+  'state statute': 'State Statutes',
+  'local regulator': 'Local Health Regulations',
   'recognized authority': 'Recognized Authorities'
 };
 
@@ -28,6 +30,10 @@ const typeOrientation: Record<string, string> = {
     'Standards published by the federal agencies that operate or contract for detention. They bind the facilities those agencies hold to them, as each agency states.',
   'state regulator':
     'Binding within the state. Pesticide control rules set who may apply what, and what record every application leaves.',
+  'state statute':
+    'Statutes. In Utah, these set who may be asked for jail standards and inspection results, and what counts as a correctional facility.',
+  'local regulator':
+    'Regulations adopted by a local board of health for correctional institutions in its jurisdiction, enforced by its own inspections.',
   'recognized authority':
     'Not regulations. Standards of practice that inspectors and counsel measure against when the regulation itself is silent.'
 };

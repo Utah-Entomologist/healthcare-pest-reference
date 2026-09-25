@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/site';
+import { ROWS, AUTHORITIES } from '../../data/complianceMap';
+---
+
+<BaseLayout
+  title="Tools"
+  description="Free working tools built from the Corrections Pest Reference: a facility compliance map and printable checklist, and a model pest management scope of work for correctional facility contracts."
+  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }]}
+>
+  <style>
+    .tool { border-bottom: 1px solid var(--color-rule); padding: 1.25rem 0; }
+    .tool h2 { margin: 0 0 0.4rem; font-size: 1.2rem; }
+    .tool h2 a { color: var(--color-primary); }
+    .tool p { margin: 0.3rem 0; max-width: 46rem; }
+  </style>
+
+  <h1>Tools</h1>
+  <p>Built from the same primary sources as the authority pages. Free to use.</p>
+
+  <div class="tool">
+    <h2><a href="/tools/compliance-map/">Pest Compliance Map</a></h2>
+    <p>
+      {ROWS.length} requirements from {AUTHORITIES.length} authorities, each paired with the record that shows it was met, how
+      often, and who the text names as responsible. Set a facility profile to keep only what applies. Prints as an inspection checklist.
+    </p>
+  </div>
+
+  <div class="tool">
+    <h2><a href="/tools/scope-of-work/">Model Scope of Work</a></h2>
+    <p>
+      Contract language for a correctional facility pest management solicitation or renewal: qualifications, frequency, device
+      map, application records, written findings, pesticide management, exclusion, and buyer-protective terms. Word download.
+    </p>
+  </div>
+</BaseLayout>

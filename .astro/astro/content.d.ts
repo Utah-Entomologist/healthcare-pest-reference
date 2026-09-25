@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"authorities": {
+"bop-p1614-01-occupational-safety.md": {
+	id: "bop-p1614-01-occupational-safety.md";
+  slug: "bop-p1614-01-occupational-safety";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "bop-p4700-08-food-service-manual.md": {
 	id: "bop-p4700-08-food-service-manual.md";
   slug: "bop-p4700-08-food-service-manual";
@@ -193,6 +200,27 @@ declare module 'astro:content' {
 "osha-1910-141-sanitation.md": {
 	id: "osha-1910-141-sanitation.md";
   slug: "osha-1910-141-sanitation";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"slco-health-regulation-34-correctional-institutions.md": {
+	id: "slco-health-regulation-34-correctional-institutions.md";
+  slug: "slco-health-regulation-34-correctional-institutions";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"usms-fpbds-v12.md": {
+	id: "usms-fpbds-v12.md";
+  slug: "usms-fpbds-v12";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
+"utah-grama-correctional-facility-records.md": {
+	id: "utah-grama-correctional-facility-records.md";
+  slug: "utah-grama-correctional-facility-records";
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">

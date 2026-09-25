@@ -27,6 +27,8 @@ const authorities = defineCollection({
       'federal regulator',
       'federal agency standard',
       'state regulator',
+      'state statute',
+      'local regulator',
       'recognized authority'
     ]),
     citation: z.string(),
