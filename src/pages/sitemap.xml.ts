@@ -26,7 +26,9 @@ export const GET: APIRoute = async () => {
     { url: '/about/', priority: '0.7', changefreq: 'yearly', sources: ['src/pages/about.astro'] },
     { url: '/methodology/', priority: '0.7', changefreq: 'yearly', sources: ['src/pages/methodology.astro'] },
     { url: '/consulting/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/consulting.astro'] },
-    { url: '/register/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/register.astro'] }
+    { url: '/register/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/register.astro'] },
+    { url: '/tools/', priority: '0.7', changefreq: 'monthly', sources: ['src/pages/tools/index.astro'] },
+    { url: '/tools/compliance-map/', priority: '0.9', changefreq: 'monthly', sources: ['src/pages/tools/compliance-map.astro', 'src/data/complianceMap.ts'] }
   ].map((page) => ({ ...page, lastmod: lastModified(page.sources) ?? repoLastCommitDate() }));
 
   const authorityPages = authorities.map((entry) => ({

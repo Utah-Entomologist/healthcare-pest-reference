@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL } from '../../lib/site';
+import { AUTHORITIES, ROWS, CADENCE_LABELS, CADENCE_ORDER } from '../../data/complianceMap';
+
+const CONTACT_EMAIL = 'trent@frazerappliedentomology.com';
+const byAuth = AUTHORITIES.map((a) => ({ ...a, rows: ROWS.filter((r) => r.auth === a.key) }));
+const authNames = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.name]));
+const authPaths = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.path]));
+const rowCount = ROWS.length;
+---
+
+<BaseLayout
+  title="Pest Compliance Map for Healthcare Facilities"
+  description="Select a healthcare facility profile (nursing home, hospital, VA medical facility, outpatient therapy organization) and see which pest control authorities apply, what each requires, the record that proves it, how often, and who the text names as responsible. Printable as a survey-readiness checklist."
+  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Compliance Map', url: `${SITE_URL}/tools/compliance-map/` }]}
+>
+  <style is:global>
+    .lede { font-size: 1.05rem; max-width: 46rem; }
+    .notice { border-left: 3px solid var(--color-accent); padding: 0.75rem 1rem; background: rgba(58, 90, 120, 0.06); font-size: 0.92rem; max-width: 46rem; margin: 1.5rem 0 2rem; }
+    .profile { border: 1px solid var(--color-rule); border-radius: 6px; padding: 1.25rem; margin: 0 0 2rem; }
+    .profile h2 { margin-top: 0; font-size: 1.15rem; }
+    .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem 1.5rem; }
+    .field label, .field legend { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 0.35rem; }
+    .field select { width: 100%; padding: 0.45rem; font: inherit; border: 1px solid var(--color-rule); border-radius: 4px; background: transparent; color: inherit; }
+    .field fieldset { border: 0; margin: 0; padding: 0; }
+    .opt { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.92rem; margin: 0.25rem 0; font-weight: 400 !important; }
+    .opt input { margin-top: 0.2rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+    .btn { display: inline-block; padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font: inherit; font-size: 0.92rem; cursor: pointer; text-decoration: none; }
+    .btn.secondary { background: transparent; color: var(--color-primary); }
+    .summary { margin: 0 0 2rem; }
+    .summary ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+    .summary li { padding: 0.35rem 0; border-bottom: 1px solid var(--color-rule); font-size: 0.93rem; }
+    .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.1rem 0.45rem; border-radius: 3px; margin-right: 0.5rem; }
+    .badge.applies { background: #1f5c3a; color: #fff; }
+    .badge.check { background: #8a5a00; color: #fff; }
+    .badge.na { background: #6b7280; color: #fff; }
+    .reason { color: var(--color-text-muted); font-size: 0.86rem; display: block; margin-top: 0.15rem; }
+    .cadence { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.75rem; margin: 0.75rem 0 2rem; }
+    .cad { border: 1px solid var(--color-rule); border-radius: 6px; padding: 0.75rem; font-size: 0.86rem; }
+    .cad h3 { font-size: 0.95rem; margin: 0 0 0.35rem; }
+    .cad ul { margin: 0; padding-left: 1rem; }
+    table.map { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 2rem; }
+    table.map th, table.map td { border-bottom: 1px solid var(--color-rule); padding: 0.55rem 0.5rem; vertical-align: top; text-align: left; }
+    table.map thead th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-meta); }
+    tr.auth-head th { background: rgba(31, 45, 58, 0.06); font-size: 0.95rem; padding-top: 0.75rem; }
+    tr.auth-head a { color: var(--color-primary); }
+    .cite { font-size: 0.78rem; color: var(--color-text-meta); display: block; margin-top: 0.2rem; }
+    details.q summary { cursor: pointer; font-size: 0.8rem; color: var(--color-accent); margin-top: 0.3rem; }
+    details.q blockquote { margin: 0.35rem 0 0; font-size: 0.84rem; }
+    .should { font-size: 0.72rem; font-weight: 700; color: #8a5a00; }
+    .box { width: 1rem; height: 1rem; border: 1.5px solid currentColor; display: inline-block; vertical-align: middle; }
+    .print-only { display: none; }
+    [hidden] { display: none !important; }
+    @media (max-width: 720px) {
+      table.map thead { display: none; }
+      table.map tr { display: block; border-bottom: 1px solid var(--color-rule); padding: 0.5rem 0; }
+      table.map td, table.map th { display: block; border: 0; padding: 0.2rem 0; }
+      table.map td[data-label]::before { content: attr(data-label) ": "; font-weight: 600; font-size: 0.8rem; color: var(--color-text-meta); }
+      td.col-box { display: none; }
+    }
+    @media print {
+      .site-header, .site-footer, nav, .profile, .actions, .no-print, .breadcrumbs, details.q summary { display: none !important; }
+      .print-only { display: block; }
+      details.q { display: none; }
+      body { font-size: 10pt; }
+      table.map { font-size: 8.5pt; }
+      table.map tr { page-break-inside: avoid; }
+      .cad { page-break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+
+  <h1>Pest Compliance Map</h1>
+  <p class="lede">
+    The pest control requirements on this reference, in one place: what each authority requires, the record that shows it was
+    met, how often, and who the text names as responsible. Set your facility's profile and the map keeps only the authorities
+    that reach it. Print it, and it becomes the survey-readiness checklist.
+  </p>
+  <p class="notice">
+    This map lists what each authority's text requires and the record that would show it. It is not a determination that any
+    facility complies, and it is not legal advice. Which authorities govern a facility is set by its jurisdiction, its operator,
+    and its accreditation. Every requirement links to the page on this reference that quotes the source.
+  </p>
+
+  <div class="print-only">
+    <p><strong>Facility:</strong> ______________________________ &nbsp; <strong>Reviewed by:</strong> ______________________ &nbsp; <strong>Date:</strong> ____________</p>
+    <p><strong>Profile:</strong> <span id="print-profile">All authorities</span></p>
+  </div>
+
+  <form class="profile no-print" id="profile" onsubmit="return false">
+    <h2>Facility profile</h2>
+    <div class="fields">
+      <div class="field">
+        <label for="f-type">Facility type</label>
+        <select id="f-type" name="type">
+          <option value="ltc" selected>Nursing home (CMS-certified long-term care)</option>
+          <option value="hospital">Hospital</option>
+          <option value="va">VA medical facility</option>
+          <option value="p485">Outpatient therapy clinic, rehabilitation agency, or public health agency</option>
+        </select>
+      </div>
+      <div class="field" id="opt-accr">
+        <label for="f-accr">Hospital accreditation</label>
+        <select id="f-accr" name="accr">
+          <option value="tjc" selected>The Joint Commission</option>
+          <option value="dnv">DNV</option>
+          <option value="other">Other accreditor or state survey</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-state">State</label>
+        <select id="f-state" name="state">
+          <option value="UT" selected>Utah</option>
+          <option value="OTHER">Another state</option>
+        </select>
+      </div>
+      <div class="field">
+        <fieldset>
+          <legend>Also true of this facility</legend>
+          <label class="opt"><input type="checkbox" id="f-kitchen" checked /> Food is prepared on site</label>
+        </fieldset>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn" id="print-btn">Print checklist or save as PDF</button>
+      <a class="btn secondary" id="review-link" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applicability review request (Healthcare Pest Reference)')}`}>Request an applicability review</a>
+    </div>
+  </form>
+
+  <section class="summary" id="summary" aria-live="polite">
+    <h2>Authorities for this profile</h2>
+    <p class="no-print" id="summary-fallback">All {AUTHORITIES.length} authorities and {rowCount} requirements are shown below. Turn on JavaScript to filter them to a facility profile.</p>
+    <ul id="summary-list"></ul>
+  </section>
+
+  <section id="cadence-section" hidden>
+    <h2>Proof calendar</h2>
+    <p class="no-print">How often each record has to exist, for this profile.</p>
+    <div class="cadence" id="cadence"></div>
+  </section>
+
+  <h2>Requirements and proof records</h2>
+  <table class="map">
+    <thead>
+      <tr>
+        <th class="col-box" scope="col">On file</th>
+        <th scope="col">Requirement</th>
+        <th scope="col">Record that shows it</th>
+        <th scope="col">How often</th>
+        <th scope="col">Named responsible</th>
+      </tr>
+    </thead>
+    {byAuth.map((a) => (
+      <tbody data-auth={a.key}>
+        <tr class="auth-head">
+          <th colspan="5" scope="rowgroup">
+            <a href={a.path}>{a.name}</a>
+            <span class="cite">{a.group}</span>
+          </th>
+        </tr>
+        {a.rows.map((r) => (
+          <tr data-row={r.id} data-kitchen={r.kitchen ? '1' : '0'} data-cad={r.cadence.join(' ')}>
+            <td class="col-box"><span class="box" aria-hidden="true"></span></td>
+            <td data-label="Requirement">
+              {r.requirement}
+              {r.should && <span class="should"> SHOULD</span>}
+              <span class="cite">{a.name}, {r.cite}</span>
+              <details class="q"><summary>Source text</summary><blockquote>"{r.quote}"</blockquote></details>
+            </td>
+            <td data-label="Record">{r.evidence}</td>
+            <td data-label="How often">{r.frequency}</td>
+            <td data-label="Named responsible">{r.owner}</td>
+          </tr>
+        ))}
+      </tbody>
+    ))}
+  </table>
+
+  <p class="no-print">
+    Want the facility-specific version, checked against your survey history and walked on site? See
+    <a href="/consulting/">Consulting</a>.
+  </p>
+
+  <script define:vars={{ AUTH_NAMES: authNames, AUTH_PATHS: authPaths, CAD_LABELS: CADENCE_LABELS, CAD_ORDER: CADENCE_ORDER, EMAIL: CONTACT_EMAIL }}>
+    (function () {
+      var $ = function (id) { return document.getElementById(id); };
+      var F = { type: $('f-type'), accr: $('f-accr'), state: $('f-state'), kitchen: $('f-kitchen') };
+      var L = { ltc: 'Nursing home', hospital: 'Hospital', va: 'VA medical facility', p485: 'Outpatient therapy organization', tjc: 'Joint Commission accredited', dnv: 'DNV accredited', other: 'other accreditor or state survey', UT: 'Utah', OTHER: 'another state' };
+      function answers() {
+        return { type: F.type.value, accr: F.accr.value, state: F.state.value, kitchen: F.kitchen.checked };
+      }
+      function A(why) { return { s: 'applies', why: why }; }
+      function C(why) { return { s: 'check', why: why }; }
+      function N(why) { return { s: 'na', why: why }; }
+      var NO_FOOD = 'No food is prepared on site.';
+      function status(key, a) {
+        var UT = a.state === 'UT';
+        switch (key) {
+          case 'f925':
+          case 'f925poc':
+            return a.type === 'ltc' ? A('CMS-certified long-term care facilities are surveyed under Appendix PP.') : null;
+          case 'a0701':
+          case 'a0750':
+            return a.type === 'hospital' ? A('Hospitals participating in Medicare answer to the Conditions of Participation.') : null;
+          case 'p485':
+            return a.type === 'p485' ? A('Clinics, rehabilitation agencies, and public health agencies furnishing outpatient physical therapy or speech-language pathology.') : null;
+          case 'vha':
+            return a.type === 'va' ? A('Every VA medical facility, including outpatient sites not covered by leases.') : null;
+          case 'tjc':
+            return (a.type === 'hospital' && a.accr === 'tjc') ? C('No pest-specific standard in the 2026 Physical Environment chapter; pest activity is cited under PE.01.01.01. See the page.') : null;
+          case 'dnv':
+            return (a.type === 'hospital' && a.accr === 'dnv') ? C('NIAHO IC.1 names pest control as one element of a sanitary environment the infection prevention policies must cover. See the page.') : null;
+          case 'fda':
+            if (!a.kitchen) return N(NO_FOOD);
+            return C("The kitchen answers to the Food Code version your state adopted; confirm the version and who inspects.");
+          case 'hazcom':
+            return a.type === 'va' ? C('How OSHA requirements reach a federal employer is not established on this reference.') : A('Employers whose workers may be exposed to stored or applied pesticides.');
+          case 'r432':
+            if (!UT) return null;
+            return a.type === 'hospital' ? A('Utah general hospitals.') : null;
+          case 'r687':
+            if (!UT) return null;
+            return a.type === 'va' ? C('Governs pesticide application in Utah; its reach onto federal property is not established here.') : A('Every commercial pesticide application in Utah.');
+          case 'hicpac':
+            return C('Guidance, not a regulation: the recognized standard inspectors and counsel measure against.');
+          case 'epa':
+            return C('Guidance, not a regulation: the federal IPM program structure for healthcare facilities.');
+        }
+        return null;
+      }
+      function profileText(a) {
+        var p = [L[a.type]];
+        if (a.type === 'hospital') p.push(L[a.accr]);
+        p.push(L[a.state]);
+        p.push(a.kitchen ? 'food prepared on site' : 'no food prepared on site');
+        return p.join(' · ');
+      }
+      var LABEL = { applies: 'Applies', check: 'Check', na: 'Does not apply' };
+      function render() {
+        var a = answers();
+        $('opt-accr').hidden = a.type !== 'hospital';
+        $('summary-fallback').hidden = true;
+        var active = {};
+        Object.keys(AUTH_NAMES).forEach(function (k) { var st = status(k, a); if (st) active[k] = st; });
+        var list = $('summary-list');
+        list.innerHTML = '';
+        ['applies', 'check', 'na'].forEach(function (s) {
+          Object.keys(active).filter(function (k) { return active[k].s === s; }).forEach(function (k) {
+            var li = document.createElement('li');
+            var badge = document.createElement('span');
+            badge.className = 'badge ' + s;
+            badge.textContent = LABEL[s];
+            var link = document.createElement('a');
+            link.setAttribute('href', AUTH_PATHS[k]);
+            link.textContent = AUTH_NAMES[k];
+            var reason = document.createElement('span');
+            reason.className = 'reason';
+            reason.textContent = active[k].why;
+            li.appendChild(badge);
+            li.appendChild(link);
+            li.appendChild(reason);
+            list.appendChild(li);
+          });
+        });
+        var cad = {};
+        document.querySelectorAll('tbody[data-auth]').forEach(function (tb) {
+          var k = tb.getAttribute('data-auth');
+          var st = active[k];
+          var show = !!st && st.s !== 'na';
+          var visible = 0;
+          tb.querySelectorAll('tr[data-row]').forEach(function (tr) {
+            var hide = !show || (tr.getAttribute('data-kitchen') === '1' && !a.kitchen);
+            tr.hidden = hide;
+            if (!hide) {
+              visible++;
+              var cite = tr.querySelector('.cite').textContent;
+              tr.getAttribute('data-cad').split(' ').forEach(function (c) { (cad[c] = cad[c] || []).push(cite); });
+            }
+          });
+          tb.hidden = !show || visible === 0;
+          var head = tb.querySelector('.auth-head th');
+          head.querySelectorAll('.badge').forEach(function (b) { b.remove(); });
+          if (show) {
+            var b = document.createElement('span');
+            b.className = 'badge ' + st.s;
+            b.textContent = LABEL[st.s];
+            head.insertBefore(b, head.firstChild);
+          }
+        });
+        var box = $('cadence');
+        box.innerHTML = '';
+        CAD_ORDER.forEach(function (c) {
+          if (!cad[c]) return;
+          var d = document.createElement('div');
+          d.className = 'cad';
+          d.innerHTML = '<h3>' + CAD_LABELS[c] + ' <span class="cite">' + cad[c].length + ' requirement' + (cad[c].length === 1 ? '' : 's') + '</span></h3><ul>' + cad[c].map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
+          box.appendChild(d);
+        });
+        $('cadence-section').hidden = Object.keys(cad).length === 0;
+        var prof = profileText(a);
+        $('print-profile').textContent = prof;
+        var body = 'Facility name:\n\nProfile from the Compliance Map: ' + prof + '\n\nWhat prompted the review (upcoming inspection, a finding, contract rebid, litigation, other):\n\nBest phone:\n';
+        $('review-link').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Applicability review request (Healthcare Pest Reference)') + '&body=' + encodeURIComponent(body);
+      }
+      Object.keys(F).forEach(function (k) { F[k].addEventListener('change', render); });
+      $('print-btn').addEventListener('click', function () { window.print(); });
+      render();
+    })();
+  </script>
+</BaseLayout>
