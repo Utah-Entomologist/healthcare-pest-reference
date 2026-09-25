@@ -12,6 +12,8 @@ import {
 const practice = CONSULTING_PRACTICE_NAME;
 const reviewBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nHouses state inmates, ICE detainees, or U.S. Marshals prisoners?\n\nFood prepared on site?\n\nWhat prompted the review (upcoming inspection, a finding, contract rebid, litigation, other):\n\nBest phone:\n';
 const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applicability review request (Corrections Pest Reference)')}&body=${encodeURIComponent(reviewBody)}`;
+const grievanceBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nRoughly how many pest-related grievances in the last 12 months:\n\nIs a claim pending or expected (if so, is counsel involved):\n\nBest phone:\n';
+const grievanceHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Vermin Grievance File Review request (Corrections Pest Reference)')}&body=${encodeURIComponent(grievanceBody)}`;
 ---
 
 <BaseLayout
@@ -115,6 +117,30 @@ const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applic
     public records under <a href="/authorities/utah-grama-correctional-facility-records/">Utah Code 63G-2-301</a>.
     Facilities that want a review conducted at the direction of counsel should say so at the outset.
   </p>
+
+  <h2 id="vermin-grievance-file-review">Vermin Grievance File Review</h2>
+
+  <p>
+    A fixed-scope review of how one facility's pest grievances were handled, built on
+    <a href="/tools/vermin-grievance-file/">the eight questions</a>. It takes the facility's
+    pest-related grievances, kites, and sick-call complaints from a set period, usually the
+    last twelve months, traces each one through the
+    <a href="/tools/grievance-loop/">grievance-to-work-order loop</a> to the records that
+    answer each question, and talks with the staff who run that loop. The deliverable is a
+    written review: for each grievance, which of the eight questions the file answers and
+    which it does not, where in the loop the record went missing, and who owns each
+    correction. It is a review of records, not a legal opinion or a certification, and it can
+    be engaged by the facility directly or through its counsel.
+  </p>
+
+  <p>It is usually requested at one of these points:</p>
+  <ul class="triggers">
+    <li>After a pest-related grievance, claim, or notice of claim</li>
+    <li>Before a jail standards, accreditation, ICE, or U.S. Marshals Service inspection</li>
+    <li>When a new administrator or a new pest control provider takes over</li>
+    <li>When counsel is evaluating or defending a conditions-of-confinement claim</li>
+  </ul>
+  <a class="cta" href={grievanceHref}>Request a Vermin Grievance File Review</a>
 
   <h2>What a Board Certified Entomologist Can Be Retained to Do</h2>
 

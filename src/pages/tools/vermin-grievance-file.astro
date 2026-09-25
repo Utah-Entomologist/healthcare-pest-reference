@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_URL, CONTACT_EMAIL } from '../../lib/site';
+import { CASE_QUOTES as Q, CASE_LINKS, QUESTIONS } from '../../data/grievanceFile';
+
+const reviewBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nRoughly how many pest-related grievances in the last 12 months:\n\nIs a claim pending or expected (if so, is counsel involved):\n\nBest phone:\n';
+const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Vermin Grievance File Review request (Corrections Pest Reference)')}&body=${encodeURIComponent(reviewBody)}`;
+---
+
+<BaseLayout
+  title="The Vermin Grievance File: Eight Questions for a Pest Grievance"
+  description="A printable worksheet for jails and prisons: the eight questions plaintiff's counsel asks about a vermin grievance, each paired with the record that answers it, built on the deliberate-indifference test in Farmer v. Brennan and Antonelli v. Sheahan."
+  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Vermin Grievance File', url: `${SITE_URL}/tools/vermin-grievance-file/` }]}
+>
+  <style is:global>
+    .lede { font-size: 1.05rem; max-width: 46rem; }
+    .notice { border-left: 3px solid var(--color-accent); padding: 0.75rem 1rem; background: rgba(58, 90, 120, 0.06); font-size: 0.9rem; max-width: 46rem; margin: 1.25rem 0 1.75rem; }
+    .case { border: 1px solid var(--color-rule); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.25rem 0 1.75rem; max-width: 46rem; }
+    .case h2 { margin-top: 0; font-size: 1.1rem; }
+    .case p { margin: 0.5rem 0; }
+    .dl { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0 2rem; }
+    .btn { display: inline-block; padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font: inherit; font-size: 0.92rem; cursor: pointer; text-decoration: none; }
+    .btn.secondary { background: transparent; color: var(--color-primary); }
+    .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 0.6rem 1.5rem; margin: 0 0 1.25rem; font-size: 0.92rem; }
+    .fields span { display: block; border-bottom: 1px solid currentColor; padding-top: 1.1rem; }
+    table.gq { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 0.5rem 0 1.5rem; }
+    table.gq th, table.gq td { border: 1px solid var(--color-rule); padding: 0.55rem 0.55rem; vertical-align: top; text-align: left; }
+    table.gq thead th { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--color-text-meta); background: rgba(31, 45, 58, 0.04); }
+    td.n { font-weight: 700; width: 2rem; text-align: center; }
+    .half { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-meta); margin-bottom: 0.2rem; }
+    .auth { display: block; font-size: 0.8rem; margin-top: 0.3rem; }
+    td.mark { width: 7.5rem; font-size: 0.8rem; white-space: nowrap; }
+    td.where { width: 9rem; }
+    .close { max-width: 46rem; font-weight: 500; }
+    .print-only { display: none; }
+    @media (max-width: 720px) {
+      table.gq thead { display: none; }
+      table.gq tr { display: block; border-bottom: 2px solid var(--color-rule); margin-bottom: 0.5rem; }
+      table.gq td { display: block; border: 0; padding: 0.25rem 0; width: auto !important; text-align: left !important; }
+      td.mark, td.where { display: none !important; }
+    }
+    @media print {
+      @page { size: letter portrait; margin: 0.5in; }
+      html { font-size: 10.5px !important; }
+      body { background: #fff !important; }
+      main { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+      main h1 { font-size: 2.2rem; margin: 0 0 0.4rem; }
+      .site-header, .site-footer, nav, .breadcrumbs, .no-print, .dl { display: none !important; }
+      .print-only { display: block; font-size: 0.85rem; color: #555; margin-top: 0.6rem; }
+      .lede, .notice, .close { max-width: none; }
+      .case { max-width: none; padding: 0.6rem 0.9rem; margin: 0.8rem 0; }
+      .worksheet { page-break-before: always; }
+      table.gq { font-size: 0.95rem; }
+      table.gq th, table.gq td { padding: 0.45rem 0.5rem; }
+      table.gq tr { page-break-inside: avoid; }
+      td.where { width: 12rem; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+
+  <h1>The Vermin Grievance File</h1>
+  <p class="lede">
+    <strong>Eight questions plaintiff's counsel asks about a pest grievance, and the record that answers each one.</strong>
+    When a person held in a jail or prison claims that cockroaches, mice, bed bugs, or lice violated the Constitution, the
+    claim turns on deliberate indifference. A prison official is liable under the Eighth Amendment only if the official "{Q.farmerKnows.text}"
+    ({Q.farmerKnows.cite}). And officials who knew "{Q.farmerReasonable.text}" ({Q.farmerReasonable.cite}).
+  </p>
+  <p class="lede">
+    Both halves are proved with paper. Knowledge is usually proved with the facility's own grievance, kite, or sick-call record.
+    A reasonable response has to be proved with records too: the work order, the service record, the follow-up, and the
+    answer to the grievance. The eight questions below walk one grievance from the first half to the second.
+  </p>
+
+  <div class="dl no-print">
+    <button type="button" class="btn" onclick="window.print()">Print or save as PDF</button>
+    <a class="btn secondary" href="/downloads/Vermin_Grievance_File_Eight_Questions.pdf" download>Download PDF</a>
+    <a class="btn secondary" href="/tools/grievance-loop/">Grievance-to-Work-Order Loop</a>
+  </div>
+
+  <section class="case">
+    <h2>Spraying is not the same as responding</h2>
+    <p>
+      In <a href={CASE_LINKS.antonelli}>Antonelli v. Sheahan</a>, the plaintiff alleged cockroaches and mice
+      "{Q.antonelliJail.text}." The district court dismissed the claim, concluding that his allegation that the jail was
+      "{Q.antonelliSprayed.text}." The Seventh Circuit reversed: "{Q.antonelliInsufficient.text}." The claim,
+      the court wrote, "{Q.antonelliEither.text}." The defendants included the Sheriff, who, the court said,
+      "{Q.antonelliSystemic.text}."
+    </p>
+    <p>
+      In November 2024 the U.S. Department of Justice announced findings that "{Q.dojFulton.text}"
+      (<a href={CASE_LINKS.doj}>{Q.dojFulton.cite}</a>).
+    </p>
+  </section>
+
+  <p class="notice">
+    This is a records worksheet. It is not legal advice and not a finding about any facility. The questions describe what a
+    file would need to show; which records a facility keeps, and who is responsible for them, is set by its own policies,
+    contracts, and jurisdiction. A facility reviewing a grievance tied to a pending or expected claim should do it through counsel.
+  </p>
+
+  <div class="worksheet">
+  <div class="fields">
+    <div>Facility<span></span></div>
+    <div>Grievance or kite no.<span></span></div>
+    <div>Date received<span></span></div>
+    <div>Reviewed by / date<span></span></div>
+  </div>
+
+  <table class="gq">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Question</th>
+        <th scope="col">Record that answers it</th>
+        <th scope="col">On file?</th>
+        <th scope="col">Where it is filed</th>
+      </tr>
+    </thead>
+    <tbody>
+      {QUESTIONS.map((q) => (
+        <tr>
+          <td class="n">{q.n}</td>
+          <td><span class="half">{q.half}</span>{q.question}</td>
+          <td>
+            {q.record}
+            {q.authority && <a class="auth" href={q.authority.href}>{q.authority.label}</a>}
+          </td>
+          <td class="mark">&#9744; Yes &nbsp;&#9744; No<br />&#9744; Partial</td>
+          <td class="where"></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <p class="close">
+    Each question maps to a record. When every answer has a record behind it, the file shows what the facility did, when,
+    and whether it worked.
+  </p>
+  </div>
+
+  <p class="print-only">
+    Corrections Pest Reference · correctionspestreference.org/tools/vermin-grievance-file/ · Trenton S. Frazer, M.S., BCE #B3413
+  </p>
+
+  <h2 class="no-print">Keep the loop closed</h2>
+  <p class="no-print">
+    The <a href="/tools/grievance-loop/">Grievance-to-Work-Order Loop</a> is a one-page log that ties each grievance to its work
+    order, response, follow-up, and answer, so these eight answers exist before anyone asks. For the rules that set what a service
+    record must contain, see the <a href="/tools/compliance-map/">Compliance Map</a>.
+  </p>
+  <h2 class="no-print">Have the file reviewed</h2>
+  <p class="no-print">
+    A Board Certified Entomologist can trace a facility's recent pest grievances through these eight questions and report where
+    the record goes missing. See the <a href="/consulting/#vermin-grievance-file-review">Vermin Grievance File Review</a>, or
+    <a href={reviewHref}>request one by email</a>.
+  </p>
+</BaseLayout>
