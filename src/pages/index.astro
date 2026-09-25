@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { personSchema } from '../lib/schema';
 import { getCollection } from 'astro:content';
+import { COMPANION_NAME, COMPANION_URL } from '../lib/site';
 
 const authorities = await getCollection('authorities');
 
@@ -13,16 +14,11 @@ const grouped = authorities.reduce((acc, authority) => {
   return acc;
 }, {} as Record<string, typeof authorities>);
 
-const typeOrder = [
-  'federal regulator',
-  'accrediting body',
-  'state regulator',
-  'recognized authority'
-];
+const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'recognized authority'];
 
 const typeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulators',
-  'accrediting body': 'Accrediting Bodies',
+  'federal agency standard': 'Federal Detention and Corrections Standards',
   'state regulator': 'State Regulators',
   'recognized authority': 'Recognized Authorities'
 };
@@ -31,37 +27,24 @@ const totalCount = authorities.length;
 ---
 
 <BaseLayout
-  title="National Reference for Healthcare Pest Control Compliance"
-  description="Authoritative reference work mapping U.S. federal, state, and accrediting body pest control compliance requirements for hospitals, critical access hospitals, skilled nursing facilities, ambulatory surgery centers, hospices, behavioral health, rehabilitation, and pediatric facilities. Primary-source anchored. Maintained by a Board Certified Entomologist."
+  title="National Reference for Pest Control Requirements in Jails, Prisons, and Detention Facilities"
+  description="Authoritative reference work mapping U.S. federal, state, and agency pest control requirements for county jails, state prisons, federal prisons, and immigration detention facilities. Primary-source anchored. Maintained by a Board Certified Entomologist."
 >
   <Fragment slot="head">
     <JsonLd data={personSchema()} />
   </Fragment>
 
   <style>
-    .hero {
-      margin-bottom: 3rem;
-    }
-
-    .hero h1 {
-      margin-bottom: 1.25rem;
-    }
-
+    .hero { margin-bottom: 3rem; }
+    .hero h1 { margin-bottom: 1.25rem; }
     .hero-lede {
       font-family: var(--font-serif);
       font-size: 1.2rem;
       line-height: 1.55;
       color: var(--color-text);
       margin-bottom: 1.5rem;
-      font-weight: 400;
     }
-
-    .hero-audience {
-      font-size: 0.95rem;
-      color: var(--color-text-muted);
-      margin-bottom: 0;
-    }
-
+    .hero-audience { font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 0; }
     .scope-note {
       background: var(--color-bg-subtle);
       border-left: 3px solid var(--color-accent);
@@ -70,16 +53,8 @@ const totalCount = authorities.length;
       font-size: 0.92rem;
       color: var(--color-text-muted);
     }
-
-    .scope-note strong {
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-
-    .authority-group {
-      margin-bottom: 2.5rem;
-    }
-
+    .scope-note strong { color: var(--color-primary); font-weight: 600; }
+    .authority-group { margin-bottom: 2.5rem; }
     .authority-group h3 {
       font-family: var(--font-sans);
       font-size: 0.78rem;
@@ -87,27 +62,13 @@ const totalCount = authorities.length;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--color-text-meta);
-      margin-bottom: 1rem;
+      margin: 0 0 1rem;
       padding-bottom: 0.5rem;
       border-bottom: 1px solid var(--color-rule);
-      margin-top: 0;
     }
-
-    .authority-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .authority-list li {
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--color-rule);
-    }
-
-    .authority-list li:last-child {
-      border-bottom: none;
-    }
-
+    .authority-list { list-style: none; margin: 0; padding: 0; }
+    .authority-list li { padding: 0.85rem 0; border-bottom: 1px solid var(--color-rule); }
+    .authority-list li:last-child { border-bottom: none; }
     .authority-list a {
       font-family: var(--font-serif);
       font-size: 1.05rem;
@@ -118,20 +79,13 @@ const totalCount = authorities.length;
       margin-bottom: 0.25rem;
       line-height: 1.35;
     }
-
     .authority-list a:hover {
       color: var(--color-accent);
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
-
-    .authority-citation {
-      font-size: 0.84rem;
-      color: var(--color-text-meta);
-      font-family: var(--font-sans);
-    }
-
+    .authority-citation { font-size: 0.84rem; color: var(--color-text-meta); font-family: var(--font-sans); }
     .closing-note {
       margin-top: 3rem;
       padding-top: 2rem;
@@ -142,36 +96,33 @@ const totalCount = authorities.length;
   </style>
 
   <div class="hero">
-    <h1>Healthcare Pest Reference</h1>
+    <h1>Corrections Pest Reference</h1>
 
     <p class="hero-lede">
-      A national authoritative reference mapping U.S. federal, state, and accrediting
-      body pest control compliance requirements for healthcare facilities. Primary-source
+      A national authoritative reference mapping U.S. federal, state, and agency pest
+      control requirements for jails, prisons, and detention facilities. Primary-source
       anchored. Independently verified. Maintained by a Board Certified Entomologist.
     </p>
 
     <p class="hero-audience">
-      For hospital risk management, infection prevention, plant operations, accreditation
-      readiness teams, healthcare procurement, and legal counsel litigating healthcare
-      pest matters.
+      For jail and prison administrators, facility and maintenance managers, food service
+      administrators, correctional health staff, procurement officers, and counsel.
     </p>
   </div>
 
   <div class="scope-note">
-    <strong>Phase 1 in progress.</strong> The current reference covers {totalCount} authorities
-    across the federal regulatory spine, with the Utah state framework as a depth prototype.
-    Subsequent phases expand to additional state regulatory frameworks, accrediting bodies,
-    standards bodies, and institutional credentialing references.
+    <strong>Version 0.1, September 2026.</strong> The reference currently covers {totalCount}
+    authorities, each quoted from its primary source. Federal detention and prison standards,
+    state jail standards, and the public enforcement record are being added as each is
+    verified. Items under verification are listed openly on the
+    <a href="/methodology/#open-questions">methodology page</a>.
   </div>
 
   <h2>Authority Index</h2>
 
   <p>
     Grouped by authority class. The <a href="/authorities/">full index</a> adds a
-    one-line orientation for each authority and a guide to which regime governs which
-    facility or department. If you are responding to a survey citation, the
-    <a href="/deficiencies/">survey deficiencies section</a> takes each tag and
-    Element of Performance in turn.
+    one-line orientation for each authority.
   </p>
 
   {typeOrder.map(type => grouped[type] && (
@@ -193,33 +144,32 @@ const totalCount = authorities.length;
   <h2>How This Reference Works</h2>
 
   <p>
-    Each authority page is a self-contained explanation of one regulatory authority.
-    Pages include the verbatim regulatory text where publicly available, a plain-language
-    summary, the facility types the requirement applies to, the documentation evidence
-    surveyors expect, the citation pathway surveyors use, and explicit notes on any
-    adjacent claims that have been investigated and disconfirmed as fabricated or
-    weakly sourced.
+    Each authority page is a self-contained explanation of one authority. Pages give the
+    verbatim text where it is publicly available, a plain-language reading, who the
+    requirement applies to as the source itself states it, and the records that show it
+    was met. Where applicability has not yet been verified, the page says so rather than
+    guessing.
   </p>
 
   <p>
-    Every claim on this reference carries a source tier rating and a confidence
-    rating. Citations should be verified against the primary source for any
-    litigation-grade application. The reference notes where primary sources are
-    paywalled and institutional access is required for direct verbatim verification.
+    Every page carries a source tier rating, a confidence rating, and the date its text
+    was last verified. Citations should be verified against the primary source for any
+    litigation-grade application. Licensed standards, such as those of accrediting
+    bodies and association-published jail standards, are recorded by identifier only.
   </p>
 
   <p>
     See the <a href="/methodology/">methodology page</a> for the source tier hierarchy,
-    confidence ratings, verification discipline, and the explicit catalog of fabricated
-    claims that have been investigated and excluded from this reference.
+    confidence ratings, verification discipline, and the open questions under verification.
   </p>
 
   <div class="closing-note">
     <p>
       Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413,
-      General Entomology specialty), MS Entomology, University of Florida.
-      See the <a href="/about/">about page</a> for credentialing detail and the
-      reference's relationship to the operator's commercial and consulting practices.
+      General Entomology specialty), M.S. Entomology, University of Florida. A companion
+      to the <a href={COMPANION_URL}>{COMPANION_NAME}</a>. See the
+      <a href="/about/">about page</a> for credentialing detail and the reference's
+      relationship to the author's commercial and consulting practices.
     </p>
   </div>
 </BaseLayout>

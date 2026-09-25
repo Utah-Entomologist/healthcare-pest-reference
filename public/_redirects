@@ -1,4 +1,5 @@
-# Host canonicalization. The site is served from the apex; the www host is a
-# custom domain on the same Pages project and must 301 to the apex so Google
-# indexes one host. Only the www host is matched, so the apex can never loop.
-https://www.healthcarepestreference.org/* https://healthcarepestreference.org/:splat 301
+# Host canonicalization. The site is served from the apex; if the www host is
+# attached as a custom domain it must 301 to the apex so search engines index one
+# host. Only the www host is matched, so the apex can never loop.
+# Deploy rule: never add a catch-all (/* /index.html 200). Unknown paths must 404.
+https://www.correctionspestreference.org/* https://correctionspestreference.org/:splat 301

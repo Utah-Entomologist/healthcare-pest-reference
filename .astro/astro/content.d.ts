@@ -141,69 +141,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"authorities": {
-"485-725e-pest-control.md": {
-	id: "485-725e-pest-control.md";
-  slug: "485-725e-pest-control";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"aorn-2026-perioperative-guidelines.md": {
-	id: "aorn-2026-perioperative-guidelines.md";
-  slug: "aorn-2026-perioperative-guidelines";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"apic-text-environmental-services.md": {
-	id: "apic-text-environmental-services.md";
-  slug: "apic-text-environmental-services";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"cdc-hicpac-environmental-guidelines.md": {
-	id: "cdc-hicpac-environmental-guidelines.md";
-  slug: "cdc-hicpac-environmental-guidelines";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"cms-conditions-of-participation.md": {
-	id: "cms-conditions-of-participation.md";
-  slug: "cms-conditions-of-participation";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"cms-state-operations-manual.md": {
-	id: "cms-state-operations-manual.md";
-  slug: "cms-state-operations-manual";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"dnv-gl-niaho-standards.md": {
-	id: "dnv-gl-niaho-standards.md";
-  slug: "dnv-gl-niaho-standards";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"epa-ipm-toolkit-2021.md": {
-	id: "epa-ipm-toolkit-2021.md";
-  slug: "epa-ipm-toolkit-2021";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"esacc-bce-credential.md": {
-	id: "esacc-bce-credential.md";
-  slug: "esacc-bce-credential";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
 "fda-food-code-2022.md": {
 	id: "fda-food-code-2022.md";
   slug: "fda-food-code-2022";
@@ -211,65 +148,16 @@ declare module 'astro:content' {
   collection: "authorities";
   data: InferEntrySchema<"authorities">
 } & { render(): Render[".md"] };
-"fgi-guidelines-design-construction.md": {
-	id: "fgi-guidelines-design-construction.md";
-  slug: "fgi-guidelines-design-construction";
+"ice-nds-2019-food-service.md": {
+	id: "ice-nds-2019-food-service.md";
+  slug: "ice-nds-2019-food-service";
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">
 } & { render(): Render[".md"] };
-"hai-cost-exposure-framing.md": {
-	id: "hai-cost-exposure-framing.md";
-  slug: "hai-cost-exposure-framing";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"joint-commission-2026-pe-chapter.md": {
-	id: "joint-commission-2026-pe-chapter.md";
-  slug: "joint-commission-2026-pe-chapter";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"nacmcf-1997-haccp-prerequisite.md": {
-	id: "nacmcf-1997-haccp-prerequisite.md";
-  slug: "nacmcf-1997-haccp-prerequisite";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"osha-hazard-communication.md": {
-	id: "osha-hazard-communication.md";
-  slug: "osha-hazard-communication";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"usda-7cfr110-rescission.md": {
-	id: "usda-7cfr110-rescission.md";
-  slug: "usda-7cfr110-rescission";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"usp-797-sterile-compounding.md": {
-	id: "usp-797-sterile-compounding.md";
-  slug: "usp-797-sterile-compounding";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"usp-800-hazardous-drugs.md": {
-	id: "usp-800-hazardous-drugs.md";
-  slug: "usp-800-hazardous-drugs";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"utah-r432-100-hospital-licensure.md": {
-	id: "utah-r432-100-hospital-licensure.md";
-  slug: "utah-r432-100-hospital-licensure";
+"osha-1910-141-sanitation.md": {
+	id: "osha-1910-141-sanitation.md";
+  slug: "osha-1910-141-sanitation";
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">
@@ -280,115 +168,6 @@ declare module 'astro:content' {
   body: string;
   collection: "authorities";
   data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-"vha-directive-1850-02.md": {
-	id: "vha-directive-1850-02.md";
-  slug: "vha-directive-1850-02";
-  body: string;
-  collection: "authorities";
-  data: InferEntrySchema<"authorities">
-} & { render(): Render[".md"] };
-};
-"deficiencies": {
-"a-0700-physical-environment.md": {
-	id: "a-0700-physical-environment.md";
-  slug: "a-0700-physical-environment";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"a-0701-buildings.md": {
-	id: "a-0701-buildings.md";
-  slug: "a-0701-buildings";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"a-0722-facilities.md": {
-	id: "a-0722-facilities.md";
-  slug: "a-0722-facilities";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"a-0747-infection-prevention-and-control.md": {
-	id: "a-0747-infection-prevention-and-control.md";
-  slug: "a-0747-infection-prevention-and-control";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"a-0749-infection-prevention-and-control-program.md": {
-	id: "a-0749-infection-prevention-and-control-program.md";
-  slug: "a-0749-infection-prevention-and-control-program";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"a-0750-sanitary-environment.md": {
-	id: "a-0750-sanitary-environment.md";
-  slug: "a-0750-sanitary-environment";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"a-0758.md": {
-	id: "a-0758.md";
-  slug: "a-0758";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"ec-02-02-01-hazardous-materials-and-waste.md": {
-	id: "ec-02-02-01-hazardous-materials-and-waste.md";
-  slug: "ec-02-02-01-hazardous-materials-and-waste";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"ec-02-06-01-safe-functional-environment.md": {
-	id: "ec-02-06-01-safe-functional-environment.md";
-  slug: "ec-02-06-01-safe-functional-environment";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"f925-plan-of-correction.md": {
-	id: "f925-plan-of-correction.md";
-  slug: "f925-plan-of-correction";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"f925.md": {
-	id: "f925.md";
-  slug: "f925";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"pe-01-01-01-safe-adequate-environment.md": {
-	id: "pe-01-01-01-safe-adequate-environment.md";
-  slug: "pe-01-01-01-safe-adequate-environment";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-"pe-02-01-01-hazardous-materials-and-waste.md": {
-	id: "pe-02-01-01-hazardous-materials-and-waste.md";
-  slug: "pe-02-01-01-hazardous-materials-and-waste";
-  body: string;
-  collection: "deficiencies";
-  data: InferEntrySchema<"deficiencies">
-} & { render(): Render[".md"] };
-};
-"topics": {
-"pesticide-storage-requirements-healthcare-facilities.md": {
-	id: "pesticide-storage-requirements-healthcare-facilities.md";
-  slug: "pesticide-storage-requirements-healthcare-facilities";
-  body: string;
-  collection: "topics";
-  data: InferEntrySchema<"topics">
 } & { render(): Render[".md"] };
 };
 

@@ -1,9 +1,8 @@
 ---
 /**
- * Real 404. Cloudflare Pages serves dist/404.html with a 404 status for any
- * path that does not exist. Without this file Pages falls back to index.html
- * with a 200, which Google files as a soft 404 and which breaks key-file
- * verification for services like IndexNow.
+ * Real 404. The host serves dist/404.html with a 404 status for any path that
+ * does not exist. Without this file a host may fall back to index.html with a
+ * 200, which Google files as a soft 404.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE_URL } from '../lib/site';
@@ -11,18 +10,15 @@ import { SITE_URL } from '../lib/site';
 
 <BaseLayout
   title="Page Not Found"
-  description="The requested page does not exist on the Healthcare Pest Reference."
+  description="The requested page does not exist on the Corrections Pest Reference."
   canonical={`${SITE_URL}/404/`}
   noindex
-  hideFooterRegister
 >
   <h1>Page Not Found</h1>
 
   <p>
     There is no page at this address. Authority pages live under
-    <a href="/authorities/">/authorities/</a>, survey deficiency pages under
-    <a href="/deficiencies/">/deficiencies/</a>, and cross-authority topics under
-    <a href="/topics/">/topics/</a>.
+    <a href="/authorities/">/authorities/</a>.
   </p>
 
   <p>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://healthcarepestreference.org/sitemap.xml
+Sitemap: https://correctionspestreference.org/sitemap.xml

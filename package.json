@@ -1,9 +1,9 @@
 {
-  "name": "healthcare-pest-reference",
+  "name": "corrections-pest-reference",
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "National authoritative reference for healthcare pest control compliance",
+  "description": "National authoritative reference for pest control requirements in jails, prisons, and detention facilities",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,9 +12,7 @@
     "postbuild": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "validate": "node scripts/validate-jsonld.mjs && node scripts/check-links.mjs",
     "preview": "astro preview",
-    "astro": "astro",
-    "indexnow": "node scripts/indexnow.mjs",
-    "verify:live": "node scripts/verify-live.mjs"
+    "astro": "astro"
   },
   "dependencies": {
     "astro": "^4.16.0"

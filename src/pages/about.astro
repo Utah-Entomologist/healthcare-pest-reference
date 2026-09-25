@@ -2,57 +2,58 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { personSchema } from '../lib/schema';
-import { CONSULTING_PRACTICE_NAME, SITE_URL } from '../lib/site';
+import { COMPANION_NAME, COMPANION_URL, CONSULTING_PRACTICE_NAME, SITE_URL } from '../lib/site';
 ---
 
 <BaseLayout
   title="About"
-  description="About the Healthcare Pest Reference. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413). Independent reference work anchored in primary-source regulatory documentation."
+  description="About the Corrections Pest Reference. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413). Independent reference work anchored in primary-source regulatory documentation for jails, prisons, and detention facilities."
   breadcrumbs={[{ name: 'About', url: `${SITE_URL}/about/` }]}
 >
   <Fragment slot="head">
     <JsonLd data={personSchema()} />
   </Fragment>
 
-  <h1>About the Healthcare Pest Reference</h1>
+  <h1>About the Corrections Pest Reference</h1>
 
   <h2>What This Reference Is</h2>
 
   <p>
-    The Healthcare Pest Reference is a national authoritative reference work mapping
-    U.S. federal, state, and accrediting body pest control compliance requirements for
-    healthcare facilities. Every requirement on this site is anchored to a primary
-    source — the underlying regulation, the accrediting body's published standard,
-    or a recognized authority's published guidance.
+    The Corrections Pest Reference is a national reference work mapping U.S. federal,
+    state, and agency pest control requirements for county jails, state prisons, federal
+    prisons, and immigration detention facilities. Every requirement on this site is
+    anchored to a primary source: the regulation itself, the agency's published standard,
+    or a court's published opinion.
   </p>
 
   <p>
-    The reference exists because no published resource currently consolidates the
-    approximately twelve distinct regulatory regimes that govern pest control in
-    U.S. healthcare facilities in a single queryable format. Hospitals and other
-    healthcare facilities navigate these requirements either by working through
-    each regulator independently, by deferring to vendor advice that may or may
-    not reflect the current regulatory record, or by relying on internal compliance
-    knowledge that varies in rigor.
+    Pest control in a correctional facility sits under several regimes at once: workplace
+    sanitation rules for the staff, food codes for the kitchen, detention and prison
+    standards for the people held there, pesticide licensing for whoever applies the
+    product, and the constitutional standard courts apply to conditions of confinement.
+    This reference puts the text of each in one place, with its source.
   </p>
 
   <p>
-    This reference makes the underlying regulatory record visible. Where verbatim
-    text is publicly available, it is reproduced. Where the primary source is
-    paywalled, the paywall is disclosed and the predecessor or summary language
-    is cited explicitly. Where a commonly-circulated claim has been investigated
-    and disconfirmed, the disconfirmation is published alongside the related
-    authority page.
+    Where verbatim text is publicly available, it is reproduced. Where a standard is
+    licensed or paywalled, it is recorded by identifier and the limitation is disclosed.
+    Where a commonly-circulated claim has been investigated and disconfirmed, the
+    disconfirmation is published.
+  </p>
+
+  <p>
+    It is a companion to the <a href={COMPANION_URL}>{COMPANION_NAME}</a>, which does
+    the same work for hospitals and long-term care facilities, and follows the same
+    methodology.
   </p>
 
   <h2>What This Reference Is Not</h2>
 
   <p>
-    This reference is not legal advice. It is not a substitute for engagement
-    with hospital counsel, accreditation consultants, or qualified pest management
-    professionals. It is not a marketing piece for any commercial pest control
-    service. Citations should be verified against the primary source for any
-    litigation-grade application.
+    This reference is not legal advice. It is not a substitute for counsel, for a
+    facility's own policies, or for qualified pest management professionals. It is not
+    a marketing piece for any commercial pest control service. Citations should be
+    verified against the primary source for any litigation-grade application.
   </p>
 
   <h2>Operator and Credentialing</h2>
@@ -60,61 +61,48 @@ import { CONSULTING_PRACTICE_NAME, SITE_URL } from '../lib/site';
   <p>
     The reference is maintained by Trenton S. Frazer, Board Certified Entomologist
     (BCE #B3413, General Entomology specialty), certified April 28, 2025 by the
-    Entomological Society of America Certification Corporation. Mr. Frazer holds
-    an MS in Entomology from the University of Florida (2012) and a BS from
-    Brigham Young University. He has twenty years of operational experience in
-    pest management quality assurance, most recently as Senior Director of
-    Quality Assurance at Aptive Environmental, where he oversaw quality programs
-    serving more than 640,000 customers across more than 80 operations centers.
+    Entomological Society of America Certification Corporation. Mr. Frazer holds an
+    M.S. in Entomology from the University of Florida and a B.A. from Brigham Young
+    University. He has twenty years of operational experience in pest management field
+    operations and quality assurance, most recently as Senior Director of Quality
+    Assurance at Aptive Environmental, where he oversaw quality programs serving more
+    than 640,000 customers across more than 80 operations centers.
   </p>
 
   <p>
-    BCE credentialing requires a bachelor's-level degree in a biological or life
-    science with at least four entomology courses, documented post-degree field
-    experience, passing the BCE Core Examination and at least one specialty
-    examination, 120 continuing education units per three-year reporting period
-    with at least 72 from Category A continuing education, and adherence to a
-    published Code of Ethics enforceable by certification revocation. Credentials
-    can be verified at <a href="https://entocert.org/roster" target="_blank" rel="noopener">entocert.org/roster</a>.
+    Credentials can be verified at
+    <a href="https://entocert.org/roster" target="_blank" rel="noopener">entocert.org/roster</a>.
   </p>
 
   <h2>Disclosure</h2>
 
   <p>
-    Mr. Frazer is the founder of Falcon Pest Control (Mountain Supply LLC dba),
-    a Utah licensed pest management operator serving hospitals, government
-    facilities, multifamily housing, and other commercial and residential
-    clients. Falcon employs licensed technicians whom he directs; the
-    credentialed standards he set for the company were scaled through hiring
-    rather than by performing the work alone.
+    Mr. Frazer is the founder of Falcon Pest Control (Mountain Supply LLC dba), a Utah
+    licensed pest management operator serving government facilities, schools, multifamily
+    housing, and other commercial and residential clients. Falcon employs licensed
+    technicians whom he directs.
   </p>
 
   <p>
-    He also maintains {CONSULTING_PRACTICE_NAME}, a national consulting practice
-    through which his Board Certified Entomologist consulting, compliance program
-    review, Entomologist of Record engagement, and expert witness work are
-    delivered. The BCE credential is held by Mr. Frazer personally; the practice
-    is the vehicle through which he is retained.
+    He also maintains {CONSULTING_PRACTICE_NAME}, a national consulting practice through
+    which his Board Certified Entomologist consulting, program review, Entomologist of
+    Record engagements, and expert witness work are delivered. The BCE credential is held
+    by Mr. Frazer personally; the practice is the vehicle through which he is retained.
   </p>
 
   <p>
-    This reference is published independently of those commercial operations.
-    The reference does not market commercial services, and engagement with
-    either operation is not required to use it. Hospitals and other healthcare
-    facilities seeking commercial pest management or consulting services are
-    welcome to evaluate any qualified provider; this reference does not endorse
-    or recommend any specific commercial vendor.
+    This reference is published independently of those operations. It does not market
+    commercial services, and engagement with either operation is not required to use it.
+    Facilities seeking commercial pest management or consulting services are welcome to
+    evaluate any qualified provider; this reference does not endorse or recommend any
+    specific vendor.
   </p>
 
   <h2>Contact</h2>
 
   <p>
-    Questions about the reference, corrections to published content, and
-    suggestions for additional authority coverage may be directed to the
-    operator through the contact route on the
-    <a href="/consulting/">consulting page</a>. Inquiries about retaining a
-    Board Certified Entomologist for accreditation readiness, plan-of-correction
-    support, Entomologist of Record engagement, or expert witness work in
-    healthcare pest matters use the same route.
+    Questions about the reference, corrections to published content, and suggestions
+    for additional authorities may be directed to the operator through the contact route
+    on the <a href="/consulting/">consulting page</a>.
   </p>
 </BaseLayout>

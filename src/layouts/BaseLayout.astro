@@ -1,6 +1,5 @@
 ---
 import JsonLd from '../components/JsonLd.astro';
-import UpdateRegisterForm from '../components/UpdateRegisterForm.astro';
 import { breadcrumbSchema, organizationSchema, websiteSchema, type Crumb } from '../lib/schema';
 import { CONSULTING_PRACTICE_NAME, SITE_NAME, SITE_URL } from '../lib/site';
 
@@ -17,9 +16,7 @@ export interface Props {
   ogType?: 'website' | 'article';
   /** Keep utility pages (e.g. /unsubscribe/) out of search indexes. */
   noindex?: boolean;
-  /** Hide the sitewide register form in the footer (used on the register pages themselves). */
-  hideFooterRegister?: boolean;
-}
+  }
 
 const {
   title,
@@ -27,8 +24,7 @@ const {
   canonical,
   breadcrumbs,
   ogType = 'website',
-  noindex = false,
-  hideFooterRegister = false
+  noindex = false
 } = Astro.props;
 
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
@@ -107,23 +103,23 @@ const crumbs: Crumb[] | undefined = breadcrumbs
     }
 
     :root {
-      /* Deep healthcare green palette - clinical credibility */
-      --color-primary: #1a3d2e;          /* deepest green, headings & primary brand */
-      --color-primary-light: #2d5a44;    /* slightly lighter for hover */
-      --color-accent: #4a7c5f;           /* medium green for links */
-      --color-accent-hover: #335642;     /* link hover */
-      --color-rule: #d4d8d2;             /* subtle rule lines */
-      --color-rule-strong: #1a3d2e;      /* strong rules for hierarchy */
+      /* Slate and steel palette - institutional credibility */
+      --color-primary: #1f2d3a;          /* deepest slate, headings & primary brand */
+      --color-primary-light: #2f4152;    /* slightly lighter for hover */
+      --color-accent: #3a5a78;           /* steel blue for links */
+      --color-accent-hover: #274159;     /* link hover */
+      --color-rule: #d6dbe0;             /* subtle rule lines */
+      --color-rule-strong: #1f2d3a;      /* strong rules for hierarchy */
 
       /* Text */
-      --color-text: #1c1f1d;             /* near-black with green undertone */
-      --color-text-muted: #5a635e;       /* secondary text */
-      --color-text-meta: #7a8580;        /* metadata, captions */
+      --color-text: #1b1f24;             /* near-black with slate undertone */
+      --color-text-muted: #525c67;       /* secondary text */
+      --color-text-meta: #69737e;        /* metadata, captions */
 
       /* Surface */
-      --color-bg: #fdfdfb;               /* warm white, paper-feel */
-      --color-bg-subtle: #f4f5f1;        /* metadata boxes, quotes */
-      --color-bg-emphasis: #eef0eb;      /* slightly stronger emphasis */
+      --color-bg: #fcfcfb;               /* warm white, paper-feel */
+      --color-bg-subtle: #f3f4f5;        /* metadata boxes, quotes */
+      --color-bg-emphasis: #eceef0;      /* slightly stronger emphasis */
 
       /* Confidence indicators */
       --color-confidence-high: #2d5a44;
@@ -592,14 +588,14 @@ const crumbs: Crumb[] | undefined = breadcrumbs
   <header class="site-header">
     <div class="site-header-inner">
       <a href="/" class="site-brand">
-        <span class="site-brand-mark">Healthcare Pest Reference</span>
-        <span class="site-brand-tagline">A National Authoritative Reference</span>
+        <span class="site-brand-mark">Corrections Pest Reference</span>
+        <span class="site-brand-tagline">Jails · Prisons · Detention Facilities</span>
       </a>
       <nav class="site-nav">
         <a href="/authorities/" class={currentPath.startsWith('/authorities') ? 'active' : ''}>Authorities</a>
-        <a href="/deficiencies/" class={currentPath.startsWith('/deficiencies') ? 'active' : ''}>Deficiencies</a>
         <a href="/methodology/" class={currentPath === '/methodology/' ? 'active' : ''}>Methodology</a>
         <a href="/about/" class={currentPath === '/about/' ? 'active' : ''}>About</a>
+        <a href="/consulting/" class={currentPath === '/consulting/' ? 'active' : ''}>Consulting</a>
       </nav>
     </div>
   </header>
@@ -612,17 +608,17 @@ const crumbs: Crumb[] | undefined = breadcrumbs
     <div class="site-footer-inner">
       <div class="site-footer-about">
         <p>
-          Healthcare Pest Reference is an independent authoritative reference work
-          mapping U.S. federal, state, and accrediting body pest control compliance
-          requirements for healthcare facilities. Every requirement on this site is
-          anchored to a primary source. Every commonly-circulated claim that has been
-          investigated and disconfirmed is explicitly catalogued.
+          Corrections Pest Reference is an independent authoritative reference work
+          mapping U.S. federal, state, and agency pest control requirements for jails,
+          prisons, and detention facilities. Every requirement on this site is anchored
+          to a primary source. Questions still under verification are listed openly.
         </p>
         <p>
-          Content serves hospital risk management, infection prevention, plant
-          operations, procurement, and legal counsel. Citations should be verified
-          against the primary source for any litigation-grade application. This
-          reference is not legal advice.
+          Content serves jail and prison administration, facility maintenance, food
+          service, correctional health, procurement, and counsel. Citations should be
+          verified against the primary source for any litigation-grade application. This
+          reference is not legal advice. Companion to the
+          <a href="https://healthcarepestreference.org">Healthcare Pest Reference</a>.
         </p>
       </div>
       <div class="site-footer-credentials">
@@ -640,15 +636,10 @@ const crumbs: Crumb[] | undefined = breadcrumbs
         </ul>
       </div>
     </div>
-    {!hideFooterRegister && (
-      <div class="site-footer-register">
-        <UpdateRegisterForm variant="footer" idSuffix="footer" />
-      </div>
-    )}
     <div class="site-footer-bottom">
-      <span>© 2026 Healthcare Pest Reference</span>
+      <span>© 2026 Corrections Pest Reference</span>
       <span>
-        <a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/register/">Update Register</a>
+        <a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/consulting/">Consulting</a>
       </span>
     </div>
   </footer>

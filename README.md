@@ -1,104 +1,45 @@
-# Healthcare Pest Reference
+# Corrections Pest Reference
 
-A national authoritative reference for U.S. healthcare pest control compliance.
-Published at https://healthcarepestreference.org.
+A national authoritative reference mapping U.S. federal, state, and agency pest
+control requirements for jails, prisons, and detention facilities. Intended home:
+https://correctionspestreference.org. Companion to https://healthcarepestreference.org,
+built from the same Astro template and held to the same methodology.
 
-## What This Is
+Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413,
+General Entomology specialty), M.S. Entomology, University of Florida.
 
-A reference work mapping federal, state, accrediting body, and recognized
-authority pest control compliance requirements for hospitals, critical access
-hospitals, skilled nursing facilities, ambulatory surgery centers, hospices,
-behavioral health facilities, rehabilitation facilities, and pediatric
-facilities. Every requirement anchored to a primary source. Every commonly-
-circulated claim that has been investigated and disconfirmed is explicitly
-catalogued.
+## Rules carried over from the healthcare reference
 
-Maintained by Trenton L. Frazer, Board Certified Entomologist (BCE #B3413,
-General Entomology specialty), MS Entomology, University of Florida.
+- Every quotation is verbatim from the primary source, with its location and read date.
+- Nothing is invented. A question the sources have not answered goes in OPEN_QUESTIONS.md
+  and on the methodology page's open-questions list, not onto an authority page.
+- Licensed or paywalled standards (ACA, NCCHC, association-published jail standards) are
+  recorded by identifier only.
+- Name form: Trenton S. Frazer. Contact route: the practice email and phone only
+  (trent@frazerappliedentomology.com, (801) 477-0223). No street address.
+- Deploy rule: real 404.astro; never SPA mode; never a `/* /index.html 200` catch-all.
+- Edit Markdown in VS Code, never TextEdit (TextEdit corrupts frontmatter).
 
 ## Stack
 
-- **Astro** static site generator
-- **Markdown** content with strict frontmatter schema validation
-- **Cloudflare Pages** hosting
+Astro static site, Markdown content collection with a strict frontmatter schema
+(`src/content/config.ts`). `npm run build` also validates JSON-LD and internal links.
 
-## Local Development
+## Local development
 
 ```sh
 npm install
 npm run dev
 ```
 
-Open http://localhost:4321 to preview.
+## Adding an authority page
 
-## Adding a New Authority Page
+1. Put the research record in `research/` (verbatim quotations, URL, read date).
+2. Create `src/content/authorities/<slug>.md` following the schema and an existing page.
+3. `npm run build` must pass clean.
 
-1. Create a new Markdown file in `src/content/authorities/`
-2. Use the frontmatter schema defined in `src/content/config.ts`
-3. Follow the body structure of existing authority pages
-4. Commit and push — Cloudflare Pages rebuilds automatically
+## Provenance
 
-Two frontmatter dates carry meaning beyond the page itself:
-
-- `last_verified` — the date the operator last checked the page against the
-  primary source. It feeds the citation block, the sitemap `lastmod`, and
-  `Article.dateModified`. Leave it out rather than guess; the page will then
-  show `[VERIFICATION DATE NOT RECORDED]`. Update it only after a real check.
-- `date_published` — the date the page first went live. Feeds
-  `Article.datePublished`. Existing pages carry the date of the commit that
-  first added them.
-
-## Content Collections
-
-- `src/content/authorities/` — one page per regulatory authority, at
-  `/authorities/<slug>/`. `related_authorities` (3–5 `{ slug, why }` entries)
-  drives the Related Authorities list; an unknown slug fails the build.
-  `summary` is the one-line orientation on the hub. `seo_title` and
-  `meta_description` override the title tag and description without
-  changing the H1.
-- `src/content/deficiencies/` — one page per survey tag or Element of
-  Performance, at `/deficiencies/<slug>/`. `governing_authorities` and
-  `related_deficiencies` are validated the same way. `content_pending: true`
-  marks a page that still carries a `[CONTENT PENDING …]` marker.
-- `src/content/topics/` — cross-authority questions, at `/topics/<slug>/`.
-
-## Build Checks
-
-```sh
-npm run check     # astro check: type-checks pages, components, and the schema.org builders
-npm run build     # astro build, then validates JSON-LD and internal links in dist/
-```
-
-Structured data is typed against `schema-dts` (the schema.org vocabulary) at
-build time and re-parsed from `dist/` after the build by
-`scripts/validate-jsonld.mjs`. `scripts/check-links.mjs` fails the build on
-any broken internal link or a page missing from the sitemap.
-
-## Server-Side Code
-
-The site is static except for three Cloudflare Pages Functions in `functions/api/`:
-
-- `subscribe` and `unsubscribe` manage the Regulatory Update Register in Resend
-  (contacts only; broadcasts are sent by the operator from Resend).
-- `contact` forwards a consulting-page inquiry to the operator by email.
-
-They read their configuration from Pages environment variables. See
-`.dev.vars.example` for the full list. Until those are set, the forms report
-that they are unavailable; nothing on the site is gated on them.
-
-## Deployment
-
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for step-by-step deployment
-instructions.
-
-## Methodology
-
-See https://healthcarepestreference.org/methodology/ for the source tier
-hierarchy, confidence ratings, and the explicit list of investigated-and-
-disconfirmed claims.
-
-## License
-
-Content © 2026 Trenton L. Frazer. The reference content is published for
-educational and reference use. Citations should be verified against primary
-sources for litigation-grade applications.
+Built September 24, 2026 from the healthcarepestreference.org template (commit 032dec6),
+on branch `corrections-pest-reference` of Utah-Entomologist/healthcare-pest-reference,
+pending its own repository. To move it: `git push <new-repo-url> corrections-pest-reference:main`.

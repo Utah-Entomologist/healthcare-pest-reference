@@ -2,7 +2,6 @@
 import BaseLayout from './BaseLayout.astro';
 import JsonLd from '../components/JsonLd.astro';
 import CitationBlock from '../components/CitationBlock.astro';
-import UpdateRegisterForm from '../components/UpdateRegisterForm.astro';
 import RelatedAuthorities from '../components/RelatedAuthorities.astro';
 import { articleSchema, personSchema } from '../lib/schema';
 import { SITE_URL } from '../lib/site';
@@ -49,6 +48,7 @@ const isHub = authority.slug === 'cms-state-operations-manual';
 
 const authorityTypeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulator',
+  'federal agency standard': 'Federal Agency Standard',
   'state regulator': 'State Regulator',
   'accrediting body': 'Accrediting Body',
   'recognized authority': 'Recognized Authority'
@@ -128,5 +128,4 @@ const article = articleSchema({
 
   <CitationBlock title={title} permalink={permalink} lastVerified={last_verified} />
 
-  <UpdateRegisterForm variant="page" idSuffix="authority" />
 </BaseLayout>

@@ -19,7 +19,7 @@ function* files(dir, ext) {
   }
 }
 
-for (const f of files('functions', '.ts')) {
+for (const f of (existsSync('functions') ? files('functions', '.ts') : [])) {
   const route = '/' + f.replace(/^functions\//, '').replace(/\.ts$/, '');
   FUNCTION_ROUTES.add(route);
 }
@@ -57,7 +57,7 @@ for (const m of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
   if (!loc) { failures.push('sitemap.xml: <url> without <loc>'); continue; }
   if (!lastmod) failures.push(`sitemap.xml: ${loc} has no <lastmod>`);
   else if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod) || Number.isNaN(Date.parse(lastmod))) failures.push(`sitemap.xml: ${loc} has malformed <lastmod> ${lastmod}`);
-  const route = loc.replace('https://healthcarepestreference.org', '');
+  const route = loc.replace('https://correctionspestreference.org', '');
   if (route.endsWith('/')) {
     const file = join(DIST, route, 'index.html');
     if (existsSync(file)) {
@@ -69,7 +69,7 @@ for (const m of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
 for (const file of files(DIST, 'index.html')) {
   const html = readFileSync(file, 'utf8');
   const route = '/' + file.replace(/^dist\//, '').replace(/index\.html$/, '');
-  const inSitemap = sitemap.includes(`<loc>https://healthcarepestreference.org${route}</loc>`);
+  const inSitemap = sitemap.includes(`<loc>https://correctionspestreference.org${route}</loc>`);
   const noindex = /name="robots" content="noindex/.test(html);
   if (!inSitemap && !noindex) failures.push(`sitemap.xml: missing ${route}`);
   if (inSitemap && noindex) failures.push(`sitemap.xml: lists noindex page ${route}`);
