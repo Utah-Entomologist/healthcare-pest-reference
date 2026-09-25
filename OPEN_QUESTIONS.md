@@ -11,9 +11,14 @@ The same list is published on /methodology/#open-questions.
 2. **Food code reach outside Utah.** Per state, whether jail and prison kitchens are inspected
    under the adopted food code, and by which agency. Ohio 5120:1-8-05(E) requires an annual
    inspection "by local or state health authorities" for full service jails (on the Ohio page).
-3. **BOP.** Current Food Service Manual program statement (P4700.06 vs. P4700.07) and its pest
-   provisions; full text of P1600.11 Chapter 3, Section 10 "Pest Control". bop.gov returned a
-   404 page to a direct download on 2026-09-24; read through a browser.
+3. **BOP OSH policy.** P4700.08 §11.18(a) refers to "the Program Statement National Occupational
+   Safety and Health" by title. P1600.11 (and guesses 1600.12, 1600.13) return bop.gov's 404
+   page as of 2026-09-24. Find the current number on bop.gov/policy and quote its pest control
+   section in full.
+7. **DOJ OIG 25-062** (June 17, 2025), Concurrent Inspections of BOP Food Service Operations:
+   insects in a food warehouse and rodent evidence at FCI Tallahassee; dead rodent at FCI
+   Mendota; BOP response. Raw PDF held (OIG_25-062.pdf); its text layer has OCR errors, so
+   quote from the HTML report page or a clean read before building a /record/ page.
 4. **Utah county jails holding no state inmates.** What standards they operate under (Utah Code
    Title 17 Ch. 22; Utah Sheriffs' Association jail standards), what is public, and what the
    public text says about pests and sanitation.
@@ -25,6 +30,9 @@ The same list is published on /methodology/#open-questions.
    Based Detention Standards). Read through a browser.
 
 ## Closed 2026-09-24
+
+- **Current BOP Food Service Manual.** P4700.08 (May 7, 2026), rescinds 4700.07 (4/8/2024).
+  Pest text at Ch. 11 §17(a), §17(c), §18(a)-(c). On the BOP page.
 
 - **OSHA coverage of Utah public employers.** OSHA stateplans + stateplans/ut; R614-1-4.A.3
   (1910.21 through end of part 1910, July 1, 2025 edition). On the OSHA page.

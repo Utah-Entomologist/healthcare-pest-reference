@@ -141,6 +141,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"authorities": {
+"bop-p4700-08-food-service-manual.md": {
+	id: "bop-p4700-08-food-service-manual.md";
+  slug: "bop-p4700-08-food-service-manual";
+  body: string;
+  collection: "authorities";
+  data: InferEntrySchema<"authorities">
+} & { render(): Render[".md"] };
 "fda-food-code-2022.md": {
 	id: "fda-food-code-2022.md";
   slug: "fda-food-code-2022";
