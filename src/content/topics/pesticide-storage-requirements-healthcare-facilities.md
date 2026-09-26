@@ -1,7 +1,7 @@
 ---
 title: "Pesticide Storage Requirements in Healthcare Facilities"
 seo_title: "Pesticide Storage Requirements in Hospitals and Healthcare Facilities: OSHA 1910.1200, EPA Label Law, State Rules, and What Surveyors Cite"
-meta_description: "What governs a pesticide stored in a hospital: OSHA 29 CFR 1910.1200 (written program, inventory, Safety Data Sheets every shift, labeling, training), the EPA label under FIFRA, the eyewash rule in 1910.151(c), state applicator rules, and the Joint Commission standard (PE.02.01.01) the finding is written to."
+meta_description: "What governs a pesticide stored in a hospital: OSHA 29 CFR 1910.1200 (written program, inventory, Safety Data Sheets every shift, training; the labeling duty is met by the EPA label), the EPA label under FIFRA, the eyewash rule in 1910.151(c), state applicator rules, and the Joint Commission standard (PE.02.01.01) the finding is written to."
 summary: "OSHA compliant pesticide storage is not one rule. It is the HazCom standard, the EPA label, the eyewash rule, state applicator rules, and the accreditor standard the finding is written to, all applied to the same shelf."
 citation: "29 CFR 1910.1200 (OSHA Hazard Communication Standard); 7 U.S.C. §136j(a)(2)(G) (FIFRA); 29 CFR 1910.151(c); state pesticide control rules"
 last_verified: 2026-09-12
@@ -11,7 +11,7 @@ content_pending: true
 date_published: 2026-09-10
 governing_authorities:
   - slug: osha-hazard-communication
-    why: "The federal standard for every pesticide on the shelf: written program, inventory, Safety Data Sheets accessible every shift, labeling, training. Verbatim text is on this page."
+    why: "The federal standard for every pesticide on the shelf: written program, inventory, Safety Data Sheets accessible every shift, training. Its labeling paragraph exempts FIFRA-labeled pesticides (1910.1200(b)(5)(i)). Verbatim text is on this page."
   - slug: joint-commission-2026-pe-chapter
     why: "Where a pesticide storage finding is actually written in a Joint Commission hospital: PE.02.01.01."
   - slug: epa-ipm-toolkit-2021
@@ -28,7 +28,7 @@ governing_authorities:
 
 | What governs it | Where it comes from | What it requires of the shelf |
 | --- | --- | --- |
-| Hazard communication | OSHA 29 CFR 1910.1200 | A written program, an inventory naming every product, a Safety Data Sheet for each, GHS-compliant labels, trained staff |
+| Hazard communication | OSHA 29 CFR 1910.1200 | A written program, an inventory naming every product, a Safety Data Sheet for each, trained staff. Container labels for EPA-registered pesticides come from the FIFRA label, not HazCom (1910.1200(b)(5)(i)) |
 | The product label | FIFRA, 7 U.S.C. §136j(a)(2)(G); labeling rules at 40 CFR Part 156 | Storage and disposal as the label directs; the label is enforceable law |
 | Emergency eyewash | OSHA 29 CFR 1910.151(c) | Quick-drenching facilities where eyes or body may be exposed to injurious corrosive materials |
 | State pesticide rules | State pesticide control acts and rules (Utah: R68-7) | Applicator licensure and, in most states, storage, labeling, and recordkeeping requirements for applicators |
@@ -38,7 +38,11 @@ Each row is taken up below.
 
 ## OSHA 29 CFR 1910.1200 (Verbatim)
 
-The Hazard Communication Standard applies to every pesticide stored or used in a healthcare facility, whether applied by facility staff or left on site by a contracted provider. The four operative provisions, as reproduced on this reference's [Hazard Communication page](/authorities/osha-hazard-communication/) from eCFR:
+The Hazard Communication Standard reaches the pesticides stored or used in a healthcare facility, whether applied by facility staff or left on site by a contracted provider, with one exception that matters on the shelf: it does not impose its own labeling requirement on a pesticide that already carries an EPA label. Paragraph (b)(5)(i), verbatim from eCFR (read September 26, 2026):
+
+> "This section does not require labeling of the following chemicals: (i) Any pesticide as such term is defined in the Federal Insecticide, Fungicide, and Rodenticide Act (7 U.S.C. 136 et seq.), when subject to the labeling requirements of that Act and labeling regulations issued under that Act by the Environmental Protection Agency;"
+
+The written program, inventory, Safety Data Sheet, and training provisions still apply. The operative provisions, as reproduced on this reference's [Hazard Communication page](/authorities/osha-hazard-communication/) from eCFR:
 
 **Written program, 1910.1200(e)(1):**
 
@@ -48,7 +52,7 @@ The Hazard Communication Standard applies to every pesticide stored or used in a
 
 > "The employer shall maintain in the workplace copies of the required safety data sheets for each hazardous chemical, and shall ensure that they are readily accessible during each work shift to employees when they are in their work area(s). (Electronic access and other alternatives to maintaining paper copies of the safety data sheets are permitted as long as no barriers to immediate employee access in each workplace are created by such options.)"
 
-**Container labeling, 1910.1200(f)**, requires every hazardous chemical container to be labeled with product identifier, signal word, hazard statements, pictograms, and precautionary statements. **Training, 1910.1200(h)**, is required on initial assignment and whenever a new hazard is introduced.
+**Container labeling, 1910.1200(f)**, requires hazardous chemical containers to be labeled with product identifier, signal word, hazard statements, pictograms, and precautionary statements; under (b)(5)(i) above, that paragraph does not reach a pesticide subject to FIFRA labeling, whose label is governed by EPA. **Training, 1910.1200(h)**, is required on initial assignment and whenever a new hazard is introduced.
 
 The phrase "readily accessible during each work shift" is the one that produces findings. An SDS file locked in a day-shift office is not accessible to the environmental services staff who encounter the cabinet at night.
 
@@ -62,7 +66,7 @@ Every registered pesticide label carries a Storage and Disposal section under EP
 
 <span class="content-pending">[VERIFICATION BLOCKED — EGRESS]</span> — verbatim text of the 40 CFR §156.10 storage-and-disposal labeling requirement could not be fetched from eCFR during the September 10, 2026 build and is not transcribed. The FIFRA quotation above is cited to the U.S. Code and was not re-fetched; see Confidence Notes.
 
-Two practical consequences. First, the label, not a general storage policy, is the first document a surveyor or state inspector will compare the shelf against. Second, an applicator who transfers product into an unlabeled spray bottle has created both a HazCom labeling violation and a label-law problem in one act.
+Two practical consequences. First, the label, not a general storage policy, is the first document a surveyor or state inspector will compare the shelf against. Second, an applicator who transfers product into an unlabeled spray bottle has created a label-law problem, and the unlabeled bottle is exactly what a surveyor photographs.
 
 ## Emergency Eyewash: 29 CFR 1910.151(c)
 

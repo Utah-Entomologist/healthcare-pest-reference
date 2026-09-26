@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION =
 /** Stable @id values so the same entity is referenced, not duplicated, across pages. */
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
-export const PERSON_ID = `${SITE_URL}/about/#trenton-l-frazer`;
+export const PERSON_ID = `${SITE_URL}/about/#trenton-s-frazer`;
 
 /**
  * The author of the reference.
