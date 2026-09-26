@@ -1,0 +1,33 @@
+# Healthcare Pest Reference
+
+> A free, national reference to the U.S. federal, state, and accrediting-body pest control requirements that reach hospitals, nursing homes, clinics, and other healthcare facilities. Every requirement is anchored to its primary source, with the source URL, a plain-language reading, and the survey tag or element of performance it is cited under. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413, Entomological Society of America Certification Corporation).
+
+Use it to answer: which CMS tag a hospital or nursing home pest finding is written under; what The Joint Commission, DNV, the VA, CDC HICPAC, the FDA Food Code, OSHA, and USP 797/800 say about pest control and pesticide storage; what a nursing home F925 plan of correction must contain.
+
+## Key pages
+
+- [Authority index](https://healthcarepestreference.org/authorities/): every federal, state, and accrediting-body authority on the reference.
+- [Survey deficiencies](https://healthcarepestreference.org/deficiencies/): pest-related CMS tags and Joint Commission elements of performance.
+- [Which tag is pest control?](https://healthcarepestreference.org/deficiencies/which-tag-is-pest-control/): CMS, Joint Commission, VA, and Food Code citations by facility type.
+- [F925, nursing home pest control](https://healthcarepestreference.org/deficiencies/f925/): 42 CFR 483.90(i)(4), survey procedures, and plan of correction.
+- [F925 plan of correction](https://healthcarepestreference.org/deficiencies/f925-plan-of-correction/): the five elements CMS requires.
+- [A-0701, Buildings](https://healthcarepestreference.org/deficiencies/a-0701-buildings/): the tag most hospital pest findings are written to.
+- [A-0750, Clean and sanitary environment](https://healthcarepestreference.org/deficiencies/a-0750-sanitary-environment/)
+- [VHA Directive 1850.02](https://healthcarepestreference.org/authorities/vha-directive-1850-02/): VA Pest Management Operations Program.
+- [CDC HICPAC environmental guidelines](https://healthcarepestreference.org/authorities/cdc-hicpac-environmental-guidelines/)
+- [Joint Commission 2026 Physical Environment chapter](https://healthcarepestreference.org/authorities/joint-commission-2026-pe-chapter/)
+- [Pesticide storage in healthcare facilities](https://healthcarepestreference.org/topics/pesticide-storage-requirements-healthcare-facilities/)
+- [What is a Board Certified Entomologist?](https://healthcarepestreference.org/authorities/esacc-bce-credential/)
+- [Methodology](https://healthcarepestreference.org/methodology/): source tiers and verification discipline.
+- [Regulatory update register](https://healthcarepestreference.org/register/)
+- [About the author](https://healthcarepestreference.org/about/)
+
+## Companion references by the same author
+
+- [Corrections Pest Reference](https://correctionspestreference.org/): pest control requirements for jails, prisons, and detention facilities, including a ten-state comparison of jail standards.
+- [University Pest Reference](https://universitypestreference.org/): pest control requirements by campus zone.
+- [Frazer Applied Entomology](https://frazerappliedentomology.com/): the author's consulting and expert witness practice.
+
+## Contact
+
+trent@frazerappliedentomology.com · (801) 477-0223
