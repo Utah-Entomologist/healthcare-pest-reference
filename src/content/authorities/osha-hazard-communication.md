@@ -21,8 +21,8 @@ facility_types_applicable:
 services_applicable:
   - all facility services using or storing pesticides
 verbatim_available: true
-summary: "HazCom governs every pesticide stored or used in a healthcare facility: written program, inventory, Safety Data Sheets accessible every shift, labeling, and training."
-meta_description: "OSHA 29 CFR 1910.1200 as it applies to pesticides in hospitals and other healthcare facilities: the written hazard communication program, pesticide inventory, Safety Data Sheet access on every shift, GHS labeling, training, and the storage findings surveyors cite under Joint Commission PE.02.01.01."
+summary: "HazCom reaches every pesticide stored or used in a healthcare facility: written program, inventory, Safety Data Sheets accessible every shift, and training. Its labeling paragraph exempts pesticides that carry an EPA label (1910.1200(b)(5)(i))."
+meta_description: "OSHA 29 CFR 1910.1200 as it applies to pesticides in hospitals and other healthcare facilities: the written hazard communication program, pesticide inventory, Safety Data Sheet access on every shift, the (b)(5)(i) labeling exemption for EPA-labeled pesticides, training, and the storage findings surveyors cite under Joint Commission PE.02.01.01."
 related_authorities:
   - slug: joint-commission-2026-pe-chapter
     why: "The accreditor standard (PE.02.01.01) under which pesticide storage and SDS deficiencies are actually cited in Joint Commission hospitals."
@@ -51,6 +51,12 @@ related_authorities:
 > "The employer shall maintain in the workplace copies of the required safety data sheets for each hazardous chemical, and shall ensure that they are readily accessible during each work shift to employees when they are in their work area(s). (Electronic access and other alternatives to maintaining paper copies of the safety data sheets are permitted as long as no barriers to immediate employee access in each workplace are created by such options.)"
 
 **Container Labeling (29 CFR 1910.1200(f)(6))** requires the employer to label every hazardous chemical container in the workplace, either with the full shipped-container elements — product identifier, signal word, hazard statement(s), pictogram(s), precautionary statement(s) — or with a product identifier plus words or symbols conveying the hazards, used together with the rest of the hazard communication program. (The five-element list is §1910.1200(f)(1)'s, which binds the chemical manufacturer, importer, or distributor for containers leaving the workplace; a hospital's own duty is (f)(6).)
+
+**Labeling exemption for pesticides (29 CFR 1910.1200(b)(5)(i)),** verbatim from eCFR (read September 26, 2026):
+
+> "This section does not require labeling of the following chemicals: (i) Any pesticide as such term is defined in the Federal Insecticide, Fungicide, and Rodenticide Act (7 U.S.C. 136 et seq.), when subject to the labeling requirements of that Act and labeling regulations issued under that Act by the Environmental Protection Agency;"
+
+The container labeling duty above therefore does not reach a pesticide subject to FIFRA labeling; its label is governed by EPA. The written program, inventory, Safety Data Sheet, and training provisions still apply to it.
 
 **Employee Training (29 CFR 1910.1200(h))** requires training on initial assignment and whenever a new hazard is introduced.
 

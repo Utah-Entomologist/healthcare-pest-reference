@@ -30,7 +30,7 @@ related_authorities:
   - slug: dnv-gl-niaho-standards
     why: "The alternative hospital accreditation framework, with substantively identical pest expectations and ISO 9001 documentation."
   - slug: osha-hazard-communication
-    why: "The federal standard behind PE.02.01.01: written program, inventory, Safety Data Sheets, labeling, and training for every pesticide on site."
+    why: "The federal standard behind PE.02.01.01: written program, inventory, Safety Data Sheets, and training for every pesticide on site (container labels for EPA-registered pesticides come from the FIFRA label, 1910.1200(b)(5)(i))."
   - slug: cdc-hicpac-environmental-guidelines
     why: "The infection control standard of care surveyors reference when scoring pest activity under PE.01.01.01."
 ---
