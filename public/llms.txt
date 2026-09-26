@@ -6,7 +6,7 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 
 ## Key pages
 
-- [Ten-state comparison of jail pest standards](https://correctionspestreference.org/state-jail-standards/): Colorado, Idaho, Montana, Nevada, New Mexico, Ohio, Oregon, Utah, Virginia, Washington, side by side, quoted verbatim.
+- [30-state comparison of jail pest standards](https://correctionspestreference.org/state-jail-standards/): the pest provision of each state's jail standards, side by side, quoted verbatim, with frequency, provider, and legal force.
 - [Authority index](https://correctionspestreference.org/authorities/): every federal, state, local and association authority on the reference.
 - [Pest Compliance Map](https://correctionspestreference.org/tools/compliance-map/): each requirement paired with the record that shows it was met.
 - [The Vermin Grievance File](https://correctionspestreference.org/tools/vermin-grievance-file/): the eight questions a pest grievance file must answer.
@@ -16,17 +16,37 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 
 ## State jail standards pages
 
-- [Colorado, Standards for Colorado Jails, Topic O](https://correctionspestreference.org/authorities/colorado-jail-standards-topic-o-pest-vermin/)
-- [Idaho Jail Standards 10.03](https://correctionspestreference.org/authorities/idaho-jail-standards-10-03/)
-- [Montana Jail Standards 10.01](https://correctionspestreference.org/authorities/montana-jail-standards-10-01/)
+- [Arkansas Criminal Detention Facility Standards](https://correctionspestreference.org/authorities/arkansas-12-car-50-506-lice-pests-intake/)
+- [California Title 15, §1212 Vermin Control](https://correctionspestreference.org/authorities/california-15-ccr-1212-vermin-control/)
+- [Standards for Colorado Jails, Topic O, Standard 1(6)(a)](https://correctionspestreference.org/authorities/colorado-jail-standards-topic-o-pest-vermin/)
+- [Florida Model Jail Standards 14.12](https://correctionspestreference.org/authorities/florida-model-jail-standards-14-12-insect-rodent/)
+- [Idaho Jail Standards 10.03 (Idaho Sheriffs' Association)](https://correctionspestreference.org/authorities/idaho-jail-standards-10-03/)
+- [Illinois County Jail Standards, 20 Ill. Adm. Code 701.120(g)](https://correctionspestreference.org/authorities/illinois-20-iac-701-120-pest-vermin-control/)
+- [Indiana County Jail Standards, 210 IAC 3-1-9(d)](https://correctionspestreference.org/authorities/indiana-210-iac-3-1-9-insects-rodents/)
+- [Iowa Jail Standards, 201 IAC 50.14(1)(a)(2)](https://correctionspestreference.org/authorities/iowa-201-iac-50-14-pest-free/)
+- [Kentucky Jail Standards, 501 KAR 3:080](https://correctionspestreference.org/authorities/kentucky-501-kar-3-080-vermin-pests/)
+- [Maryland Adult Detention Center Standards, COMAR 12.14.03.05](https://correctionspestreference.org/authorities/maryland-comar-12-14-03-05-vermin-pest-control/)
+- [Massachusetts County Correctional Standards, 103 CMR 974.06](https://correctionspestreference.org/authorities/massachusetts-103-cmr-974-06-insect-rodent-control/)
+- [Michigan Jail Rules, R 791.727](https://correctionspestreference.org/authorities/michigan-r-791-727-vermin-pest-control-plan/)
+- [Minnesota Rules 2911.7500](https://correctionspestreference.org/authorities/minnesota-rule-2911-7500-vermin-pests/)
+- [Montana Jail Standards (2016), Standard 10.01](https://correctionspestreference.org/authorities/montana-jail-standards-10-01/)
 - [Nevada NAC 211.430](https://correctionspestreference.org/authorities/nevada-nac-211-430-vermin-control/)
-- [New Mexico ADPS SS-06](https://correctionspestreference.org/authorities/new-mexico-nmac-adps-ss-06/)
+- [New Jersey Adult County Correctional Facilities, N.J.A.C. 10A:31-11.5](https://correctionspestreference.org/authorities/new-jersey-njac-10a-31-11-5-vermin-pests/)
+- [New Mexico Adult Detention Professional Standards SS-06](https://correctionspestreference.org/authorities/new-mexico-nmac-adps-ss-06/)
+- [New York Commission of Correction, 9 NYCRR 7015.2(e)](https://correctionspestreference.org/authorities/new-york-9-nycrr-7015-2-insect-rodent/)
+- [North Carolina Jail Sanitation, 15A NCAC 18A .1515](https://correctionspestreference.org/authorities/north-carolina-15a-ncac-18a-1515-vermin-control/)
 - [Ohio Adm.Code 5120:1-8-05](https://correctionspestreference.org/authorities/ohio-5120-1-8-05-jail-sanitation/)
-- [Oregon ORS 169.076](https://correctionspestreference.org/authorities/oregon-ors-169-076-local-correctional-facility-standards/)
-- [Oregon Jail Standards H-201 (OSSA)](https://correctionspestreference.org/authorities/oregon-ossa-jail-standards-h-201/)
-- [Utah Correctional Standards](https://correctionspestreference.org/authorities/utah-udc-correctional-standards/)
-- [Virginia 6VAC15-40-1150](https://correctionspestreference.org/authorities/virginia-6vac15-40-1150-vermin-pest-control/)
-- [Washington WASPC 20.1](https://correctionspestreference.org/authorities/washington-waspc-jail-accreditation-20-1/)
+- [Oklahoma Jail Standards, OAC 310:670-5-6(19)](https://correctionspestreference.org/authorities/oklahoma-oac-310-670-5-6-pest-control/)
+- [ORS 169.076(2)(g) (Oregon)](https://correctionspestreference.org/authorities/oregon-ors-169-076-local-correctional-facility-standards/)
+- [Oregon Jail Standards (OSSA), H-201 Sanitation Plan](https://correctionspestreference.org/authorities/oregon-ossa-jail-standards-h-201/)
+- [Pennsylvania County Prison Requirements, 37 Pa. Code §95.248(2)](https://correctionspestreference.org/authorities/pennsylvania-37-pa-code-95-248-vermin-pests/)
+- [South Carolina Minimum Standards for Local Detention Facilities, 3003](https://correctionspestreference.org/authorities/south-carolina-jail-standards-3003-vermin-insects-pests/)
+- [Tennessee Corrections Institute, Rule 1400-01-.09(5)](https://correctionspestreference.org/authorities/tennessee-tci-1400-01-09-vermin-pests/)
+- [Texas Minimum Jail Standards, 37 TAC §261.147](https://correctionspestreference.org/authorities/texas-tcjs-37-tac-261-147-vermin-control/)
+- [Utah Correctional Standards (FY27 Secure Facilities) — Pest, Vermin, and Food Service Inspection](https://correctionspestreference.org/authorities/utah-udc-correctional-standards/)
+- [Virginia 6VAC15-40-1150 — Jail Vermin and Pest Control (Quarterly Licensed Service)](https://correctionspestreference.org/authorities/virginia-6vac15-40-1150-vermin-pest-control/)
+- [WASPC Jail Accreditation Standard 20.1 (Washington)](https://correctionspestreference.org/authorities/washington-waspc-jail-accreditation-20-1/)
+- [Wisconsin DOC 350.12(10)](https://correctionspestreference.org/authorities/wisconsin-doc-350-12-vermin-pests/)
 
 ## Companion references by the same author
 
