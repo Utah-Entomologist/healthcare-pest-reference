@@ -18,6 +18,7 @@ export const GET: APIRoute = async () => {
   const staticPages = [
     { url: '/', priority: '1.0', changefreq: 'monthly', sources: ['src/pages/index.astro'] },
     { url: '/authorities/', priority: '0.9', changefreq: 'monthly', sources: ['src/pages/authorities/index.astro', 'src/content/authorities'] },
+    { url: '/state-jail-standards/', priority: '0.9', changefreq: 'monthly', sources: ['src/pages/state-jail-standards.astro'] },
     { url: '/about/', priority: '0.7', changefreq: 'yearly', sources: ['src/pages/about.astro'] },
     { url: '/methodology/', priority: '0.7', changefreq: 'monthly', sources: ['src/pages/methodology.astro'] },
     { url: '/consulting/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/consulting.astro'] },

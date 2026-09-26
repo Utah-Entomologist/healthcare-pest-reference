@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL } from '../lib/site';
+
+/**
+ * Ten-state comparison of the pest provisions in state jail standards.
+ * Every quotation below is copied from the linked authority page, which
+ * carries the source URL and verification date. Change the authority page
+ * first, then this table.
+ */
+const rows = [
+  {
+    state: 'Colorado',
+    instrument: 'Standards for Colorado Jails, Topic O, Standard 1(6)(a)',
+    force: 'Every county jail must comply beginning July 1, 2026 (Section 2-3-1901.5, C.R.S.).',
+    quote: 'Jails shall have a policy to mitigate and respond to pest and vermin control issues.',
+    frequency: 'None in the standard. The best-practice note recommends inspections at least quarterly by a local pest control business or a certified pest controller.',
+    slug: 'colorado-jail-standards-topic-o-pest-vermin'
+  },
+  {
+    state: 'Idaho',
+    instrument: 'Idaho Sheriffs’ Association, Idaho Jail Standards (April 2024), 10.03',
+    force: 'Association standard, designated recommended (R); the association inspects county jails annually.',
+    quote: 'The facility has a plan for the control of vermin and pests which includes monthly inspections.',
+    frequency: 'Monthly inspections. Any fumigation by a licensed pest control professional.',
+    slug: 'idaho-jail-standards-10-03'
+  },
+  {
+    state: 'Montana',
+    instrument: 'Montana Jail Standards – 2016, 10.01',
+    force: 'Adopting body and legal force not verified for this reference.',
+    quote: 'Vermin and pests are controlled.',
+    frequency: 'None named.',
+    slug: 'montana-jail-standards-10-01'
+  },
+  {
+    state: 'Nevada',
+    instrument: 'NAC 211.430 (State Board of Health)',
+    force: 'Regulation for every local correctional institution, including a jail.',
+    quote: 'The operator of each local correctional institution must take effective measures to eliminate rodents, flies, cockroaches and other vermin.',
+    frequency: 'None named. Exclusion is specified, down to screening no larger than 16 mesh; health authority findings must be written up (NAC 211.130).',
+    slug: 'nevada-nac-211-430-vermin-control'
+  },
+  {
+    state: 'New Mexico',
+    instrument: 'Adult Detention Professional Standards (4th ed., Jan. 2024), SS-06',
+    force: 'Association accreditation standard (New Mexico Association of Counties).',
+    quote: 'A written control plan addresses vermin and pest control.',
+    frequency: 'Monthly inspection by a licensed exterminator, an extermination schedule, and documented inspection reports and treatment.',
+    slug: 'new-mexico-nmac-adps-ss-06'
+  },
+  {
+    state: 'Ohio',
+    instrument: 'Ohio Adm.Code 5120:1-8-05 (full service jails)',
+    force: 'State rule, effective January 1, 2026.',
+    quote: '(Essential) Monthly sanitation, vermin and safety inspections of all areas will be conducted by a designated trained staff person.',
+    frequency: 'Monthly, by a designated trained staff person; annual inspection by local or state health authorities.',
+    slug: 'ohio-5120-1-8-05-jail-sanitation'
+  },
+  {
+    state: 'Oregon',
+    instrument: 'ORS 169.076(2)(g); OSSA Oregon Jail Standards H-201',
+    force: 'Statute for every local correctional facility; the Department of Corrections inspects and the Attorney General can enforce (ORS 169.070, 169.080).',
+    quote: 'Have a comprehensive written policy with respect to: ... (g) Vermin and communicable disease control.',
+    frequency: 'None in the statute. The sheriffs’ association standard ties vermin treatment to inspection findings (recorded by identifier; copyrighted).',
+    slug: 'oregon-ors-169-076-local-correctional-facility-standards'
+  },
+  {
+    state: 'Utah',
+    instrument: 'Utah Correctional Standards (FY27, Secure Facilities), E-03',
+    force: 'Utah Department of Corrections minimum standards for facilities housing offenders under its jurisdiction.',
+    quote: 'B. Pest/Vermin control: facility shall remove inmates from areas if there is a risk of illness.',
+    frequency: 'An item on the facility’s required weekly documented inspection; no service frequency or provider named.',
+    slug: 'utah-udc-correctional-standards'
+  },
+  {
+    state: 'Virginia',
+    instrument: '6VAC15-40-1150 (State Board of Local and Regional Jails)',
+    force: 'Regulation in the Minimum Standards for Jails and Lockups.',
+    quote: 'The facility shall control vermin and pests and shall be serviced at least quarterly by a licensed pest control business or personnel certified by the Virginia Department of Agriculture and Consumer Services.',
+    frequency: 'At least quarterly, by a licensed pest control business or VDACS-certified personnel.',
+    slug: 'virginia-6vac15-40-1150-vermin-pest-control'
+  },
+  {
+    state: 'Washington',
+    instrument: 'WASPC Jail Accreditation Standards (2026), 20.1',
+    force: 'Association accreditation standard, for agencies seeking accreditation.',
+    quote: 'The agency has policy or procedures governing pest control.',
+    frequency: 'None named. WASPC’s listed proofs: the policy, and a contract, vendor invoice, or memo naming the provider.',
+    slug: 'washington-waspc-jail-accreditation-20-1'
+  }
+];
+---
+
+<BaseLayout
+  title="Pest Control Requirements in State Jail Standards: A Ten-State Comparison"
+  description="The pest and vermin provisions of jail standards in Colorado, Idaho, Montana, Nevada, New Mexico, Ohio, Oregon, Utah, Virginia and Washington, quoted from each primary source, with frequency, provider, and legal force side by side."
+  breadcrumbs={[{ name: 'State Jail Standards', url: `${SITE_URL}/state-jail-standards/` }]}
+>
+  <style>
+    .compare { width: 100%; border-collapse: collapse; font-size: 0.93rem; margin: 1.25rem 0 2rem; }
+    .compare th, .compare td { border-bottom: 1px solid var(--color-rule); padding: 0.7rem 0.6rem; text-align: left; vertical-align: top; }
+    .compare th { font-family: var(--font-serif); font-weight: 600; background: var(--color-surface, transparent); }
+    .compare td.state a { font-family: var(--font-serif); font-weight: 600; color: var(--color-primary); }
+    .compare blockquote { margin: 0; padding: 0; border: 0; font-style: normal; }
+    .table-wrap { overflow-x: auto; }
+    .note { color: var(--color-text-muted); font-size: 0.93rem; }
+    @media (max-width: 760px) {
+      .compare thead { display: none; }
+      .compare, .compare tbody, .compare tr, .compare td { display: block; width: 100%; }
+      .compare tr { border-bottom: 2px solid var(--color-rule); padding: 0.6rem 0; }
+      .compare td { border: 0; padding: 0.3rem 0; }
+      .compare td::before { content: attr(data-label); display: block; font-weight: 600; font-size: 0.8rem; color: var(--color-text-meta); }
+    }
+  </style>
+
+  <h1>Pest Control Requirements in State Jail Standards: A Ten-State Comparison</h1>
+
+  <p>
+    What a state's jail standards say about pests, side by side. Each row quotes the provision from its primary
+    source and links to the authority page, which gives the full text, who it applies to, the records that show it
+    was met, and the date the text was verified.
+  </p>
+
+  <p class="note">
+    Legal force is stated as each source states it. State rules and statutes bind; association standards are
+    professional standards tied to inspection or accreditation. Verify against the primary source before relying on
+    any row for a legal purpose.
+  </p>
+
+  <div class="table-wrap">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Instrument</th>
+          <th scope="col">Legal force (as the source states it)</th>
+          <th scope="col">Pest provision (verbatim)</th>
+          <th scope="col">Frequency and provider named</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr>
+            <td class="state" data-label="State"><a href={`/authorities/${r.slug}/`}>{r.state}</a></td>
+            <td data-label="Instrument">{r.instrument}</td>
+            <td data-label="Legal force">{r.force}</td>
+            <td data-label="Pest provision (verbatim)"><blockquote>“{r.quote}”</blockquote></td>
+            <td data-label="Frequency and provider">{r.frequency}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What the Comparison Shows</h2>
+
+  <ul>
+    <li>
+      <strong>A named frequency and a named provider together in binding text: Virginia only.</strong> Virginia's rule
+      sets service at least quarterly by a licensed pest control business or certified personnel. Ohio's binding rule
+      sets monthly inspections by a designated trained staff person, not a licensed provider. Colorado places quarterly
+      inspection by a pest control business in a best-practice recommendation.
+    </li>
+    <li>
+      <strong>Monthly appears three times.</strong> Ohio (staff inspections), Idaho (plan inspections) and New Mexico
+      (inspection by a licensed exterminator).
+    </li>
+    <li>
+      <strong>Outcome-only standards.</strong> Montana states the outcome in one sentence. Nevada states the outcome and
+      then specifies exclusion, down to screen mesh.
+    </li>
+    <li>
+      <strong>Tracking a finding to its correction.</strong> New Mexico's process indicators ask for documentation that
+      identified deficiencies were corrected, and Utah's weekly inspection policy must contain a process for reporting
+      and tracking maintenance issues. The others stop at a policy, a plan, inspection, or service.
+    </li>
+  </ul>
+
+  <p>
+    A policy is not a closed complaint, and a grievance or claim turns on the second. The
+    <a href="/tools/grievance-loop/">Grievance-to-Work-Order Loop</a> and
+    <a href="/tools/vermin-grievance-file/">The Vermin Grievance File</a> are free tools for closing it, and the
+    <a href="/tools/compliance-map/">Pest Compliance Map</a> pairs each requirement with the record that shows it.
+  </p>
+
+  <h2>Coverage</h2>
+
+  <p>
+    Ten states as of September 2026. Federal detention standards (ICE, U.S. Marshals Service, Bureau of Prisons), the
+    FDA Food Code, and OSHA are on the <a href="/authorities/">authority index</a>. Association standards that are
+    copyrighted are recorded by identifier only. To suggest a state or send a correction, write to
+    <a href="mailto:trent@frazerappliedentomology.com">trent@frazerappliedentomology.com</a>.
+  </p>
+</BaseLayout>

@@ -1,0 +1,39 @@
+# Corrections Pest Reference
+
+> A free, primary-source reference to the pest control requirements that reach U.S. jails, prisons, and detention facilities. Every requirement is quoted from its source, with the source URL, a plain-language reading, who it applies to, the records that show it was met, and the date the text was verified. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413, Entomological Society of America Certification Corporation).
+
+Use it to answer: what does a state's jail standard require for pest and vermin control; what federal detention standards (ICE, U.S. Marshals Service, Bureau of Prisons) require; what records show a jail responded to a pest grievance.
+
+## Key pages
+
+- [Ten-state comparison of jail pest standards](https://correctionspestreference.org/state-jail-standards/): Colorado, Idaho, Montana, Nevada, New Mexico, Ohio, Oregon, Utah, Virginia, Washington, side by side, quoted verbatim.
+- [Authority index](https://correctionspestreference.org/authorities/): every federal, state, local and association authority on the reference.
+- [Pest Compliance Map](https://correctionspestreference.org/tools/compliance-map/): each requirement paired with the record that shows it was met.
+- [The Vermin Grievance File](https://correctionspestreference.org/tools/vermin-grievance-file/): the eight questions a pest grievance file must answer.
+- [Grievance-to-Work-Order Loop](https://correctionspestreference.org/tools/grievance-loop/): a printable log tying each complaint to its work order and closure.
+- [Methodology](https://correctionspestreference.org/methodology/): source tiers, confidence ratings, verification discipline, open questions.
+- [About the author](https://correctionspestreference.org/about/): credentials and relationship to the author's practices.
+
+## State jail standards pages
+
+- [Colorado, Standards for Colorado Jails, Topic O](https://correctionspestreference.org/authorities/colorado-jail-standards-topic-o-pest-vermin/)
+- [Idaho Jail Standards 10.03](https://correctionspestreference.org/authorities/idaho-jail-standards-10-03/)
+- [Montana Jail Standards 10.01](https://correctionspestreference.org/authorities/montana-jail-standards-10-01/)
+- [Nevada NAC 211.430](https://correctionspestreference.org/authorities/nevada-nac-211-430-vermin-control/)
+- [New Mexico ADPS SS-06](https://correctionspestreference.org/authorities/new-mexico-nmac-adps-ss-06/)
+- [Ohio Adm.Code 5120:1-8-05](https://correctionspestreference.org/authorities/ohio-5120-1-8-05-jail-sanitation/)
+- [Oregon ORS 169.076](https://correctionspestreference.org/authorities/oregon-ors-169-076-local-correctional-facility-standards/)
+- [Oregon Jail Standards H-201 (OSSA)](https://correctionspestreference.org/authorities/oregon-ossa-jail-standards-h-201/)
+- [Utah Correctional Standards](https://correctionspestreference.org/authorities/utah-udc-correctional-standards/)
+- [Virginia 6VAC15-40-1150](https://correctionspestreference.org/authorities/virginia-6vac15-40-1150-vermin-pest-control/)
+- [Washington WASPC 20.1](https://correctionspestreference.org/authorities/washington-waspc-jail-accreditation-20-1/)
+
+## Companion references by the same author
+
+- [Healthcare Pest Reference](https://healthcarepestreference.org/): pest control requirements for hospitals and healthcare facilities.
+- [University Pest Reference](https://universitypestreference.org/): pest control requirements by campus zone.
+- [Frazer Applied Entomology](https://frazerappliedentomology.com/): the author's consulting and expert witness practice.
+
+## Contact
+
+trent@frazerappliedentomology.com · (801) 477-0223

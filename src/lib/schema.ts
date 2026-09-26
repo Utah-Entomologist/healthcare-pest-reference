@@ -117,7 +117,15 @@ export function personSchema(): WithContext<Person> {
       { '@type': 'CollegeOrUniversity', name: 'University of Florida', url: 'https://www.ufl.edu/' },
       { '@type': 'CollegeOrUniversity', name: 'Brigham Young University', url: 'https://www.byu.edu/' }
     ],
-    sameAs: [AUTHOR.rosterUrl]
+    sameAs: [
+      AUTHOR.rosterUrl,
+      'https://www.linkedin.com/in/trent-frazer-a4331815b/',
+      'https://www.credly.com/users/trent-frazer.7bbcc3b7',
+      'https://www.jurispro.com/expert/trenton-frazer-ms-bce-10258',
+      'https://frazerappliedentomology.com/',
+      'https://healthcarepestreference.org/',
+      'https://universitypestreference.org/'
+    ]
   };
 }
 
