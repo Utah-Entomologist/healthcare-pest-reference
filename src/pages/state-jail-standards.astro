@@ -263,7 +263,10 @@ const rows = [
     .compare th { font-family: var(--font-serif); font-weight: 600; background: var(--color-surface, transparent); }
     .compare td.state a { font-family: var(--font-serif); font-weight: 600; color: var(--color-primary); }
     .compare blockquote { margin: 0; padding: 0; border: 0; font-style: normal; }
-    .table-wrap { overflow-x: auto; }
+    .table-wrap { overflow-x: auto; width: min(1180px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+    .compare col.c-state { width: 10%; } .compare col.c-inst { width: 18%; } .compare col.c-force { width: 19%; }
+    .compare col.c-quote { width: 31%; } .compare col.c-freq { width: 22%; }
+    .compare blockquote { font-size: 0.92rem; line-height: 1.45; }
     .note { color: var(--color-text-muted); font-size: 0.93rem; }
     @media (max-width: 760px) {
       .compare thead { display: none; }
@@ -296,6 +299,7 @@ const rows = [
 
   <div class="table-wrap">
     <table class="compare">
+      <colgroup><col class="c-state" /><col class="c-inst" /><col class="c-force" /><col class="c-quote" /><col class="c-freq" /></colgroup>
       <thead>
         <tr>
           <th scope="col">State</th>
