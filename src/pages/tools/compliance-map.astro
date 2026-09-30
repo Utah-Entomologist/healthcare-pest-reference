@@ -1,17 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL, CONTACT_EMAIL } from '../../lib/site';
-import { AUTHORITIES, ROWS, CADENCE_LABELS, CADENCE_ORDER } from '../../data/complianceMap';
+import { AUTHORITIES, ROWS, CADENCE_LABELS, CADENCE_ORDER, STATES, OSHA_PUBLIC, checklistFile } from '../../data/complianceMap';
 
 const byAuth = AUTHORITIES.map((a) => ({ ...a, rows: ROWS.filter((r) => r.auth === a.key) }));
 const authNames = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.name]));
 const authSlugs = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.slug]));
+const authState = Object.fromEntries(AUTHORITIES.filter((a) => a.state).map((a) => [a.key, a.state]));
+const authScope = Object.fromEntries(AUTHORITIES.filter((a) => a.scope).map((a) => [a.key, a.scope]));
+const stateNames = Object.fromEntries(STATES.map((s) => [s.code, s.name]));
+const pdfFiles = Object.fromEntries(STATES.map((s) => [s.code, checklistFile(s.name)]));
+const pdfUtah = { slco: checklistFile('Utah', 'Salt_Lake_County_Jail'), prison: checklistFile('Utah', 'Utah_State_Prison') };
 const rowCount = ROWS.length;
 ---
 
 <BaseLayout
   title="Pest Compliance Map for Jails, Prisons, and Detention Facilities"
-  description="Select a facility profile and see which pest control authorities apply, what each requires, the record that proves it, how often, and who the text names as responsible. Printable as an inspection checklist."
+  description="Select a facility profile in any of 30 states and see which pest control authorities apply, what each requires, the record that proves it, how often, and who the text names as responsible. Print it, download a PDF checklist, or export a spreadsheet."
   breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Compliance Map', url: `${SITE_URL}/tools/compliance-map/` }]}
 >
   <style is:global>
@@ -23,14 +28,17 @@ const rowCount = ROWS.length;
     .field label, .field legend { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 0.35rem; }
     .field select { width: 100%; padding: 0.45rem; font: inherit; border: 1px solid var(--color-rule); border-radius: 4px; background: transparent; color: inherit; }
     .field fieldset { border: 0; margin: 0; padding: 0; }
+    .field .hint { font-size: 0.8rem; color: var(--color-text-muted); margin: 0.3rem 0 0; }
     .opt { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.92rem; margin: 0.25rem 0; font-weight: 400 !important; }
     .opt input { margin-top: 0.2rem; }
     .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
     .btn { display: inline-block; padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font: inherit; font-size: 0.92rem; cursor: pointer; text-decoration: none; }
     .btn.secondary { background: transparent; color: var(--color-primary); }
+    .downloads-note { font-size: 0.8rem; color: var(--color-text-muted); margin: 0.6rem 0 0; }
     .summary { margin: 0 0 2rem; }
     .summary ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
     .summary li { padding: 0.35rem 0; border-bottom: 1px solid var(--color-rule); font-size: 0.93rem; }
+    .scope-note { font-size: 0.9rem; border-left: 3px solid #8a5a00; padding: 0.5rem 0.75rem; margin: 0.75rem 0 0; max-width: 46rem; }
     .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; padding: 0.1rem 0.45rem; border-radius: 3px; margin-right: 0.5rem; }
     .badge.applies { background: #1f5c3a; color: #fff; }
     .badge.check { background: #8a5a00; color: #fff; }
@@ -48,6 +56,7 @@ const rowCount = ROWS.length;
     .cite { font-size: 0.78rem; color: var(--color-text-meta); display: block; margin-top: 0.2rem; }
     details.q summary { cursor: pointer; font-size: 0.8rem; color: var(--color-accent); margin-top: 0.3rem; }
     details.q blockquote { margin: 0.35rem 0 0; font-size: 0.84rem; }
+    .ident { font-size: 0.78rem; color: var(--color-text-muted); display: block; margin-top: 0.3rem; font-style: italic; }
     .should { font-size: 0.72rem; font-weight: 700; color: #8a5a00; }
     .box { width: 1rem; height: 1rem; border: 1.5px solid currentColor; display: inline-block; vertical-align: middle; }
     .print-only { display: none; }
@@ -60,6 +69,7 @@ const rowCount = ROWS.length;
       td.col-box { display: none; }
     }
     @media print {
+      @page { size: letter; margin: 0.55in; }
       .site-header, .site-footer, nav, .profile, .actions, .no-print, .breadcrumbs, details.q summary { display: none !important; }
       .print-only { display: block; }
       details.q { display: none; }
@@ -74,8 +84,9 @@ const rowCount = ROWS.length;
   <h1>Pest Compliance Map</h1>
   <p class="lede">
     Every pest control requirement on this reference, in one place: what the authority requires, the record that shows it was met,
-    how often, and who the text names as responsible. Set your facility's profile and the map keeps only the authorities that
-    reach it. Print it, and it becomes the inspection checklist.
+    how often, and who the text names as responsible. It covers the federal detention standards and the jail pest provisions of
+    {STATES.length} states. Set your facility's profile and the map keeps only the authorities that reach it. Print it, download it as a
+    PDF checklist, or export it as a spreadsheet.
   </p>
   <p class="notice">
     This map lists what each authority's text requires and the record that would show it. It is not a determination that any
@@ -86,6 +97,7 @@ const rowCount = ROWS.length;
   <div class="print-only">
     <p><strong>Facility:</strong> ______________________________ &nbsp; <strong>Reviewed by:</strong> ______________________ &nbsp; <strong>Date:</strong> ____________</p>
     <p><strong>Profile:</strong> <span id="print-profile">All authorities</span></p>
+    <p class="cite">From the Pest Compliance Map, {SITE_URL.replace('https://', '')}/tools/compliance-map/, <span id="print-date"></span>. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413).</p>
   </div>
 
   <form class="profile no-print" id="profile" onsubmit="return false">
@@ -94,11 +106,10 @@ const rowCount = ROWS.length;
       <div class="field">
         <label for="f-state">State</label>
         <select id="f-state" name="state">
-          <option value="UT" selected>Utah</option>
-          <option value="OH">Ohio</option>
-          <option value="VA">Virginia</option>
-          <option value="OTHER">Another state</option>
+          {STATES.map((s) => <option value={s.code} selected={s.code === 'UT'}>{s.name}</option>)}
+          <option value="OTHER">Another state (not yet on this reference)</option>
         </select>
+        <p class="hint">{STATES.length} states are on this reference. To suggest one, <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('State to add (Corrections Pest Reference)')}`}>write to the author</a>.</p>
       </div>
       <div class="field">
         <label for="f-op">Who operates it</label>
@@ -130,14 +141,18 @@ const rowCount = ROWS.length;
     </div>
     <div class="actions">
       <button type="button" class="btn" id="print-btn">Print checklist or save as PDF</button>
+      <a class="btn secondary" id="pdf-link" href={`/downloads/${pdfFiles.UT}`} download hidden>Download ready-made PDF</a>
+      <button type="button" class="btn secondary" id="csv-btn" hidden>Download spreadsheet (CSV)</button>
       <a class="btn secondary" id="review-link" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applicability review request (Corrections Pest Reference)')}`}>Request an applicability review</a>
     </div>
+    <p class="downloads-note" id="downloads-note" hidden></p>
   </form>
 
   <section class="summary" id="summary" aria-live="polite">
     <h2>Authorities for this profile</h2>
     <p class="no-print" id="summary-fallback">All {AUTHORITIES.length} authorities and {rowCount} requirements are shown below. Turn on JavaScript to filter them to a facility profile.</p>
     <ul id="summary-list"></ul>
+    <p class="scope-note" id="scope-note" hidden></p>
   </section>
 
   <section id="cadence-section" hidden>
@@ -169,10 +184,13 @@ const rowCount = ROWS.length;
           <tr data-row={r.id} data-kitchen={r.kitchen ? '1' : '0'} data-cad={r.cadence.join(' ')}>
             <td class="col-box"><span class="box" aria-hidden="true"></span></td>
             <td data-label="Requirement">
-              {r.requirement}
+              <span class="req">{r.requirement}</span>
               {r.should && <span class="should"> SHOULD</span>}
+              {r.recommended && <span class="should"> RECOMMENDED</span>}
               <span class="cite">{a.name}, {r.cite}</span>
-              <details class="q"><summary>Source text</summary><blockquote>"{r.quote}"</blockquote></details>
+              {r.identifierOnly
+                ? <span class="ident">Copyrighted standard, recorded by identifier. The authority page summarizes it; the text is not reproduced.</span>
+                : <details class="q"><summary>Source text</summary><blockquote>"{r.quote}"</blockquote></details>}
             </td>
             <td data-label="Record">{r.evidence}</td>
             <td data-label="How often">{r.frequency}</td>
@@ -186,14 +204,31 @@ const rowCount = ROWS.length;
   <p class="no-print">
     Want the facility-specific version, checked against your agreements and walked on site? See
     <a href="/consulting/">Consulting</a>. Writing a pest control contract? Start from the
-    <a href="/tools/scope-of-work/">model scope of work</a>.
+    <a href="/tools/scope-of-work/">model scope of work</a>. Comparing states? See the
+    <a href="/state-jail-standards/">{STATES.length}-state comparison</a>.
   </p>
 
-  <script define:vars={{ AUTH_NAMES: authNames, AUTH_SLUGS: authSlugs, CAD_LABELS: CADENCE_LABELS, CAD_ORDER: CADENCE_ORDER, EMAIL: CONTACT_EMAIL }}>
+  <script define:vars={{ AUTH_NAMES: authNames, AUTH_SLUGS: authSlugs, AUTH_STATE: authState, AUTH_SCOPE: authScope, STATE_NAMES: stateNames, OSHA_PUBLIC, PDF_FILES: pdfFiles, PDF_UTAH: pdfUtah, CAD_LABELS: CADENCE_LABELS, CAD_ORDER: CADENCE_ORDER, EMAIL: CONTACT_EMAIL, SITE: SITE_URL }}>
     (function () {
       var $ = function (id) { return document.getElementById(id); };
       var F = { state: $('f-state'), op: $('f-op'), ice: $('f-ice'), kitchen: $('f-kitchen'), usms: $('f-usms'), udc: $('f-udc'), slco: $('f-slco') };
-      var L = { UT: 'Utah', OH: 'Ohio', VA: 'Virginia', OTHER: 'Another state', county: 'County jail', state: 'State prison', bop: 'Federal Bureau of Prisons institution', 'private': 'Privately operated facility' };
+      var OPS = { county: 'County jail', state: 'State prison', bop: 'Federal Bureau of Prisons institution', 'private': 'Privately operated facility' };
+      function stateName(c) { return c === 'OTHER' ? 'Another state' : STATE_NAMES[c]; }
+
+      // A profile can arrive in the URL (?state=PA&op=county&kitchen=1), so a filtered map can be linked or printed.
+      (function readParams() {
+        var q = new URLSearchParams(location.search);
+        var st = (q.get('state') || '').toUpperCase();
+        if (st && (STATE_NAMES[st] || st === 'OTHER')) F.state.value = st;
+        if (q.get('op') && OPS[q.get('op')]) F.op.value = q.get('op');
+        if (q.get('ice') && ['none', 'pbnds', 'nds', 'unsure'].indexOf(q.get('ice')) >= 0) F.ice.value = q.get('ice');
+        ['kitchen', 'usms', 'udc', 'slco'].forEach(function (k) { var v = q.get(k); if (v === '1' || v === '0') F[k].checked = v === '1'; });
+      })();
+      function writeParams(a) {
+        var q = new URLSearchParams({ state: a.state, op: a.op, ice: a.ice, kitchen: a.kitchen ? '1' : '0', usms: a.usms ? '1' : '0', udc: a.udc ? '1' : '0', slco: a.slco ? '1' : '0' });
+        try { history.replaceState(null, '', location.pathname + '?' + q.toString()); } catch (e) {}
+      }
+
       function answers() {
         return { state: F.state.value, op: F.op.value, ice: F.ice.value, kitchen: F.kitchen.checked, usms: F.usms.checked, udc: F.udc.checked, slco: F.slco.checked };
       }
@@ -201,16 +236,23 @@ const rowCount = ROWS.length;
       function C(why) { return { s: 'check', why: why }; }
       function N(why) { return { s: 'na', why: why }; }
       var NO_FOOD = 'No food is prepared on site.';
+      var PRIVATE_DEFAULT = 'Written for local jails. Whether it reaches a privately operated facility depends on whose prisoners it holds and on its agreement; confirm with the inspecting agency.';
       function status(key, a) {
         var UT = a.state === 'UT';
         var pub = a.op === 'county' || a.op === 'state';
+        if (AUTH_STATE[key]) {
+          if (a.state !== AUTH_STATE[key] || a.op === 'bop') return null;
+          var sc = AUTH_SCOPE[key] || {};
+          if (sc[a.op]) return { s: sc[a.op].s, why: sc[a.op].why };
+          return a.op === 'private' ? C(PRIVATE_DEFAULT) : null;
+        }
         switch (key) {
           case 'osha':
             if (a.op === 'private') return A('A private-sector workplace, covered by federal OSHA or by a State Plan that covers the private sector.');
             if (a.op === 'bop') return C('How OSHA requirements reach a federal employer is not established on this reference.');
             if (UT) return A("Utah's State Plan covers state and local government workers, and Utah rule R614-1-4 incorporates Part 1910.");
-            if (a.state === 'VA') return C("OSHA lists Virginia's State Plan as covering state and local government workers; its adoption of 1910.141 is not verified here.");
-            if (a.state === 'OH') return N('OSHA: Ohio has no State Plan, and state and local government workers are not covered by federal OSHA.');
+            if (OSHA_PUBLIC[a.state] === 'none') return N('OSHA: ' + stateName(a.state) + ' has no State Plan, and state and local government workers are not covered by federal OSHA.');
+            if (OSHA_PUBLIC[a.state] === 'plan') return C('OSHA lists ' + stateName(a.state) + "'s State Plan as covering state and local government workers; its adoption of 1910.141 is not verified here.");
             return C('Depends on whether your state runs an OSHA-approved State Plan that covers public employers.');
           case 'fda':
             if (!a.kitchen) return N(NO_FOOD);
@@ -251,15 +293,11 @@ const rowCount = ROWS.length;
           case 'bop4700':
             if (a.op !== 'bop') return null;
             return a.kitchen ? A('The Bureau Food Service program.') : N(NO_FOOD);
-          case 'ohio':
-            return (a.state === 'OH' && a.op === 'county') ? C('The rule applies to full service jails in Ohio.') : null;
-          case 'va':
-            return (a.state === 'VA' && a.op === 'county') ? C("Part of Virginia's Minimum Standards for Jails and Lockups; confirm the chapter's applicability to your facility.") : null;
         }
         return null;
       }
       function profileText(a) {
-        var p = [L[a.state], L[a.op]];
+        var p = [stateName(a.state), OPS[a.op]];
         if (a.state === 'UT' && (a.op === 'county' || a.op === 'private')) p.push(a.udc ? 'houses state inmates' : 'no state inmates');
         if (a.state === 'UT' && a.slco) p.push('Salt Lake County');
         p.push(a.ice === 'none' ? 'no ICE detainees' : a.ice === 'pbnds' ? 'ICE (PBNDS 2011)' : a.ice === 'nds' ? 'ICE (NDS 2019)' : 'ICE (standards unconfirmed)');
@@ -267,14 +305,30 @@ const rowCount = ROWS.length;
         p.push(a.kitchen ? 'food prepared on site' : 'no food prepared on site');
         return p.join(' · ');
       }
+      // The ready-made PDF matches the default profile for its state: food on site, no ICE, no USMS.
+      function readyPdf(a) {
+        if (a.ice !== 'none' || a.usms || !a.kitchen) return null;
+        if (a.state === 'UT') {
+          if (a.op === 'state') return { file: PDF_UTAH.prison, label: 'Utah state prison' };
+          if (a.op === 'county' && a.slco && a.udc) return { file: PDF_UTAH.slco, label: 'Salt Lake County jail' };
+          if (a.op === 'county' && !a.slco && a.udc) return { file: PDF_FILES.UT, label: 'Utah county jail' };
+          return null;
+        }
+        if (a.op === 'county' && PDF_FILES[a.state]) return { file: PDF_FILES[a.state], label: STATE_NAMES[a.state] + ' county jail' };
+        return null;
+      }
       var LABEL = { applies: 'Applies', check: 'Check', na: 'Does not apply' };
+      var current = { active: {}, a: null };
       function render() {
         var a = answers();
         $('opt-udc').hidden = !(a.state === 'UT' && (a.op === 'county' || a.op === 'private'));
         $('opt-slco').hidden = !(a.state === 'UT' && a.op !== 'bop');
+        if ($('opt-slco').hidden) { a.slco = false; }
+        if ($('opt-udc').hidden && a.state !== 'UT') { a.udc = false; }
         $('summary-fallback').hidden = true;
         var active = {};
         Object.keys(AUTH_NAMES).forEach(function (k) { var st = status(k, a); if (st) active[k] = st; });
+        current = { active: active, a: a };
         var list = $('summary-list');
         list.innerHTML = '';
         ['applies', 'check', 'na'].forEach(function (s) {
@@ -295,6 +349,16 @@ const rowCount = ROWS.length;
             list.appendChild(li);
           });
         });
+        var hasState = Object.keys(active).some(function (k) { return AUTH_STATE[k] || ['udc', 'r392', 'r687', 'slco', 'grama'].indexOf(k) >= 0; });
+        var note = $('scope-note');
+        note.hidden = true;
+        if (a.state === 'OTHER') {
+          note.textContent = 'Your state\'s jail pest provision is not on this reference yet. The federal and food-code authorities above are marked as they apply; ask for an applicability review to have your state\'s rules read against the facility.';
+          note.hidden = false;
+        } else if (!hasState && a.op !== 'bop') {
+          note.textContent = 'No ' + stateName(a.state) + ' authority on this reference reaches a ' + OPS[a.op].toLowerCase() + ' yet. The state jail standards here are written for local facilities.';
+          note.hidden = false;
+        }
         var cad = {};
         document.querySelectorAll('tbody[data-auth]').forEach(function (tb) {
           var k = tb.getAttribute('data-auth');
@@ -326,17 +390,72 @@ const rowCount = ROWS.length;
           if (!cad[c]) return;
           var d = document.createElement('div');
           d.className = 'cad';
-          d.innerHTML = '<h3>' + CAD_LABELS[c] + ' <span class="cite">' + cad[c].length + ' requirement' + (cad[c].length === 1 ? '' : 's') + '</span></h3><ul>' + cad[c].map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
+          var h = document.createElement('h3');
+          h.textContent = CAD_LABELS[c] + ' ';
+          var n = document.createElement('span');
+          n.className = 'cite';
+          n.textContent = cad[c].length + ' requirement' + (cad[c].length === 1 ? '' : 's');
+          h.appendChild(n);
+          var ul = document.createElement('ul');
+          cad[c].forEach(function (x) { var li = document.createElement('li'); li.textContent = x; ul.appendChild(li); });
+          d.appendChild(h);
+          d.appendChild(ul);
           box.appendChild(d);
         });
         $('cadence-section').hidden = Object.keys(cad).length === 0;
         var prof = profileText(a);
         $('print-profile').textContent = prof;
+        $('print-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        var pdf = readyPdf(a);
+        var pl = $('pdf-link');
+        pl.hidden = !pdf;
+        if (pdf) { pl.href = '/downloads/' + pdf.file; pl.textContent = 'Download ' + pdf.label + ' PDF'; }
+        $('csv-btn').hidden = false;
+        var dn = $('downloads-note');
+        dn.hidden = false;
+        dn.textContent = pdf
+          ? 'The ready-made PDF is the standard ' + pdf.label + ' profile. For any other profile, use Print and choose Save as PDF.'
+          : 'No ready-made PDF for this exact profile. Use Print and choose Save as PDF, or download the spreadsheet.';
         var body = 'Facility name:\n\nProfile from the Compliance Map: ' + prof + '\n\nWhat prompted the review (upcoming inspection, a finding, contract rebid, litigation, other):\n\nBest phone:\n';
         $('review-link').href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Applicability review request (Corrections Pest Reference)') + '&body=' + encodeURIComponent(body);
+        writeParams(a);
       }
+
+      function csvCell(v) { return '"' + String(v == null ? '' : v).replace(/\s+/g, ' ').trim().replace(/"/g, '""') + '"'; }
+      function downloadCsv() {
+        var a = current.a || answers();
+        var out = [['On file', 'Authority', 'Status for this profile', 'Why', 'Citation', 'Requirement', 'Source text (verbatim)', 'Record that shows it', 'How often', 'Named responsible', 'Authority page']];
+        document.querySelectorAll('tbody[data-auth]').forEach(function (tb) {
+          if (tb.hidden) return;
+          var k = tb.getAttribute('data-auth');
+          var st = current.active[k];
+          tb.querySelectorAll('tr[data-row]').forEach(function (tr) {
+            if (tr.hidden) return;
+            var td = tr.querySelectorAll('td');
+            var bq = tr.querySelector('blockquote');
+            var quote = bq ? bq.textContent.replace(/^"|"$/g, '') : 'Copyrighted standard, recorded by identifier; text not reproduced';
+            out.push(['', AUTH_NAMES[k], st ? LABEL[st.s] : '', st ? st.why : '', tr.querySelector('.cite').textContent,
+              tr.querySelector('.req').textContent, quote, td[2].textContent, td[3].textContent, td[4].textContent,
+              SITE + '/authorities/' + AUTH_SLUGS[k] + '/']);
+          });
+        });
+        out.push([]);
+        out.push(['', 'Profile: ' + profileText(a)]);
+        out.push(['', 'From the Pest Compliance Map, ' + SITE + '/tools/compliance-map/. Lists what each authority\'s text requires and the record that would show it. Not a compliance determination and not legal advice.']);
+        var csv = '﻿' + out.map(function (r) { return r.map(csvCell).join(','); }).join('\r\n');
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'Pest_Compliance_Map_' + stateName(a.state).replace(/ /g, '_') + '_' + OPS[a.op].replace(/ /g, '_') + '.csv';
+        document.body.appendChild(link);
+        link.click();
+        setTimeout(function () { URL.revokeObjectURL(url); link.remove(); }, 1000);
+      }
+
       Object.keys(F).forEach(function (k) { F[k].addEventListener('change', render); });
       $('print-btn').addEventListener('click', function () { window.print(); });
+      $('csv-btn').addEventListener('click', downloadCsv);
       render();
     })();
   </script>

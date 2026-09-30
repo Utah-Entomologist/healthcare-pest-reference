@@ -9,17 +9,21 @@
  */
 
 export type Cadence =
-  | 'delivery' | 'application' | 'daily' | 'weekly' | 'monthly' | 'quarterly'
-  | 'annual' | 'detection' | 'ongoing' | 'routine' | 'policy' | 'contract' | 'request';
+  | 'intake' | 'delivery' | 'application' | 'daily' | 'weekly' | 'monthly' | 'quarterly'
+  | 'semiannual' | 'annual' | 'inspection' | 'detection' | 'ongoing' | 'routine' | 'policy'
+  | 'contract' | 'request';
 
 export const CADENCE_LABELS: Record<Cadence, string> = {
+  intake: 'At intake',
   delivery: 'Each delivery',
   application: 'Each pesticide application',
   daily: 'Daily',
   weekly: 'Weekly',
   monthly: 'Monthly',
   quarterly: 'Quarterly',
+  semiannual: 'Twice a year',
   annual: 'Annually',
+  inspection: 'Each outside inspection',
   detection: 'When pests are found',
   ongoing: 'Ongoing condition',
   routine: 'Routinely (no frequency set)',
@@ -29,16 +33,58 @@ export const CADENCE_LABELS: Record<Cadence, string> = {
 };
 
 export const CADENCE_ORDER: Cadence[] = [
-  'policy', 'contract', 'delivery', 'application', 'daily', 'weekly', 'monthly',
-  'quarterly', 'annual', 'detection', 'routine', 'ongoing', 'request'
+  'policy', 'contract', 'intake', 'delivery', 'application', 'daily', 'weekly', 'monthly',
+  'quarterly', 'semiannual', 'annual', 'inspection', 'detection', 'routine', 'ongoing', 'request'
 ];
+
+/** How an authority reaches a facility, by who operates it. Missing operator = not shown. */
+export interface Applic { s: 'applies' | 'check'; why: string; }
+export interface Scope { county?: Applic; private?: Applic; state?: Applic; }
 
 export interface Authority {
   key: string;
   name: string;
   slug: string;
   group: 'Federal' | 'Federal detention and corrections' | 'Utah' | 'Other states';
+  /** Two-letter code for a state authority outside Utah. */
+  state?: string;
+  scope?: Scope;
 }
+
+/** States with a verified jail pest provision on this reference. */
+export const STATES: { code: string; name: string }[] = [
+  { code: 'AR', name: 'Arkansas' }, { code: 'CA', name: 'California' }, { code: 'CO', name: 'Colorado' },
+  { code: 'FL', name: 'Florida' }, { code: 'ID', name: 'Idaho' }, { code: 'IL', name: 'Illinois' },
+  { code: 'IN', name: 'Indiana' }, { code: 'IA', name: 'Iowa' }, { code: 'KY', name: 'Kentucky' },
+  { code: 'MD', name: 'Maryland' }, { code: 'MA', name: 'Massachusetts' }, { code: 'MI', name: 'Michigan' },
+  { code: 'MN', name: 'Minnesota' }, { code: 'MT', name: 'Montana' }, { code: 'NV', name: 'Nevada' },
+  { code: 'NJ', name: 'New Jersey' }, { code: 'NM', name: 'New Mexico' }, { code: 'NY', name: 'New York' },
+  { code: 'NC', name: 'North Carolina' }, { code: 'OH', name: 'Ohio' }, { code: 'OK', name: 'Oklahoma' },
+  { code: 'OR', name: 'Oregon' }, { code: 'PA', name: 'Pennsylvania' }, { code: 'SC', name: 'South Carolina' },
+  { code: 'TN', name: 'Tennessee' }, { code: 'TX', name: 'Texas' }, { code: 'UT', name: 'Utah' },
+  { code: 'VA', name: 'Virginia' }, { code: 'WA', name: 'Washington' }, { code: 'WI', name: 'Wisconsin' }
+];
+
+/**
+ * OSHA State Plan coverage of state and local government workers, as OSHA's State Plans page states it
+ * (saved OSHA_stateplans.txt, read 2026-09-24). 'none' = "State and local government workers are not
+ * covered by federal OSHA." Adoption of 1910.141 by a State Plan is verified only for Utah.
+ */
+export const OSHA_PUBLIC: Record<string, 'plan' | 'none'> = {
+  AR: 'none', CA: 'plan', CO: 'none', FL: 'none', ID: 'none', IL: 'plan', IN: 'plan', IA: 'plan',
+  KY: 'plan', MD: 'plan', MA: 'plan', MI: 'plan', MN: 'plan', MT: 'none', NV: 'plan', NJ: 'plan',
+  NM: 'plan', NY: 'plan', NC: 'plan', OH: 'none', OK: 'none', OR: 'plan', PA: 'none', SC: 'plan',
+  TN: 'plan', TX: 'none', UT: 'plan', VA: 'plan', WA: 'plan', WI: 'none'
+};
+
+/** Checklist PDFs in /downloads, built from this map by scripts/build-checklists.mjs. */
+export function checklistFile(stateName: string, variant: 'County_Jail' | 'Salt_Lake_County_Jail' | 'Utah_State_Prison' = 'County_Jail'): string {
+  if (variant !== 'County_Jail') return `Pest_Compliance_Checklist_${variant}.pdf`;
+  return `Pest_Compliance_Checklist_County_Jail_${stateName.replace(/ /g, '_')}.pdf`;
+}
+
+const JAIL = (why: string): Applic => ({ s: 'applies', why });
+const CHECK = (why: string): Applic => ({ s: 'check', why });
 
 export const AUTHORITIES: Authority[] = [
   { key: 'osha', name: 'OSHA 29 CFR 1910.141', slug: 'osha-1910-141-sanitation', group: 'Federal' },
@@ -55,8 +101,83 @@ export const AUTHORITIES: Authority[] = [
   { key: 'r687', name: 'Utah R68-7 Pesticide Control', slug: 'utah-r68-7-pesticide-applicator', group: 'Utah' },
   { key: 'slco', name: 'Salt Lake County Health Regulation #34', slug: 'slco-health-regulation-34-correctional-institutions', group: 'Utah' },
   { key: 'grama', name: 'Utah Code 63G-2-301 (GRAMA)', slug: 'utah-grama-correctional-facility-records', group: 'Utah' },
-  { key: 'ohio', name: 'Ohio Adm.Code 5120:1-8-05', slug: 'ohio-5120-1-8-05-jail-sanitation', group: 'Other states' },
-  { key: 'va', name: 'Virginia 6VAC15-40-1150', slug: 'virginia-6vac15-40-1150-vermin-pest-control', group: 'Other states' }
+  { key: 'ohio', name: 'Ohio Adm.Code 5120:1-8-05', slug: 'ohio-5120-1-8-05-jail-sanitation', group: 'Other states', state: 'OH',
+    scope: { county: CHECK('The rule applies to full service jails in Ohio.') } },
+  { key: 'va', name: 'Virginia 6VAC15-40-1150', slug: 'virginia-6vac15-40-1150-vermin-pest-control', group: 'Other states', state: 'VA',
+    scope: { county: CHECK("Part of Virginia's Minimum Standards for Jails and Lockups; confirm the chapter's applicability to your facility.") } },
+  { key: 'ar', name: 'Arkansas 12 CAR Part 50 (Minimum Standards for Adult Criminal Detention Facilities)', slug: 'arkansas-12-car-50-506-lice-pests-intake', group: 'Other states', state: 'AR',
+    scope: { county: JAIL('Adult criminal detention facilities of political subdivisions, including county, municipal and regional jails (12 CAR §50-101).') } },
+  { key: 'ca', name: 'California 15 CCR §§1212, 1264, 1280 (Title 15 Minimum Standards)', slug: 'california-15-ccr-1212-vermin-control', group: 'Other states', state: 'CA',
+    scope: { county: JAIL('Local detention facilities, Types I through IV, under the BSCC minimum standards (15 CCR §1010(a)).') } },
+  { key: 'co', name: 'Standards for Colorado Jails, Topic O, Standard 1', slug: 'colorado-jail-standards-topic-o-pest-vermin', group: 'Other states', state: 'CO',
+    scope: { county: JAIL('Each Colorado county jail must comply beginning July 1, 2026 (Section 2-3-1901.5, C.R.S.).') } },
+  { key: 'fl', name: 'Florida Model Jail Standards 14.12', slug: 'florida-model-jail-standards-14-12-insect-rodent', group: 'Other states', state: 'FL',
+    scope: {
+      county: JAIL('Every operator of a county or municipal detention facility must adopt the Florida Model Jail Standards at a minimum (Fla. Stat. § 951.23(4)(b)).'),
+      private: CHECK('The statute reaches any other entity that operates a county or municipal detention facility (Fla. Stat. § 951.23(4)(b)); confirm the facility is one.')
+    } },
+  { key: 'id', name: 'Idaho Jail Standards 10.03 (Idaho Sheriffs\' Association)', slug: 'idaho-jail-standards-10-03', group: 'Other states', state: 'ID',
+    scope: { county: CHECK("Idaho Sheriffs' Association standards for full-service jails, checked in the association's annual certification inspection. 10.03 is a recommended (R) standard.") } },
+  { key: 'il', name: 'Illinois 20 Ill. Adm. Code 701.120 (County Jail Standards)', slug: 'illinois-20-iac-701-120-pest-vermin-control', group: 'Other states', state: 'IL',
+    scope: { county: JAIL('Illinois county jails (20 Ill. Adm. Code 701). Municipal jails fall under Part 720, which is not mapped here.') } },
+  { key: 'in', name: 'Indiana 210 IAC 3-1-9 (County Jail Standards)', slug: 'indiana-210-iac-3-1-9-insects-rodents', group: 'Other states', state: 'IN',
+    scope: {
+      county: JAIL('Every county jail, including a privately contracted county detention facility (IC 11-12-4).'),
+      private: CHECK('Covers privately contracted county detention facilities; confirm the facility confines county arrestees and inmates.')
+    } },
+  { key: 'ia', name: 'Iowa 201 IAC 50.14 (Jail Facilities)', slug: 'iowa-201-iac-50-14-pest-free', group: 'Other states', state: 'IA',
+    scope: { county: JAIL('Facilities regulated by Iowa Code chapters 356 and 356A, except temporary holding facilities (rule 50.2(1)).') } },
+  { key: 'ky', name: 'Kentucky 501 KAR 3:080 (Full-service jails)', slug: 'kentucky-501-kar-3-080-vermin-pests', group: 'Other states', state: 'KY',
+    scope: { county: JAIL('Full-service jails (501 KAR Chapter 3). A life safety jail carries the same duty under 501 KAR 13:010.') } },
+  { key: 'md', name: 'Maryland COMAR 12.14.03.05 (Adult Detention Centers)', slug: 'maryland-comar-12-14-03-05-vermin-pest-control', group: 'Other states', state: 'MD',
+    scope: { county: JAIL('Adult detention centers, State or local, other than Division of Correction facilities and Patuxent Institution (COMAR 12.14.03).') } },
+  { key: 'ma974', name: 'Massachusetts 103 CMR 974.00 (County Correctional Facilities)', slug: 'massachusetts-103-cmr-974-06-insect-rodent-control', group: 'Other states', state: 'MA',
+    scope: { county: JAIL('All county correctional facilities (103 CMR 900.08).') } },
+  { key: 'ma451', name: 'Massachusetts 105 CMR 451.000 (Health and Sanitation, Correctional Facilities)', slug: 'massachusetts-103-cmr-974-06-insect-rodent-control', group: 'Other states', state: 'MA',
+    scope: {
+      county: JAIL('Every correctional facility operated by the Department of Correction or the counties (105 CMR 451.000).'),
+      state: JAIL('Every correctional facility operated by the Department of Correction or the counties (105 CMR 451.000).')
+    } },
+  { key: 'mi', name: 'Michigan R 791.727 (Jails and Lockups)', slug: 'michigan-r-791-727-vermin-pest-control-plan', group: 'Other states', state: 'MI',
+    scope: { county: JAIL('Jails and lockups under the jurisdiction of the county sheriff (MCL 791.262).') } },
+  { key: 'mn', name: 'Minnesota Rules 2911 (Jail Facilities)', slug: 'minnesota-rule-2911-7500-vermin-pests', group: 'Other states', state: 'MN',
+    scope: {
+      county: JAIL('Public and private correctional facilities for detention and confinement, unless inspected or licensed by another state agency (chapter 2911 scope).'),
+      private: JAIL('Public and private correctional facilities for detention and confinement, unless inspected or licensed by another state agency (chapter 2911 scope).')
+    } },
+  { key: 'mt', name: 'Montana Jail Standards 2016, 10.01', slug: 'montana-jail-standards-10-01', group: 'Other states', state: 'MT',
+    scope: { county: CHECK('Written for Montana adult local detention facilities. The adopting body and whether the 2016 edition is binding are not established on this reference.') } },
+  { key: 'nv', name: 'Nevada NAC 211.430 (Vermin control)', slug: 'nevada-nac-211-430-vermin-control', group: 'Other states', state: 'NV',
+    scope: { county: JAIL('Local correctional institutions, defined to include jails operated by or under the supervision of a subdivision of the State (NAC 211.070).') } },
+  { key: 'nj', name: 'New Jersey N.J.A.C. 10A:31-11 (Adult County Correctional Facilities)', slug: 'new-jersey-njac-10a-31-11-5-vermin-pests', group: 'Other states', state: 'NJ',
+    scope: {
+      county: JAIL('All adult county correctional facilities and facilities or units housing county inmates (N.J.A.C. 10A:31-1.2).'),
+      private: CHECK('Reaches facilities or units housing county inmates (N.J.A.C. 10A:31-1.2); confirm whether the facility houses them.')
+    } },
+  { key: 'nm', name: 'New Mexico Adult Detention Professional Standards SS-06 (NMAC accreditation)', slug: 'new-mexico-nmac-adps-ss-06', group: 'Other states', state: 'NM',
+    scope: { county: CHECK('Adult detention facilities in the New Mexico Government Accreditation Program. Whether a statute or rule requires the same of every county jail is not verified here.') } },
+  { key: 'ny', name: 'New York 9 NYCRR Part 7015 (Sanitation)', slug: 'new-york-9-nycrr-7015-2-insect-rodent', group: 'Other states', state: 'NY',
+    scope: { county: JAIL('Local correctional facilities, including county jails and penitentiaries, under the State Commission of Correction.') } },
+  { key: 'nc', name: 'North Carolina 15A NCAC 18A .1515 (adopted by 10A NCAC 14J .0701)', slug: 'north-carolina-15a-ncac-18a-1515-vermin-control', group: 'Other states', state: 'NC',
+    scope: { county: JAIL('All jails and local confinement facilities (10A NCAC 14J .0102(a) and .0701).') } },
+  { key: 'ok', name: 'Oklahoma OAC 310:670 (Jail Standards)', slug: 'oklahoma-oac-310-670-5-6-pest-control', group: 'Other states', state: 'OK',
+    scope: { county: JAIL('City and county detention facilities and lockups under the Oklahoma Jail Standards Act (74 O.S. § 192).') } },
+  { key: 'or', name: 'Oregon ORS 169.076 (Standards for local correctional facilities)', slug: 'oregon-ors-169-076-local-correctional-facility-standards', group: 'Other states', state: 'OR',
+    scope: { county: JAIL('Each local correctional facility in Oregon (ORS 169.076).') } },
+  { key: 'ossa', name: 'Oregon Jail Standards H-201 and H-108 (Oregon State Sheriffs\' Association)', slug: 'oregon-ossa-jail-standards-h-201', group: 'Other states', state: 'OR',
+    scope: { county: CHECK("Oregon jails that follow the Oregon State Sheriffs' Association jail standards.") } },
+  { key: 'pa', name: 'Pennsylvania 37 Pa. Code Chapter 95 (County Correctional Institutions)', slug: 'pennsylvania-37-pa-code-95-248-vermin-pests', group: 'Other states', state: 'PA',
+    scope: { county: JAIL('Every Pennsylvania county prison (37 Pa. Code Chapter 95).') } },
+  { key: 'sc', name: 'South Carolina Minimum Standards for Local Detention Facilities, 3003', slug: 'south-carolina-jail-standards-3003-vermin-insects-pests', group: 'Other states', state: 'SC',
+    scope: { county: JAIL('Every local detention facility in South Carolina (Standard 1011).') } },
+  { key: 'tn', name: 'Tennessee Corrections Institute Rule 1400-01-.09', slug: 'tennessee-tci-1400-01-09-vermin-pests', group: 'Other states', state: 'TN',
+    scope: { county: JAIL('All local facilities, Types I through IV, inspected annually by the Tennessee Corrections Institute.') } },
+  { key: 'tx', name: 'Texas 37 TAC (Texas Commission on Jail Standards)', slug: 'texas-tcjs-37-tac-261-147-vermin-control', group: 'Other states', state: 'TX',
+    scope: { county: JAIL('County jails and county correctional centers under the Texas Commission on Jail Standards.') } },
+  { key: 'wa', name: 'WASPC Jail Accreditation Standard 20.1 (Washington)', slug: 'washington-waspc-jail-accreditation-20-1', group: 'Other states', state: 'WA',
+    scope: { county: CHECK('Washington jails seeking or holding WASPC accreditation. No other Washington rule is verified here.') } },
+  { key: 'wi', name: 'Wisconsin DOC 350.12 (Jails)', slug: 'wisconsin-doc-350-12-vermin-pests', group: 'Other states', state: 'WI',
+    scope: { county: JAIL('County jails, state-local shared correctional facilities, and county houses of correction (DOC 350.02).') } }
 ];
 
 export interface Row {
@@ -64,6 +185,7 @@ export interface Row {
   auth: string;
   cite: string;
   requirement: string;
+  /** Verbatim source text. Empty only when `identifierOnly` (copyrighted standard recorded by identifier). */
   quote: string;
   evidence: string;
   cadence: Cadence[];
@@ -71,6 +193,9 @@ export interface Row {
   owner: string;
   kitchen?: boolean;
   should?: boolean;
+  /** Designated "recommended" by the standard itself. */
+  recommended?: boolean;
+  identifierOnly?: boolean;
 }
 
 const NOT_NAMED = 'Not named in the text';
@@ -354,5 +479,473 @@ export const ROWS: Row[] = [
   { id: 'va-quarterly', auth: 'va', cite: '6VAC15-40-1150',
     requirement: 'Control vermin and pests; service at least quarterly by a licensed pest control business or VDACS-certified personnel.',
     quote: 'The facility shall control vermin and pests and shall be serviced at least quarterly by a licensed pest control business or personnel certified by the Virginia Department of Agriculture and Consumer Services.',
-    evidence: 'Quarterly service records; provider license or certification', cadence: ['quarterly'], frequency: 'At least quarterly', owner: 'Licensed pest control business or certified personnel' }
+    evidence: 'Quarterly service records; provider license or certification', cadence: ['quarterly'], frequency: 'At least quarterly', owner: 'Licensed pest control business or certified personnel' },
+
+  // ---- Arkansas ----
+  { id: 'ar-intake', auth: 'ar', cite: '§50-506(a)', should: true,
+    requirement: 'At search, check each detainee for lice or other pests (written as "should") and enter all findings in the personal record.',
+    quote: "he or she should be checked for lice or other pests, cuts, bruises, needle marks, or any other bodily injuries, and all findings shall be entered in the detainee's personal record.",
+    evidence: 'Intake records showing the lice and pest check', cadence: ['intake'], frequency: 'At intake search', owner: NOT_NAMED },
+  { id: 'ar-delouse', auth: 'ar', cite: '§50-506(d)',
+    requirement: 'Delouse a lice-infested detainee by methods the Department of Health recommends.',
+    quote: 'A lice-infested detainee shall be deloused by methods which have been recommended by the Department of Health.',
+    evidence: 'Delousing records and the Department of Health method used', cadence: ['detection'], frequency: 'Each case', owner: NOT_NAMED },
+  { id: 'ar-outside-food', auth: 'ar', cite: '§50-1107(b)',
+    requirement: 'Only the chief executive may allow outside food, under rigid controls so the facility does not become infested.',
+    quote: 'shall exercise rigid controls to ensure that the facility remains secure and does not become infested, unsanitary, or otherwise unsafe',
+    evidence: 'Written exceptions and the controls applied', cadence: ['ongoing'], frequency: 'Each exception', owner: 'Chief executive' },
+  { id: 'ar-food', auth: 'ar', cite: '§50-1103(a)', kitchen: true,
+    requirement: 'Food service, contracted or on site, conforms to the Department of Health food service establishment rules.',
+    quote: 'Food service operations, whether contractual or on-site, shall conform to the Department of Health rules pertaining to food service establishments.',
+    evidence: 'Food service inspection reports', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- California ----
+  { id: 'ca-1212', auth: 'ca', cite: '15 CCR §1212',
+    requirement: 'The responsible physician writes a plan, and signs medical protocols, for treating vermin-infested persons and their contacts.',
+    quote: 'The responsible physician shall develop a written plan for the control and treatment of incarcerated persons who are found to be vermin-infested.',
+    evidence: 'The §1212 plan and the signed medical protocols', cadence: ['policy', 'detection'], frequency: 'Written plan; each case', owner: 'Responsible physician' },
+  { id: 'ca-1264', auth: 'ca', cite: '15 CCR §1264',
+    requirement: 'Policies to stop vermin spreading through personal clothing; infested clothing cleaned, disinfected, or stored closed.',
+    quote: 'Infested clothing shall be cleaned, disinfected, or stored in a closed container so as to eradicate or stop the spread of the vermin.',
+    evidence: 'Clothing policies and laundry records', cadence: ['policy', 'detection'], frequency: 'Written policy; each case', owner: 'Facility administrator' },
+  { id: 'ca-1280', auth: 'ca', cite: '15 CCR §1280',
+    requirement: 'A regular schedule of housekeeping and inspections to find and correct unsanitary conditions. Pests, frequency, and provider are not named.',
+    quote: 'Such a plan shall provide for a regular schedule of housekeeping tasks and inspections to identify and correct unsanitary or unsafe conditions or work practices which may be found.',
+    evidence: 'The housekeeping and inspection schedule and its correction records', cadence: ['policy', 'routine'], frequency: 'Regular schedule (frequency not set)', owner: 'Facility administrator' },
+  { id: 'ca-food', auth: 'ca', cite: 'Health & Safety Code §114259.1, via 15 CCR §1245(a)', kitchen: true,
+    requirement: 'Kitchens follow the Retail Food Code, which requires food facility premises to be kept free of vermin.',
+    quote: 'The premises of each food facility shall be kept free of vermin.',
+    evidence: 'Kitchen inspection reports under the Retail Food Code', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'ca-annual', auth: 'ca', cite: 'Health & Safety Code §101045(a)',
+    requirement: 'The county health officer investigates health and sanitary conditions in the county jail at least once a year.',
+    quote: 'The county health officer shall, at least annually, investigate health and sanitary conditions in a county jail',
+    evidence: "The county health officer's annual inspection report", cadence: ['annual'], frequency: 'At least annually', owner: 'County health officer' },
+
+  // ---- Colorado ----
+  { id: 'co-policy', auth: 'co', cite: 'Topic O, Std. 1(6)(a)',
+    requirement: 'A policy to mitigate and to respond to pest and vermin control issues.',
+    quote: 'Jails shall have a policy to mitigate and respond to pest and vermin control issues.',
+    evidence: 'The written pest and vermin policy, showing both mitigation and response steps; pest complaints tied to work orders and closure', cadence: ['policy'], frequency: 'Written policy', owner: 'The jail' },
+  { id: 'co-health', auth: 'co', cite: 'Topic O, Std. 1(6)(b)',
+    requirement: 'Comply with all inspections required by local or state health authorities.',
+    quote: 'The jail shall comply with all inspections required by local or state health authorities.',
+    evidence: 'Local or state health authority inspection reports', cadence: ['inspection'], frequency: 'As the health authority requires', owner: 'The jail' },
+  { id: 'co-refuse', auth: 'co', cite: 'Topic O, Std. 1(5)(a)',
+    requirement: 'Remove garbage and refuse from confinement areas daily, into durable, cleanable containers that do not attract or allow breeding of rodents or other vermin.',
+    quote: 'disposed of in durable containers which are easily cleaned, which do not leak or absorb liquid and which do not attract or allow the breeding of rodents or other vermin',
+    evidence: 'Waste-handling schedule; container condition records', cadence: ['daily'], frequency: 'Daily removal', owner: NOT_NAMED },
+  { id: 'co-waste', auth: 'co', cite: 'Topic O, Std. 1(5)(d)',
+    requirement: 'Solid waste disposal must not attract or allow the breeding of vermin.',
+    quote: '(II) attract or allow the breeding of vermin;',
+    evidence: 'Solid waste disposal practice and site condition', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'co-quarterly', auth: 'co', cite: 'Recommendations/Best Practices (3)', should: true,
+    requirement: 'Processes for sanitation and vermin inspections, with inspections at least quarterly by a local pest control business or certified pest controller (a best practice, written as "should" and "may").',
+    quote: 'The jail should establish processes for sanitation and vermin inspections, and may ensure that inspections are conducted at least quarterly by a local pest control business or a certified pest controller.',
+    evidence: 'Inspection and service records, quarterly by a pest control business or certified pest controller', cadence: ['quarterly'], frequency: 'At least quarterly (recommended)', owner: 'The jail' },
+
+  // ---- Florida ----
+  { id: 'fl-free', auth: 'fl', cite: '14.12',
+    requirement: 'Keep detention facilities free of all insects and rodents.',
+    quote: 'Detention facilities shall be kept free of all insects and rodents.',
+    evidence: 'Inspection and service findings showing no activity, or activity with corrective action', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'fl-program', auth: 'fl', cite: '14.12',
+    requirement: 'Maintain a vermin control program in all areas on a scheduled basis.',
+    quote: 'A program to control vermin (e.g., pest control) in all areas of the detention facility will be maintained on a scheduled basis.',
+    evidence: 'The scheduled vermin control program and service records matching it', cadence: ['policy', 'routine'], frequency: 'On the facility schedule', owner: NOT_NAMED },
+  { id: 'fl-openings', auth: 'fl', cite: '14.12',
+    requirement: 'Seal or screen every outside opening against insects and rodents.',
+    quote: 'All outside openings shall be effectively sealed or screened to prevent entry of insects or rodents.',
+    evidence: 'Records of sealed or screened outside openings', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'fl-label', auth: 'fl', cite: '14.12',
+    requirement: 'Apply every pesticide by its registered label.',
+    quote: 'All pesticides used to control insects or rodents shall be applied in accordance with instructions and cautions on the registered product label.',
+    evidence: 'Pesticide application records showing label compliance', cadence: ['application'], frequency: 'Each application', owner: NOT_NAMED },
+  { id: 'fl-licensed', auth: 'fl', cite: '14.12',
+    requirement: 'Restricted use pesticides only by Florida-certified persons; a facility without certified operators uses a commercial licensed pest control company.',
+    quote: 'Facilities not having certified pest control operators shall utilize commercial licensed pest control companies.',
+    evidence: 'Commercial licensed pest control contract and license, or certification of in-house operators', cadence: ['contract'], frequency: 'At contract award and renewal', owner: 'Commercial licensed pest control company, or certified in-house operators' },
+  { id: 'fl-storage', auth: 'fl', cite: '8.9 (serious-violation item)',
+    requirement: 'Locked storage, separate from food supplies, for insect and rodent spray and other poisons.',
+    quote: 'A locked storage area separate from food supplies shall be provided for soaps, detergents, waxes, cleaning compounds, insect and rodent spray, and other poisons.',
+    evidence: 'The locked storage location, separate from food', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'fl-weekly', auth: 'fl', cite: '14.16',
+    requirement: 'A formal sanitation inspection at least weekly; substantial deficiencies recorded and corrected.',
+    quote: 'The Officer-in-Charge or designee will conduct a formal sanitation inspection of the facility at least once a week, and any substantial deficiencies will be recorded and corrected.',
+    evidence: 'Weekly sanitation inspections and corrections', cadence: ['weekly'], frequency: 'At least weekly', owner: 'Officer-in-Charge or designee' },
+  { id: 'fl-inspect', auth: 'fl', cite: 'Fla. Stat. § 951.2302(3)',
+    requirement: 'Jail standards inspections at least twice a year, at least 120 days apart.',
+    quote: 'The jail standards must require that each detention facility be inspected, at a minimum, twice annually for compliance with the jail standards',
+    evidence: 'The twice-yearly Florida Model Jail Standards inspection reports', cadence: ['semiannual'], frequency: 'Twice a year, 120+ days apart', owner: NOT_NAMED },
+
+  // ---- Idaho ----
+  { id: 'id-plan', auth: 'id', cite: '10.03 (R)', recommended: true,
+    requirement: 'A plan for the control of vermin and pests that includes monthly inspections.',
+    quote: 'The facility has a plan for the control of vermin and pests which includes monthly inspections.',
+    evidence: 'The written vermin and pest control plan; monthly inspection records with dates, locations, findings and actions', cadence: ['policy', 'monthly'], frequency: 'Monthly, under a written plan', owner: 'The facility' },
+  { id: 'id-fumigation', auth: 'id', cite: '10.03 (R)', recommended: true,
+    requirement: 'Any necessary fumigation is done by a licensed pest control professional.',
+    quote: 'If fumigations are necessary, they are done by a licensed pest control professional.',
+    evidence: 'License of any professional who performed fumigation', cadence: ['application'], frequency: 'Each fumigation', owner: 'Licensed pest control professional' },
+
+  // ---- Illinois ----
+  { id: 'il-program', auth: 'il', cite: '701.120(g)',
+    requirement: 'Establish and document a continuous and effective program of insect and rodent control and extermination.',
+    quote: 'A continuous and effective program of insect and rodent control and extermination shall be established and documented.',
+    evidence: 'The written program; service and treatment documentation showing it is continuous', cadence: ['policy', 'ongoing'], frequency: 'Continuous', owner: NOT_NAMED },
+  { id: 'il-body-inspect', auth: 'il', cite: '701.120(f)(1)',
+    requirement: 'Inspect living areas frequently to control body pests.',
+    quote: 'Frequent inspection of living areas shall be made to aid in control of body pests.',
+    evidence: 'Living-area inspection records', cadence: ['routine'], frequency: 'Frequently (frequency not set)', owner: NOT_NAMED },
+  { id: 'il-body-control', auth: 'il', cite: '701.120(f)(2)',
+    requirement: 'Take immediate control or extermination measures when body pest infestation occurs.',
+    quote: 'Immediate control or extermination measures shall be taken when body pest infestation occurs.',
+    evidence: 'Immediate-response records', cadence: ['detection'], frequency: 'Immediately on infestation', owner: NOT_NAMED },
+  { id: 'il-openings', auth: 'il', cite: '701.120(a)(3)',
+    requirement: 'Protect openings to the outside with tight-fitting self-closing doors; screening no coarser than 16 mesh to the inch.',
+    quote: 'Openings to the outside shall be effectively protected against the entrance of rodents and insects with tight fitting self-closing doors.',
+    evidence: 'Door, window, and screen condition records', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- Indiana ----
+  { id: 'in-weekly', auth: 'in', cite: '210 IAC 3-1-9(d)',
+    requirement: 'Inspect the jail weekly for evidence of insects and rodents.',
+    quote: 'Each jail shall be inspected weekly for evidence of insects and rodents.',
+    evidence: 'Weekly inspection records for evidence of insects and rodents', cadence: ['weekly'], frequency: 'Weekly', owner: NOT_NAMED },
+  { id: 'in-licensed', auth: 'in', cite: '210 IAC 3-1-9(d)',
+    requirement: 'Obtain licensed extermination services to treat as often as necessary to eliminate insects and rodents.',
+    quote: 'Licensed extermination services shall be obtained to spray or treat facilities as often as necessary to eliminate insects and rodents.',
+    evidence: "The provider's license and service records; records showing treatment continued until elimination", cadence: ['contract', 'detection'], frequency: 'As often as necessary', owner: 'Licensed extermination services' },
+  { id: 'in-remove', auth: 'in', cite: '210 IAC 3-1-9(d)',
+    requirement: 'Remove inmates from an area when spraying or fogging cannot properly be done with them present.',
+    quote: 'Inmates shall be removed from an area if spraying or fogging is necessary and cannot properly be accomplished if inmates are present.',
+    evidence: 'Records of inmate relocation during spraying or fogging', cadence: ['application'], frequency: 'Each spraying or fogging', owner: NOT_NAMED },
+  { id: 'in-areas', auth: 'in', cite: '210 IAC 3-1-9(c)',
+    requirement: 'A designated jail official inspects all areas at least weekly, and each living area daily.',
+    quote: 'All areas of a jail shall be inspected by a designated jail official at least once per week.',
+    evidence: 'Weekly all-area and daily living-area inspection records', cadence: ['weekly', 'daily'], frequency: 'Weekly; living areas daily', owner: 'Designated jail officials' },
+  { id: 'in-annual', auth: 'in', cite: 'IC 11-12-4-2(a)',
+    requirement: 'The Department of Correction inspects each county jail at least once a year.',
+    quote: 'The department shall inspect each county jail at least one (1) time each year to determine whether it is complying with the standards adopted under section 1 of this chapter.',
+    evidence: "The Department's annual inspection report", cadence: ['annual'], frequency: 'At least annually', owner: 'Indiana Department of Correction' },
+
+  // ---- Iowa ----
+  { id: 'ia-pestfree', auth: 'ia', cite: '50.14(1)"a"(2)',
+    requirement: 'Maintain the jail in a pest-free condition.',
+    quote: 'The jail shall be maintained in a pest-free condition.',
+    evidence: 'Pest control service records showing the jail is kept pest-free', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'ia-certified', auth: 'ia', cite: '50.14(1)"a"(2)',
+    requirement: 'Anyone spraying chemicals is certified by the Iowa Department of Agriculture and Land Stewardship.',
+    quote: 'Persons spraying chemicals shall be certified by the Iowa department of agriculture and land stewardship.',
+    evidence: 'Certification of each person who sprays chemicals', cadence: ['application'], frequency: 'Each application', owner: 'Persons spraying chemicals' },
+  { id: 'ia-exposure', auth: 'ia', cite: '50.14(1)"a"(2)',
+    requirement: 'Prisoners and staff are not directly exposed to the chemicals used.',
+    quote: 'Prisoners and staff shall not be directly exposed to the chemicals being used.',
+    evidence: 'Records showing prisoners and staff were not directly exposed during treatment', cadence: ['application'], frequency: 'Each application', owner: NOT_NAMED },
+  { id: 'ia-annual', auth: 'ia', cite: '50.3',
+    requirement: 'The chief jail inspector inspects each jail at least annually and reports the results within 45 days.',
+    quote: 'The chief jail inspector or authorized representatives shall visit and inspect each jail within this state at least annually to determine the degree of compliance with these standards',
+    evidence: "The chief jail inspector's annual report", cadence: ['annual'], frequency: 'At least annually', owner: 'Chief jail inspector' },
+
+  // ---- Kentucky ----
+  { id: 'ky-control', auth: 'ky', cite: '501 KAR 3:080 §1(1)',
+    requirement: 'The jailer or jail administrator provides for the control of vermin and pests. No frequency or provider is set.',
+    quote: 'The jailer or jail administrator shall provide for the control of vermin and pests.',
+    evidence: 'Pest control contract, invoices, service records, and follow-up', cadence: ['ongoing'], frequency: 'Ongoing', owner: 'Jailer or jail administrator' },
+  { id: 'ky-plan', auth: 'ky', cite: '501 KAR 3:080 §1(3)',
+    requirement: 'A written preventative maintenance plan with cleaning, inspection, and trash-removal schedules.',
+    quote: 'The jailer or jail administrator shall have a written preventative maintenance plan that includes: (a) A cleaning schedule for various locations and items in the jail; (b) A schedule for inspections by the jailer or jail administrator; (c) A schedule for trash and garbage removal;',
+    evidence: 'The written preventative maintenance plan and its inspection schedule', cadence: ['policy'], frequency: 'Written plan', owner: 'Jailer or jail administrator' },
+
+  // ---- Maryland ----
+  { id: 'md-quarterly', auth: 'md', cite: '12.14.03.05A(3)(b)',
+    requirement: 'A written housekeeping policy that provides for quarterly vermin and pest control services.',
+    quote: '(b) Quarterly vermin and pest control services;',
+    evidence: 'The written housekeeping policy; service records for each quarter', cadence: ['policy', 'quarterly'], frequency: 'Quarterly', owner: 'Managing official of the facility' },
+  { id: 'md-weekly', auth: 'md', cite: '12.14.03.05A(2)',
+    requirement: 'A written policy requiring weekly sanitation inspections of internal and external areas.',
+    quote: '(2) Requiring weekly sanitation inspections of internal and external facility areas;',
+    evidence: 'Weekly sanitation inspection records', cadence: ['weekly'], frequency: 'Weekly', owner: 'Managing official of the facility' },
+  { id: 'md-audit', auth: 'md', cite: 'Commission audit worksheet (rev. 4/2020)',
+    requirement: 'The Commission audit looks for a contract with a licensed exterminator and records of the services.',
+    quote: 'See contract with licensed exterminator. See records of provisions',
+    evidence: 'Contract with a licensed exterminator; quarterly service records', cadence: ['contract', 'inspection'], frequency: 'At each Commission audit', owner: NOT_NAMED },
+
+  // ---- Massachusetts ----
+  { id: 'ma974-policy', auth: 'ma974', cite: '103 CMR 974.06 (Required)',
+    requirement: 'Written policy and procedure govern the control of vermin and pests.',
+    quote: 'Written policy and procedure shall govern the control of vermin and pests.',
+    evidence: 'The written vermin and pest control policy and procedure', cadence: ['policy'], frequency: 'Written policy', owner: NOT_NAMED },
+  { id: 'ma974-licensed', auth: 'ma974', cite: '103 CMR 974.06 (Required)',
+    requirement: 'When pests exist, exterminate them without hazard to inmates or employees, by a person with appropriate licensing.',
+    quote: 'When they exist, such pests shall be exterminated in a manner which is not hazardous to the health of inmates or employees, by a person with appropriate licensing.',
+    evidence: 'License of each person who exterminated; records of when pests existed and were exterminated', cadence: ['detection'], frequency: 'When pests exist', owner: 'A person with appropriate licensing' },
+  { id: 'ma974-weekly', auth: 'ma974', cite: '103 CMR 974.04(1)',
+    requirement: 'Sanitation inspections of all institution areas at least weekly by a designated qualified employee.',
+    quote: 'At least weekly sanitation inspections of all institution areas by a designated qualified employee',
+    evidence: 'Weekly sanitation inspection records', cadence: ['weekly'], frequency: 'At least weekly', owner: 'Designated qualified employee' },
+  { id: 'ma451-exterminate', auth: 'ma451', cite: '105 CMR 451.361', recommended: true,
+    requirement: 'Extermination without hazard to inmates or employees, only by a person certified or licensed under M.G.L. c. 132B, § 10. The section is in the Recommended series; this sentence says "shall."',
+    quote: 'Extermination shall be undertaken in a manner which is not hazardous to the health of inmates or employees, and only by a person certified or licensed to apply pesticides pursuant to M.G.L. c. 132B, § 10.',
+    evidence: 'Applicator certification or license; treatment records', cadence: ['application'], frequency: 'Each application', owner: 'Certified or licensed pesticide applicator' },
+  { id: 'ma451-screens', auth: 'ma451', cite: '105 CMR 451.141',
+    requirement: 'Tight-fitting screens, at least 16 mesh, on each window and door used for ventilation to the exterior.',
+    quote: 'Each window and door which is used for ventilation to the exterior shall have tight-fitting screens with a minimum of 16 mesh per square inch to effectively block entrance of insects and rodents.',
+    evidence: 'Screen condition records for ventilation windows and doors', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- Michigan ----
+  { id: 'mi-plan', auth: 'mi', cite: 'R 791.727',
+    requirement: 'A written vermin and pest control plan that includes, at minimum, monthly inspections by a trained person the facility administrator designates.',
+    quote: 'A facility shall establish and maintain a written plan for the control of vermin and pests that includes, at a minimum, monthly inspections by a trained person designated by the facility administrator.',
+    evidence: 'The written plan; monthly inspection records naming the trained person; the designation and the training behind it', cadence: ['policy', 'monthly'], frequency: 'Monthly, under a written plan', owner: 'Trained person designated by the facility administrator' },
+  { id: 'mi-weekly', auth: 'mi', cite: 'R 791.724(a)',
+    requirement: 'Weekly sanitation inspections of all facility areas by a trained designee.',
+    quote: '(a) Weekly sanitation inspections of all facility areas by a trained person designated by the facility administrator.',
+    evidence: 'Weekly sanitation inspection records', cadence: ['weekly'], frequency: 'Weekly', owner: 'Trained person designated by the facility administrator' },
+  { id: 'mi-annual', auth: 'mi', cite: 'R 791.724(b)',
+    requirement: 'At least annual inspections by federal, state, or local sanitation and health officials where their standards apply.',
+    quote: '(b) At least annual inspections by federal, state, or local sanitation and health officials if federal, state, or local standards are applicable.',
+    evidence: 'Annual sanitation and health inspection reports', cadence: ['annual'], frequency: 'At least annually', owner: 'Federal, state, or local sanitation and health officials' },
+
+  // ---- Minnesota ----
+  { id: 'mn-plan', auth: 'mn', cite: '2911.7500',
+    requirement: 'A written plan for the control and elimination of vermin and pests. No frequency or provider is set.',
+    quote: 'The facility shall have a written plan for the control and elimination of vermin and pests.',
+    evidence: 'The written plan; inspections, findings, and treatment showing it is carried out', cadence: ['policy'], frequency: 'Written plan', owner: 'The facility' },
+  { id: 'mn-deterioration', auth: 'mn', cite: '2911.7400',
+    requirement: 'Policies and procedures to detect building and equipment deterioration, safety hazards, and unsanitary conditions.',
+    quote: 'The facility administrator or designee shall have policies and procedures designed to detect building and equipment deterioration, safety hazards, and unsanitary conditions.',
+    evidence: 'Maintenance records and work orders for the conditions found', cadence: ['policy'], frequency: 'Written policy', owner: 'Facility administrator or designee' },
+
+  // ---- Montana ----
+  { id: 'mt-outcome', auth: 'mt', cite: '10.01',
+    requirement: 'Vermin and pests are controlled. The standard names no frequency, provider, or record.',
+    quote: 'Vermin and pests are controlled.',
+    evidence: 'Service or inspection records with dates, locations, findings and actions; pest complaints tied to work orders and closure', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'mt-health', auth: 'mt', cite: '25.05',
+    requirement: 'Local and state public health authorities hold powers and duties to enforce pest and vermin control measures.',
+    quote: 'Both local and state public health authorities have powers and duties to enforce minimum public health standards including, but not limited to communicable disease control and prevention measures, housing conditions, housekeeping, laundry and linen services, indoor air, drinking water supply and sewage treatment systems, solid waste disposal, and pest and vermin control measures.',
+    evidence: 'Local health department inspection reports', cadence: ['inspection'], frequency: 'As health authorities inspect', owner: 'Local and state public health authorities' },
+
+  // ---- Nevada ----
+  { id: 'nv-measures', auth: 'nv', cite: 'NAC 211.430(1)',
+    requirement: 'Take effective measures to eliminate rodents, flies, cockroaches and other vermin.',
+    quote: 'The operator of each local correctional institution must take effective measures to eliminate rodents, flies, cockroaches and other vermin.',
+    evidence: 'Pest service and inspection records showing effective measures', cadence: ['ongoing'], frequency: 'Ongoing', owner: 'The operator of the institution' },
+  { id: 'nv-free', auth: 'nv', cite: 'NAC 211.430(1)',
+    requirement: 'Confinement premises free of vermin at all times, and kept so vermin cannot harbor or breed.',
+    quote: 'The premises of each facility used for confinement must be free of vermin at all times and must be kept in such a condition as will prevent the harboring or breeding of vermin.',
+    evidence: 'Inspection findings showing no activity, or activity with corrective action; harborage findings closed out', cadence: ['ongoing'], frequency: 'At all times', owner: NOT_NAMED },
+  { id: 'nv-openings', auth: 'nv', cite: 'NAC 211.430(2)–(4)',
+    requirement: 'Protect openings to the outside with tight-fitting self-closing doors, closed windows, and intact screening no larger than 16 mesh.',
+    quote: 'Openings to the outside must be effectively protected against the entrance of rodents, insects and other vermin by installation of tight-fitting, self-closing doors, closed windows and screening, and by providing controlled air currents or other means.',
+    evidence: 'Exclusion survey of exterior openings, doors, windows and screens, with repairs dated', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'nv-reports', auth: 'nv', cite: 'NAC 211.130',
+    requirement: 'Each health authority inspection is written up with the specific deficiencies found, and a copy goes to the institution.',
+    quote: 'The report must set forth the specific deficiencies found.',
+    evidence: "Health authority inspection reports and the jail's record of correcting each deficiency", cadence: ['inspection'], frequency: 'Each health authority inspection', owner: 'Health authority inspector' },
+
+  // ---- New Jersey ----
+  { id: 'nj-arrange', auth: 'nj', cite: '10A:31-11.5(a)',
+    requirement: 'Staff arrange for the control of vermin and pests.',
+    quote: 'Staff at each adult county correctional facility shall make arrangements for the control of vermin and pests.',
+    evidence: 'The pest control contract', cadence: ['contract'], frequency: 'At contract award and renewal', owner: 'Facility staff' },
+  { id: 'nj-monthly', auth: 'nj', cite: '10A:31-11.5(b)',
+    requirement: 'Licensed pest control professionals service the facility at least once a month.',
+    quote: 'Licensed pest control professionals shall be used at least once per month to clean or fumigate the facility.',
+    evidence: 'Contract with a licensed professional and the license; service records showing a visit every month', cadence: ['contract', 'monthly'], frequency: 'At least monthly', owner: 'Licensed pest control professionals' },
+  { id: 'nj-ipm', auth: 'nj', cite: '10A:31-11.5(c)',
+    requirement: 'Use integrated pest management practices to control the use of toxic pesticides.',
+    quote: 'Integrated pest management practices shall be utilized to control the use of toxic pesticides.',
+    evidence: 'The integrated pest management plan (monitoring, thresholds, exclusion and sanitation before pesticides); pesticide use records', cadence: ['policy', 'application'], frequency: 'Ongoing; each application', owner: NOT_NAMED },
+  { id: 'nj-codes', auth: 'nj', cite: '10A:31-11.1',
+    requirement: 'Comply with federal, state and local sanitation, safety and health codes.',
+    quote: 'Each adult county correctional facility shall comply with Federal, State and local sanitation, safety and health codes.',
+    evidence: 'Health and sanitation inspection results', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- New Mexico ----
+  { id: 'nm-plan', auth: 'nm', cite: 'SS-06',
+    requirement: 'A written control plan for vermin and pests that includes monthly inspection by a licensed exterminator, an extermination schedule, and documentation of inspection reports and treatment.',
+    quote: 'A written control plan addresses vermin and pest control.',
+    evidence: 'The written control plan; the extermination schedule', cadence: ['policy'], frequency: 'Written plan', owner: NOT_NAMED },
+  { id: 'nm-monthly', auth: 'nm', cite: 'SS-06',
+    requirement: 'Monthly inspection by a licensed exterminator.',
+    quote: 'monthly inspection by a licensed exterminator',
+    evidence: 'The pest control contract; monthly inspection reports by a licensed exterminator', cadence: ['contract', 'monthly'], frequency: 'Monthly', owner: 'Licensed exterminator' },
+  { id: 'nm-docs', auth: 'nm', cite: 'SS-06',
+    requirement: 'Document inspection reports and treatment.',
+    quote: 'documentation of inspection reports and treatment',
+    evidence: 'Inspection reports and treatment records', cadence: ['monthly', 'application'], frequency: 'Each inspection and treatment', owner: NOT_NAMED },
+  { id: 'nm-corrected', auth: 'nm', cite: 'SS-06, Process Indicators',
+    requirement: 'Show that identified deficiencies were corrected.',
+    quote: 'Inspection reports, including documentation that identified deficiencies were corrected.',
+    evidence: 'The deficiency, the correction, and the date, for each finding', cadence: ['detection'], frequency: 'Each finding', owner: NOT_NAMED },
+
+  // ---- New York ----
+  { id: 'ny-procedures', auth: 'ny', cite: '9 NYCRR 7015.2(e)',
+    requirement: 'Develop and implement procedures designed to eliminate insect and rodent infestation.',
+    quote: 'Each local correctional facility shall develop and implement procedures designed to eliminate insect and rodent infestation.',
+    evidence: 'The written procedures and records showing they are carried out', cadence: ['policy'], frequency: 'Written procedures', owner: 'Each local correctional facility' },
+  { id: 'ny-food', auth: 'ny', cite: '9 NYCRR 7015.2(e)(1)',
+    requirement: 'The chief administrative officer may prohibit or limit food accumulation in cells (permitted, not required).',
+    quote: 'the chief administrative officer may prohibit or establish limitations regarding the accumulation of food items in cells or individual housing areas',
+    evidence: 'Any limits on food in cells and how they are enforced', cadence: ['policy'], frequency: 'Written limits, if set', owner: 'Chief administrative officer' },
+  { id: 'ny-label', auth: 'ny', cite: '9 NYCRR 7015.2(e)(2)',
+    requirement: "Use any pesticide consistent with the manufacturer's recommendations and applicable law.",
+    quote: "any pesticide applied in the facility shall be used consistent with the manufacturer's recommendations and any applicable laws or regulations.",
+    evidence: 'Pesticide application records showing label-consistent use', cadence: ['application'], frequency: 'Each application', owner: NOT_NAMED },
+  { id: 'ny-annual', auth: 'ny', cite: '9 NYCRR 7015.3',
+    requirement: 'The chief administrative officer requests annual inspections by the local health authority.',
+    quote: 'The chief administrative officer shall request that the local health authority with jurisdiction over the facility perform annual inspections of the facility.',
+    evidence: 'The request, and the annual local health authority inspection results', cadence: ['annual'], frequency: 'Annually', owner: 'Chief administrative officer (requests); local health authority (inspects)' },
+
+  // ---- North Carolina ----
+  { id: 'nc-measures', auth: 'nc', cite: '15A NCAC 18A .1515(a)',
+    requirement: 'Effective measures to keep flies, rodents and other vermin out, and to prevent their breeding or presence on the premises.',
+    quote: '(a) Effective measures shall be taken to keep flies, rodents, and other vermin out of the local confinement facility and to prevent their breeding or presence on the premises.',
+    evidence: 'Pest control service records showing effective measures', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'nc-openings', auth: 'nc', cite: '15A NCAC 18A .1515(c)',
+    requirement: 'Protect openings to the outer air with self-closing doors, closed windows, or 16-mesh or finer screening, unless flying insects are absent nearby.',
+    quote: 'all openings to the outer air shall be effectively protected against entrance of such insects by self-closing doors, closed windows, 16-mesh or finer screening, or other effective means.',
+    evidence: 'Screen, door, and window condition records', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'nc-registered', auth: 'nc', cite: '15A NCAC 18A .1515(d)',
+    requirement: 'Use only pesticides registered with the EPA and the North Carolina Department of Agriculture for the specific use.',
+    quote: 'Only those pesticides shall be used which have been approved for a specific use and properly registered with the Environmental Protection Agency and with the North Carolina Department of Agriculture',
+    evidence: 'Pesticide product records showing EPA and state registration', cadence: ['application'], frequency: 'Each application', owner: NOT_NAMED },
+  { id: 'nc-annual', auth: 'nc', cite: '15A NCAC 18A .1503',
+    requirement: 'The facility is inspected at least once a year.',
+    quote: 'Inspections of local confinement facilities shall be made at least once a year.',
+    evidence: "The local health department's annual sanitation inspection and demerit score", cadence: ['annual'], frequency: 'At least annually', owner: NOT_NAMED },
+
+  // ---- Oklahoma ----
+  { id: 'ok-conducive', auth: 'ok', cite: '310:670-5-6(19)',
+    requirement: 'Eliminate immediately any condition conducive to harboring or breeding insects, rodents or other vermin.',
+    quote: 'Any condition conducive to harboring or breeding insects, rodents or other vermin shall be eliminated immediately.',
+    evidence: 'Records of conducive conditions found and eliminated, with dates', cadence: ['detection'], frequency: 'Immediately', owner: NOT_NAMED },
+  { id: 'ok-contract', auth: 'ok', cite: '310:670-5-6(19)',
+    requirement: 'Contract licensed pest control professionals, on the schedule the facility policy sets.',
+    quote: 'Licensed pest control professionals shall be contracted to perform pest control on a scheduled basis specified in the facility policy and procedure.',
+    evidence: 'The facility policy that sets the schedule; the contract and provider license; service records matching the schedule', cadence: ['contract', 'policy'], frequency: 'On the schedule in facility policy', owner: 'Licensed pest control professionals, under contract' },
+  { id: 'ok-delouse', auth: 'ok', cite: '310:670-5-8(3)',
+    requirement: 'Delousing procedures developed with the designated medical authority and used whenever vermin are detected.',
+    quote: 'Delousing procedures shall be developed in coordination with the designated medical authority and used whenever vermin are detected.',
+    evidence: "Delousing procedures with the medical authority's sign-off; delousing records", cadence: ['policy', 'detection'], frequency: 'Written procedure; each detection', owner: 'Designated medical authority (coordinates)' },
+
+  // ---- Oregon (ORS) ----
+  { id: 'or-policy', auth: 'or', cite: 'ORS 169.076(2)(g)',
+    requirement: 'A comprehensive written policy on vermin and communicable disease control.',
+    quote: '(g) Vermin and communicable disease control.',
+    evidence: 'The written policy; intake screening and delousing or treatment records where the policy calls for them', cadence: ['policy'], frequency: 'Written policy', owner: 'Each local correctional facility' },
+  { id: 'or-clean', auth: 'or', cite: 'ORS 169.076(8)',
+    requirement: 'Keep the facility clean.',
+    quote: 'Ensure that the facility be clean',
+    evidence: 'Pest service and inspection records; pest grievances tied to work orders and closure', cadence: ['ongoing'], frequency: 'Ongoing', owner: 'Each local correctional facility' },
+  { id: 'or-inspect', auth: 'or', cite: 'ORS 169.070(1)',
+    requirement: 'The Department of Corrections inspects local correctional facilities for compliance with these standards.',
+    quote: 'The department shall inspect local correctional facilities, lockups, temporary holds and juvenile detention facilities, to ensure compliance with the standards established in ORS 169.076 to 169.078',
+    evidence: 'Department of Corrections inspection reports and any corrective-measure correspondence', cadence: ['inspection'], frequency: 'Each Department inspection', owner: 'Oregon Department of Corrections' },
+
+  // ---- Oregon (OSSA), copyrighted: recorded by identifier ----
+  { id: 'ossa-h201', auth: 'ossa', cite: 'H-201 (Sanitation Plan)', identifierOnly: true,
+    requirement: 'A cleaning and sanitation policy and plan whose tasks include treatment for vermin as needed, as inspections determine.',
+    quote: '',
+    evidence: 'The written cleaning and sanitation plan; inspection records showing when treatment was needed and what followed', cadence: ['policy', 'detection'], frequency: 'Written plan; treatment as inspections find', owner: 'Jail officials' },
+  { id: 'ossa-h108', auth: 'ossa', cite: 'H-108 (Vermin-Infested or Washable Biohazards)', identifierOnly: true,
+    requirement: 'Procedures for handling vermin-infested or contaminated clothing, bedding, and mattresses so vermin are not transferred to clean supplies.',
+    quote: '',
+    evidence: 'Procedures and logs for handling vermin-infested clothing and bedding', cadence: ['policy', 'detection'], frequency: 'Written procedure; each case', owner: NOT_NAMED },
+
+  // ---- Pennsylvania ----
+  { id: 'pa-monthly', auth: 'pa', cite: '37 Pa. Code § 95.248(2) (essential)',
+    requirement: 'Vermin and pests are addressed monthly by a qualified person, and every pest or vermin treatment is documented.',
+    quote: 'The control of vermin and pests shall be addressed on a monthly basis by a qualified person, with documentation of the application of any pest or vermin control treatment.',
+    evidence: 'Monthly pest and vermin records showing who addressed them and their qualifications; documentation of each treatment', cadence: ['monthly', 'application'], frequency: 'Monthly; each treatment', owner: 'A qualified person' },
+  { id: 'pa-plan', auth: 'pa', cite: '37 Pa. Code § 95.248(2)',
+    requirement: 'A written sanitation and housekeeping plan covering all prison areas.',
+    quote: 'Written local policy must identify a sanitation and housekeeping plan.',
+    evidence: 'The written sanitation and housekeeping plan', cadence: ['policy'], frequency: 'Written plan', owner: NOT_NAMED },
+  { id: 'pa-inspection', auth: 'pa', cite: '37 Pa. Code § 95.248(2)',
+    requirement: 'A monthly sanitation inspection of all prison areas, documented and submitted to the prison administrator.',
+    quote: 'A sanitation inspection shall be conducted of all prison areas on a monthly basis to determine the health and safety status of the prison and the need for action.',
+    evidence: 'Monthly sanitation inspection reports submitted to the prison administrator', cadence: ['monthly'], frequency: 'Monthly', owner: 'Prison administrator or designee (receives the results)' },
+  { id: 'pa-food', auth: 'pa', cite: '37 Pa. Code § 95.230(2)', kitchen: true,
+    requirement: 'Store and prepare food to prevent damage from insects and rodents.',
+    quote: 'Food shall be stored and prepared in a proper manner to assure freshness and to prevent spoilage and damage from insects and rodents.',
+    evidence: 'Food storage conditions', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- South Carolina ----
+  { id: 'sc-program', auth: 'sc', cite: '3003(a)',
+    requirement: 'A regularly scheduled program of pest and vermin control and extermination.',
+    quote: 'Each facility shall have a regularly scheduled program of pest and vermin control and extermination.',
+    evidence: 'The written, regularly scheduled program; service records matching the schedule', cadence: ['policy', 'routine'], frequency: 'On the facility schedule', owner: NOT_NAMED },
+  { id: 'sc-measures', auth: 'sc', cite: '3003(b)',
+    requirement: 'Effective measures to keep flies, rodents and other vermin out, and to prevent their breeding or continued presence.',
+    quote: 'Effective measures shall be taken to keep flies, rodents, and other vermin out of the confinement facility and to prevent their breeding or continued presence on the premises.',
+    evidence: 'Service and inspection records', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'sc-openings', auth: 'sc', cite: '3003(b)',
+    requirement: 'Protect all openings to the outer air with self-closing doors, closed windows, or 16-mesh or finer screening.',
+    quote: 'All openings to the outer air shall be effectively protected against the entrance of insects and rodents by self-closing doors, closed windows, sixteen (16) mesh or finer screening, or other effective means.',
+    evidence: 'Door, window, and screen condition records', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'sc-annual', auth: 'sc', cite: '1014',
+    requirement: 'Annual inspection by the Department of Corrections Jail and Prison Inspection Division, with a follow-up.',
+    quote: 'staff from the Jail and Prison Inspection Division of the Department of Corrections will conduct an annual inspection of each facility.',
+    evidence: 'The annual inspection report and the follow-up', cadence: ['annual'], frequency: 'Annually, with follow-up', owner: 'Jail and Prison Inspection Division, Department of Corrections' },
+
+  // ---- Tennessee ----
+  { id: 'tn-control', auth: 'tn', cite: '1400-01-.09(5)',
+    requirement: 'Provide for control of vermin and pests; remove inmates from treatment areas when there is a risk of illness.',
+    quote: 'Facilities shall provide for control of vermin and pests and shall remove inmates from treatment areas if there is a risk of illness.',
+    evidence: 'Pest control service records; records of inmate relocation during treatment', cadence: ['ongoing', 'application'], frequency: 'Ongoing; each treatment', owner: 'The facility' },
+  { id: 'tn-walls', auth: 'tn', cite: '1400-01-.09(6)',
+    requirement: 'Keep housing and holding-area walls clean and free of objects that give vermin hiding places.',
+    quote: 'Inmate housing and temporary holding area walls shall be kept clean and free of pictures or other objects which provide hiding places for vermin or create a fire hazard.',
+    evidence: 'Housing inspection records showing walls kept free of harborage', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'tn-annual', auth: 'tn', cite: '1400-01-.02(4)(a)',
+    requirement: 'The Tennessee Corrections Institute may inspect all facilities annually; a facility that misses an applicable standard is recommended for non-certification.',
+    quote: 'the Tennessee Corrections Institute has the authority to inspect all facilities annually to verify compliance',
+    evidence: "The Institute's annual inspection and certification result", cadence: ['annual'], frequency: 'Annually', owner: 'Tennessee Corrections Institute' },
+
+  // ---- Texas ----
+  { id: 'tx-construction', auth: 'tx', cite: '37 TAC §261.147',
+    requirement: 'Facility construction protects against the entrance and infestation of vermin.',
+    quote: 'Facility construction shall protect against the entrance and infestation of vermin.',
+    evidence: 'Construction and repair records for screens, door sweeps, and other exclusion work', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'tx-screens', auth: 'tx', cite: '37 TAC §261.148',
+    requirement: 'Operable windows have insect screens.',
+    quote: 'Operable windows shall be equipped with insect screens.',
+    evidence: 'Window screen condition records', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'tx-plan', auth: 'tx', cite: '37 TAC §§279.1–279.2',
+    requirement: 'A written, Commission-approved sanitation plan that says how and by whom it is carried out. It sets no pest frequency or provider.',
+    quote: 'Each facility shall have and implement a written plan, reviewed and approved by the commission, for the maintenance of an acceptable level of cleanliness and sanitation throughout the facility.',
+    evidence: 'The Commission-approved sanitation plan and whether it addresses pests; any pest control contract and service records', cadence: ['policy'], frequency: 'Written plan', owner: 'The facility (plan approved by the Commission)' },
+  { id: 'tx-intake', auth: 'tx', cite: '37 TAC §273.4(a)(6)',
+    requirement: 'Intake health screening notes the presence of lice and vermin.',
+    quote: '(6) inventory of body deformities, ease of movement, markings, condition of body orifices, and presence of lice and vermin.',
+    evidence: 'Intake screening records for lice and vermin', cadence: ['intake'], frequency: 'At intake', owner: NOT_NAMED },
+
+  // ---- Washington (WASPC accreditation) ----
+  { id: 'wa-policy', auth: 'wa', cite: '20.1 (2026)',
+    requirement: 'Policy or procedures governing pest control.',
+    quote: 'The agency has policy or procedures governing pest control.',
+    evidence: 'The pest control policy or procedures; the service agreement, vendor invoice, or memo naming the provider', cadence: ['policy'], frequency: 'Written policy', owner: 'The agency' },
+
+  // ---- Wisconsin ----
+  { id: 'wi-program', auth: 'wi', cite: 'DOC 350.12(10)',
+    requirement: 'Control vermin and pests with an effective, documented program.',
+    quote: 'Vermin and pests are controlled with an effective, documented program.',
+    evidence: 'The written program; service reports, findings, and follow-up showing it is effective', cadence: ['policy', 'ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'wi-labels', auth: 'wi', cite: 'DOC 350.12(10)',
+    requirement: 'Label containers of rodent and insect poisons prominently and distinctly.',
+    quote: 'Containers of poisonous compounds used for exterminating rodents or insects shall be prominently and distinctly labeled for easy identification of contents.',
+    evidence: 'Labels on every container of poisonous compounds', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'wi-storage', auth: 'wi', cite: 'DOC 350.12(10)',
+    requirement: 'Store poisonous compounds apart from food and kitchenware, locked and out of inmate reach.',
+    quote: 'Poisonous compounds shall be stored independently and separately from food and kitchenware in a locked area not accessible to inmates.',
+    evidence: 'The locked storage location, separate from food', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'wi-monthly', auth: 'wi', cite: 'DOC 350.12(13)',
+    requirement: 'Safety and sanitation inspections completed and documented at least monthly.',
+    quote: 'Safety and sanitation inspections of the jail are completed and documented at a minimum of once monthly.',
+    evidence: 'Monthly safety and sanitation inspection records', cadence: ['monthly'], frequency: 'At least monthly', owner: NOT_NAMED },
+  { id: 'wi-annual', auth: 'wi', cite: 'Wis. Stat. § 301.37(3)',
+    requirement: 'The Department inspects each jail at least annually for safety and sanitation, reports deficiencies, and orders them corrected.',
+    quote: 'at least annually thereafter, the department shall inspect each institution with respect to safety, sanitation, adequacy and fitness',
+    evidence: "The Department's inspection report and any correction order", cadence: ['annual'], frequency: 'At least annually', owner: 'Wisconsin Department of Corrections' }
 ];

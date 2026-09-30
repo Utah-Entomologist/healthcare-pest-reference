@@ -8,7 +8,7 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 
 - [30-state comparison of jail pest standards](https://correctionspestreference.org/state-jail-standards/): the pest provision of each state's jail standards, side by side, quoted verbatim, with frequency, provider, and legal force.
 - [Authority index](https://correctionspestreference.org/authorities/): every federal, state, local and association authority on the reference.
-- [Pest Compliance Map](https://correctionspestreference.org/tools/compliance-map/): each requirement paired with the record that shows it was met.
+- [Pest Compliance Map](https://correctionspestreference.org/tools/compliance-map/): each requirement paired with the record that shows it was met, for federal detention standards and 30 states; filter by facility profile, download a PDF checklist per state, or export a spreadsheet.
 - [The Vermin Grievance File](https://correctionspestreference.org/tools/vermin-grievance-file/): the eight questions a pest grievance file must answer.
 - [Grievance-to-Work-Order Loop](https://correctionspestreference.org/tools/grievance-loop/): a printable log tying each complaint to its work order and closure.
 - [Methodology](https://correctionspestreference.org/methodology/): source tiers, confidence ratings, verification discipline, open questions.
