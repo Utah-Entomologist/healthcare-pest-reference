@@ -925,7 +925,7 @@ export const ROWS: Row[] = [
   { id: 'wa-policy', auth: 'wa', cite: '20.1 (2026)',
     requirement: 'Policy or procedures governing pest control.',
     quote: 'The agency has policy or procedures governing pest control.',
-    evidence: 'The pest control policy or procedures; the service agreement, vendor invoice, or memo naming the provider', cadence: ['policy'], frequency: 'Written policy', owner: 'The agency' },
+    evidence: "A copy of the current pest control policy; a copy of the service provider agreement (WASPC's required proofs, Rev. Jan 2026)", cadence: ['policy', 'contract'], frequency: 'Written policy; current agreement', owner: 'The agency' },
 
   // ---- Wisconsin ----
   { id: 'wi-program', auth: 'wi', cite: 'DOC 350.12(10)',
