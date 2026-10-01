@@ -10,10 +10,8 @@ import {
 } from '../lib/site';
 
 const practice = CONSULTING_PRACTICE_NAME;
-const reviewBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nHouses state inmates, ICE detainees, or U.S. Marshals prisoners?\n\nFood prepared on site?\n\nWhat prompted the review (upcoming inspection, a finding, contract rebid, litigation, other):\n\nBest phone:\n';
-const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Applicability review request (Corrections Pest Reference)')}&body=${encodeURIComponent(reviewBody)}`;
-const grievanceBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nRoughly how many pest-related grievances in the last 12 months:\n\nIs a claim pending or expected (if so, is counsel involved):\n\nBest phone:\n';
-const grievanceHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Vermin Grievance File Review request (Corrections Pest Reference)')}&body=${encodeURIComponent(grievanceBody)}`;
+const reviewHref = `${CONSULTING_PRACTICE_URL}/contact/`;
+const grievanceHref = `${CONSULTING_PRACTICE_URL}/contact/`;
 ---
 
 <BaseLayout

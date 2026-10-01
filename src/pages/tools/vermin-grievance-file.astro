@@ -3,8 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL, CONTACT_EMAIL } from '../../lib/site';
 import { CASE_QUOTES as Q, CASE_LINKS, QUESTIONS } from '../../data/grievanceFile';
 
-const reviewBody = 'Facility name:\n\nState and operator (county, state, federal, private):\n\nRoughly how many pest-related grievances in the last 12 months:\n\nIs a claim pending or expected (if so, is counsel involved):\n\nBest phone:\n';
-const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Vermin Grievance File Review request (Corrections Pest Reference)')}&body=${encodeURIComponent(reviewBody)}`;
+const reviewHref = 'https://frazerappliedentomology.com/contact/';
 ---
 
 <BaseLayout
@@ -152,6 +151,6 @@ const reviewHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Vermin
   <p class="no-print">
     A Board Certified Entomologist can trace a facility's recent pest grievances through these eight questions and report where
     the record goes missing. See the <a href="/consulting/#vermin-grievance-file-review">Vermin Grievance File Review</a>, or
-    <a href={reviewHref}>request one by email</a>.
+    <a href={reviewHref}>request one through the contact form</a>.
   </p>
 </BaseLayout>
