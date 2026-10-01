@@ -1,46 +1,192 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../lib/site';
-import { Content } from '../../data/scope-of-work.md';
+import { STATES } from '../../data/complianceMap';
+import { SOW_TITLE, SOW_SECTIONS, NATIONAL_SLOTS, tokenize, sowDocxName } from '../../data/scopeOfWork.js';
+
+const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
 ---
 
 <BaseLayout
-  title="Model Scope of Work: Pest Management for Jails, Prisons, and Detention Facilities"
-  description="Free model contract language for a correctional facility pest management scope of work: licensed applicators, monthly service, device maps, required application records, written findings, pesticide management, exclusion, and buyer-protective contract terms. Word download."
+  title={SOW_TITLE}
+  description="Free model contract language for a correctional facility pest management scope of work, filled in for your state: the authorities that apply, licensed applicators, monthly service, device maps, required application records, written findings, pesticide management, exclusion, and buyer-protective contract terms. Word download for each state."
   breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Model Scope of Work', url: `${SITE_URL}/tools/scope-of-work/` }]}
 >
   <style is:global>
     .lede { font-size: 1.05rem; max-width: 46rem; }
-    .dl { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0 2.25rem; }
+    .dl { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
     .btn { display: inline-block; padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid var(--color-primary); background: var(--color-primary); color: #fff; font-size: 0.92rem; text-decoration: none; cursor: pointer; font: inherit; }
     .btn.secondary { background: transparent; color: var(--color-primary); }
+    .dl-note { font-size: 0.82rem; color: var(--color-text-muted); margin: 0 0 2rem; max-width: 46rem; }
+    .profile { border: 1px solid var(--color-rule); border-radius: 6px; padding: 1.25rem; margin: 1.5rem 0 1rem; max-width: 46rem; }
+    .profile h2 { margin-top: 0; font-size: 1.1rem; }
+    .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem 1.5rem; }
+    .field label, .field legend { font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 0.35rem; }
+    .field select { width: 100%; padding: 0.45rem; font: inherit; border: 1px solid var(--color-rule); border-radius: 4px; background: transparent; color: inherit; }
+    .field fieldset { border: 0; margin: 0; padding: 0; }
+    .field .hint { font-size: 0.8rem; color: var(--color-text-muted); margin: 0.3rem 0 0; }
+    .opt { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.92rem; margin: 0.25rem 0; font-weight: 400 !important; }
+    .opt input { margin-top: 0.2rem; }
+    .for { font-size: 0.92rem; margin: 0 0 1.25rem; max-width: 46rem; }
     .sow { max-width: 46rem; }
     .sow h2 { font-size: 1.2rem; margin-top: 2rem; }
     .sow p { margin: 0.6rem 0; }
+    .sow .slot { background: rgba(58, 90, 120, 0.09); border-radius: 2px; padding: 0 0.15rem; }
+    .sow p.note { font-size: 0.9rem; border-left: 3px solid #8a5a00; padding: 0.35rem 0.75rem; }
+    [hidden] { display: none !important; }
+    .print-only { display: none; }
     @media print {
-      .site-header, .site-footer, nav, .dl, .breadcrumbs, .no-print { display: none !important; }
+      .site-header, .site-footer, nav, .dl, .dl-note, .breadcrumbs, .no-print, .profile { display: none !important; }
+      .print-only { display: block; }
       body { font-size: 10.5pt; }
+      .sow .slot { background: none; padding: 0; }
       a { color: inherit; text-decoration: none; }
     }
   </style>
 
-  <h1>Model Scope of Work: Pest Management for Jails, Prisons, and Detention Facilities</h1>
+  <h1>{SOW_TITLE}</h1>
   <p class="lede">
     Contract language an agency can drop into a pest control solicitation or renewal. It asks for what the authorities on this
     reference ask for, in the form an inspector will want to see: licensed applicators, a fixed service frequency, a device map,
-    complete application records, written findings with owners, and contract terms that keep the agency in control.
+    complete application records, written findings with owners, and contract terms that keep the agency in control. Choose your
+    state and Section 2.1 lists the authorities that reach the facility.
   </p>
+
+  <form class="profile no-print" id="sow-profile-form" onsubmit="return false">
+    <h2>Fill it in for your facility</h2>
+    <div class="fields">
+      <div class="field">
+        <label for="s-state">State</label>
+        <select id="s-state">
+          <option value="" selected>National version (no state)</option>
+          {STATES.map((s) => <option value={s.code}>{s.name}</option>)}
+        </select>
+        <p class="hint">{STATES.length} states are on this reference.</p>
+      </div>
+      <div class="field">
+        <label for="s-op">Who operates it</label>
+        <select id="s-op">
+          <option value="county" selected>County jail</option>
+          <option value="state">State prison</option>
+          <option value="bop">Federal Bureau of Prisons institution</option>
+          <option value="private">Privately operated facility</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="s-ice">ICE detainees</label>
+        <select id="s-ice">
+          <option value="none" selected>None</option>
+          <option value="pbnds">Yes, agreement uses PBNDS 2011</option>
+          <option value="nds">Yes, agreement uses NDS 2019</option>
+          <option value="unsure">Yes, not sure which standards</option>
+        </select>
+      </div>
+      <div class="field">
+        <fieldset>
+          <legend>Also true of this facility</legend>
+          <label class="opt"><input type="checkbox" id="s-kitchen" checked /> Food is prepared on site</label>
+          <label class="opt"><input type="checkbox" id="s-usms" /> Holds U.S. Marshals Service prisoners under a detention agreement</label>
+          <label class="opt" id="s-opt-udc" hidden><input type="checkbox" id="s-udc" checked /> Houses Utah state inmates</label>
+          <label class="opt" id="s-opt-slco" hidden><input type="checkbox" id="s-slco" /> Located in Salt Lake County</label>
+        </fieldset>
+      </div>
+    </div>
+  </form>
+
   <div class="dl">
-    <a class="btn" href="/downloads/Model_Scope_of_Work_Correctional_Pest_Management.docx" download>Download Word (.docx)</a>
-    <button type="button" class="btn secondary" onclick="window.print()">Print or save as PDF</button>
-    <a class="btn secondary no-print" href="/tools/compliance-map/">Compliance Map</a>
+    <a class="btn" id="sow-docx" href={nationalDocx} download>Download Word (.docx)</a>
+    <button type="button" class="btn secondary" id="sow-print">Print or save as PDF</button>
+    <a class="btn secondary no-print" id="sow-map" href="/tools/compliance-map/">Compliance Map</a>
   </div>
+  <p class="dl-note" id="sow-dl-note">The Word file is the national version, with every state-specific item left in [BRACKETS].</p>
+
+  <p class="for"><strong>Filled in for:</strong> <span id="sow-for">National version (no state chosen)</span></p>
 
   <div class="sow">
-    <Content />
+    <h2>How to use this document</h2>
+    <p>
+      This is model language for the scope of work in a pest management contract for a jail, prison, or detention facility.
+      Text in [BRACKETS] is for the agency to complete or choose. Delete provisions that do not fit the facility. Each requirement
+      is keyed to the authorities that ask for it; the <a href="/tools/compliance-map/">Pest Compliance Map</a> shows which
+      authorities reach a given facility. Adapt it with your procurement officer and counsel. It is not legal advice.
+    </p>
+    {SOW_SECTIONS.map((sec) => (
+      <>
+        <h2>{sec.h}</h2>
+        {sec.p.map((para) => {
+          const toks = tokenize(para);
+          const onlySlot = toks.length === 1 && toks[0].slot;
+          return (
+            <p class={onlySlot ? 'note' : undefined} data-only-slot={onlySlot ? toks[0].slot : undefined} hidden={onlySlot && !NATIONAL_SLOTS[toks[0].slot]}>
+              {toks.map((t) => (t.slot ? <span class="slot" data-slot={t.slot}>{NATIONAL_SLOTS[t.slot]}</span> : t.text))}
+            </p>
+          );
+        })}
+      </>
+    ))}
   </div>
+
+  <p class="print-only">From the Model Scope of Work, {SITE_URL.replace('https://', '')}/tools/scope-of-work/. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413).</p>
 
   <p class="no-print">
     Questions about adapting it to a specific facility or solicitation: <a href="/consulting/">Consulting</a>.
   </p>
+
+  <script>
+    import { AUTHORITIES, STATES, OSHA_PUBLIC } from '../../data/complianceMap';
+    import { STATE_STANDARD_ROWS } from '../../data/stateStandards.js';
+    import { contextFrom } from '../../lib/applicability.js';
+    import { sowSlots, profileLabel, sowDocxName, defaultProfile } from '../../data/scopeOfWork.js';
+
+    const ctx = contextFrom(AUTHORITIES, STATES, OSHA_PUBLIC);
+    const data = { AUTHORITIES, ctx, STANDARD_ROWS: STATE_STANDARD_ROWS };
+    const $ = (id: string) => document.getElementById(id) as any;
+    const F = { state: $('s-state'), op: $('s-op'), ice: $('s-ice'), kitchen: $('s-kitchen'), usms: $('s-usms'), udc: $('s-udc'), slco: $('s-slco') };
+
+    (function readParams() {
+      const q = new URLSearchParams(location.search);
+      const st = (q.get('state') || '').toUpperCase();
+      if (st && ctx.STATE_NAMES[st]) F.state.value = st;
+      if (q.get('op') && ['county', 'state', 'bop', 'private'].includes(q.get('op')!)) F.op.value = q.get('op');
+      if (q.get('ice') && ['none', 'pbnds', 'nds', 'unsure'].includes(q.get('ice')!)) F.ice.value = q.get('ice');
+      (['kitchen', 'usms', 'udc', 'slco'] as const).forEach((k) => { const v = q.get(k); if (v === '1' || v === '0') F[k].checked = v === '1'; });
+    })();
+
+    function answers() {
+      const a = { state: F.state.value, op: F.op.value, ice: F.ice.value, kitchen: F.kitchen.checked, usms: F.usms.checked, udc: F.udc.checked, slco: F.slco.checked };
+      if (a.state !== 'UT') { a.udc = false; a.slco = false; }
+      if (a.state === 'UT' && a.op === 'bop') a.slco = false;
+      return a;
+    }
+
+    function render() {
+      const a = answers();
+      $('s-opt-udc').hidden = !(a.state === 'UT' && (a.op === 'county' || a.op === 'private'));
+      $('s-opt-slco').hidden = !(a.state === 'UT' && a.op !== 'bop');
+      const slots: Record<string, string> = sowSlots(a.state ? a : null, data);
+      document.querySelectorAll<HTMLElement>('.sow [data-slot]').forEach((el) => { el.textContent = slots[el.dataset.slot!] ?? ''; });
+      document.querySelectorAll<HTMLElement>('.sow [data-only-slot]').forEach((p) => { p.hidden = !slots[p.dataset.onlySlot!]; });
+      $('sow-for').textContent = profileLabel(a.state ? a : null, ctx.STATE_NAMES);
+
+      const name = a.state ? ctx.STATE_NAMES[a.state] : '';
+      const link = $('sow-docx');
+      link.href = '/downloads/' + sowDocxName(name) + '.docx';
+      const def = name ? defaultProfile(a.state) : null;
+      const same = def && (['op', 'ice', 'kitchen', 'usms', 'slco'] as const).every((k) => (def as any)[k] === (a as any)[k]) && (a.state !== 'UT' || a.op !== 'county' || def.udc === a.udc);
+      link.textContent = name ? 'Download Word (.docx), ' + name + ' county jail' : 'Download Word (.docx)';
+      $('sow-dl-note').textContent = !name
+        ? 'The Word file is the national version, with every state-specific item left in [BRACKETS].'
+        : same
+          ? 'The Word file is filled in for a ' + name + ' county jail that prepares food on site, with no ICE detainees or USMS prisoners.'
+          : 'The Word file is filled in for a ' + name + ' county jail that prepares food on site. For the profile above, use Print and choose Save as PDF, or edit Section 2.1 of the Word file.';
+
+      const q = new URLSearchParams({ state: a.state, op: a.op, ice: a.ice, kitchen: a.kitchen ? '1' : '0', usms: a.usms ? '1' : '0', udc: a.udc ? '1' : '0', slco: a.slco ? '1' : '0' });
+      $('sow-map').href = '/tools/compliance-map/' + (a.state ? '?' + q.toString() : '');
+      try { history.replaceState(null, '', location.pathname + (a.state ? '?' + q.toString() : '')); } catch (e) {}
+    }
+
+    Object.values(F).forEach((el) => el.addEventListener('change', render));
+    $('sow-print').addEventListener('click', () => window.print());
+    render();
+  </script>
 </BaseLayout>

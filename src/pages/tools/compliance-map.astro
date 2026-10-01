@@ -3,7 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL, CONTACT_EMAIL } from '../../lib/site';
 import { AUTHORITIES, ROWS, CADENCE_LABELS, CADENCE_ORDER, STATES, OSHA_PUBLIC, checklistFile } from '../../data/complianceMap';
 
-const byAuth = AUTHORITIES.map((a) => ({ ...a, rows: ROWS.filter((r) => r.auth === a.key) }));
+const stateNameByCode = Object.fromEntries(STATES.map((s) => [s.code, s.name]));
+const groupLabel = (a: (typeof AUTHORITIES)[number]) => (a.group === 'Other states' && a.state ? stateNameByCode[a.state] : a.group);
+const isFederal = (a: (typeof AUTHORITIES)[number]) => a.group.startsWith('Federal');
+const byAuth = AUTHORITIES.map((a, i) => ({ ...a, i, label: groupLabel(a), rows: ROWS.filter((r) => r.auth === a.key) }))
+  .sort((x, y) => (isFederal(x) === isFederal(y) ? (isFederal(x) ? x.i - y.i : x.label.localeCompare(y.label) || x.i - y.i) : isFederal(x) ? -1 : 1));
 const authNames = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.name]));
 const authSlugs = Object.fromEntries(AUTHORITIES.map((a) => [a.key, a.slug]));
 const authState = Object.fromEntries(AUTHORITIES.filter((a) => a.state).map((a) => [a.key, a.state]));
@@ -106,7 +110,8 @@ const rowCount = ROWS.length;
       <div class="field">
         <label for="f-state">State</label>
         <select id="f-state" name="state">
-          {STATES.map((s) => <option value={s.code} selected={s.code === 'UT'}>{s.name}</option>)}
+          <option value="" selected>Choose your state</option>
+          {STATES.map((s) => <option value={s.code}>{s.name}</option>)}
           <option value="OTHER">Another state (not yet on this reference)</option>
         </select>
         <p class="hint">{STATES.length} states are on this reference. To suggest one, <a href="https://frazerappliedentomology.com/contact/">write to the author</a>.</p>
@@ -141,7 +146,7 @@ const rowCount = ROWS.length;
     </div>
     <div class="actions">
       <button type="button" class="btn" id="print-btn">Print checklist or save as PDF</button>
-      <a class="btn secondary" id="pdf-link" href={`/downloads/${pdfFiles.UT}`} download hidden>Download ready-made PDF</a>
+      <a class="btn secondary" id="pdf-link" download hidden>Download ready-made PDF</a>
       <button type="button" class="btn secondary" id="csv-btn" hidden>Download spreadsheet (CSV)</button>
       <a class="btn secondary" id="review-link" href="https://frazerappliedentomology.com/contact/">Request an applicability review</a>
     </div>
@@ -177,7 +182,7 @@ const rowCount = ROWS.length;
         <tr class="auth-head">
           <th colspan="5" scope="rowgroup">
             <a href={`/authorities/${a.slug}/`}>{a.name}</a>
-            <span class="cite">{a.group}</span>
+            <span class="cite">{a.label}</span>
           </th>
         </tr>
         {a.rows.map((r) => (
@@ -204,16 +209,21 @@ const rowCount = ROWS.length;
   <p class="no-print">
     Want the facility-specific version, checked against your agreements and walked on site? See
     <a href="/consulting/">Consulting</a>. Writing a pest control contract? Start from the
-    <a href="/tools/scope-of-work/">model scope of work</a>. Comparing states? See the
+    <a href="/tools/scope-of-work/" id="sow-link">model scope of work</a>, filled in for this profile. Comparing states? See the
     <a href="/state-jail-standards/">{STATES.length}-state comparison</a>.
   </p>
 
+  <script>
+    import { status } from '../../lib/applicability.js';
+    (window as any).CPRApplicability = { status };
+  </script>
+
   <script define:vars={{ AUTH_NAMES: authNames, AUTH_SLUGS: authSlugs, AUTH_STATE: authState, AUTH_SCOPE: authScope, STATE_NAMES: stateNames, OSHA_PUBLIC, PDF_FILES: pdfFiles, PDF_UTAH: pdfUtah, CAD_LABELS: CADENCE_LABELS, CAD_ORDER: CADENCE_ORDER, EMAIL: CONTACT_EMAIL, SITE: SITE_URL }}>
-    (function () {
+    function boot() {
       var $ = function (id) { return document.getElementById(id); };
       var F = { state: $('f-state'), op: $('f-op'), ice: $('f-ice'), kitchen: $('f-kitchen'), usms: $('f-usms'), udc: $('f-udc'), slco: $('f-slco') };
       var OPS = { county: 'County jail', state: 'State prison', bop: 'Federal Bureau of Prisons institution', 'private': 'Privately operated facility' };
-      function stateName(c) { return c === 'OTHER' ? 'Another state' : STATE_NAMES[c]; }
+      function stateName(c) { return c === 'OTHER' ? 'Another state' : (STATE_NAMES[c] || 'No state chosen'); }
 
       // A profile can arrive in the URL (?state=PA&op=county&kitchen=1), so a filtered map can be linked or printed.
       (function readParams() {
@@ -227,75 +237,15 @@ const rowCount = ROWS.length;
       function writeParams(a) {
         var q = new URLSearchParams({ state: a.state, op: a.op, ice: a.ice, kitchen: a.kitchen ? '1' : '0', usms: a.usms ? '1' : '0', udc: a.udc ? '1' : '0', slco: a.slco ? '1' : '0' });
         try { history.replaceState(null, '', location.pathname + '?' + q.toString()); } catch (e) {}
+        var sl = document.getElementById('sow-link');
+        if (sl) sl.setAttribute('href', '/tools/scope-of-work/' + (a.state ? '?' + q.toString() : ''));
       }
 
       function answers() {
         return { state: F.state.value, op: F.op.value, ice: F.ice.value, kitchen: F.kitchen.checked, usms: F.usms.checked, udc: F.udc.checked, slco: F.slco.checked };
       }
-      function A(why) { return { s: 'applies', why: why }; }
-      function C(why) { return { s: 'check', why: why }; }
-      function N(why) { return { s: 'na', why: why }; }
-      var NO_FOOD = 'No food is prepared on site.';
-      var PRIVATE_DEFAULT = 'Written for local jails. Whether it reaches a privately operated facility depends on whose prisoners it holds and on its agreement; confirm with the inspecting agency.';
-      function status(key, a) {
-        var UT = a.state === 'UT';
-        var pub = a.op === 'county' || a.op === 'state';
-        if (AUTH_STATE[key]) {
-          if (a.state !== AUTH_STATE[key] || a.op === 'bop') return null;
-          var sc = AUTH_SCOPE[key] || {};
-          if (sc[a.op]) return { s: sc[a.op].s, why: sc[a.op].why };
-          return a.op === 'private' ? C(PRIVATE_DEFAULT) : null;
-        }
-        switch (key) {
-          case 'osha':
-            if (a.op === 'private') return A('A private-sector workplace, covered by federal OSHA or by a State Plan that covers the private sector.');
-            if (a.op === 'bop') return C('How OSHA requirements reach a federal employer is not established on this reference.');
-            if (UT) return A("Utah's State Plan covers state and local government workers, and Utah rule R614-1-4 incorporates Part 1910.");
-            if (OSHA_PUBLIC[a.state] === 'none') return N('OSHA: ' + stateName(a.state) + ' has no State Plan, and state and local government workers are not covered by federal OSHA.');
-            if (OSHA_PUBLIC[a.state] === 'plan') return C('OSHA lists ' + stateName(a.state) + "'s State Plan as covering state and local government workers; its adoption of 1910.141 is not verified here.");
-            return C('Depends on whether your state runs an OSHA-approved State Plan that covers public employers.');
-          case 'fda':
-            if (!a.kitchen) return N(NO_FOOD);
-            if (UT) return A('Utah adopts the 2022 Food Code through R392-100, which does not exempt jails or prisons.');
-            if (a.ice === 'nds') return A('ICE NDS 2019 Standard 4.1 directs compliance with the most recent FDA food code.');
-            return C("Depends on your state's adoption of the Food Code and on who inspects your kitchen.");
-          case 'r392':
-            if (!UT) return null;
-            return a.kitchen ? A('Utah food service establishments; the exemption list does not include jails or prisons.') : N(NO_FOOD);
-          case 'r687':
-            if (!UT) return null;
-            return a.op === 'bop' ? C('Governs pesticide application in Utah; its reach onto federal property is not established here.') : A('Every commercial pesticide application in Utah, and staff use of restricted use pesticides.');
-          case 'udc':
-            if (!UT || a.op === 'bop') return null;
-            if (a.op === 'state') return A('State prisons are Utah Department of Corrections facilities.');
-            if (a.udc) return A('The facility houses offenders under Utah Department of Corrections jurisdiction.');
-            return N('Applies to facilities housing offenders under Utah Department of Corrections jurisdiction.');
-          case 'slco':
-            if (!UT || !a.slco || a.op === 'bop') return null;
-            return A('Correctional institutions in Salt Lake County. Whether the 2007 text has been amended is being confirmed.');
-          case 'grama':
-            if (!UT || a.op === 'bop') return null;
-            return pub ? A('Records of Utah governmental entities, including county jails and state prisons.') : C("Governs records held by governmental entities, including records of a contractor's services.");
-          case 'pbnds12':
-          case 'pbnds41':
-            if (a.ice === 'pbnds') return (key === 'pbnds41' && !a.kitchen) ? N(NO_FOOD) : A('The ICE agreement uses PBNDS 2011.');
-            if (a.ice === 'unsure') return C('Confirm which standard set your ICE agreement uses.');
-            return null;
-          case 'nds11':
-          case 'nds41':
-            if (a.ice === 'nds') return (key === 'nds41' && !a.kitchen) ? N(NO_FOOD) : A('The ICE agreement uses NDS 2019.');
-            if (a.ice === 'unsure') return C('Confirm which standard set your ICE agreement uses.');
-            return null;
-          case 'usms':
-            return a.usms ? A('To the extent the Marshals Service detention agreement incorporates the handbook.') : null;
-          case 'bop1614':
-            return a.op === 'bop' ? A('Bureau-owned or -operated facilities.') : null;
-          case 'bop4700':
-            if (a.op !== 'bop') return null;
-            return a.kitchen ? A('The Bureau Food Service program.') : N(NO_FOOD);
-        }
-        return null;
-      }
+      var CTX = { AUTH_STATE: AUTH_STATE, AUTH_SCOPE: AUTH_SCOPE, OSHA_PUBLIC: OSHA_PUBLIC, STATE_NAMES: STATE_NAMES };
+      function status(key, a) { return window.CPRApplicability.status(key, a, CTX); }
       function profileText(a) {
         var p = [stateName(a.state), OPS[a.op]];
         if (a.state === 'UT' && (a.op === 'county' || a.op === 'private')) p.push(a.udc ? 'houses state inmates' : 'no state inmates');
@@ -352,7 +302,10 @@ const rowCount = ROWS.length;
         var hasState = Object.keys(active).some(function (k) { return AUTH_STATE[k] || ['udc', 'r392', 'r687', 'slco', 'grama'].indexOf(k) >= 0; });
         var note = $('scope-note');
         note.hidden = true;
-        if (a.state === 'OTHER') {
+        if (!a.state) {
+          note.textContent = 'Choose your state to add its jail standard and any other state rules on this reference. Until then, the map shows the federal authorities.';
+          note.hidden = false;
+        } else if (a.state === 'OTHER') {
           note.textContent = 'Your state\'s jail pest provision is not on this reference yet. The federal and food-code authorities above are marked as they apply; ask for an applicability review to have your state\'s rules read against the facility.';
           note.hidden = false;
         } else if (!hasState && a.op !== 'bop') {
@@ -455,6 +408,7 @@ const rowCount = ROWS.length;
       $('print-btn').addEventListener('click', function () { window.print(); });
       $('csv-btn').addEventListener('click', downloadCsv);
       render();
-    })();
+    }
+    if (window.CPRApplicability) boot(); else document.addEventListener('DOMContentLoaded', boot);
   </script>
 </BaseLayout>

@@ -16,7 +16,7 @@ services_applicable:
   - vermin inspections
   - health authority inspection
 verbatim_available: true
-summary: "A comparison standard from outside Utah. Ohio requires monthly sanitation, vermin, and safety inspections of all areas of a full service jail by a designated trained staff person, and an annual inspection by local or state health authorities."
+summary: "Ohio requires monthly sanitation, vermin, and safety inspections of all areas of a full service jail by a designated trained staff person, and an annual inspection by local or state health authorities."
 related_authorities:
   - slug: virginia-6vac15-40-1150-vermin-pest-control
     why: "Another state jail standard, which goes further: quarterly service by a licensed pest control business or certified personnel."

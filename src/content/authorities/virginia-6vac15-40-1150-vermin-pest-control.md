@@ -15,7 +15,7 @@ services_applicable:
   - pest control service
   - pest control contracting
 verbatim_available: true
-summary: "A comparison standard from outside Utah, and the most specific state jail pest provision on this reference: the facility shall control vermin and pests and be serviced at least quarterly by a licensed pest control business or personnel certified by the state agriculture department."
+summary: "Virginia's jail standard names both the duty and the provider: the facility shall control vermin and pests and be serviced at least quarterly by a licensed pest control business or personnel certified by the state agriculture department."
 related_authorities:
   - slug: ohio-5120-1-8-05-jail-sanitation
     why: "Another state jail standard, which requires monthly vermin inspections by a designated trained staff person rather than licensed service."

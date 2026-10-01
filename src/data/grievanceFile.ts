@@ -109,8 +109,8 @@ export const QUESTIONS: GrievanceQuestion[] = [
     n: 5,
     half: 'Response',
     question: 'What did they find, and what did they apply or install: product, EPA registration number, location, quantity?',
-    record: 'The service record for that visit: findings, the areas treated, each product with its EPA registration number and amount, and any traps, monitors, or exclusion work installed. In Utah, a commercial applicator’s application record has nine required elements and must be made within 24 hours.',
-    authority: { label: 'Utah R68-7-11(11)', href: '/authorities/utah-r68-7-pesticide-applicator/' }
+    record: 'The service record for that visit: findings, the areas treated, each product with its EPA registration number and amount, and any traps, monitors, or exclusion work installed. Each state’s pesticide rules set what an application record must contain and how soon it must be made.',
+    authority: { label: 'Compliance Map', href: '/tools/compliance-map/' }
   },
   {
     n: 6,
