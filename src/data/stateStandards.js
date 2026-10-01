@@ -233,7 +233,7 @@ export const STATE_STANDARD_ROWS = [
   {
     state: 'Washington',
     instrument: 'WASPC Jail Accreditation Standards (2026), 20.1',
-    force: 'Association accreditation standard, for agencies seeking accreditation.',
+    force: 'Association accreditation standard, for agencies seeking accreditation. Separately, RCW 70.48.071 requires every city and county jail to adopt operating standards and be operated in accordance with them.',
     quote: 'The agency has policy or procedures governing pest control.',
     frequency: 'None named. WASPC’s required proofs: the agency policy and a copy of the service provider agreement.',
     slug: 'washington-waspc-jail-accreditation-20-1'

@@ -2,15 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_URL } from '../../lib/site';
 import { STATES } from '../../data/complianceMap';
-import { SOW_TITLE, SOW_SECTIONS, NATIONAL_SLOTS, tokenize, sowDocxName } from '../../data/scopeOfWork.js';
+import { tokenize } from '../../data/scopeOfWork.js';
+import { POLICY_TITLE, POLICY_SECTIONS, POLICY_NATIONAL_SLOTS, policyDocxName } from '../../data/pestPolicy.js';
 
-const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
+const nationalDocx = `/downloads/${policyDocxName('')}.docx`;
 ---
 
 <BaseLayout
-  title={SOW_TITLE}
-  description="Free model contract language for a correctional facility pest management scope of work, filled in for your state: the authorities that apply, licensed applicators, monthly service, device maps, required application records, written findings, pesticide management, exclusion, and buyer-protective contract terms. Word download for each state."
-  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Model Scope of Work', url: `${SITE_URL}/tools/scope-of-work/` }]}
+  title={POLICY_TITLE}
+  description="Free model pest control policy for a jail, prison, or detention facility, filled in for your state: responsibility, licensed service at a set frequency, pest reports closed as work orders, food service, infested persons and property, pesticide storage, records, and review. Word download for each state."
+  breadcrumbs={[{ name: 'Tools', url: `${SITE_URL}/tools/` }, { name: 'Model Pest Control Policy', url: `${SITE_URL}/tools/pest-control-policy/` }]}
 >
   <style is:global>
     .lede { font-size: 1.05rem; max-width: 46rem; }
@@ -44,12 +45,12 @@ const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
     }
   </style>
 
-  <h1>{SOW_TITLE}</h1>
+  <h1>{POLICY_TITLE}</h1>
   <p class="lede">
-    Contract language an agency can drop into a pest control solicitation or renewal. It asks for what the authorities on this
-    reference ask for, in the form an inspector will want to see: licensed applicators, a fixed service frequency, a device map,
-    complete application records, written findings with owners, and contract terms that keep the agency in control. Choose your
-    state and Section 2.1 lists the authorities that reach the facility.
+    The written pest control policy is a document many standards ask for. Washington's accreditation standard asks
+    for the agency's pest control policy, Oregon's statute requires a written vermin control policy, and 11 of the 30 states
+    on this reference ask for a plan, policy, or program without setting a frequency. That makes the policy the place where the
+    frequency, the provider, and the records get set. Choose your state and Section 2.2 lists the authorities that reach the facility.
   </p>
 
   <form class="profile no-print" id="sow-profile-form" onsubmit="return false">
@@ -98,6 +99,7 @@ const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
     <a class="btn" id="sow-docx" href={nationalDocx} download>Download Word (.docx)</a>
     <button type="button" class="btn secondary" id="sow-print">Print or save as PDF</button>
     <a class="btn secondary no-print" id="sow-map" href="/tools/compliance-map/">Compliance Map</a>
+    <a class="btn secondary no-print" id="policy-sow" href="/tools/scope-of-work/">Model Scope of Work</a>
   </div>
   <p class="dl-note" id="sow-dl-note">The Word file is the national version, with every state-specific item left in [BRACKETS].</p>
 
@@ -106,21 +108,23 @@ const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
   <div class="sow">
     <h2>How to use this document</h2>
     <p>
-      This is model language for the scope of work in a pest management contract for a jail, prison, or detention facility.
-      Text in [BRACKETS] is for the agency to complete or choose. Delete provisions that do not fit the facility. Each requirement
-      is keyed to the authorities that ask for it; the <a href="/tools/compliance-map/">Pest Compliance Map</a> shows which
-      authorities reach a given facility. Set the service frequency to match the agency's own pest control policy (see the
-      <a href="/tools/pest-control-policy/">model pest control policy</a>). Adapt it with your procurement officer and counsel. It is not legal advice.
+      This is model language for an agency's written pest control policy or procedure. Text in [BRACKETS] is for the agency to
+      complete or choose. Delete provisions that do not fit the facility. Each provision is keyed to the authorities that ask for
+      it; the <a href="/tools/compliance-map/">Pest Compliance Map</a> shows which authorities reach a given facility. If the
+      agency's policy manual already has a pest control policy (<a href="/authorities/lexipol-custody-manual-policy-805-vermin-pest-control/">Lexipol's
+      custody manual has one, Policy 805</a>), use this model to review it, and keep one policy, not two. Keep the service
+      agreement consistent with the policy the agency adopts; the <a href="/tools/scope-of-work/">Model Scope of Work</a> is
+      contract language for that. Adapt it with your counsel. It is not legal advice.
     </p>
-    {SOW_SECTIONS.map((sec) => (
+    {POLICY_SECTIONS.map((sec) => (
       <>
         <h2>{sec.h}</h2>
         {sec.p.map((para) => {
           const toks = tokenize(para);
           const onlySlot = toks.length === 1 && toks[0].slot;
           return (
-            <p class={onlySlot ? 'note' : undefined} data-only-slot={onlySlot ? toks[0].slot : undefined} hidden={onlySlot && !NATIONAL_SLOTS[toks[0].slot]}>
-              {toks.map((t) => (t.slot ? <span class="slot" data-slot={t.slot}>{NATIONAL_SLOTS[t.slot]}</span> : t.text))}
+            <p class={onlySlot ? 'note' : undefined} data-only-slot={onlySlot ? toks[0].slot : undefined} hidden={onlySlot && !POLICY_NATIONAL_SLOTS[toks[0].slot]}>
+              {toks.map((t) => (t.slot ? <span class="slot" data-slot={t.slot}>{POLICY_NATIONAL_SLOTS[t.slot]}</span> : t.text))}
             </p>
           );
         })}
@@ -128,17 +132,18 @@ const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
     ))}
   </div>
 
-  <p class="print-only">From the Model Scope of Work, {SITE_URL.replace('https://', '')}/tools/scope-of-work/. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413).</p>
+  <p class="print-only">From the Model Pest Control Policy, {SITE_URL.replace('https://', '')}/tools/pest-control-policy/. Maintained by Trenton S. Frazer, Board Certified Entomologist (BCE #B3413).</p>
 
   <p class="no-print">
-    Questions about adapting it to a specific facility or solicitation: <a href="/consulting/">Consulting</a>.
+    Questions about adapting it to a specific facility: <a href="/consulting/">Consulting</a>.
   </p>
 
   <script>
     import { AUTHORITIES, STATES, OSHA_PUBLIC } from '../../data/complianceMap';
     import { STATE_STANDARD_ROWS } from '../../data/stateStandards.js';
     import { contextFrom } from '../../lib/applicability.js';
-    import { sowSlots, profileLabel, sowDocxName, defaultProfile } from '../../data/scopeOfWork.js';
+    import { profileLabel, defaultProfile } from '../../data/scopeOfWork.js';
+    import { policySlots, policyDocxName } from '../../data/pestPolicy.js';
 
     const ctx = contextFrom(AUTHORITIES, STATES, OSHA_PUBLIC);
     const data = { AUTHORITIES, ctx, STANDARD_ROWS: STATE_STANDARD_ROWS };
@@ -167,14 +172,14 @@ const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
       $('s-opt-udc').hidden = !(a.state === 'UT' && (a.op === 'county' || a.op === 'private'));
       $('s-opt-slco').hidden = !(a.state === 'UT' && a.op !== 'bop');
       $('s-opt-lexipol').hidden = a.op === 'bop';
-      const slots: Record<string, string> = sowSlots(a.state ? a : null, data);
+      const slots: Record<string, string> = policySlots(a.state ? a : null, data);
       document.querySelectorAll<HTMLElement>('.sow [data-slot]').forEach((el) => { el.textContent = slots[el.dataset.slot!] ?? ''; });
       document.querySelectorAll<HTMLElement>('.sow [data-only-slot]').forEach((p) => { p.hidden = !slots[p.dataset.onlySlot!]; });
       $('sow-for').textContent = profileLabel(a.state ? a : null, ctx.STATE_NAMES);
 
       const name = a.state ? ctx.STATE_NAMES[a.state] : '';
       const link = $('sow-docx');
-      link.href = '/downloads/' + sowDocxName(name) + '.docx';
+      link.href = '/downloads/' + policyDocxName(name) + '.docx';
       const def = name ? defaultProfile(a.state) : null;
       const same = def && (['op', 'ice', 'kitchen', 'usms', 'slco', 'lexipol'] as const).every((k) => (def as any)[k] === (a as any)[k]) && (a.state !== 'UT' || a.op !== 'county' || def.udc === a.udc);
       link.textContent = name ? 'Download Word (.docx), ' + name + ' county jail' : 'Download Word (.docx)';
@@ -182,11 +187,12 @@ const nationalDocx = `/downloads/${sowDocxName('')}.docx`;
         ? 'The Word file is the national version, with every state-specific item left in [BRACKETS].'
         : same
           ? 'The Word file is filled in for a ' + name + ' county jail that prepares food on site, with no ICE detainees or USMS prisoners.'
-          : 'The Word file is filled in for a ' + name + ' county jail that prepares food on site. For the profile above, use Print and choose Save as PDF, or edit Section 2.1 of the Word file.';
+          : 'The Word file is filled in for a ' + name + ' county jail that prepares food on site. For the profile above, use Print and choose Save as PDF, or edit Section 2 of the Word file.';
 
       const q = new URLSearchParams({ state: a.state, op: a.op, ice: a.ice, kitchen: a.kitchen ? '1' : '0', usms: a.usms ? '1' : '0', udc: a.udc ? '1' : '0', slco: a.slco ? '1' : '0' });
       if (a.lexipol) q.set('lexipol', '1');
       $('sow-map').href = '/tools/compliance-map/' + (a.state ? '?' + q.toString() : '');
+      $('policy-sow').href = '/tools/scope-of-work/' + (a.state ? '?' + q.toString() : '');
       try { history.replaceState(null, '', location.pathname + (a.state ? '?' + q.toString() : '')); } catch (e) {}
     }
 

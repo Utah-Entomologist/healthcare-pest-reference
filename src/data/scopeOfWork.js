@@ -19,6 +19,7 @@ export const SOW_HOW_TO_USE =
   'This is model language for the scope of work in a pest management contract for a jail, prison, or detention facility. ' +
   'Text in [BRACKETS] is for the agency to complete or choose. Delete provisions that do not fit the facility. ' +
   'Each requirement is keyed to the authorities that ask for it; the Pest Compliance Map shows which authorities reach a given facility. ' +
+  "Set the service frequency to match the agency's own pest control policy. " +
   'Adapt it with your procurement officer and counsel. It is not legal advice.';
 
 export const SOW_SECTIONS = [
@@ -40,6 +41,7 @@ export const SOW_SECTIONS = [
   { h: '4. Service frequency', p: [
     '4.1 Scheduled service throughout the Facility at least [MONTHLY]. (Benchmarks: ICE PBNDS 2011 Standard 1.2 §V.A.4, USMS FPBDS F.2.4, and BOP Program Statement 1614.01 §47.a each set monthly inspections; Virginia 6VAC15-40-1150 sets service at least quarterly.)',
     '{{stateStandardNote}}',
+    '{{policyNote}}',
     '4.2 Food service areas: scheduled service [WEEKLY / TWICE MONTHLY / MONTHLY].',
     '4.3 Callbacks: on-site response within [24] hours of a request, and within [4] hours for [RODENT ACTIVITY IN FOOD AREAS / SUSPECTED BED BUGS IN HOUSING / OTHER].',
     '4.4 During an active infestation, the Contractor shall increase service frequency in the affected area at no additional charge until activity is resolved, and shall document each added visit.'
@@ -98,6 +100,7 @@ export const NATIONAL_SLOTS = {
   licenseNote: '(Issued by [THE STATE AGENCY THAT LICENSES COMMERCIAL PEST CONTROL BUSINESSES].)',
   categoriesNote: '(Confirm the license categories the state requires for structural and institutional pest control, and for outdoor vertebrate and wood-destroying organism work where it is in scope.)',
   stateStandardNote: '',
+  policyNote: "[DRAFTING NOTE, delete before issuing: Match 4.1 to the frequency in the Agency's own pest control policy. Lexipol's custody manual, which some agencies adopt as their policy, calls in Policy 805.3 for inspections at least monthly by a licensed pest control professional.]",
   recordsRule: "[THE STATE'S PESTICIDE APPLICATION RECORDKEEPING RULE]",
   retention: "[THE PERIOD SET BY THE STATE'S PESTICIDE RECORDKEEPING RULE / THREE YEARS, per BOP 1614.01 §47 where it applies]",
   inspectors: '[THE STATE JAIL STANDARDS INSPECTOR / ICE / USMS / THE HEALTH DEPARTMENT / AN ACCREDITOR]',
@@ -113,6 +116,7 @@ export function profileLabel(a, STATE_NAMES) {
   p.push(a.ice === 'none' ? 'no ICE detainees' : a.ice === 'pbnds' ? 'ICE (PBNDS 2011)' : a.ice === 'nds' ? 'ICE (NDS 2019)' : 'ICE (standards unconfirmed)');
   if (a.usms) p.push('USMS prisoners');
   p.push(a.kitchen ? 'food prepared on site' : 'no food prepared on site');
+  if (a.lexipol) p.push('Lexipol policy manual');
   return p.join(' · ');
 }
 
@@ -157,6 +161,9 @@ export function sowSlots(a, data) {
     retention: '[THE PERIOD SET BY THE ' + name.toUpperCase() + ' PESTICIDE RECORDKEEPING RULE / THREE YEARS, per BOP 1614.01 §47 where it applies]',
     publicRecords: '[APPLICABLE ' + name.toUpperCase() + ' PUBLIC RECORDS LAW]'
   };
+  if (a.lexipol && a.op !== 'bop') {
+    slots.policyNote = "[DRAFTING NOTE, delete before issuing: The Agency's policy manual is Lexipol's custody manual. Policy 805.3 calls for inspections at least monthly by a licensed pest control professional, so 4.1 should be at least monthly unless the Agency's edition says otherwise.]";
+  }
   if (UT && a.op !== 'bop') {
     // Utah's pesticide, records, and inspection rules are verified on this reference.
     slots.licenseNote = '(In Utah, issued by the Utah Department of Agriculture and Food under R68-7.)';
@@ -190,7 +197,7 @@ export function fill(p, slots) {
 
 /** The default profile used for each state's ready-made Word file (matches the checklist PDFs). */
 export function defaultProfile(code) {
-  return { state: code, op: 'county', ice: 'none', kitchen: true, usms: false, udc: code === 'UT', slco: false };
+  return { state: code, op: 'county', ice: 'none', kitchen: true, usms: false, udc: code === 'UT', slco: false, lexipol: false };
 }
 
 export function sowDocxName(stateName) {

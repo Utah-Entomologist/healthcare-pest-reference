@@ -141,6 +141,7 @@ const rowCount = ROWS.length;
           <label class="opt"><input type="checkbox" id="f-usms" /> Holds U.S. Marshals Service prisoners under a detention agreement</label>
           <label class="opt" id="opt-udc"><input type="checkbox" id="f-udc" checked /> Houses Utah state inmates</label>
           <label class="opt" id="opt-slco"><input type="checkbox" id="f-slco" /> Located in Salt Lake County</label>
+          <label class="opt" id="opt-lexipol"><input type="checkbox" id="f-lexipol" /> Our policy manual is Lexipol's custody manual</label>
         </fieldset>
       </div>
     </div>
@@ -194,7 +195,7 @@ const rowCount = ROWS.length;
               {r.recommended && <span class="should"> RECOMMENDED</span>}
               <span class="cite">{a.name}, {r.cite}</span>
               {r.identifierOnly
-                ? <span class="ident">Copyrighted standard, recorded by identifier. The authority page summarizes it; the text is not reproduced.</span>
+                ? <span class="ident">Copyrighted text, recorded by identifier. The authority page summarizes it; the text is not reproduced.</span>
                 : <details class="q"><summary>Source text</summary><blockquote>"{r.quote}"</blockquote></details>}
             </td>
             <td data-label="Record">{r.evidence}</td>
@@ -209,7 +210,8 @@ const rowCount = ROWS.length;
   <p class="no-print">
     Want the facility-specific version, checked against your agreements and walked on site? See
     <a href="/consulting/">Consulting</a>. Writing a pest control contract? Start from the
-    <a href="/tools/scope-of-work/" id="sow-link">model scope of work</a>, filled in for this profile. Comparing states? See the
+    <a href="/tools/scope-of-work/" id="sow-link">model scope of work</a>, filled in for this profile. Writing or reviewing the
+    pest control policy itself? Start from the <a href="/tools/pest-control-policy/" id="policy-link">model pest control policy</a>. Comparing states? See the
     <a href="/state-jail-standards/">{STATES.length}-state comparison</a>.
   </p>
 
@@ -221,7 +223,7 @@ const rowCount = ROWS.length;
   <script define:vars={{ AUTH_NAMES: authNames, AUTH_SLUGS: authSlugs, AUTH_STATE: authState, AUTH_SCOPE: authScope, STATE_NAMES: stateNames, OSHA_PUBLIC, PDF_FILES: pdfFiles, PDF_UTAH: pdfUtah, CAD_LABELS: CADENCE_LABELS, CAD_ORDER: CADENCE_ORDER, EMAIL: CONTACT_EMAIL, SITE: SITE_URL }}>
     function boot() {
       var $ = function (id) { return document.getElementById(id); };
-      var F = { state: $('f-state'), op: $('f-op'), ice: $('f-ice'), kitchen: $('f-kitchen'), usms: $('f-usms'), udc: $('f-udc'), slco: $('f-slco') };
+      var F = { state: $('f-state'), op: $('f-op'), ice: $('f-ice'), kitchen: $('f-kitchen'), usms: $('f-usms'), udc: $('f-udc'), slco: $('f-slco'), lexipol: $('f-lexipol') };
       var OPS = { county: 'County jail', state: 'State prison', bop: 'Federal Bureau of Prisons institution', 'private': 'Privately operated facility' };
       function stateName(c) { return c === 'OTHER' ? 'Another state' : (STATE_NAMES[c] || 'No state chosen'); }
 
@@ -232,17 +234,20 @@ const rowCount = ROWS.length;
         if (st && (STATE_NAMES[st] || st === 'OTHER')) F.state.value = st;
         if (q.get('op') && OPS[q.get('op')]) F.op.value = q.get('op');
         if (q.get('ice') && ['none', 'pbnds', 'nds', 'unsure'].indexOf(q.get('ice')) >= 0) F.ice.value = q.get('ice');
-        ['kitchen', 'usms', 'udc', 'slco'].forEach(function (k) { var v = q.get(k); if (v === '1' || v === '0') F[k].checked = v === '1'; });
+        ['kitchen', 'usms', 'udc', 'slco', 'lexipol'].forEach(function (k) { var v = q.get(k); if (v === '1' || v === '0') F[k].checked = v === '1'; });
       })();
       function writeParams(a) {
         var q = new URLSearchParams({ state: a.state, op: a.op, ice: a.ice, kitchen: a.kitchen ? '1' : '0', usms: a.usms ? '1' : '0', udc: a.udc ? '1' : '0', slco: a.slco ? '1' : '0' });
+        if (a.lexipol) q.set('lexipol', '1');
         try { history.replaceState(null, '', location.pathname + '?' + q.toString()); } catch (e) {}
         var sl = document.getElementById('sow-link');
         if (sl) sl.setAttribute('href', '/tools/scope-of-work/' + (a.state ? '?' + q.toString() : ''));
+        var pl2 = document.getElementById('policy-link');
+        if (pl2) pl2.setAttribute('href', '/tools/pest-control-policy/' + (a.state ? '?' + q.toString() : ''));
       }
 
       function answers() {
-        return { state: F.state.value, op: F.op.value, ice: F.ice.value, kitchen: F.kitchen.checked, usms: F.usms.checked, udc: F.udc.checked, slco: F.slco.checked };
+        return { state: F.state.value, op: F.op.value, ice: F.ice.value, kitchen: F.kitchen.checked, usms: F.usms.checked, udc: F.udc.checked, slco: F.slco.checked, lexipol: F.lexipol.checked };
       }
       var CTX = { AUTH_STATE: AUTH_STATE, AUTH_SCOPE: AUTH_SCOPE, OSHA_PUBLIC: OSHA_PUBLIC, STATE_NAMES: STATE_NAMES };
       function status(key, a) { return window.CPRApplicability.status(key, a, CTX); }
@@ -253,11 +258,12 @@ const rowCount = ROWS.length;
         p.push(a.ice === 'none' ? 'no ICE detainees' : a.ice === 'pbnds' ? 'ICE (PBNDS 2011)' : a.ice === 'nds' ? 'ICE (NDS 2019)' : 'ICE (standards unconfirmed)');
         if (a.usms) p.push('USMS prisoners');
         p.push(a.kitchen ? 'food prepared on site' : 'no food prepared on site');
+        if (a.lexipol) p.push('Lexipol policy manual');
         return p.join(' · ');
       }
       // The ready-made PDF matches the default profile for its state: food on site, no ICE, no USMS.
       function readyPdf(a) {
-        if (a.ice !== 'none' || a.usms || !a.kitchen) return null;
+        if (a.ice !== 'none' || a.usms || !a.kitchen || a.lexipol) return null;
         if (a.state === 'UT') {
           if (a.op === 'state') return { file: PDF_UTAH.prison, label: 'Utah state prison' };
           if (a.op === 'county' && a.slco && a.udc) return { file: PDF_UTAH.slco, label: 'Salt Lake County jail' };
@@ -275,6 +281,8 @@ const rowCount = ROWS.length;
         $('opt-slco').hidden = !(a.state === 'UT' && a.op !== 'bop');
         if ($('opt-slco').hidden) { a.slco = false; }
         if ($('opt-udc').hidden && a.state !== 'UT') { a.udc = false; }
+        $('opt-lexipol').hidden = a.op === 'bop';
+        if (a.op === 'bop') { a.lexipol = false; }
         $('summary-fallback').hidden = true;
         var active = {};
         Object.keys(AUTH_NAMES).forEach(function (k) { var st = status(k, a); if (st) active[k] = st; });
@@ -384,7 +392,7 @@ const rowCount = ROWS.length;
             if (tr.hidden) return;
             var td = tr.querySelectorAll('td');
             var bq = tr.querySelector('blockquote');
-            var quote = bq ? bq.textContent.replace(/^"|"$/g, '') : 'Copyrighted standard, recorded by identifier; text not reproduced';
+            var quote = bq ? bq.textContent.replace(/^"|"$/g, '') : 'Copyrighted text, recorded by identifier; not reproduced';
             out.push(['', AUTH_NAMES[k], st ? LABEL[st.s] : '', st ? st.why : '', tr.querySelector('.cite').textContent,
               tr.querySelector('.req').textContent, quote, td[2].textContent, td[3].textContent, td[4].textContent,
               SITE + '/authorities/' + AUTH_SLUGS[k] + '/']);

@@ -4,11 +4,12 @@
  * One function, used by the Pest Compliance Map, the Model Scope of Work page, and the
  * per-state scope-of-work Word files built at `astro build`, so the three can never disagree.
  *
- * `a` is a facility profile: { state, op, ice, kitchen, usms, udc, slco }
+ * `a` is a facility profile: { state, op, ice, kitchen, usms, udc, slco, lexipol }
  *   state   two-letter code, 'OTHER', or '' when no state is chosen
  *   op      'county' | 'state' | 'bop' | 'private'
  *   ice     'none' | 'pbnds' | 'nds' | 'unsure'
  *   kitchen, usms, udc, slco  booleans (udc and slco are Utah-only questions)
+ *   lexipol  boolean: the agency's policy manual is Lexipol's custody manual (absent = false)
  *
  * `ctx` carries the data the decision needs: { AUTH_STATE, AUTH_SCOPE, OSHA_PUBLIC, STATE_NAMES }.
  * Returns { s: 'applies' | 'check' | 'na', why } or null when the authority does not reach the profile.
@@ -86,6 +87,9 @@ export function status(key, a, ctx) {
     case 'bop4700':
       if (a.op !== 'bop') return null;
       return a.kitchen ? A('The Bureau Food Service program.') : N(NO_FOOD);
+    case 'lexipol':
+      if (!a.lexipol || a.op === 'bop') return null;
+      return A("The agency adopted Lexipol's custody manual as its policy. Confirm Policy 805's wording in your edition; agencies can edit their manuals.");
   }
   return null;
 }

@@ -29,7 +29,9 @@ const authorities = defineCollection({
       'state regulator',
       'state statute',
       'local regulator',
-      'recognized authority'
+      'recognized authority',
+      /** A policy manual an agency adopts as its own policy (e.g., Lexipol's custody manual). Copyrighted text is recorded by section. */
+      'agency policy'
     ]),
     citation: z.string(),
     /**

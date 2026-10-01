@@ -12,7 +12,7 @@ const grouped = authorities.reduce((acc, authority) => {
   return acc;
 }, {} as Record<string, typeof authorities>);
 
-const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'state statute', 'local regulator', 'recognized authority'];
+const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'state statute', 'local regulator', 'recognized authority', 'agency policy'];
 
 const typeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulators',
@@ -20,7 +20,8 @@ const typeLabels: Record<string, string> = {
   'state regulator': 'State Regulators',
   'state statute': 'State Statutes',
   'local regulator': 'Local Health Regulations',
-  'recognized authority': 'Recognized Authorities'
+  'recognized authority': 'Recognized Authorities',
+  'agency policy': 'Agency Policy Manuals'
 };
 
 const typeOrientation: Record<string, string> = {
@@ -31,11 +32,13 @@ const typeOrientation: Record<string, string> = {
   'state regulator':
     'Binding within the state: jail standards adopted under state law, and the pesticide control rules that set who may apply what and what record every application leaves.',
   'state statute':
-    'Statutes. Oregon\u2019s requires every local correctional facility to have a written vermin control policy; Utah\u2019s set who may be asked for jail standards and inspection results.',
+    'Statutes. Oregon\u2019s requires every local correctional facility to have a written vermin control policy; Washington\u2019s requires every city and county jail to adopt operating standards and run by them; Utah\u2019s set who may be asked for jail standards and inspection results.',
   'local regulator':
     'Regulations adopted by a local board of health for correctional institutions in its jurisdiction, enforced by its own inspections.',
   'recognized authority':
-    'Not regulations. Association jail standards and accreditation programs, and standards of practice that inspectors and counsel measure against when the regulation itself is silent.'
+    'Not regulations. Association jail standards and accreditation programs, and standards of practice that inspectors and counsel measure against when the regulation itself is silent.',
+  'agency policy':
+    'Policy manuals that agencies adopt as their own policy. Not law: their force comes from adoption, and where a state requires a jail to run by the standards it adopts, from that. Copyrighted manuals are recorded by section.'
 };
 ---
 

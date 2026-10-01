@@ -14,7 +14,7 @@ const grouped = authorities.reduce((acc, authority) => {
   return acc;
 }, {} as Record<string, typeof authorities>);
 
-const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'state statute', 'local regulator', 'recognized authority'];
+const typeOrder = ['federal regulator', 'federal agency standard', 'state regulator', 'state statute', 'local regulator', 'recognized authority', 'agency policy'];
 
 const typeLabels: Record<string, string> = {
   'federal regulator': 'Federal Regulators',
@@ -22,7 +22,8 @@ const typeLabels: Record<string, string> = {
   'state regulator': 'State Regulators',
   'state statute': 'State Statutes',
   'local regulator': 'Local Health Regulations',
-  'recognized authority': 'Recognized Authorities'
+  'recognized authority': 'Recognized Authorities',
+  'agency policy': 'Agency Policy Manuals'
 };
 
 const totalCount = authorities.length;
@@ -113,9 +114,10 @@ const totalCount = authorities.length;
   </div>
 
   <div class="scope-note">
-    <strong>Version 0.5, September 2026.</strong> The reference currently covers {totalCount}
-    authorities, each quoted from its primary source: OSHA, the FDA Food Code, the Bureau of
-    Prisons, ICE, the U.S. Marshals Service, and the jail standards of thirty states. The public
+    <strong>Version 0.6, October 2026.</strong> The reference currently covers {totalCount}
+    authorities, each quoted from its primary source or, where copyrighted, recorded by section: OSHA,
+    the FDA Food Code, the Bureau of Prisons, ICE, the U.S. Marshals Service, the jail standards of
+    thirty states, and agency policy manuals such as Lexipol's custody manual. The public
     enforcement record is being added as each document is verified. Items under verification
     are listed openly on the <a href="/methodology/#open-questions">methodology page</a>.
   </div>
@@ -135,8 +137,16 @@ const totalCount = authorities.length;
     this reference with the record that shows it was met, how often, and who the text names as
     responsible. Set a facility profile in any of the 30 states and print it as an inspection
     checklist, download a ready-made PDF, or export a spreadsheet. The
-    <a href="/tools/scope-of-work/">Model Scope of Work</a> is contract language for a pest
-    management solicitation, with a Word download.
+    <a href="/tools/vermin-grievance-file/">Vermin Grievance File</a> and the
+    <a href="/tools/grievance-loop/">Grievance-to-Work-Order Loop</a> tie each pest grievance to the
+    records that answer it. The <a href="/tools/pest-control-policy/">Model Pest Control Policy</a>
+    and the <a href="/tools/scope-of-work/">Model Scope of Work</a> are policy and contract language,
+    filled in for your state, with Word downloads.
+  </p>
+
+  <p>
+    Working with member jails as a county risk pool or insurer? See
+    <a href="/risk-pools/">For Risk Pools</a>.
   </p>
 
   <h2>Authority Index</h2>

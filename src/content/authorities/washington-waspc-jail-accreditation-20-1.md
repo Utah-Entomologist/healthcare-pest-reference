@@ -18,6 +18,10 @@ services_applicable:
 verbatim_available: true
 summary: "Washington's jail accreditation standard. WASPC standard 20.1 asks for policy or procedures governing pest control, and WASPC's current jail proofs list requires the agency policy and a copy of the service provider agreement."
 related_authorities:
+  - slug: washington-rcw-70-48-071-jail-operating-standards
+    why: "The Washington statute requiring every city and county jail to adopt operating standards and to be operated in accordance with them."
+  - slug: lexipol-custody-manual-policy-805-vermin-pest-control
+    why: "For a jail whose custody manual is Lexipol's, Policy 805 is the agency policy WASPC asks to see, and it sets a monthly inspection by a licensed pest control professional."
   - slug: oregon-ors-169-076-local-correctional-facility-standards
     why: "The neighboring state's statute, which requires a written vermin control policy of every local correctional facility rather than only accredited ones."
   - slug: idaho-jail-standards-10-03
@@ -56,14 +60,18 @@ The standard is one line: a written policy or procedure for pest control. The pr
 
 That gap is where a jail's own records matter. An accreditation file can pass on a policy and a service agreement, while a grievance or claim turns on what happened after a specific complaint.
 
+The two proofs also have to agree with each other. If the agency's policy sets a frequency or a provider, the service agreement should deliver it. Lexipol's custody manual, which some Washington sheriffs' offices publish as their policy, sets both in Policy 805.3: a licensed pest control professional inspecting at least monthly. See the [Lexipol Policy 805 page](/authorities/lexipol-custody-manual-policy-805-vermin-pest-control/).
+
 ## Who It Applies To
 
-Washington jails seeking WASPC accreditation or re-accreditation, as the document's purpose statement describes. Whether any other Washington rule requires the same of non-accredited jails was not verified for this page.
+Washington jails seeking WASPC accreditation or re-accreditation, as the document's purpose statement describes.
+
+Separately, state law requires every city, town, and county that owns or operates an adult jail to adopt operating standards and to run the jail in accordance with them ([RCW 70.48.071](/authorities/washington-rcw-70-48-071-jail-operating-standards/)). That statute does not name pest control. Whether any Washington rule requires a pest control policy of non-accredited jails was not verified for this page.
 
 ## Documentation Evidence
 
 - The agency's pest control policy or procedures
-- A copy of the current pest control service provider agreement (WASPC's required proof, with the current policy)
+- A copy of the current pest control service provider agreement (WASPC's required proof, with the current policy), consistent with the frequency and provider the policy sets
 - Beyond the listed proofs: service reports with dates, locations, findings and actions, and pest grievances tied to work orders and closure
 
 ## Confidence Notes

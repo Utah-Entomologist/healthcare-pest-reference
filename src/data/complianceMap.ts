@@ -45,7 +45,7 @@ export interface Authority {
   key: string;
   name: string;
   slug: string;
-  group: 'Federal' | 'Federal detention and corrections' | 'Utah' | 'Other states';
+  group: 'Federal' | 'Federal detention and corrections' | 'Utah' | 'Other states' | 'Agency policy manuals';
   /** Two-letter code for a state authority outside Utah. */
   state?: string;
   scope?: Scope;
@@ -175,9 +175,16 @@ export const AUTHORITIES: Authority[] = [
   { key: 'tx', name: 'Texas 37 TAC (Texas Commission on Jail Standards)', slug: 'texas-tcjs-37-tac-261-147-vermin-control', group: 'Other states', state: 'TX',
     scope: { county: JAIL('County jails and county correctional centers under the Texas Commission on Jail Standards.') } },
   { key: 'wa', name: 'WASPC Jail Accreditation Standard 20.1 (Washington)', slug: 'washington-waspc-jail-accreditation-20-1', group: 'Other states', state: 'WA',
-    scope: { county: CHECK('Washington jails seeking or holding WASPC accreditation. No other Washington rule is verified here.') } },
+    scope: { county: CHECK('Washington jails seeking or holding WASPC accreditation.') } },
+  { key: 'rcw70', name: 'RCW 70.48.071 (Washington)', slug: 'washington-rcw-70-48-071-jail-operating-standards', group: 'Other states', state: 'WA',
+    scope: {
+      county: JAIL('Every city, town, and county that owns or operates an adult jail adopts operating standards and runs the jail by them. It does not name pest control.'),
+      private: CHECK('Written for units of local government that own or operate adult jails; whether it reaches a privately operated facility depends on who owns or operates it.')
+    } },
   { key: 'wi', name: 'Wisconsin DOC 350.12 (Jails)', slug: 'wisconsin-doc-350-12-vermin-pests', group: 'Other states', state: 'WI',
-    scope: { county: JAIL('County jails, state-local shared correctional facilities, and county houses of correction (DOC 350.02).') } }
+    scope: { county: JAIL('County jails, state-local shared correctional facilities, and county houses of correction (DOC 350.02).') } },
+  // Agency policy manuals: applies only when the profile says the agency's manual is Lexipol's (see applicability.js).
+  { key: 'lexipol', name: 'Lexipol Custody Manual Policy 805 (agency policy)', slug: 'lexipol-custody-manual-policy-805-vermin-pest-control', group: 'Agency policy manuals' }
 ];
 
 export interface Row {
@@ -927,6 +934,16 @@ export const ROWS: Row[] = [
     quote: 'The agency has policy or procedures governing pest control.',
     evidence: "A copy of the current pest control policy; a copy of the service provider agreement (WASPC's required proofs, Rev. Jan 2026)", cadence: ['policy', 'contract'], frequency: 'Written policy; current agreement', owner: 'The agency' },
 
+  // ---- Washington, RCW 70.48.071 ----
+  { id: 'rcw70-adopt', auth: 'rcw70', cite: 'RCW 70.48.071',
+    requirement: 'Adopt standards for the operation of the jail, at least the minimums the federal and state constitutions and statutes require for inmate and staff health, safety, and welfare.',
+    quote: 'All units of local government that own or operate adult correctional facilities shall, individually or collectively, adopt standards for the operation of those facilities',
+    evidence: 'The adopted operating standards and the record of their adoption, including the pest control policy or procedures within them', cadence: ['policy'], frequency: 'Adopted standards, kept current', owner: 'The city, town, or county that owns or operates the jail' },
+  { id: 'rcw70-operate', auth: 'rcw70', cite: 'RCW 70.48.071',
+    requirement: 'Operate the jail in accordance with the adopted standards.',
+    quote: 'Local correctional facilities shall be operated in accordance with these standards.',
+    evidence: 'Service agreement and service records that match what the adopted pest control policy sets (frequency, provider, records)', cadence: ['contract', 'ongoing'], frequency: 'Ongoing', owner: 'Each local correctional facility' },
+
   // ---- Wisconsin ----
   { id: 'wi-program', auth: 'wi', cite: 'DOC 350.12(10)',
     requirement: 'Control vermin and pests with an effective, documented program.',
@@ -947,5 +964,23 @@ export const ROWS: Row[] = [
   { id: 'wi-annual', auth: 'wi', cite: 'Wis. Stat. § 301.37(3)',
     requirement: 'The Department inspects each jail at least annually for safety and sanitation, reports deficiencies, and orders them corrected.',
     quote: 'at least annually thereafter, the department shall inspect each institution with respect to safety, sanitation, adequacy and fitness',
-    evidence: "The Department's inspection report and any correction order", cadence: ['annual'], frequency: 'At least annually', owner: 'Wisconsin Department of Corrections' }
+    evidence: "The Department's inspection report and any correction order", cadence: ['annual'], frequency: 'At least annually', owner: 'Wisconsin Department of Corrections' },
+
+  // ---- Lexipol custody manual, Policy 805 (copyrighted; recorded by section) ----
+  { id: 'lexipol-805-2', auth: 'lexipol', cite: '805.2 (Policy)', identifierOnly: true,
+    requirement: 'Control vermin and pests within the facility. The facility head develops and carries out the policy with the physician or medical director and the local public health entity, including medical protocols for infested inmates and their clothing, effects, and living areas.',
+    quote: '',
+    evidence: "The agency's adopted Policy 805; the medical protocol for infested inmates, clothing, personal effects, and living areas", cadence: ['policy'], frequency: 'Adopted policy', owner: 'The facility head or designee (title varies by agency)' },
+  { id: 'lexipol-805-3', auth: 'lexipol', cite: '805.3 (Pest Control Services)', identifierOnly: true,
+    requirement: 'Procure a licensed pest control professional to inspect the facility at least monthly and to treat areas as required.',
+    quote: '',
+    evidence: 'A service agreement with a licensed pest control professional for at least monthly inspections; dated service reports at that frequency', cadence: ['contract', 'monthly'], frequency: 'At least monthly', owner: 'The facility head or designee (title varies by agency)' },
+  { id: 'lexipol-805-4', auth: 'lexipol', cite: '805.4 (Prevention and Control)', identifierOnly: true,
+    requirement: 'Treat an infested inmate when the infestation is identified, in a separate treatment area; handle infested clothing, bedding, and property by a listed method or as the provider or physician directs; document each treatment.',
+    quote: '',
+    evidence: 'Treatment records: date, area treated, pest treated, treatment used; records of how infested property was handled', cadence: ['detection'], frequency: 'Each treatment', owner: 'The supervisor documents each treatment' },
+  { id: 'lexipol-805-5', auth: 'lexipol', cite: '805.5 (Labeling and Secure Storage of Compounds)', identifierOnly: true,
+    requirement: "Label pest control compounds conspicuously; store them securely, separate from food and kitchenware, out of inmates' reach.",
+    quote: '',
+    evidence: 'Labeled containers in a secured storage location away from food and kitchenware', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
 ];

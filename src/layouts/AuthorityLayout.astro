@@ -25,7 +25,8 @@ const {
   source_tier,
   source_confidence,
   paywalled,
-  verbatim_available
+  verbatim_available,
+  verbatim_paywall_note
 } = authority.data;
 
 const NOT_RECORDED = '[VERIFICATION DATE NOT RECORDED]';
@@ -53,7 +54,8 @@ const authorityTypeLabels: Record<string, string> = {
   'state statute': 'State Statute',
   'local regulator': 'Local Health Regulation',
   'accrediting body': 'Accrediting Body',
-  'recognized authority': 'Recognized Authority'
+  'recognized authority': 'Recognized Authority',
+  'agency policy': 'Agency Policy Manual'
 };
 
 const article = articleSchema({
@@ -108,7 +110,7 @@ const article = articleSchema({
       <dd>{paywalled ? 'Yes — institutional access recommended for litigation-grade use' : 'No'}</dd>
 
       <dt>Verbatim Available</dt>
-      <dd>{verbatim_available ? 'Yes' : 'No — predecessor or paraphrase only'}</dd>
+      <dd>{verbatim_available ? 'Yes' : verbatim_paywall_note ? 'No — copyrighted; summarized, not reproduced' : 'No — predecessor or paraphrase only'}</dd>
 
       <dt>Last Verified</dt>
       <dd>{lastVerifiedText}</dd>

@@ -10,6 +10,8 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 - [Authority index](https://correctionspestreference.org/authorities/): every federal, state, local and association authority on the reference.
 - [Pest Compliance Map](https://correctionspestreference.org/tools/compliance-map/): each requirement paired with the record that shows it was met, for federal detention standards and 30 states; filter by facility profile, download a PDF checklist per state, or export a spreadsheet.
 - [Model Scope of Work](https://correctionspestreference.org/tools/scope-of-work/): model contract language for a correctional pest management scope of work, filled in for any of the 30 states on the reference, with a Word download for each state and a national version.
+- [Model Pest Control Policy](https://correctionspestreference.org/tools/pest-control-policy/): model language for the written pest control policy many standards ask for, filled in for any of the 30 states on the reference, with a Word download for each state and a national version.
+- [For Risk Pools and Insurers](https://correctionspestreference.org/risk-pools/): where pest grievance exposure lies in a member jail, three questions to ask, and the tools that answer them.
 - [The Vermin Grievance File](https://correctionspestreference.org/tools/vermin-grievance-file/): the eight questions a pest grievance file must answer.
 - [Grievance-to-Work-Order Loop](https://correctionspestreference.org/tools/grievance-loop/): a printable log tying each complaint to its work order and closure.
 - [Methodology](https://correctionspestreference.org/methodology/): source tiers, confidence ratings, verification discipline, open questions.
@@ -47,7 +49,12 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 - [Utah Correctional Standards (FY27 Secure Facilities) — Pest, Vermin, and Food Service Inspection](https://correctionspestreference.org/authorities/utah-udc-correctional-standards/)
 - [Virginia 6VAC15-40-1150 — Jail Vermin and Pest Control (Quarterly Licensed Service)](https://correctionspestreference.org/authorities/virginia-6vac15-40-1150-vermin-pest-control/)
 - [WASPC Jail Accreditation Standard 20.1 (Washington)](https://correctionspestreference.org/authorities/washington-waspc-jail-accreditation-20-1/)
+- [RCW 70.48.071 (Washington), jail operating standards](https://correctionspestreference.org/authorities/washington-rcw-70-48-071-jail-operating-standards/)
 - [Wisconsin DOC 350.12(10)](https://correctionspestreference.org/authorities/wisconsin-doc-350-12-vermin-pests/)
+
+## Agency policy manuals
+
+- [Lexipol Custody Manual Policy 805, Vermin and Pest Control](https://correctionspestreference.org/authorities/lexipol-custody-manual-policy-805-vermin-pest-control/): recorded by section from agency-published editions; a licensed pest control professional inspecting at least monthly.
 
 ## Companion references by the same author
 

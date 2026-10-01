@@ -24,7 +24,9 @@ export const GET: APIRoute = async () => {
     { url: '/consulting/', priority: '0.5', changefreq: 'yearly', sources: ['src/pages/consulting.astro'] },
     { url: '/tools/', priority: '0.7', changefreq: 'monthly', sources: ['src/pages/tools/index.astro'] },
     { url: '/tools/compliance-map/', priority: '0.9', changefreq: 'monthly', sources: ['src/pages/tools/compliance-map.astro', 'src/data/complianceMap.ts'] },
-    { url: '/tools/scope-of-work/', priority: '0.8', changefreq: 'monthly', sources: ['src/pages/tools/scope-of-work.astro', 'src/data/scope-of-work.md'] },
+    { url: '/tools/scope-of-work/', priority: '0.8', changefreq: 'monthly', sources: ['src/pages/tools/scope-of-work.astro', 'src/data/scopeOfWork.js'] },
+    { url: '/tools/pest-control-policy/', priority: '0.8', changefreq: 'monthly', sources: ['src/pages/tools/pest-control-policy.astro', 'src/data/pestPolicy.js'] },
+    { url: '/risk-pools/', priority: '0.6', changefreq: 'monthly', sources: ['src/pages/risk-pools.astro'] },
     { url: '/tools/vermin-grievance-file/', priority: '0.8', changefreq: 'monthly', sources: ['src/pages/tools/vermin-grievance-file.astro', 'src/data/grievanceFile.ts'] },
     { url: '/tools/grievance-loop/', priority: '0.7', changefreq: 'monthly', sources: ['src/pages/tools/grievance-loop.astro', 'src/data/grievanceFile.ts'] }
   ].map((page) => ({ ...page, lastmod: lastModified(page.sources) ?? repoLastCommitDate() }));

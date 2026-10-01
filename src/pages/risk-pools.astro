@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_URL } from '../lib/site';
+import { STATES } from '../data/complianceMap';
+import { CASE_QUOTES as Q } from '../data/grievanceFile';
+---
+
+<BaseLayout
+  title="For County Risk Pools and Insurers: Pest Control Exposure in Member Jails"
+  description="How a pest grievance in a jail becomes a claim, the three questions to ask a member jail, and the free tools on the Corrections Pest Reference that answer them: the model pest control policy, the grievance-to-work-order loop, the Vermin Grievance File, and the Compliance Map."
+  breadcrumbs={[{ name: 'For Risk Pools', url: `${SITE_URL}/risk-pools/` }]}
+>
+  <style>
+    .lede { font-size: 1.05rem; max-width: 46rem; }
+    .q { border: 1px solid var(--color-rule); border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0; max-width: 46rem; }
+    .q h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+    .q p { margin: 0.3rem 0; }
+    .q .tools { font-size: 0.92rem; }
+    .cite { font-size: 0.85rem; color: var(--color-text-meta); }
+    section { max-width: 46rem; }
+  </style>
+
+  <h1>For County Risk Pools and Insurers</h1>
+  <p class="lede">
+    A pest grievance in a jail can become a claim. This page puts the reference's free tools in the order a risk manager or
+    loss-control consultant would use them with a member jail: where the exposure is, three questions to ask, and what the
+    member's own state asks for.
+  </p>
+
+  <section>
+    <h2>Where the exposure is</h2>
+    <p>
+      When a person held in a jail claims that cockroaches, mice, bed bugs, or lice violated the Constitution, the claim turns on
+      deliberate indifference. An official is liable only if the official "{Q.farmerKnows.text}" <span class="cite">({Q.farmerKnows.cite})</span>.
+      And officials who knew "{Q.farmerReasonable.text}" <span class="cite">({Q.farmerReasonable.cite})</span>.
+    </p>
+    <p>
+      Both halves are proved with paper. Knowledge is usually proved with the jail's own grievance, kite, or sick-call record. A
+      reasonable response has to be proved with records too, and a spray record alone may not be enough: "{Q.antonelliInsufficient.text}"
+      <span class="cite">({Q.antonelliInsufficient.cite})</span>.
+    </p>
+    <p>
+      The <a href="/tools/vermin-grievance-file/">Vermin Grievance File</a> walks through both halves, question by question.
+      It is a records worksheet, not legal advice.
+    </p>
+  </section>
+
+  <section>
+    <h2>Three questions to ask a member jail</h2>
+
+    <div class="q">
+      <h3>1. Does the written pest control policy set a frequency and a provider, and does the service agreement deliver them?</h3>
+      <p>
+        Many standards ask for a written policy and stop there, so the policy is where the frequency gets set. Some custody
+        manuals set it already: Lexipol's Policy 805 calls for a licensed pest control professional to inspect at least monthly.
+        A quarterly or on-call contract under that policy is a gap in the jail's own file.
+      </p>
+      <p class="tools">
+        Tools: <a href="/tools/pest-control-policy/">Model Pest Control Policy</a> ·
+        <a href="/authorities/lexipol-custody-manual-policy-805-vermin-pest-control/">Lexipol Policy 805</a> ·
+        <a href="/tools/scope-of-work/">Model Scope of Work</a>
+      </p>
+    </div>
+
+    <div class="q">
+      <h3>2. Does every pest report become a work order, with a follow-up check and an answer?</h3>
+      <p>
+        The loop usually breaks in the same places: the complaint never becomes a work order, the service visit records no
+        location, nobody checks whether the treatment worked, or the grievance is answered before the work was done.
+      </p>
+      <p class="tools">Tool: <a href="/tools/grievance-loop/">Grievance-to-Work-Order Loop</a></p>
+    </div>
+
+    <div class="q">
+      <h3>3. For the last pest grievance, can the file answer the eight questions?</h3>
+      <p>
+        When did the jail learn of it, who received it, what was done and when, by whom and under what license, what was found
+        and applied, was the person moved, did someone check whether it worked, and what was the grievant told.
+      </p>
+      <p class="tools">Tool: <a href="/tools/vermin-grievance-file/">The Vermin Grievance File</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the member's state asks for</h2>
+    <p>
+      The <a href="/tools/compliance-map/">Pest Compliance Map</a> lists, for a facility profile in any of {STATES.length} states,
+      every authority on this reference that reaches it, what each requires, and the record that shows it was met. Each state
+      has a ready-made county jail checklist PDF. The <a href="/state-jail-standards/">{STATES.length}-state comparison</a> puts
+      each state's jail pest provision side by side, with its legal force.
+    </p>
+  </section>
+
+  <section>
+    <h2>Sharing it with members</h2>
+    <p>
+      Every tool is free, with no login. Link to any page in a member bulletin or loss-control newsletter, or put it on screen
+      in a training session. For a member training session or webinar led by the author, see <a href="/consulting/">Consulting</a>.
+    </p>
+  </section>
+</BaseLayout>
