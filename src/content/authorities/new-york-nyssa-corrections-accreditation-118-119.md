@@ -28,7 +28,7 @@ related_authorities:
 
 ## Citation
 
-New York State Sheriffs' Association, *Corrections Accreditation Manual of the New York State Sheriffs' Association for Sheriffs' Corrections Divisions*, June 1998 ("Revised June, 1998" in the page footers), Standards 118 and 119 with commentary, in Chapter XIV, Health Standards. Read October 1, 2026 from the copy the association links from its accreditation page at nysheriffs.org, which says the manual "details 166 standards that a county must meet or exceed in order to earn accreditation." Whether the 1998 text is the current edition is not verified here.
+New York State Sheriffs' Association, *Corrections Accreditation Manual of the New York State Sheriffs' Association for Sheriffs' Corrections Divisions*, June 1998 (the page footers read Revised June, 1998), Standards 118 and 119 with commentary, in Chapter XIV, Health Standards. Read October 1, 2026 from the copy the association links from its accreditation page at nysheriffs.org, which says the manual "details 166 standards that a county must meet or exceed in order to earn accreditation." Whether the 1998 text is the current edition is not verified here.
 
 ## What It Says (Verbatim)
 

@@ -32,9 +32,9 @@ related_authorities:
 
 New York Environmental Conservation Law (ECL), Article 33 (Pesticides), and New York Codes, Rules and Regulations, Title 6, Part 325 (Application of Pesticides), administered by the Department of Environmental Conservation. ECL text was read on October 1, 2026 from a public mirror of the Legislature's text and checked against nysenate.gov; Part 325 from the Legal Information Institute's copy.
 
-The jail standard that brings these in:
+The jail standard that brings these in, 9 NYCRR 7015.2(e)(2):
 
-> "any pesticide applied in the facility shall be used consistent with the manufacturer's recommendations and any applicable laws or regulations." (9 NYCRR 7015.2(e)(2))
+> "any pesticide applied in the facility shall be used consistent with the manufacturer's recommendations and any applicable laws or regulations."
 
 ## What It Says (Verbatim)
 

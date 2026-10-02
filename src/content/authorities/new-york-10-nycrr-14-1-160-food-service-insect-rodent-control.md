@@ -32,11 +32,15 @@ related_authorities:
 
 New York Codes, Rules and Regulations, Title 10 (Department of Health), Chapter I (State Sanitary Code), Subpart 14-1 (Food Service Establishments). Sections 14-1.20 and 14-1.160 were read from the Department of Health's official regulations site, and sections 14-1.60 and 14-1.150 from the Legal Information Institute's copy, on October 1, 2026.
 
-The link to the jail standards is in the Commission of Correction's own rules, read from its compilation served July 15, 2026:
+The link to the jail standards is in the Commission of Correction's own rules, read from its compilation served July 15, 2026.
 
-> "(d) The food service area of each facility, and all food preparation equipment and utensils, shall be maintained in a clean and sanitary condition consistent with the State Sanitary Code." (9 NYCRR 7015.2(d))
+**9 NYCRR 7015.2(d):**
 
-> "(c) A food service organization which provides food services for a local correctional facility must comply with the requirements of this Part and with the requirements of the State Sanitary Code as contained in 10 NYCRR Part 14." (9 NYCRR 7009.1(c))
+> "(d) The food service area of each facility, and all food preparation equipment and utensils, shall be maintained in a clean and sanitary condition consistent with the State Sanitary Code."
+
+**9 NYCRR 7009.1(c):**
+
+> "(c) A food service organization which provides food services for a local correctional facility must comply with the requirements of this Part and with the requirements of the State Sanitary Code as contained in 10 NYCRR Part 14."
 
 ## What It Says (Verbatim)
 
