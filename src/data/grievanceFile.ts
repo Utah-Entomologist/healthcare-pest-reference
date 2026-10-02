@@ -56,6 +56,36 @@ export const CASE_QUOTES: Record<string, CaseQuote> = {
     cite: 'Antonelli v. Sheahan, 81 F.3d 1422 (7th Cir. 1996)',
     source: 'Antonelli_v_Sheahan_81F3d1422.txt'
   },
+  darnellShould: {
+    id: 'darnellShould',
+    text: 'knew, or should have known, that the condition posed an excessive risk to health or safety',
+    cite: 'Darnell v. Pineiro, 849 F.3d 17, 35 (2d Cir. 2017)',
+    source: 'Darnell_v_Pineiro_849F3d17.txt'
+  },
+  darnellNegligent: {
+    id: 'darnellNegligent',
+    text: 'A detainee must prove that an official acted intentionally or recklessly, and not merely negligently',
+    cite: 'Darnell v. Pineiro, 849 F.3d 17, 36 (2d Cir. 2017)',
+    source: 'Darnell_v_Pineiro_849F3d17.txt'
+  },
+  darnellVermin: {
+    id: 'darnellVermin',
+    text: 'infested with rats, mice, cockroaches, flies, and other insects and vermin',
+    cite: 'Darnell v. Pineiro, 849 F.3d 17, 24 (2d Cir. 2017)',
+    source: 'Darnell_v_Pineiro_849F3d17.txt'
+  },
+  edwardsVermin: {
+    id: 'edwardsVermin',
+    text: 'compelled to live in a prison cell coated in black mold and overrun by vermin are enough to establish an objective deprivation that posed a serious health risk',
+    cite: 'Edwards v. Arocho, No. 22-585-pr, slip op. at 26 (2d Cir. Dec. 30, 2024)',
+    source: 'Edwards_v_Arocho_2dCir_2024-12-30.txt'
+  },
+  edwardsRounds: {
+    id: 'edwardsRounds',
+    text: 'officers making their rounds',
+    cite: 'Edwards v. Arocho, No. 22-585-pr, slip op. at 28 (2d Cir. Dec. 30, 2024)',
+    source: 'Edwards_v_Arocho_2dCir_2024-12-30.txt'
+  },
   dojFulton: {
     id: 'dojFulton',
     text: 'people incarcerated in the Fulton County Jail suffered harms from pest infestation',
@@ -67,7 +97,9 @@ export const CASE_QUOTES: Record<string, CaseQuote> = {
 export const CASE_LINKS = {
   farmer: 'https://tile.loc.gov/storage-services/service/ll/usrep/usrep511/usrep511825/usrep511825.pdf',
   antonelli: 'https://law.resource.org/pub/us/case/reporter/F3/081/81.F3d.1422.94-3383.html',
-  doj: 'https://www.justice.gov/archives/opa/pr/justice-department-finds-conditions-fulton-county-jail-georgia-violate-constitution-and'
+  doj: 'https://www.justice.gov/archives/opa/pr/justice-department-finds-conditions-fulton-county-jail-georgia-violate-constitution-and',
+  darnell: 'https://www.govinfo.gov/content/pkg/USCOURTS-ca2-15-02870/pdf/USCOURTS-ca2-15-02870-0.pdf',
+  edwards: 'https://www.govinfo.gov/content/pkg/USCOURTS-ca2-22-00585/pdf/USCOURTS-ca2-22-00585-0.pdf'
 } as const;
 
 export interface GrievanceQuestion {

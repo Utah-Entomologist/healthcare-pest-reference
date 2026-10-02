@@ -37,6 +37,7 @@ export function status(key, a, ctx) {
   if (AUTH_STATE[key]) {
     if (a.state !== AUTH_STATE[key] || a.op === 'bop') return null;
     const sc = AUTH_SCOPE[key] || {};
+    if (sc.kitchenOnly && !a.kitchen) return N(NO_FOOD);
     if (sc[a.op]) return { s: sc[a.op].s, why: sc[a.op].why };
     return a.op === 'private' ? C(PRIVATE_DEFAULT) : null;
   }
@@ -45,6 +46,7 @@ export function status(key, a, ctx) {
       if (a.op === 'private') return A('A private-sector workplace, covered by federal OSHA or by a State Plan that covers the private sector.');
       if (a.op === 'bop') return C('How OSHA requirements reach a federal employer is not established on this reference.');
       if (UT) return A("Utah's State Plan covers state and local government workers, and Utah rule R614-1-4 incorporates Part 1910.");
+      if (a.state === 'NY') return A("New York's Public Employee Safety and Health program covers public employees (Labor Law § 27-a), and 12 NYCRR 800.3 adopts Part 1910 (July 1, 2021 edition) for them.");
       if (OSHA_PUBLIC[a.state] === 'none') return N('OSHA: ' + stateNameOf(a.state, STATE_NAMES) + ' has no State Plan, and state and local government workers are not covered by federal OSHA.');
       if (OSHA_PUBLIC[a.state] === 'plan') return C('OSHA lists ' + stateNameOf(a.state, STATE_NAMES) + "'s State Plan as covering state and local government workers; its adoption of 1910.141 is not verified here.");
       return C('Depends on whether your state runs an OSHA-approved State Plan that covers public employers.');
@@ -52,6 +54,7 @@ export function status(key, a, ctx) {
       if (!a.kitchen) return N(NO_FOOD);
       if (UT) return A('Utah adopts the 2022 Food Code through R392-100, which does not exempt jails or prisons.');
       if (a.ice === 'nds') return A('ICE NDS 2019 Standard 4.1 directs compliance with the most recent FDA food code.');
+      if (a.state === 'NY') return N("New York's Department of Health has not adopted the FDA Food Code; food service follows 10 NYCRR Subpart 14-1, listed under New York.");
       return C("Depends on your state's adoption of the Food Code and on who inspects your kitchen.");
     case 'r392':
       if (!UT) return null;

@@ -39,7 +39,11 @@ export const CADENCE_ORDER: Cadence[] = [
 
 /** How an authority reaches a facility, by who operates it. Missing operator = not shown. */
 export interface Applic { s: 'applies' | 'check'; why: string; }
-export interface Scope { county?: Applic; private?: Applic; state?: Applic; }
+export interface Scope {
+  county?: Applic; private?: Applic; state?: Applic;
+  /** The authority reaches only a facility where food is prepared on site (see applicability.js). */
+  kitchenOnly?: boolean;
+}
 
 export interface Authority {
   key: string;
@@ -68,7 +72,7 @@ export const STATES: { code: string; name: string }[] = [
 /**
  * OSHA State Plan coverage of state and local government workers, as OSHA's State Plans page states it
  * (saved OSHA_stateplans.txt, read 2026-09-24). 'none' = "State and local government workers are not
- * covered by federal OSHA." Adoption of 1910.141 by a State Plan is verified only for Utah.
+ * covered by federal OSHA." Adoption of 1910.141 by a State Plan is verified for Utah (R614-1-4) and New York (12 NYCRR 800.3).
  */
 export const OSHA_PUBLIC: Record<string, 'plan' | 'none'> = {
   AR: 'none', CA: 'plan', CO: 'none', FL: 'none', ID: 'none', IL: 'plan', IN: 'plan', IA: 'plan',
@@ -158,6 +162,22 @@ export const AUTHORITIES: Authority[] = [
     scope: { county: CHECK('Adult detention facilities in the New Mexico Government Accreditation Program. Whether a statute or rule requires the same of every county jail is not verified here.') } },
   { key: 'ny', name: 'New York 9 NYCRR Part 7015 (Sanitation)', slug: 'new-york-9-nycrr-7015-2-insect-rodent', group: 'Other states', state: 'NY',
     scope: { county: JAIL('Local correctional facilities, including county jails and penitentiaries, under the State Commission of Correction.') } },
+  { key: 'ny7032', name: 'New York 9 NYCRR Part 7032 (Grievance Program)', slug: 'new-york-9-nycrr-7032-grievance-program', group: 'Other states', state: 'NY',
+    scope: { county: JAIL('Every local correctional facility, except those in cities of one million or more (9 NYCRR 7032.1, 7032.12).') } },
+  { key: 'ny14', name: 'New York 10 NYCRR Subpart 14-1 (State Sanitary Code, Food Service)', slug: 'new-york-10-nycrr-14-1-160-food-service-insect-rodent-control', group: 'Other states', state: 'NY',
+    scope: {
+      kitchenOnly: true,
+      county: JAIL('The food service area of a local correctional facility is kept consistent with the State Sanitary Code (9 NYCRR 7015.2(d)), and a food service organization serving it must comply with 10 NYCRR Part 14 (9 NYCRR 7009.1(c)).'),
+      private: CHECK('Food service establishments in New York follow Subpart 14-1; confirm who holds the permit for the kitchen and who inspects it.')
+    } },
+  { key: 'nyecl', name: 'New York ECL Article 33 and 6 NYCRR Part 325 (Pesticides)', slug: 'new-york-ecl-33-6-nycrr-325-pesticide-application', group: 'Other states', state: 'NY',
+    scope: {
+      county: JAIL('Every commercial pesticide application in New York, by a contractor or by facility staff, and every agency, including a county, that applies pesticides (ECL 33-0905, 33-0907).'),
+      private: JAIL('Every commercial pesticide application in New York (ECL 33-0905).'),
+      state: JAIL('Every commercial pesticide application in New York, and every state agency that applies pesticides (ECL 33-0905, 33-0907).')
+    } },
+  { key: 'nyssa', name: "NYSSA Corrections Accreditation Standards 118 and 119 (New York State Sheriffs' Association)", slug: 'new-york-nyssa-corrections-accreditation-118-119', group: 'Other states', state: 'NY',
+    scope: { county: CHECK("New York county jails seeking or holding the New York State Sheriffs' Association's corrections accreditation. Quoted from the June 1998 manual on the association's website; confirm the current edition.") } },
   { key: 'nc', name: 'North Carolina 15A NCAC 18A .1515 (adopted by 10A NCAC 14J .0701)', slug: 'north-carolina-15a-ncac-18a-1515-vermin-control', group: 'Other states', state: 'NC',
     scope: { county: JAIL('All jails and local confinement facilities (10A NCAC 14J .0102(a) and .0701).') } },
   { key: 'ok', name: 'Oklahoma OAC 310:670 (Jail Standards)', slug: 'oklahoma-oac-310-670-5-6-pest-control', group: 'Other states', state: 'OK',
@@ -803,6 +823,118 @@ export const ROWS: Row[] = [
     requirement: 'The chief administrative officer requests annual inspections by the local health authority.',
     quote: 'The chief administrative officer shall request that the local health authority with jurisdiction over the facility perform annual inspections of the facility.',
     evidence: 'The request, and the annual local health authority inspection results', cadence: ['annual'], frequency: 'Annually', owner: 'Chief administrative officer (requests); local health authority (inspects)' },
+  { id: 'ny-sanitation', auth: 'ny', cite: '9 NYCRR 7015.2(a)',
+    requirement: 'Written procedures to keep every area of the facility sanitary, with sanitation tasks completed as necessary.',
+    quote: 'The chief administrative officer shall establish written procedures designed to ensure that all areas of the facility are maintained in a sanitary condition.',
+    evidence: 'The written sanitation procedures, and records of the sanitation tasks completed', cadence: ['policy'], frequency: 'Written procedures', owner: 'Chief administrative officer' },
+  { id: 'ny-kitchen', auth: 'ny', cite: '9 NYCRR 7015.2(d)', kitchen: true,
+    requirement: 'Keep the food service area clean and sanitary, consistent with the State Sanitary Code (10 NYCRR Subpart 14-1).',
+    quote: 'The food service area of each facility, and all food preparation equipment and utensils, shall be maintained in a clean and sanitary condition consistent with the State Sanitary Code.',
+    evidence: 'Kitchen sanitation records and the health department food service inspection reports', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- New York: 9 NYCRR Part 7032 (Grievance Program) ----
+  { id: 'ny7032-program', auth: 'ny7032', cite: '9 NYCRR 7032.1',
+    requirement: 'A formal grievance program, through which pest complaints are filed and answered.',
+    quote: 'the chief administrative officer of each local correctional facility shall establish, implement and maintain a formal inmate grievance program.',
+    evidence: 'The written grievance policy and procedures', cadence: ['policy'], frequency: 'Written program', owner: 'Chief administrative officer' },
+  { id: 'ny7032-file', auth: 'ny7032', cite: '9 NYCRR 7032.4(d)',
+    requirement: 'Grievance forms readily available; a grievance is filed within five days of the occurrence.',
+    quote: 'Facility staff shall make forms readily available so that an inmate may file a grievance. An inmate must file a grievance within five days of the date of the act or occurrence giving rise to the grievance.',
+    evidence: 'Dated grievance forms, logged on receipt', cadence: ['detection'], frequency: 'Each grievance', owner: 'Facility staff (forms)' },
+  { id: 'ny7032-investigate', auth: 'ny7032', cite: '9 NYCRR 7032.4(g)',
+    requirement: 'Investigate each grievance with interview summaries and copies of pertinent documents; for a pest grievance, the work order and the service report.',
+    quote: 'At a minimum, each investigation of an inmate grievance shall include gathering and assessing the following information: (1) a description of the facts and issues underlying the circumstances of the grievance; (2) summaries of all interviews held with the grievant and with all parties involved in the grievance; (3) copies of pertinent documents; and (4) any additional relevant information.',
+    evidence: 'The investigation report, with the work order and pest service report attached', cadence: ['detection'], frequency: 'Each grievance', owner: NOT_NAMED },
+  { id: 'ny7032-decide', auth: 'ny7032', cite: '9 NYCRR 7032.4(i)',
+    requirement: 'A written determination, with the facts and reasons, within five business days of receiving the grievance.',
+    quote: "Within five business days of the receipt of a grievance, the grievance coordinator shall issue a written determination. Such determination shall specify the facts and reasons underlying the coordinator's determination.",
+    evidence: 'The written determination, and the copy provided to the grievant', cadence: ['detection'], frequency: 'Within 5 business days of receipt', owner: 'Grievance coordinator' },
+  { id: 'ny7032-relief', auth: 'ny7032', cite: '9 NYCRR 7032.4(l)',
+    requirement: 'When a grievance has merit, direct relief in writing for the grievant and for all others similarly situated; for pests, the whole affected area.',
+    quote: 'If the chief administrative officer finds merit in a grievance, he/she shall direct in writing that appropriate remedies or meaningful relief be provided to the grievant and for all others similarly situated.',
+    evidence: 'The written direction, and the work orders that carried it out', cadence: ['detection'], frequency: 'Each grievance found to have merit', owner: 'Chief administrative officer' },
+  { id: 'ny7032-appeal', auth: 'ny7032', cite: '9 NYCRR 7032.5(b)',
+    requirement: "On appeal, send the appeal, the investigation report, and the pertinent documents to the Commission's Citizens' Policy and Complaint Review Council within three business days.",
+    quote: "the grievance coordinator shall mail, or electronically submit in a manner and form prescribed by the Commission of Correction, the appeal, the accompanying investigation report and all other pertinent documents to the Commission's Citizens' Policy and Complaint Review Council.",
+    evidence: 'The appeal packet and the receipt given to the grievant', cadence: ['detection'], frequency: 'Within 3 business days of the notice of appeal', owner: 'Grievance coordinator' },
+  { id: 'ny7032-comply', auth: 'ny7032', cite: '9 NYCRR 7032.5(e)',
+    requirement: "Verify compliance with the Council's determination, and file the verification with the grievance.",
+    quote: "The chief administrative officer shall submit verification of compliance with the Citizens' Policy and Complaint Review Council's determination as directed by such Council. Such verification shall be filed with the grievance.",
+    evidence: 'The verification of compliance, filed with the grievance', cadence: ['detection'], frequency: 'Each appeal decided for the grievant', owner: 'Chief administrative officer' },
+  { id: 'ny7032-record', auth: 'ny7032', cite: '9 NYCRR 7032.10',
+    requirement: 'A centralized record of all grievances.',
+    quote: 'Each chief administrative officer shall develop a centralized record of all grievances.',
+    evidence: 'A centralized grievance record in which pest grievances can be found and counted', cadence: ['ongoing'], frequency: 'Ongoing', owner: 'Chief administrative officer' },
+
+  // ---- New York: 10 NYCRR Subpart 14-1 (food service) ----
+  { id: 'ny14-free', auth: 'ny14', cite: '10 NYCRR 14-1.160', kitchen: true,
+    requirement: 'Keep the food service premises free of insects, rodents, harborage, and breeding conditions.',
+    quote: 'The premises are to be free of insects, rodents, harborage, and insect or rodent breeding conditions.',
+    evidence: 'Pest service reports for food areas, health department inspection reports, and the corrections made', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'ny14-openings', auth: 'ny14', cite: '10 NYCRR 14-1.160', kitchen: true,
+    requirement: 'Protect openings to the outside against insects and rodents.',
+    quote: 'Openings to the outside are to be protected against the entrance of insects and rodents.',
+    evidence: 'Door sweep, screen, and seal condition in service reports, and repair work orders', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'ny14-sanitation', auth: 'ny14', cite: '10 NYCRR 14-1.160', kitchen: true,
+    requirement: 'Do not use pesticides in place of sanitation.',
+    quote: 'Pesticides are not to be used in place of or as a substitute for proper sanitation.',
+    evidence: 'Sanitation findings in service reports, with the corrections, alongside any applications', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'ny14-spray', auth: 'ny14', cite: '10 NYCRR 14-1.60(a)', kitchen: true,
+    requirement: 'No insecticide spraying in food preparation and service areas while food is handled or exposed.',
+    quote: 'Insecticide spraying is prohibited in food preparation and service areas while food is being processed, prepared or served, or where unprotected food, clean utensils or containers are displayed or stored.',
+    evidence: 'Application records showing the time and location of each food-area application', cadence: ['application'], frequency: 'Each application', owner: NOT_NAMED },
+  { id: 'ny14-bait', auth: 'ny14', cite: '10 NYCRR 14-1.60(e)', kitchen: true,
+    requirement: 'No unprotected bait stations in food storage, service, preparation, or utensil washing and storage areas.',
+    quote: 'The use of unprotected bait stations in food storage, service and preparation areas and in utensil washing and storage areas is forbidden.',
+    evidence: 'A device map showing only protected bait stations in food areas', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'ny14-garbage', auth: 'ny14', cite: '10 NYCRR 14-1.150(a)', kitchen: true,
+    requirement: 'Keep garbage in insect-proof and rodent-proof containers.',
+    quote: 'Garbage and refuse is to be kept in durable, easily cleanable, insect-proof and rodent-proof containers.',
+    evidence: 'Container condition in service reports and sanitation inspections', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+
+  // ---- New York: ECL Article 33 and 6 NYCRR Part 325 (pesticides) ----
+  { id: 'nyecl-cert', auth: 'nyecl', cite: 'ECL 33-0905(1)',
+    requirement: 'Anyone who makes a commercial application is certified by the Department of Environmental Conservation. Commercial application is any application other than a private or residential one (ECL 33-0101(11)).',
+    quote: 'Any person who engages in the commercial or private application of pesticides or the sale of restricted use pesticides shall be certified by the commissioner except as provided in subdivision two of this section.',
+    evidence: "Each applicator's certification and identification card, including facility staff who apply pesticides", cadence: ['contract'], frequency: 'At contract award and renewal', owner: NOT_NAMED },
+  { id: 'nyecl-register', auth: 'nyecl', cite: 'ECL 33-0907(1); 6 NYCRR 325.23(a)',
+    requirement: 'A pest control business, and an agency (including a county) that applies its own pesticides, registers with the Department of Environmental Conservation.',
+    quote: 'Any pesticide business or agency as defined in this article shall register with the commissioner.',
+    evidence: "The business's (or the county's) current registration", cadence: ['contract'], frequency: 'At contract award and renewal', owner: NOT_NAMED },
+  { id: 'nyecl-category', auth: 'nyecl', cite: '6 NYCRR 325.23(h)',
+    requirement: 'A business working in Category 7 (industrial, institutional, or structural; 6 NYCRR 325.16(g)) employs at least one certified commercial pesticide applicator in that category.',
+    quote: 'A registered business using pesticides in category 7 - industrial, institutional, or structural; category 5 - aquatics; category 1 - agriculture; or businesses applying pesticides by aircraft must employ at least one certified commercial pesticide applicator, certified in these categories.',
+    evidence: "The certified employee's certification and category", cadence: ['contract'], frequency: 'At contract award and renewal', owner: NOT_NAMED },
+  { id: 'nyecl-label', auth: 'nyecl', cite: 'ECL 33-0905(5)(b)',
+    requirement: 'Before each application in the building, give the owner or its agent the label information, including all warnings.',
+    quote: 'every certified applicator shall, prior to the application of a pesticide within or on the premises of a multiple dwelling, building, or structure other than a dwelling supply the owner or his agent, with a copy of the information, including all warnings, contained on the label of the pesticide to be applied.',
+    evidence: 'Label information for each product applied, delivered before application and kept on file', cadence: ['application'], frequency: 'Each application', owner: 'Certified applicator (supplies); owner or agent (receives)' },
+  { id: 'nyecl-records', auth: 'nyecl', cite: 'ECL 33-1205(1)',
+    requirement: 'Record each application: EPA registration number, product, quantity, date, and address; keep at least three years.',
+    quote: 'All commercial applicators shall maintain pesticide use records for each pesticide application containing the following: a. EPA registration number; b. product name; c. quantity of each pesticide used; d. date applied; e. location of application by address (including five-digit zip code). Such records shall be maintained for a period of not less than three years.',
+    evidence: 'Application records with each listed element, kept three years', cadence: ['application'], frequency: 'Each application', owner: 'Commercial applicators' },
+  { id: 'nyecl-detail', auth: 'nyecl', cite: 'ECL 33-1205(1)',
+    requirement: 'Also record dosage rates, methods of application, and target organisms.',
+    quote: 'All commercial applicators shall also maintain corresponding records of the dosage rates, methods of application and target organisms for each pesticide application.',
+    evidence: 'Dosage, method, and target pest on each application record', cadence: ['application'], frequency: 'Each application', owner: 'Commercial applicators' },
+  { id: 'nyecl-report', auth: 'nyecl', cite: 'ECL 33-1205(1)',
+    requirement: 'File an annual electronic report of applications with the Department of Environmental Conservation, by February 1 for the prior year.',
+    quote: 'All commercial applicators shall file, at least annually, a report or reports containing such information with the department in an electronic format',
+    evidence: "The applicator's annual report filing", cadence: ['annual'], frequency: 'Annually', owner: 'Commercial applicators' },
+
+  // ---- New York: NYSSA Corrections Accreditation Manual (June 1998 edition, as published) ----
+  { id: 'nyssa-118', auth: 'nyssa', cite: 'Standard 118',
+    requirement: 'Monthly sanitation inspections of the jail, with written reports to the jail administrator and the health authority.',
+    quote: 'Written policy and procedures require that monthly sanitation inspections of the jail are conducted, and that written reports are submitted to the jail administrator and the health authority.',
+    evidence: 'Monthly inspection checklists or reports, and their routing to the jail administrator and the health authority', cadence: ['monthly'], frequency: 'Monthly', owner: 'Jail administrator and health authority (receive the reports)' },
+  { id: 'nyssa-119', auth: 'nyssa', cite: 'Standard 119', kitchen: true,
+    requirement: 'Kitchen, dining, and food storage areas kept clean and sanitary.',
+    quote: 'The kitchen, dining, and food storage areas are kept clean and sanitary for the preparation and serving of meals.',
+    evidence: 'Kitchen sections of the monthly inspections, and health department reports', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
+  { id: 'nyssa-119c', auth: 'nyssa', cite: 'Standard 119, commentary', kitchen: true, should: true,
+    requirement: 'The kitchen area should be free of rodents and insects (commentary).',
+    quote: 'The area should be free of rodents and insects',
+    evidence: 'Pest findings for kitchen areas in service reports and monthly inspections', cadence: ['ongoing'], frequency: 'Ongoing', owner: NOT_NAMED },
 
   // ---- North Carolina ----
   { id: 'nc-measures', auth: 'nc', cite: '15A NCAC 18A .1515(a)',

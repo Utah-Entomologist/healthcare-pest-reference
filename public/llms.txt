@@ -37,6 +37,10 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 - [New Jersey Adult County Correctional Facilities, N.J.A.C. 10A:31-11.5](https://correctionspestreference.org/authorities/new-jersey-njac-10a-31-11-5-vermin-pests/)
 - [New Mexico Adult Detention Professional Standards SS-06](https://correctionspestreference.org/authorities/new-mexico-nmac-adps-ss-06/)
 - [New York Commission of Correction, 9 NYCRR 7015.2(e)](https://correctionspestreference.org/authorities/new-york-9-nycrr-7015-2-insect-rodent/)
+- [New York 9 NYCRR Part 7032, grievance program](https://correctionspestreference.org/authorities/new-york-9-nycrr-7032-grievance-program/): five days to file, a written determination in five business days, relief for all others similarly situated.
+- [New York 10 NYCRR Subpart 14-1, food service insect and rodent control](https://correctionspestreference.org/authorities/new-york-10-nycrr-14-1-160-food-service-insect-rodent-control/): the State Sanitary Code rule for jail kitchens; New York has not adopted the FDA Food Code.
+- [New York ECL Article 33 and 6 NYCRR Part 325, pesticide application](https://correctionspestreference.org/authorities/new-york-ecl-33-6-nycrr-325-pesticide-application/): certification, business and agency registration, label information, and records.
+- [NYSSA Corrections Accreditation Standards 118 and 119](https://correctionspestreference.org/authorities/new-york-nyssa-corrections-accreditation-118-119/): monthly sanitation inspections; a kitchen free of rodents and insects.
 - [North Carolina Jail Sanitation, 15A NCAC 18A .1515](https://correctionspestreference.org/authorities/north-carolina-15a-ncac-18a-1515-vermin-control/)
 - [Ohio Adm.Code 5120:1-8-05](https://correctionspestreference.org/authorities/ohio-5120-1-8-05-jail-sanitation/)
 - [Oklahoma Jail Standards, OAC 310:670-5-6(19)](https://correctionspestreference.org/authorities/oklahoma-oac-310-670-5-6-pest-control/)

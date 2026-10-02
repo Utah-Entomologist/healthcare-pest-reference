@@ -45,6 +45,7 @@ export const POLICY_SECTIONS = [
     "5.1 Staff record pest activity, and conditions that attract or shelter pests (food kept in cells, standing water, gaps around pipes and doors, damaged screens and door sweeps), on the Facility's [WEEKLY] sanitation inspection.",
     "5.2 Every pest report, whether from an incarcerated person's grievance, request, or sick call, a staff observation, a health or jail inspection, or the provider's service report, is logged the day it is received with the date, location, and pest, and is opened as a work order.",
     '5.3 A logged report is closed only after the response is recorded, a follow-up check is made, and the person who reported it receives an answer that matches the work record.',
+    '{{grievanceNote}}',
     '5.4 Conducive conditions are entered as maintenance work orders and tracked to completion.'
   ] },
   { h: '6. Food service areas', p: [
@@ -73,7 +74,8 @@ export const POLICY_NATIONAL_SLOTS = {
   authorities: "[SELECT FROM THE PEST COMPLIANCE MAP, for example: the pest provision of the state's jail standards or accreditation standards; FDA Food Code §6-501.111 as the state adopts it; 29 CFR 1910.141(a)(5) where OSHA reaches the Facility; ICE PBNDS 2011 Standards 1.2 and 4.1; USMS FPBDS Version 12 Standard F.2.4]",
   state: '[STATE]',
   stateStandardNote: '',
-  lexipolNote: ''
+  lexipolNote: '',
+  grievanceNote: ''
 };
 
 /**
@@ -88,6 +90,9 @@ export function policySlots(a, data) {
   const slots = { ...POLICY_NATIONAL_SLOTS, authorities: sow.authorities, state: name };
   if (row && a.op !== 'bop') {
     slots.stateStandardNote = `[DRAFTING NOTE, delete before adopting: ${name}'s jail standard, ${row.instrument}, reads: "${row.quote}" On frequency and provider: ${row.frequency}]`;
+  }
+  if (a.state === 'NY' && a.op !== 'bop') {
+    slots.grievanceNote = '[DRAFTING NOTE, delete before adopting: In New York, 9 NYCRR Part 7032 sets the grievance clock. A grievance is filed within five days of the occurrence (7032.4(d)), and the grievance coordinator issues a written determination within five business days of receipt (7032.4(i)). Where the follow-up check under 5.3 cannot be made within that time, the determination can state what was done and when the follow-up check is scheduled, and the report stays open until the check is recorded. A grievance found to have merit requires relief "for all others similarly situated" (7032.4(l)). Part 7032 does not apply to facilities in cities of one million or more (7032.12).]';
   }
   if (a.lexipol && a.op !== 'bop') {
     slots.lexipolNote = "[DRAFTING NOTE, delete before adopting: The Agency's policy manual is Lexipol's custody manual, whose Policy 805 already covers pest control services (a licensed pest control professional inspecting at least monthly), infested inmates, and storage of pest control compounds. Use this model to review Policy 805 against the Agency's practice. Policy 805 itself does not address pest reports and grievances, food service, records, or review; check whether other policies in the manual do before adding them. Keep one pest control policy, not two.]";

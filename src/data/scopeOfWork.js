@@ -173,6 +173,13 @@ export function sowSlots(a, data) {
     slots.inspectors = '[UDC / ICE / USMS / THE HEALTH DEPARTMENT / AN ACCREDITOR]';
     slots.publicRecords = '[APPLICABLE PUBLIC RECORDS LAW; IN UTAH, UTAH CODE 63G-2-301]';
   }
+  if (a.state === 'NY' && a.op !== 'bop') {
+    // New York's pesticide certification, registration, and records law are verified on this reference.
+    slots.licenseNote = '(In New York, a pesticide business registration with the Department of Environmental Conservation under ECL 33-0907 and 6 NYCRR 325.23.)';
+    slots.categoriesNote = '(In New York, commercial applicator certification under ECL 33-0905, in Category 7 under 6 NYCRR 325.16(g), Industrial, institutional and structural pest control. A registered business using Category 7 must employ at least one certified commercial pesticide applicator certified in it, 6 NYCRR 325.23(h).)';
+    slots.recordsRule = '[N.Y. Environmental Conservation Law 33-1205(1)]';
+    slots.retention = '[THREE YEARS, per ECL 33-1205(1) / THREE YEARS, per BOP 1614.01 §47 where it applies]';
+  }
   return slots;
 }
 
