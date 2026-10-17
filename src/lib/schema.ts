@@ -124,7 +124,8 @@ export function personSchema(): WithContext<Person> {
       'https://www.jurispro.com/expert/trenton-frazer-ms-bce-10258',
       'https://frazerappliedentomology.com/',
       'https://correctionspestreference.org/',
-      'https://universitypestreference.org/'
+      'https://universitypestreference.org/',
+      'https://multifamilypestreference.org/'
     ]
   };
 }

@@ -1,0 +1,178 @@
+{
+  "/": {
+    "title": "Healthcare Pest Reference: Pest Control Compliance",
+    "description": "Maps federal, state, and accreditor pest control requirements for hospitals, skilled nursing facilities, and clinics. Primary-source anchored."
+  },
+  "/authorities/": {
+    "title": "Pest Control Authorities Index: Healthcare",
+    "description": "Index of the regulations, standards, and accreditor requirements behind healthcare pest control, with a guide to which regime governs which facility."
+  },
+  "/deficiencies/": {
+    "title": "Pest Survey Deficiencies: CMS Tags, Joint Commission",
+    "description": "Reference pages for the CMS A-tags and Joint Commission elements under which pest activity and pesticide storage are cited, with plan of correction structure."
+  },
+  "/deficiencies/which-tag-is-pest-control/": {
+    "title": "Which Tag Is Pest Control? CMS, Joint Commission, VA",
+    "description": "Which survey tag a pest finding is cited under by facility type: F925, A-0701, A-0724, A-0750, 42 CFR §485.725(e), PE.01.01.01, and VHA Directive 1850.02."
+  },
+  "/topics/": {
+    "title": "Healthcare Pest Control Topics Across Authorities",
+    "description": "Questions that cut across several regulatory authorities, answered from the primary sources with links to each governing authority page."
+  },
+  "/about/": {
+    "title": "About the Healthcare Pest Reference and Its Author",
+    "description": "About the Healthcare Pest Reference, maintained by Trenton S. Frazer, BCE #B3413, and anchored to primary-source regulatory documentation."
+  },
+  "/methodology/": {
+    "title": "Methodology: Source Tiers and Verification Discipline",
+    "description": "Source tier hierarchy, confidence ratings, verification discipline, and the list of commonly circulated claims investigated and excluded from this reference."
+  },
+  "/consulting/": {
+    "title": "Healthcare Pest Consulting: Frazer Applied Entomology",
+    "description": "Frazer Applied Entomology, the consulting practice of Trenton S. Frazer, BCE: accreditation readiness, plan-of-correction support, and expert witness work."
+  },
+  "/register/": {
+    "title": "Regulatory Update Register: Healthcare Pest Rules",
+    "description": "Email register that sends a notice when a covered regulatory authority changes, stating the change, its effective date, and the documentation it affects."
+  },
+  "/authorities/485-725e-pest-control/": {
+    "title": "42 CFR §485.725(e): Clinic and Rehab Pest Control",
+    "description": "Verbatim text of 42 CFR §485.725(e), Standard: Pest control, for clinics, rehabilitation agencies, and public health agencies. Not hospitals."
+  },
+  "/authorities/aorn-2026-perioperative-guidelines/": {
+    "title": "AORN 2026 Perioperative Guidelines: Pest Exclusion",
+    "description": "Pest-relevant provisions of the AORN 2026 Guidelines for Perioperative Practice, Environmental Cleaning. Paywalled source; paraphrase, not quotation."
+  },
+  "/authorities/apic-text-environmental-services/": {
+    "title": "APIC Text: Environmental Services and Pest Management",
+    "description": "Pest-relevant provisions of the APIC Text of Infection Control and Epidemiology, Environmental Services chapter. Paywalled source; paraphrase."
+  },
+  "/authorities/cdc-hicpac-environmental-guidelines/": {
+    "title": "CDC HICPAC Environmental Guidelines: Pest Control",
+    "description": "Text of CDC HICPAC Guidelines for Environmental Infection Control in Health-Care Facilities (2003), Part II, Section E.V. Quoted from the source."
+  },
+  "/authorities/cms-conditions-of-participation/": {
+    "title": "42 CFR 482.41: Hospital Physical Environment (CMS)",
+    "description": "Text of the CMS Conditions of Participation for hospitals, Physical Environment, 42 CFR Part 482, Subpart C, Section 482.41, and how surveyors evaluate it."
+  },
+  "/authorities/cms-state-operations-manual/": {
+    "title": "CMS Appendix A Hospital Survey Protocol: Pest A-Tags",
+    "description": "What CMS Appendix A of the State Operations Manual says about hospital pest control and how it is cited under A-0701, A-0724, A-0747, and A-0750."
+  },
+  "/authorities/dnv-gl-niaho-standards/": {
+    "title": "DNV-GL NIAHO Standards: Pest Management in Hospitals",
+    "description": "Pest management provisions of the DNV NIAHO Accreditation Requirements, Revision 25-1, IC.1, for DNV-accredited hospitals. Paraphrase of a paywalled source."
+  },
+  "/authorities/epa-ipm-toolkit-2021/": {
+    "title": "EPA 907K21002: IPM in Health Care Facilities (2021)",
+    "description": "What EPA Region 7's IPM in Health Care Facilities toolkit (EPA 907K21002) says, with verbatim passages and a correction of three earlier quotations."
+  },
+  "/authorities/esacc-bce-credential/": {
+    "title": "ESACC Board Certified Entomologist (BCE) Credential",
+    "description": "BCE requirements from the Entomological Society of America Certification Corporation, how to verify a BCE on the ESACC roster, and how it compares to ACE."
+  },
+  "/authorities/fda-food-code-2022/": {
+    "title": "FDA Food Code 2022: Pest Control in Hospital Food Service",
+    "description": "Pest control text of FDA Food Code 2022 sections 6-501.111 and 6-202.13 as it applies to healthcare food service operations. Quoted from the primary source."
+  },
+  "/authorities/fgi-guidelines-design-construction/": {
+    "title": "FGI Guidelines for Design and Construction: Pest Exclusion",
+    "description": "Pest exclusion in healthcare facility design under the 2026 FGI Codes for Planning and Design and the 2022 FGI Guidelines for Design and Construction."
+  },
+  "/authorities/hai-cost-exposure-framing/": {
+    "title": "Healthcare Infection Costs and Pest Exposure Framing",
+    "description": "Financial framing of healthcare-associated infection costs and pest exposure, from Scott 2009, Zimlichman 2013, Sheele 2017, and CMS Value-Based Purchasing."
+  },
+  "/authorities/joint-commission-2026-pe-chapter/": {
+    "title": "Joint Commission 2026 PE Chapter: Pests and Pesticides",
+    "description": "How the Joint Commission 2026 Physical Environment chapter of the Comprehensive Accreditation Manual for Hospitals treats pest activity and pesticide storage."
+  },
+  "/authorities/nacmcf-1997-haccp-prerequisite/": {
+    "title": "NACMCF 1997 HACCP: Pest Control as Prerequisite Program",
+    "description": "Text of NACMCF 1997 HACCP Principles and Application Guidelines, Appendix A, on pest control as a prerequisite program. Quoted from the source."
+  },
+  "/authorities/osha-hazard-communication/": {
+    "title": "OSHA 29 CFR 1910.1200: Pesticide Storage and SDS",
+    "description": "OSHA 29 CFR 1910.1200 for pesticides in hospitals: written program, inventory, SDS access, training, and storage findings under Joint Commission PE.02.01.01."
+  },
+  "/authorities/usda-7cfr110-rescission/": {
+    "title": "USDA Rescission of 7 CFR Part 110: Pesticide Records",
+    "description": "USDA final rule rescinding 7 CFR Part 110, FR Doc 2025-08220, on recordkeeping by certified applicators of restricted use pesticides. Key passages quoted."
+  },
+  "/authorities/usp-797-sterile-compounding/": {
+    "title": "USP <797> Sterile Compounding: Pest Control Provisions",
+    "description": "Pest-management provisions of USP General Chapter <797>, Pharmaceutical Compounding, Sterile Preparations. The source is paywalled; the page gives paraphrase."
+  },
+  "/authorities/usp-800-hazardous-drugs/": {
+    "title": "USP <800> Hazardous Drugs: Pest Control Provisions",
+    "description": "Pest-management provisions of USP General Chapter <800>, Hazardous Drugs, Handling in Healthcare Settings. The source is paywalled; the page gives paraphrase."
+  },
+  "/authorities/utah-r432-100-hospital-licensure/": {
+    "title": "Utah R432-100-38(1)(d): Hospital Pest Control Program",
+    "description": "Verbatim text of Utah Admin. Code R432-100-38(1)(d), the pest-control program provision for Utah-licensed hospitals, with the section number corrected."
+  },
+  "/authorities/utah-r68-7-pesticide-applicator/": {
+    "title": "Utah Administrative Code R68-7: Pesticide Control Rule",
+    "description": "Operative provisions of Utah Administrative Code R68-7, the Utah Pesticide Control Rule administered by the Utah Department of Agriculture and Food."
+  },
+  "/authorities/vha-directive-1850-02/": {
+    "title": "VHA Directive 1850.02: Pest Management Program",
+    "description": "Verbatim policy of VHA Directive 1850.02: Pest Management Officer duties, IPMOP required elements, prior approval in patient care areas, and training."
+  },
+  "/deficiencies/a-0700-physical-environment/": {
+    "title": "A-0700 Physical Environment: CMS Condition-Level Tag",
+    "description": "A-0700 is the CMS hospital condition-level tag for 42 CFR §482.41, Physical Environment: verbatim text and when a pest finding becomes condition-level."
+  },
+  "/deficiencies/a-0701-buildings/": {
+    "title": "A-0701 Buildings: CMS Pest Control Deficiency Tag",
+    "description": "How CMS tag A-0701 (Buildings) is cited for pest conditions in hospitals, the regulation it enforces, and the records surveyors look for. Primary-source text."
+  },
+  "/deficiencies/a-0722-facilities/": {
+    "title": "A-0722 Facilities, with A-0724: Hospital Pest Findings",
+    "description": "A-0722 and A-0724 (42 CFR §482.41(d)): verbatim CMS guidance and how hospital pest findings in food service and support areas are cited. Primary-source text."
+  },
+  "/deficiencies/a-0747-infection-prevention-and-control/": {
+    "title": "A-0747 Infection Prevention and Control: CMS Tag",
+    "description": "A-0747, the CMS hospital condition-level tag for 42 CFR §482.42, with verbatim text and how a pest finding framed as infection control reaches it."
+  },
+  "/deficiencies/a-0749-infection-prevention-and-control-program/": {
+    "title": "A-0749 Infection Control Program: Not the Pest Tag",
+    "description": "A-0749 (42 CFR §482.42(a)(2)): verbatim CMS guidance, and why a hospital pest finding framed as infection control is usually written at A-0750 instead."
+  },
+  "/deficiencies/a-0750-sanitary-environment/": {
+    "title": "A-0750 Clean and Sanitary Environment: Pest Findings",
+    "description": "A-0750 (42 CFR §482.42(a)(3)), the CMS tag a hospital pest finding framed as infection control is most likely written to. Verbatim guidance."
+  },
+  "/deficiencies/a-0758/": {
+    "title": "A-0758 Does Not Exist: Use A-0701, A-0724, A-0750",
+    "description": "A-0758 does not appear in CMS Appendix A. Hospital pest findings are cited under A-0701, A-0724, and A-0750; verbatim tag headings and how to read them."
+  },
+  "/deficiencies/ec-02-02-01-hazardous-materials-and-waste/": {
+    "title": "EC.02.02.01 EP 5: Legacy Hazardous Materials Element",
+    "description": "Legacy Joint Commission element EC.02.02.01 EP 5 on hazardous materials management, now superseded: what surveyors looked for and plan of correction."
+  },
+  "/deficiencies/ec-02-06-01-safe-functional-environment/": {
+    "title": "EC.02.06.01: Legacy Safe, Functional Environment",
+    "description": "Legacy Joint Commission Environment of Care standard EC.02.06.01, now superseded: what surveyors looked for and how to structure a plan of correction."
+  },
+  "/deficiencies/f925-plan-of-correction/": {
+    "title": "F925 Plan of Correction: Five Elements, 10-Day Clock",
+    "description": "How to structure a plan of correction for an F925 (42 CFR §483.90(i)(4)) pest citation: the five CMS elements, the ten-day clock, and past noncompliance."
+  },
+  "/deficiencies/f925/": {
+    "title": "F925 Nursing Home Pest Control Program (CMS)",
+    "description": "F925 (42 CFR §483.90(i)(4)): verbatim regulation, CMS's definition of an effective pest control program, survey procedures and probes, plan of correction."
+  },
+  "/deficiencies/pe-01-01-01-safe-adequate-environment/": {
+    "title": "PE.01.01.01 Safe and Adequate Physical Environment",
+    "description": "Joint Commission PE.01.01.01, Safe and Adequate Physical Environment: what surveyors look for and the documentation that satisfies it."
+  },
+  "/deficiencies/pe-02-01-01-hazardous-materials-and-waste/": {
+    "title": "PE.02.01.01 Hazardous Materials and Waste",
+    "description": "Joint Commission PE.02.01.01 (EPs 1-4), Hazardous Materials and Waste: what surveyors look for and the documentation that satisfies it."
+  },
+  "/topics/pesticide-storage-requirements-healthcare-facilities/": {
+    "title": "OSHA 1910.1200 Pesticide Storage in Healthcare Facilities",
+    "description": "What governs a pesticide stored in a hospital: OSHA 29 CFR 1910.1200, the EPA label under FIFRA, eyewash rule 1910.151(c), state rules, and PE.02.01.01."
+  }
+}

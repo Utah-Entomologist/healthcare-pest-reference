@@ -3,6 +3,7 @@ import JsonLd from '../components/JsonLd.astro';
 import UpdateRegisterForm from '../components/UpdateRegisterForm.astro';
 import { breadcrumbSchema, organizationSchema, websiteSchema, type Crumb } from '../lib/schema';
 import { CONSULTING_PRACTICE_NAME, SITE_NAME, SITE_URL } from '../lib/site';
+import seo from '../data/seo.json';
 
 export interface Props {
   title: string;
@@ -33,6 +34,18 @@ const {
 
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
 const siteName = SITE_NAME;
+
+/**
+ * Search-result overrides (src/data/seo.json), keyed by pathname. They change
+ * only the <title>, meta description and social tags so search snippets fit
+ * Google's display limits (about 60 and 155 characters). The H1, the Article
+ * headline and the citation block keep the page's full title.
+ */
+const seoMap = seo as Record<string, { title?: string; description?: string }>;
+const seoKey = Astro.url.pathname.replace(/\/+$/, '') + '/';
+const seoEntry = seoMap[seoKey] ?? seoMap[seoKey.replace(/\/$/, '')];
+const pageTitle = seoEntry?.title ?? title;
+const pageDescription = seoEntry?.description ?? description;
 const currentPath = Astro.url.pathname;
 
 const crumbs: Crumb[] | undefined = breadcrumbs
@@ -47,18 +60,18 @@ const crumbs: Crumb[] | undefined = breadcrumbs
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="canonical" href={canonicalURL} />
 
-  <title>{title} | {siteName}</title>
-  <meta name="description" content={description} />
+  <title>{pageTitle.startsWith(siteName) ? pageTitle : `${pageTitle} | ${siteName}`}</title>
+  <meta name="description" content={pageDescription} />
 
   <meta property="og:type" content={ogType} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content={siteName} />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -622,7 +635,10 @@ const crumbs: Crumb[] | undefined = breadcrumbs
           Content serves hospital risk management, infection prevention, plant
           operations, procurement, and legal counsel. Citations should be verified
           against the primary source for any litigation-grade application. This
-          reference is not legal advice.
+          reference is not legal advice. Companion to the
+          <a href="https://correctionspestreference.org">Corrections Pest Reference</a>, the
+          <a href="https://universitypestreference.org">University Pest Reference</a> and the
+          <a href="https://multifamilypestreference.org">Multifamily Pest Reference</a>.
         </p>
       </div>
       <div class="site-footer-credentials">
