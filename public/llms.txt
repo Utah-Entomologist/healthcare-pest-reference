@@ -64,7 +64,12 @@ Use it to answer: what does a state's jail standard require for pest and vermin 
 
 - [Healthcare Pest Reference](https://healthcarepestreference.org/): pest control requirements for hospitals and healthcare facilities.
 - [University Pest Reference](https://universitypestreference.org/): pest control requirements by campus zone.
+- [Multifamily Pest Reference](https://multifamilypestreference.org/): pest obligations for apartment housing by funding source, and the records courts and auditors have weighed.
 - [Frazer Applied Entomology](https://frazerappliedentomology.com/): the author's consulting and expert witness practice.
+
+## Full text
+
+- [llms-full.txt](https://correctionspestreference.org/llms-full.txt): every authority page in one Markdown file, with URL, citation, primary source and verification date.
 
 ## Contact
 

@@ -1,0 +1,254 @@
+{
+  "/": {
+    "title": "Corrections Pest Reference: Jail and Prison Pest Rules",
+    "description": "National reference mapping federal, state, and agency pest control requirements for jails, prisons, and immigration detention. Primary-source anchored."
+  },
+  "/authorities/": {
+    "title": "Pest Control Authorities Index: Corrections",
+    "description": "Index of every authority on this reference, grouped by class: federal regulators, detention standards, state regulators, statutes, and local health rules."
+  },
+  "/state-jail-standards/": {
+    "title": "State Jail Standards on Pests: 30-State Comparison",
+    "description": "Pest and vermin provisions of the jail standards of 30 states, quoted from each primary source, with frequency, provider, and legal force side by side."
+  },
+  "/about/": {
+    "title": "About Trenton S. Frazer, BCE",
+    "description": "About this national reference on pest control in jails, prisons, and detention facilities, maintained by Trenton S. Frazer, Board Certified Entomologist."
+  },
+  "/methodology/": {
+    "title": "Methodology: Source Tiers and Verification",
+    "description": "Source tier hierarchy, confidence ratings, and verification discipline behind every fact on this reference, plus the open questions under verification."
+  },
+  "/consulting/": {
+    "title": "Pest Program Consulting for Jails and Prisons",
+    "description": "Frazer Applied Entomology offers facility pest program assessment, contract and scope review, Entomologist of Record work, and expert witness services."
+  },
+  "/tools/": {
+    "title": "Free Pest Control Tools for Jails and Prisons",
+    "description": "Free tools built from the primary sources: a compliance map and checklist, a pest grievance worksheet and log, a model policy, and a model scope of work."
+  },
+  "/tools/compliance-map/": {
+    "title": "Pest Compliance Map for Jails and Prisons",
+    "description": "Choose a facility profile in any of 30 states to see which pest control authorities apply, the record that shows each was met, and how often."
+  },
+  "/tools/scope-of-work/": {
+    "title": "Model Pest Management Scope of Work for Jails",
+    "description": "Free model contract language for a correctional facility pest management scope of work, filled in for your state, with a Word download for each state."
+  },
+  "/tools/pest-control-policy/": {
+    "title": "Model Pest Control Policy for Jails and Prisons",
+    "description": "Free model written pest control policy for a jail, prison, or detention facility, filled in for your state, with a Word download for each state."
+  },
+  "/risk-pools/": {
+    "title": "Jail Pest Control Exposure for Risk Pools, Insurers",
+    "description": "How a pest grievance in a jail becomes a claim, three questions to ask a member jail, and the free tools that answer them. For risk pools and insurers."
+  },
+  "/tools/vermin-grievance-file/": {
+    "title": "Vermin Grievance File: Eight Pest Grievance Questions",
+    "description": "Printable worksheet pairing the eight questions plaintiff's counsel asks about a jail vermin grievance with the record that answers each one."
+  },
+  "/tools/grievance-loop/": {
+    "title": "Pest Grievance Log: Grievance-to-Work-Order Loop",
+    "description": "Printable log template for jails and prisons that ties each pest grievance to its work order, response, follow-up check, and answer."
+  },
+  "/authorities/arkansas-12-car-50-506-lice-pests-intake/": {
+    "title": "12 CAR 50-506: Arkansas Lice and Pests at Intake",
+    "description": "Arkansas Minimum Standards for Adult Criminal Detention Facilities, 12 CAR 50-506: pests addressed only at intake, with delousing. Verbatim text."
+  },
+  "/authorities/bop-p1614-01-occupational-safety/": {
+    "title": "BOP P1614.01 Section 47: Prison Pest Control",
+    "description": "Pest control provisions of Federal Bureau of Prisons Program Statement 1614.01, Occupational Safety, Section 47. Verbatim text and the records it expects."
+  },
+  "/authorities/bop-p4700-08-food-service-manual/": {
+    "title": "BOP P4700.08 Food Service: Rodent and Insect Control",
+    "description": "Rodent and insect control provisions of Federal Bureau of Prisons Program Statement 4700.08, Food Service Manual, for prison kitchens. Verbatim text."
+  },
+  "/authorities/california-15-ccr-1212-vermin-control/": {
+    "title": "15 CCR 1212 Vermin Control: California Jail Standards",
+    "description": "California 15 CCR 1212 (infested persons) and 1264 (clothing); jail facility pest control comes only through the Retail Food Code for kitchens. Verbatim."
+  },
+  "/authorities/colorado-jail-standards-topic-o-pest-vermin/": {
+    "title": "Colorado Jail Standards Topic O: Pest and Vermin Policy",
+    "description": "Colorado jail standards, Topic O, call for a policy to mitigate and respond to pest and vermin control issues in county jails. Verbatim text and records."
+  },
+  "/authorities/fda-food-code-2022/": {
+    "title": "FDA Food Code 2022: Correctional Kitchen Pest Control",
+    "description": "Pest control text of FDA Food Code 2022 sections 6-501.111 and 6-202.13 as it applies to jail and prison food service. Quoted from the primary source."
+  },
+  "/authorities/florida-model-jail-standards-14-12-insect-rodent/": {
+    "title": "Florida Model Jail Standards 14.12: Insects, Rodents",
+    "description": "Text of Florida Model Jail Standards 14.12 on insect and rodent control in county jails, adopted under Fla. Stat. 951.23. Quoted from the source."
+  },
+  "/authorities/ice-nds-2019-environmental-health-safety/": {
+    "title": "ICE NDS 2019 Standard 1.1: Pests and Vermin",
+    "description": "Pests and vermin provisions of ICE National Detention Standards 2019, Standard 1.1 Environmental Health and Safety. Verbatim text and records."
+  },
+  "/authorities/ice-nds-2019-food-service/": {
+    "title": "ICE NDS 2019 Standard 4.1: Food Service Pest Control",
+    "description": "Pest control provisions of ICE National Detention Standards 2019, Standard 4.1 Food Service, for detention food service. Verbatim text and records."
+  },
+  "/authorities/ice-pbnds-2011-environmental-health-safety/": {
+    "title": "ICE PBNDS 2011 Standard 1.2: Monthly Pest Inspections",
+    "description": "Monthly licensed pest control inspection provisions of ICE PBNDS 2011, Standard 1.2 Environmental Health and Safety. Primary-source text and records."
+  },
+  "/authorities/ice-pbnds-2011-food-service/": {
+    "title": "ICE PBNDS 2011 Standard 4.1: Food Service Pest Control",
+    "description": "Pest control provisions of ICE PBNDS 2011, Standard 4.1 Food Service, for detention food service. Quoted from the primary source, with records."
+  },
+  "/authorities/idaho-jail-standards-10-03/": {
+    "title": "Idaho Jail Standards 10.03: Vermin and Pest Plan",
+    "description": "Idaho Sheriffs' Association Jail Standards 10.03: a vermin and pest control plan with monthly inspections and licensed fumigation. Verbatim text."
+  },
+  "/authorities/illinois-20-iac-701-120-pest-vermin-control/": {
+    "title": "20 Ill. Adm. Code 701.120(g): Illinois Jail Pests",
+    "description": "Illinois county jail standards, 20 Ill. Adm. Code 701.120(g): a continuous, documented insect and rodent program, body pests, 16-mesh screening. Verbatim."
+  },
+  "/authorities/indiana-210-iac-3-1-9-insects-rodents/": {
+    "title": "210 IAC 3-1-9(d): Indiana Jail Weekly Pest Inspection",
+    "description": "Indiana county jail standards, 210 IAC 3-1-9(d): weekly inspection for insects and rodents and licensed extermination as often as necessary. Verbatim text."
+  },
+  "/authorities/iowa-201-iac-50-14-pest-free/": {
+    "title": "201 IAC 50.14(1)(a)(2): Iowa Jail Pest-Free Condition",
+    "description": "Iowa jail standards, 201 IAC 50.14(1)(a)(2): a pest-free jail, chemicals applied by certified applicators, no direct exposure of prisoners or staff."
+  },
+  "/authorities/kentucky-501-kar-3-080-vermin-pests/": {
+    "title": "501 KAR 3:080: Kentucky Jail Vermin and Pest Control",
+    "description": "Kentucky full-service jail standards, 501 KAR 3:080 Section 1(1): the jailer provides for control of vermin and pests; preventive maintenance plan. Verbatim."
+  },
+  "/authorities/lexipol-custody-manual-policy-805-vermin-pest-control/": {
+    "title": "Lexipol Custody Manual Policy 805: Pest Control",
+    "description": "Lexipol Custody Manual Policy 805, Vermin and Pest Control: monthly licensed inspection, treatment of infested inmates, and secured storage. By section."
+  },
+  "/authorities/maryland-comar-12-14-03-05-vermin-pest-control/": {
+    "title": "COMAR 12.14.03.05: Maryland Quarterly Jail Pest Control",
+    "description": "Maryland adult detention center standards, COMAR 12.14.03.05A(3)(b): a written housekeeping policy for quarterly vermin and pest control. Verbatim text."
+  },
+  "/authorities/massachusetts-103-cmr-974-06-insect-rodent-control/": {
+    "title": "103 CMR 974.06: Massachusetts Insect and Rodent Control",
+    "description": "Massachusetts 103 CMR 974.06: a written vermin and pest policy and extermination by a licensed person, with DPH 105 CMR 451.361. Verbatim text."
+  },
+  "/authorities/michigan-r-791-727-vermin-pest-control-plan/": {
+    "title": "Michigan R 791.727: Jail Vermin and Pest Control Plan",
+    "description": "Michigan Department of Corrections jail and lockup rule R 791.727: a written vermin and pest control plan with monthly inspections. Verbatim text."
+  },
+  "/authorities/minnesota-rule-2911-7500-vermin-pests/": {
+    "title": "Minnesota Rules 2911.7500: Jail Vermin and Pest Plan",
+    "description": "Minnesota Rules 2911.7500: a written plan for control and elimination of vermin and pests in every jail. Verbatim text, legal force, pending revision."
+  },
+  "/authorities/montana-jail-standards-10-01/": {
+    "title": "Montana Jail Standards 10.01: Vermin and Pest Control",
+    "description": "Montana Jail Standards, Chapter 10 Sanitation and Hygiene, Standard 10.01: vermin and pests are controlled. Verbatim text and the records that show it."
+  },
+  "/authorities/nevada-nac-211-430-vermin-control/": {
+    "title": "Nevada NAC 211.430: Jail Vermin Control",
+    "description": "Nevada NAC 211.430 on measures to eliminate rodents, flies, cockroaches and other vermin in local correctional institutions; NAC 211.130. Verbatim."
+  },
+  "/authorities/new-jersey-njac-10a-31-11-5-vermin-pests/": {
+    "title": "N.J.A.C. 10A:31-11.5: New Jersey Jail Pest Control",
+    "description": "N.J.A.C. 10A:31-11.5: licensed pest control professionals at least monthly, plus integrated pest management, in adult county correctional facilities."
+  },
+  "/authorities/new-mexico-nmac-adps-ss-06/": {
+    "title": "New Mexico ADPS SS-06: Jail Vermin and Pest Plan",
+    "description": "New Mexico Adult Detention Professional Standards SS-06: a written vermin and pest control plan with monthly inspection by a licensed exterminator."
+  },
+  "/authorities/new-york-10-nycrr-14-1-160-food-service-insect-rodent-control/": {
+    "title": "10 NYCRR 14-1.160: New York Jail Kitchen Insect Control",
+    "description": "New York jail kitchens are held to the State Sanitary Code, 10 NYCRR Subpart 14-1: premises free of insects, rodents, and harborage. Verbatim text."
+  },
+  "/authorities/new-york-9-nycrr-7015-2-insect-rodent/": {
+    "title": "9 NYCRR 7015.2(e): New York Insect and Rodent Control",
+    "description": "New York Commission of Correction 9 NYCRR 7015.2(e): each local correctional facility develops procedures to eliminate insect and rodent infestation."
+  },
+  "/authorities/new-york-9-nycrr-7032-grievance-program/": {
+    "title": "9 NYCRR Part 7032: New York Pest Grievance Deadlines",
+    "description": "New York 9 NYCRR Part 7032: five days to file, a written determination in five business days, and appeal, applied to pest grievances. Verbatim text."
+  },
+  "/authorities/new-york-ecl-33-6-nycrr-325-pesticide-application/": {
+    "title": "New York ECL Article 33: Pesticides Applied in Jails",
+    "description": "New York ECL Article 33 and 6 NYCRR Part 325 on certification, registration, and records for pesticides applied in a jail. Verbatim text and records."
+  },
+  "/authorities/new-york-nyssa-corrections-accreditation-118-119/": {
+    "title": "NYSSA Standards 118 and 119: Jail Sanitation and Pests",
+    "description": "New York State Sheriffs' Association accreditation Standards 118 and 119: monthly sanitation inspections and a kitchen free of rodents and insects."
+  },
+  "/authorities/north-carolina-15a-ncac-18a-1515-vermin-control/": {
+    "title": "15A NCAC 18A .1515: North Carolina Jail Vermin Control",
+    "description": "North Carolina jail standards adopt 15A NCAC 18A .1515: effective measures against flies, rodents and vermin, 16-mesh screening. Verbatim text."
+  },
+  "/authorities/ohio-5120-1-8-05-jail-sanitation/": {
+    "title": "Ohio 5120:1-8-05: Jail Sanitation, Vermin Inspections",
+    "description": "Ohio Adm.Code 5120:1-8-05, sanitation and environmental conditions in full service jails, with monthly vermin inspections. Quoted from the source."
+  },
+  "/authorities/oklahoma-oac-310-670-5-6-pest-control/": {
+    "title": "Oklahoma OAC 310:670-5-6(19): Jail Pest Control",
+    "description": "Oklahoma jail standards, OAC 310:670-5-6(19): conducive conditions eliminated, and licensed pest control professionals contracted on a schedule. Verbatim."
+  },
+  "/authorities/oregon-ors-169-076-local-correctional-facility-standards/": {
+    "title": "ORS 169.076(2)(g): Oregon Jail Vermin Control Policy",
+    "description": "Oregon ORS 169.076 requires each local correctional facility to have a written policy on vermin and communicable disease control. Verbatim text."
+  },
+  "/authorities/oregon-ossa-jail-standards-h-201/": {
+    "title": "Oregon Jail Standards H-201: Sanitation Plan and Vermin",
+    "description": "Oregon State Sheriffs' Association Oregon Jail Standards, H-201 Sanitation Plan, place vermin control inside the cleaning plan. Recorded by identifier."
+  },
+  "/authorities/osha-1910-141-sanitation/": {
+    "title": "OSHA 29 CFR 1910.141(a)(5): Vermin Control in Jails",
+    "description": "OSHA 29 CFR 1910.141 paragraphs (a)(1) Scope and (a)(5) Vermin control, as applied to jail and prison workplaces. Quoted from the primary source."
+  },
+  "/authorities/pennsylvania-37-pa-code-95-248-vermin-pests/": {
+    "title": "37 Pa. Code 95.248(2): Pennsylvania Prison Pest Control",
+    "description": "Pennsylvania county prison requirements, 37 Pa. Code 95.248(2): monthly vermin and pest control by a qualified person, with documentation. Verbatim text."
+  },
+  "/authorities/slco-health-regulation-34-correctional-institutions/": {
+    "title": "Salt Lake County Health Regulation #34: Jail Pests",
+    "description": "Salt Lake Valley Health Department Health Regulation #34 on insect and rodent control in correctional institutions. Primary-source text and records."
+  },
+  "/authorities/south-carolina-jail-standards-3003-vermin-insects-pests/": {
+    "title": "South Carolina Standard 3003: Vermin, Insects, Pests",
+    "description": "South Carolina Minimum Standards for Local Detention Facilities, 3003: a scheduled pest control program, exclusion, and 16-mesh screening. Verbatim text."
+  },
+  "/authorities/tennessee-tci-1400-01-09-vermin-pests/": {
+    "title": "Tennessee TCI Rule 1400-01-.09(5): Jail Pest Control",
+    "description": "Tennessee Corrections Institute Rule 1400-01-.09(5): local jails provide for control of vermin and pests and remove inmates from treatment areas. Verbatim."
+  },
+  "/authorities/texas-tcjs-37-tac-261-147-vermin-control/": {
+    "title": "37 TAC 261.147: Texas Jail Vermin Control Rule",
+    "description": "Texas Minimum Jail Standards 37 TAC 261.147 is a construction rule; the sanitation rule, Chapter 279, has no pest control requirement. Verbatim text."
+  },
+  "/authorities/usms-fpbds-v12/": {
+    "title": "USMS FPBDS Version 12, F.2.4: Monthly Pest Inspections",
+    "description": "U.S. Marshals Service Federal Performance Based Detention Standards, Version 12, on vermin and pest control in contract detention. Primary-source text."
+  },
+  "/authorities/utah-grama-correctional-facility-records/": {
+    "title": "Utah Code 63G-2-301: Public Jail Pest Records",
+    "description": "Utah Code 63G-2-301 (GRAMA): jail standards, inspection results, and pest contracts are normally public records. Quoted from the primary source."
+  },
+  "/authorities/utah-r392-100-food-service-sanitation/": {
+    "title": "Utah R392-100 Food Service Sanitation: Jail Kitchens",
+    "description": "Utah Administrative Code R392-100, Food Service Sanitation, which adopts the 2022 FDA Food Code, as applied to jail and prison kitchens. Source text."
+  },
+  "/authorities/utah-r68-7-pesticide-applicator/": {
+    "title": "Utah R68-7 Pesticide Applicator Licensing: Jails",
+    "description": "Utah Administrative Code R68-7, the Utah Pesticide Control Rule, as it applies to licensed applicators in jails and prisons. Quoted from the source."
+  },
+  "/authorities/utah-udc-correctional-standards/": {
+    "title": "Utah Correctional Standards FY27: Pest and Vermin",
+    "description": "Utah Department of Corrections standards E-03, G-04, G-05, and I-01(F) for secure facilities: pest, vermin, and food service inspection. Source text."
+  },
+  "/authorities/virginia-6vac15-40-1150-vermin-pest-control/": {
+    "title": "Virginia 6VAC15-40-1150: Jail Vermin and Pest Control",
+    "description": "Virginia 6VAC15-40-1150 for jails and lockups: vermin and pest control by quarterly licensed service. Quoted from the primary source, with records."
+  },
+  "/authorities/washington-rcw-70-48-071-jail-operating-standards/": {
+    "title": "RCW 70.48.071: Washington Jail Operating Standards",
+    "description": "Washington's City and County Jails Act: each jail adopts operating standards and runs by them. Verbatim text and what it means for pest control policy."
+  },
+  "/authorities/washington-waspc-jail-accreditation-20-1/": {
+    "title": "WASPC Jail Accreditation 20.1: Washington Pest Control",
+    "description": "Washington Association of Sheriffs and Police Chiefs jail accreditation standard 20.1: policy or procedures governing pest control. Verbatim text."
+  },
+  "/authorities/wisconsin-doc-350-12-vermin-pests/": {
+    "title": "Wisconsin DOC 350.12(10): Jail Vermin and Pest Program",
+    "description": "Wisconsin Administrative Code DOC 350.12(10): vermin and pests controlled with an effective, documented program; locked storage of poisons. Verbatim."
+  }
+}
