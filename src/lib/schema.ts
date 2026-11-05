@@ -125,7 +125,8 @@ export function personSchema(): WithContext<Person> {
       'https://frazerappliedentomology.com/',
       'https://healthcarepestreference.org/',
       'https://universitypestreference.org/',
-      'https://multifamilypestreference.org/'
+      'https://multifamilypestreference.org/',
+      'https://foodservicepestreference.org/'
     ]
   };
 }
