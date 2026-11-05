@@ -27,6 +27,7 @@ Use it to answer: which CMS tag a hospital or nursing home pest finding is writt
 - [Corrections Pest Reference](https://correctionspestreference.org/): pest control requirements for jails, prisons, and detention facilities, including a 30-state comparison of jail standards.
 - [University Pest Reference](https://universitypestreference.org/): pest control requirements by campus zone.
 - [Multifamily Pest Reference](https://multifamilypestreference.org/): pest obligations for apartment housing by funding source, and the records courts and auditors have weighed.
+- [Food Service Pest Reference](https://foodservicepestreference.org/): pest requirements for restaurants and food service, what inspectors actually cite, and the records that hold up, in English and Spanish.
 - [Frazer Applied Entomology](https://frazerappliedentomology.com/): the author's consulting and expert witness practice.
 
 ## Full text
